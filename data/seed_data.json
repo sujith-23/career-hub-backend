@@ -1211,6 +1211,35 @@
             "futureScope": [
               "Growing demand as satellite data becomes central to planning & climate work"
             ]
+          },
+          "astronaut": {
+            "name": "Astronaut",
+            "desc": "Flying to space as part of a national or international space mission — India's own astronaut program (Gaganyaan) plus routes through NASA/international agencies.",
+            "entrance": "Selected from Engineering/Science graduates (often with test pilot or advanced degree background) via ISRO's Astronaut Selection or international agency programs",
+            "coreSubjects": [
+              "Engineering or applied science background",
+              "Physical fitness & aviation medicine",
+              "Systems training (spacecraft operations)"
+            ],
+            "jobRoles": [
+              "Astronaut (ISRO Gaganyaan Programme)",
+              "Astronaut (NASA / international space agencies, for those pursuing opportunities abroad)"
+            ],
+            "skills": [
+              "Extreme physical & mental fitness",
+              "Engineering/piloting background",
+              "Teamwork under high-pressure conditions"
+            ],
+            "higherStudies": [
+              "Engineering degree + often a master's; test pilot training is a common route"
+            ],
+            "topRecruiters": [
+              "ISRO (Gaganyaan Programme)",
+              "NASA and other international space agencies (for globally competitive candidates)"
+            ],
+            "futureScope": [
+              "India's human spaceflight program (Gaganyaan) is opening this path domestically for the first time"
+            ]
           }
         }
       }
@@ -2853,7 +2882,8 @@
         "jobRoles": [
           "Small Business Owner",
           "Startup Founder",
-          "Trader/Retailer"
+          "Trader/Retailer",
+          "Start a Startup Company"
         ],
         "skills": [
           "Risk-taking",
