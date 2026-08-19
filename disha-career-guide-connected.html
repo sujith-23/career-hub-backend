@@ -243,9 +243,11 @@ function render(){
   const main = document.getElementById('main');
   const crumb = document.getElementById('crumb');
   const searchWrap = document.querySelector('.search-wrap');
+  const authBox = document.getElementById('authBox');
 
   const isAuthPage = parts[0] === 'login' || parts[0] === 'signup';
   if(searchWrap) searchWrap.style.display = isAuthPage ? 'none' : 'block';
+  if(authBox) authBox.style.display = isAuthPage ? 'none' : 'flex';
 
   if(parts[0] === 'login'){ renderAuthPage('login'); return; }
   if(parts[0] === 'signup'){ renderAuthPage('signup'); return; }
