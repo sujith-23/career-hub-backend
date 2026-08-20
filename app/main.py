@@ -1,5 +1,15 @@
 """
 Career Vision Hub — Backend API
+Serves the career-path content (streams -> paths -> children) that used to be
+hardcoded in the frontend's `DATA` object, plus click-tracking and a
+student feedback/question endpoint.
+
+Run locally:
+    pip install -r requirements.txt
+    python app/seed.py        # one-time: load data/seed_data.json into SQLite
+    uvicorn app.main:app --reload
+
+Docs available at /docs once running.
 """
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
@@ -8,7 +18,7 @@ from datetime import datetime
 
 from . import models, schemas
 from .database import SessionLocal, engine
-from .firebase_auth import get_current_user
+from .firebase_auth import get_current_user, get_current_user_optional, require_admin
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -18,9 +28,10 @@ app = FastAPI(
     version="1.0.0",
 )
 
+# Allow the GitHub Pages frontend (and local dev) to call this API.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # tighten to your GitHub Pages origin before going live
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -39,14 +50,18 @@ def root():
     return {"status": "ok", "service": "career-vision-hub-api"}
 
 
+# ---------- Content endpoints (replace the hardcoded DATA object) ----------
+
 @app.get("/api/streams", response_model=list[schemas.StreamSummary])
 def list_streams(db: Session = Depends(get_db)):
+    """Lightweight list for the hub screen: id, name, full, color, desc."""
     streams = db.query(models.Stream).all()
     return streams
 
 
 @app.get("/api/streams/{stream_id}", response_model=schemas.StreamDetail)
 def get_stream(stream_id: str, db: Session = Depends(get_db)):
+    """Full stream detail including all paths, matching the old DATA[streamId] shape."""
     stream = db.query(models.Stream).filter(models.Stream.id == stream_id).first()
     if not stream:
         raise HTTPException(status_code=404, detail="Stream not found")
@@ -55,6 +70,11 @@ def get_stream(stream_id: str, db: Session = Depends(get_db)):
 
 @app.get("/api/streams/full/all")
 def get_all_streams_full(db: Session = Depends(get_db)):
+    """
+    Returns every stream keyed by id, in the exact shape the old frontend
+    `DATA` object used (DATA[streamId] = {name, full, color, desc, paths}).
+    One call instead of 11 — this is what the frontend should fetch on load.
+    """
     streams = db.query(models.Stream).all()
     return {
         s.id: {
@@ -68,12 +88,26 @@ def get_all_streams_full(db: Session = Depends(get_db)):
     }
 
 
+# ---------- Click / usage tracking ----------
+
 @app.post("/api/track", response_model=schemas.TrackEventOut)
-def track_event(event: schemas.TrackEventIn, db: Session = Depends(get_db)):
+def track_event(
+    event: schemas.TrackEventIn,
+    db: Session = Depends(get_db),
+    user=Depends(get_current_user_optional),
+):
+    """
+    Log which stream/path/node was clicked, for analytics.
+    If the student is logged in, their identity is recorded too (so Grama
+    Vaani can see which student showed interest in which path); if not
+    logged in, the click is still logged anonymously.
+    """
     row = models.ClickEvent(
         stream_id=event.stream_id,
         path_id=event.path_id,
         node_id=event.node_id,
+        user_id=user["uid"] if user else None,
+        user_email=user["email"] if user else None,
         created_at=datetime.utcnow(),
     )
     db.add(row)
@@ -83,10 +117,19 @@ def track_event(event: schemas.TrackEventIn, db: Session = Depends(get_db)):
 
 
 @app.get("/api/analytics/popular", response_model=list[schemas.PopularItem])
-def popular_items(limit: int = 10, db: Session = Depends(get_db)):
+def popular_items(
+    limit: int = 10,
+    db: Session = Depends(get_db),
+    _admin=Depends(require_admin),
+):
+    """Most-clicked streams (aggregated, anonymous) — safe for any logged-in user to see."""
     from sqlalchemy import func
+
     results = (
-        db.query(models.ClickEvent.stream_id, func.count(models.ClickEvent.id).label("clicks"))
+        db.query(
+            models.ClickEvent.stream_id,
+            func.count(models.ClickEvent.id).label("clicks"),
+        )
         .group_by(models.ClickEvent.stream_id)
         .order_by(func.count(models.ClickEvent.id).desc())
         .limit(limit)
@@ -94,6 +137,45 @@ def popular_items(limit: int = 10, db: Session = Depends(get_db)):
     )
     return [{"stream_id": r[0], "clicks": r[1]} for r in results]
 
+
+@app.get("/api/analytics/students")
+def student_interest(db: Session = Depends(get_db), _admin=Depends(require_admin)):
+    """
+    ADMIN ONLY (email must be in the ADMIN_EMAILS env var).
+    Shows which logged-in student explored which stream/path, and how many
+    times — i.e. real per-student interest data, not just aggregated counts.
+    Anonymous (not-logged-in) clicks are excluded here since there's no
+    student to attribute them to.
+    """
+    from sqlalchemy import func
+
+    rows = (
+        db.query(
+            models.ClickEvent.user_email,
+            models.ClickEvent.stream_id,
+            models.ClickEvent.path_id,
+            func.count(models.ClickEvent.id).label("clicks"),
+            func.max(models.ClickEvent.created_at).label("last_seen"),
+        )
+        .filter(models.ClickEvent.user_email.isnot(None))
+        .group_by(models.ClickEvent.user_email, models.ClickEvent.stream_id, models.ClickEvent.path_id)
+        .order_by(models.ClickEvent.user_email, func.count(models.ClickEvent.id).desc())
+        .all()
+    )
+
+    by_student = {}
+    for email, stream_id, path_id, clicks, last_seen in rows:
+        by_student.setdefault(email, []).append({
+            "stream_id": stream_id,
+            "path_id": path_id,
+            "clicks": clicks,
+            "last_seen": last_seen.isoformat() if last_seen else None,
+        })
+
+    return by_student
+
+
+# ---------- Student feedback / "ask a mentor" ----------
 
 @app.post("/api/feedback", response_model=schemas.FeedbackOut)
 def submit_feedback(item: schemas.FeedbackIn, db: Session = Depends(get_db)):
@@ -111,8 +193,11 @@ def submit_feedback(item: schemas.FeedbackIn, db: Session = Depends(get_db)):
 
 @app.get("/api/feedback", response_model=list[schemas.FeedbackOut])
 def list_feedback(db: Session = Depends(get_db)):
+    """Simple admin-facing list (add auth before exposing this publicly)."""
     return db.query(models.Feedback).order_by(models.Feedback.created_at.desc()).all()
 
+
+# ---------- Saved paths (requires login) ----------
 
 @app.post("/api/saved-paths", response_model=schemas.SavedPathOut)
 def save_path(
@@ -120,6 +205,7 @@ def save_path(
     db: Session = Depends(get_db),
     user_id: str = Depends(get_current_user),
 ):
+    """Bookmark a career path for the logged-in student."""
     row = models.SavedPath(
         user_id=user_id,
         stream_id=item.stream_id,
@@ -139,6 +225,7 @@ def list_saved_paths(
     db: Session = Depends(get_db),
     user_id: str = Depends(get_current_user),
 ):
+    """All paths the logged-in student has bookmarked."""
     return (
         db.query(models.SavedPath)
         .filter(models.SavedPath.user_id == user_id)

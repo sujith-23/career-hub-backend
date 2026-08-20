@@ -69,6 +69,43 @@ fetch('https://your-api-url/api/track', {
 });
 ```
 
+## Login + saved paths (Firebase Auth)
+
+Students can now log in / sign up (Firebase Authentication, same pattern as
+Career Vision Hub) and bookmark career paths. The backend verifies the
+Firebase ID token to know which user is saving what — it never sees passwords.
+
+### Backend setup
+
+1. In the [Firebase console](https://console.firebase.google.com), open your
+   project (or create one) → **Project settings** → **Service accounts** →
+   **Generate new private key**. This downloads a JSON file.
+2. Save it as `backend/firebase-service-account.json` (already gitignored —
+   never commit this file, it's a secret credential).
+3. In the Firebase console, go to **Authentication** → **Sign-in method** →
+   enable **Email/Password**.
+4. Install the new dependency: `pip install -r requirements.txt` (already
+   includes `firebase-admin`).
+5. Restart the server. `/api/saved-paths` endpoints now work.
+
+### Frontend setup
+
+1. In the Firebase console → **Project settings** → **General** → scroll to
+   "Your apps" → add a Web app (or reuse the one from Career Vision Hub).
+2. Copy the `firebaseConfig` object it gives you.
+3. In `disha-career-guide-connected.html`, find the `firebaseConfig` block
+   near the bottom of the `<script>` and paste your real values in place of
+   the `YOUR_...` placeholders.
+4. Reload the page — "Log in" / "Sign up" buttons appear top-right. After
+   logging in, visiting any final career page shows a "Save this path"
+   button, and "My saved paths" lists everything you've bookmarked.
+
+### New endpoints (all require `Authorization: Bearer <firebase_id_token>`)
+
+- `POST /api/saved-paths` — bookmark a path
+- `GET /api/saved-paths` — list the logged-in user's bookmarks
+- `DELETE /api/saved-paths/{id}` — remove a bookmark
+
 ## Deploying (Docker + Azure Container Apps)
 
 Same pattern as your CodeTutor project:
