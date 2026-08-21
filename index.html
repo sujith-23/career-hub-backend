@@ -414,6 +414,25 @@ function render(){
   }
 
   if(parts[0] === 'students'){ renderStudentInterest(); return; }
+  if(parts[0] === 'admin-saved'){
+  if(!currentUser){
+    location.hash = '#/login';
+    return;
+  }
+
+  if(!ADMIN_EMAILS.includes((currentUser.email || '').toLowerCase())){
+    main.innerHTML = `
+      <a class="back-link" href="#/">‹ Back to home</a>
+      <p style="padding:20px;color:#A2402F;">
+        You're not authorized to view student saved paths.
+      </p>
+    `;
+    return;
+  }
+
+  renderAdminSavedPaths();
+  return;
+}
 
   if(parts.length===0){ renderHome(main,crumb); return; }
 
@@ -1016,9 +1035,10 @@ function renderAuthBox(){
       <a href="#/courses" class="top-action">📚 Compare Courses</a>
       <a href="#/exams" class="top-action">📝 Entrance Exams</a>
       ${isAdmin ? `
-        <a href="#/students" id="studentsBtn" class="top-action">🎓 Student Interest</a>
-        <a href="#/analytics" id="analyticsBtn" class="top-action">📊 Analytics</a>
-      ` : ''}
+  <a href="#/students" id="studentsBtn" class="top-action">🎓 Student Interest</a>
+  <a href="#/analytics" id="analyticsBtn" class="top-action">📊 Analytics</a>
+  <a href="#/admin-saved" id="adminSavedBtn" class="top-action">⭐ Student Saved Paths</a>
+` : ''}
       <a href="#/saved" id="savedPathsBtn" class="top-action">★ My Saved Paths</a>
       <span class="top-user-email">${currentUser.email}</span>
       <button id="logoutBtn" class="top-action top-action-logout">Log out</button>
@@ -1270,7 +1290,241 @@ async function renderStudentInterest(){
     console.error(err);
   }
 }
+async function renderAdminSavedPaths(){
+  const main = document.getElementById('main');
+  const crumb = document.getElementById('crumb');
 
+  crumb.innerHTML = '';
+
+  if(!currentUser){
+    location.hash = '#/login';
+    return;
+  }
+
+  const isAdmin = ADMIN_EMAILS.includes(
+    (currentUser.email || '').toLowerCase()
+  );
+
+  if(!isAdmin){
+    main.innerHTML = `
+      <a class="back-link" href="#/">‹ Back to home</a>
+      <p style="padding:20px;color:#A2402F;">
+        You're not authorized to view student saved paths.
+      </p>
+    `;
+    return;
+  }
+
+  main.innerHTML = `
+    <a class="back-link" href="#/">‹ Back to home</a>
+    <h1>Student Saved Paths</h1>
+    <p style="color:var(--ink-soft);font-size:0.9rem;margin-bottom:20px;">
+      Career paths saved by each student.
+    </p>
+    <p style="padding:20px;">Loading saved paths...</p>
+  `;
+
+  try {
+    const token = await currentUser.getIdToken();
+
+    const res = await fetch(
+      `${API_BASE}/api/admin/saved-paths`,
+      {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      }
+    );
+
+    if(!res.ok){
+      const errorData = await res.json().catch(() => ({}));
+
+      throw new Error(
+        errorData.detail ||
+        `Server returned ${res.status}`
+      );
+    }
+
+    const byStudent = await res.json();
+
+    const emails = Object.keys(byStudent);
+
+    if(emails.length === 0){
+      main.innerHTML = `
+        <a class="back-link" href="#/">‹ Back to home</a>
+
+        <h1>Student Saved Paths</h1>
+
+        <p style="padding:20px 0;color:var(--ink-soft);">
+          No students have saved any career paths yet.
+        </p>
+      `;
+
+      return;
+    }
+
+    let html = `
+      <a class="back-link" href="#/">‹ Back to home</a>
+
+      <h1>Student Saved Paths</h1>
+
+      <p style="
+        color:var(--ink-soft);
+        font-size:0.9rem;
+        margin-bottom:24px;
+      ">
+        Career paths saved by each student.
+      </p>
+    `;
+
+    for(const email of emails){
+
+      const items = byStudent[email] || [];
+
+      html += `
+        <div
+          style="
+            background:var(--card);
+            border:1px solid var(--rail);
+            border-radius:10px;
+            padding:18px;
+            margin-bottom:20px;
+            box-shadow:var(--shadow);
+          "
+        >
+
+          <h3 style="
+            margin:0 0 14px;
+            font-size:1rem;
+          ">
+            ${email}
+          </h3>
+
+          <ul class="saved-list">
+      `;
+
+      if(items.length === 0){
+
+        html += `
+          <li class="saved-item">
+            <span style="color:var(--ink-soft);">
+              No saved paths
+            </span>
+          </li>
+        `;
+
+      } else {
+
+        for(const item of items){
+
+          const hashParts = [
+            item.stream_id,
+            item.path_id,
+            item.node_id
+          ].filter(Boolean);
+
+          const hash = hashParts.join('/');
+
+          const label =
+            item.label ||
+            item.path_id ||
+            item.stream_id ||
+            'Saved career path';
+
+          html += `
+            <li class="saved-item">
+
+              <div style="min-width:0;">
+
+                <a
+                  href="#/${hash}"
+                  style="
+                    font-weight:600;
+                    font-size:0.94rem;
+                  "
+                >
+                  ${label}
+                </a>
+
+                <div style="
+                  margin-top:5px;
+                  font-size:0.76rem;
+                  color:var(--ink-soft);
+                ">
+                  Stream: ${item.stream_id || '-'}
+                  ${item.path_id
+                    ? ` · Path: ${item.path_id}`
+                    : ''
+                  }
+                  ${item.node_id
+                    ? ` · Node: ${item.node_id}`
+                    : ''
+                  }
+                </div>
+
+                ${
+                  item.created_at
+                    ? `
+                      <div style="
+                        margin-top:3px;
+                        font-size:0.72rem;
+                        color:var(--ink-soft);
+                      ">
+                        Saved: ${new Date(
+                          item.created_at
+                        ).toLocaleString()}
+                      </div>
+                    `
+                    : ''
+                }
+
+              </div>
+
+            </li>
+          `;
+        }
+      }
+
+      html += `
+          </ul>
+
+        </div>
+      `;
+    }
+
+    main.innerHTML = html;
+
+  } catch(err){
+
+    console.error(
+      'Failed to load admin saved paths:',
+      err
+    );
+
+    main.innerHTML = `
+      <a class="back-link" href="#/">‹ Back to home</a>
+
+      <h1>Student Saved Paths</h1>
+
+      <div style="
+        padding:20px;
+        margin-top:15px;
+        background:#f8e5e1;
+        border:1px solid #A2402F;
+        border-radius:8px;
+        color:#A2402F;
+      ">
+        <strong>Could not load student saved paths.</strong>
+
+        <div style="margin-top:8px;font-size:0.85rem;">
+          ${err.message}
+        </div>
+      </div>
+    `;
+  }
+}
 async function renderSavedPaths(){
   const main = document.getElementById('main');
   const crumb = document.getElementById('crumb');
