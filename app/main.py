@@ -205,6 +205,7 @@ def save_path(
     db: Session = Depends(get_db),
     user_id: str = Depends(get_current_user),
 ):
+    
     """Bookmark a career path for the logged-in student."""
     row = models.SavedPath(
         user_id=user_id,
@@ -218,6 +219,18 @@ def save_path(
     db.commit()
     db.refresh(row)
     return row
+@app.get("/api/saved-paths", response_model=list[schemas.SavedPathOut])
+def list_saved_paths(
+    db: Session = Depends(get_db),
+    user_id: str = Depends(get_current_user),
+):
+    """Return saved career paths for the logged-in student."""
+    return (
+        db.query(models.SavedPath)
+        .filter(models.SavedPath.user_id == user_id)
+        .order_by(models.SavedPath.created_at.desc())
+        .all()
+    )
 
 
 @app.get("/api/admin/saved-paths")
