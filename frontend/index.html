@@ -559,6 +559,7 @@ function buildCourseComparisonData(){
           Array.isArray(node.higherStudies) && node.higherStudies.length
             ? node.higherStudies.join(', ')
             : '',
+	salary: node.salary || null,
         color: stream.color || 'var(--ink)',
         streamId,
         pathId: pathIds[0] || null,
@@ -721,9 +722,14 @@ function renderCourseComparison(){
       higherStudies:
         Array.isArray(node.higherStudies) && node.higherStudies.length
           ? node.higherStudies.join(', ')
-          : 'Not specified'
+          : 'Not specified',
+	salary: node.salary || null,
     });
   }
+
+
+
+
 
   for(const [streamId, stream] of Object.entries(DATA || {})){
     if(!stream) continue;
@@ -939,17 +945,38 @@ function renderCourseComparison(){
       }
     }
 
+
+
+
     const rows = [
-      ['Stream', selectedStream.name, selectedStream.name],
-      ['Course', c1.name, c2.name],
-      ['Course path', c1.breadcrumb || 'Not specified', c2.breadcrumb || 'Not specified'],
-      ['Duration', c1.duration, c2.duration],
-      ['Entrance route', c1.entrance, c2.entrance],
-      ['Main focus', c1.focus, c2.focus],
-      ['Career options', c1.careers, c2.careers],
-      ['Important skills', c1.skills, c2.skills],
-      ['Higher studies', c1.higherStudies, c2.higherStudies]
-    ];
+  ['Stream', selectedStream.name, selectedStream.name],
+  ['Course', c1.name, c2.name],
+  ['Course path', c1.breadcrumb || 'Not specified', c2.breadcrumb || 'Not specified'],
+  ['Duration', c1.duration || 'Not specified', c2.duration || 'Not specified'],
+
+  ['Fresher salary',
+    c1.salary?.fresher || 'Not specified',
+    c2.salary?.fresher || 'Not specified'
+  ],
+
+  ['Mid-level salary',
+    c1.salary?.midLevel || 'Not specified',
+    c2.salary?.midLevel || 'Not specified'
+  ],
+
+  ['Senior salary',
+    c1.salary?.senior || 'Not specified',
+    c2.salary?.senior || 'Not specified'
+  ],
+
+  ['Entrance route', c1.entrance || 'Not specified', c2.entrance || 'Not specified'],
+  ['Main focus', c1.focus || 'Not specified', c2.focus || 'Not specified'],
+  ['Career options', c1.careers || 'Not specified', c2.careers || 'Not specified'],
+  ['Important skills', c1.skills || 'Not specified', c2.skills || 'Not specified'],
+  ['Higher studies', c1.higherStudies || 'Not specified', c2.higherStudies || 'Not specified']
+];
+
+
 
     comparisonTable.innerHTML = `
       <div style="overflow-x:auto;">
