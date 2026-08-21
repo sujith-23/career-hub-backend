@@ -575,6 +575,9 @@ function buildCourseComparisonData(){
   return options;
 }
 
+
+
+
 const ENTRANCE_EXAM_DATA = [
 
   {
@@ -583,7 +586,17 @@ const ENTRANCE_EXAM_DATA = [
     purpose: "Admission to participating engineering colleges and eligibility route for JEE Advanced.",
     suitable: "MPC / PCM students",
     stage: "After 12th",
-    note: "Check the current year NTA eligibility and participating-institute rules."
+    note: "Check the current year NTA eligibility and participating-institute rules.",
+    courses: [
+  "B.Tech CSE",
+  "B.Tech AI & Data Science",
+  "B.Tech AI & Machine Learning",
+  "B.Tech IT",
+  "B.Tech ECE",
+  "B.Tech EEE",
+  "B.Tech Mechanical",
+  "B.Tech Civil"
+]
   },
   {
     name: "JEE Advanced",
@@ -591,7 +604,18 @@ const ENTRANCE_EXAM_DATA = [
     purpose: "Entrance examination for undergraduate programmes at IITs, subject to eligibility.",
     suitable: "PCM students who meet JEE Advanced eligibility",
     stage: "After 12th",
-    note: "Eligibility and attempt rules change by year."
+    note: "Eligibility and attempt rules change by year.",
+courses: [
+    "B.Tech CSE",
+    "B.Tech AI & Data Science",
+    "B.Tech AI & Machine Learning",
+    "B.Tech ECE",
+    "B.Tech Mechanical",
+    "B.Tech Civil",
+    "B.Tech Chemical",
+    "B.Tech Aerospace",
+    "B.Tech Biotechnology"
+  ]
   },
   {
     name: "AP EAMCET / AP EAPCET",
@@ -599,7 +623,21 @@ const ENTRANCE_EXAM_DATA = [
     purpose: "State-level admission route for participating professional courses in Andhra Pradesh.",
     suitable: "Eligible AP/other-state students",
     stage: "After 12th",
-    note: "Use the official notification for the current year's exact eligibility and counselling rules."
+    note: "Use the official notification for the current year's exact eligibility and counselling rules.",
+courses: [
+    "B.Tech CSE",
+    "B.Tech AI & Data Science",
+    "B.Tech AI & Machine Learning",
+    "B.Tech IT",
+    "B.Tech ECE",
+    "B.Tech EEE",
+    "B.Tech Mechanical",
+    "B.Tech Civil",
+    "B.Tech Chemical",
+    "B.Tech Agricultural Engineering",
+    "B.Sc Agriculture",
+    "B.Pharm"
+  ]
   },
   {
     name: "NEET-UG",
@@ -607,7 +645,16 @@ const ENTRANCE_EXAM_DATA = [
     purpose: "National entrance route for undergraduate medical education and other programmes covered by the current rules.",
     suitable: "BiPC / PCB students",
     stage: "After 12th",
-    note: "Check the current NTA and counselling authority rules for the exact course."
+    note: "Check the current NTA and counselling authority rules for the exact course.",
+courses: [
+    "MBBS",
+    "BDS",
+    "BAMS",
+    "BHMS",
+    "BUMS",
+    "B.Sc Nursing",
+    "Veterinary Science"
+  ]
   },
   {
     name: "CUET-UG",
@@ -615,7 +662,22 @@ const ENTRANCE_EXAM_DATA = [
     purpose: "Common entrance route used by participating universities for undergraduate admissions.",
     suitable: "Students meeting the selected university/course requirements",
     stage: "After 12th",
-    note: "Subject combinations and participating universities vary by year."
+    note: "Subject combinations and participating universities vary by year.",
+courses: [
+    "B.Sc Computer Science",
+    "B.Sc Physics",
+    "B.Sc Mathematics",
+    "B.Sc Statistics",
+    "B.Sc Data Science",
+    "BCA",
+    "BBA",
+    "B.Com",
+    "BA Economics",
+    "BA Political Science",
+    "BA History",
+    "BA Psychology",
+    "BSW"
+  ]
   },
   {
     name: "NDA",
@@ -623,7 +685,12 @@ const ENTRANCE_EXAM_DATA = [
     purpose: "UPSC examination route for entry to National Defence Academy pathways.",
     suitable: "Eligible 12th-pass candidates",
     stage: "After 12th",
-    note: "Check the latest UPSC notification for age, education, gender and physical requirements."
+    note: "Check the latest UPSC notification for age, education, gender and physical requirements.",
+courses: [
+    "NDA — Army",
+    "NDA — Navy",
+    "NDA — Air Force"
+  ]
   },
   {
     name: "NATA",
@@ -631,9 +698,16 @@ const ENTRANCE_EXAM_DATA = [
     purpose: "Aptitude examination used for architecture admissions under the applicable rules.",
     suitable: "Students meeting B.Arch eligibility",
     stage: "After 12th",
-    note: "Confirm current Council of Architecture and institution admission requirements."
+    note: "Confirm current Council of Architecture and institution admission requirements.",
+courses: [
+    "B.Arch — Architecture"
+  ]
   }
 ];
+
+
+
+
 
 function renderCourseComparison(){
   const main = document.getElementById('main');
@@ -1079,6 +1153,42 @@ function renderEntranceExams(){
 
     <div id="examList" class="stations" style="--lc:var(--ink);margin-top:0;"></div>
   `;
+const COURSE_LINKS = {
+  "B.Tech CSE": "#/mpc/engineering/cse",
+  "B.Tech AI & Data Science": "#/mpc/engineering/aids",
+  "B.Tech AI & Machine Learning": "#/mpc/engineering/aiml",
+  "B.Tech IT": "#/mpc/engineering/it",
+  "B.Tech ECE": "#/mpc/engineering/ece",
+  "B.Tech EEE": "#/mpc/engineering/eee",
+  "B.Tech Mechanical": "#/mpc/engineering/mechanical",
+  "B.Tech Civil": "#/mpc/engineering/civil",
+  "B.Tech Chemical": "#/mpc/engineering/chemical",
+  "B.Tech Agricultural Engineering": "#/mpc/engineering/agricultural",
+  "B.Sc Agriculture": "#/bipc/agriculture/bscagri",
+  "B.Pharm": "#/bipc/pharmacynursing/bpharm",
+  "MBBS": "#/bipc/medical/mbbs",
+  "BDS": "#/bipc/medical/bds",
+  "BAMS": "#/bipc/medical/bams",
+  "BHMS": "#/bipc/medical/bhms",
+  "BUMS": "#/bipc/medical/bums",
+  "B.Sc Nursing": "#/bipc/pharmacynursing/bscnursing",
+  "Veterinary Science": "#/bipc/veterinary",
+  "B.Sc Computer Science": "#/mpc/degree/bsc_cs",
+  "B.Sc Physics": "#/mpc/degree/bsc_physics",
+  "B.Sc Mathematics": "#/mpc/degree/bsc_maths",
+  "B.Sc Statistics": "#/mpc/degree/bsc_stats",
+  "B.Sc Data Science": "#/mpc/degree/bsc_datascience",
+  "BCA": "#/mpc/degree/bca",
+  "BBA": "#/mpc/degree/bba",
+  "B.Com": "#/cec/bcom",
+  "BA Economics": "#/cec/ba/baeconomics",
+  "BA Political Science": "#/cec/ba/bapolisci",
+  "BA History": "#/hec/humanities/bahistory",
+  "BA Psychology": "#/hec/humanities/bapsychology",
+  "BSW": "#/hec/bsw"
+};
+
+
 
   const renderExams = (query='') => {
     const q = query.trim().toLowerCase();
@@ -1103,6 +1213,23 @@ function renderEntranceExams(){
           <div class="station-desc"><strong>Stage:</strong> ${e.stage}</div>
           <div class="station-desc" style="margin-top:7px;">${e.purpose}</div>
           <div class="station-desc" style="margin-top:6px;">${e.note}</div>
+	  ${e.courses && e.courses.length ? `
+  <div class="station-desc" style="margin-top:12px;">
+    <strong>Courses available:</strong>
+    <ul style="margin:6px 0 0 20px; padding:0;">
+
+      ${e.courses.map(course => `
+  <li style="margin:3px 0;">
+    ${COURSE_LINKS[course]
+      ? `<a href="${COURSE_LINKS[course]}" style="color:inherit;text-decoration:underline;">${course}</a>`
+      : course}
+  </li>
+`).join('')}
+
+
+    </ul>
+  </div>
+` : ''}
         </div>
       </div>
     `).join('');
