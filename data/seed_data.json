@@ -47,7 +47,13 @@
               "High demand across every industry",
               "Strong freelance/startup potential"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–25+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "aids": {
             "name": "AI & Data Science",
@@ -85,7 +91,13 @@
               "One of the fastest-growing tech fields",
               "Strong demand across finance, retail, healthcare"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–25+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "aiml": {
             "name": "AI & Machine Learning",
@@ -123,7 +135,13 @@
               "Core to almost every future product",
               "High research & industry demand"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹4–7 LPA",
+              "midLevel": "₹8–16 LPA",
+              "senior": "₹16–30+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "it": {
             "name": "IT — Information Technology",
@@ -159,7 +177,13 @@
               "Steady demand across every industry",
               "Good entry point into cloud/DevOps"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–24+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "cybersecurity": {
             "name": "Cyber Security",
@@ -197,7 +221,13 @@
               "Rapidly growing due to rising cyber threats",
               "High-paying specialist demand"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–14 LPA",
+              "senior": "₹14–28+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "datascience": {
             "name": "Data Science",
@@ -232,7 +262,13 @@
             "futureScope": [
               "Strong demand across every data-heavy industry"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹4–8 LPA",
+              "midLevel": "₹8–16 LPA",
+              "senior": "₹16–30+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "ece": {
             "name": "ECE — Electronics & Communication",
@@ -268,7 +304,13 @@
             "futureScope": [
               "Core to IoT, 5G and semiconductor growth"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–24+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "eee": {
             "name": "EEE — Electrical & Electronics",
@@ -302,7 +344,13 @@
             "futureScope": [
               "Growing demand in renewable energy sector"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–20+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "mechanical": {
             "name": "Mechanical Engineering",
@@ -336,7 +384,13 @@
             "futureScope": [
               "Steady demand in manufacturing, automotive & energy"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "civil": {
             "name": "Civil Engineering",
@@ -371,7 +425,13 @@
             "futureScope": [
               "Consistent demand from infrastructure & urban growth"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "chemical": {
             "name": "Chemical Engineering",
@@ -402,7 +462,13 @@
             "futureScope": [
               "Strong demand in petrochemicals, pharma & materials"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–22+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "aeronautical": {
             "name": "Aeronautical Engineering",
@@ -433,7 +499,13 @@
             "futureScope": [
               "Niche but growing with India's aerospace push"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–22+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "aerospace": {
             "name": "Aerospace Engineering",
@@ -465,7 +537,13 @@
             "futureScope": [
               "Expanding with India's space & satellite industry"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹4–7 LPA",
+              "midLevel": "₹7–14 LPA",
+              "senior": "₹14–25+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "automobile": {
             "name": "Automobile Engineering",
@@ -496,7 +574,13 @@
             "futureScope": [
               "Shifting fast toward EVs — strong future demand"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "mechatronics": {
             "name": "Mechatronics Engineering",
@@ -527,7 +611,13 @@
             "futureScope": [
               "Growing fast with factory automation & robotics"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–22+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "robotics": {
             "name": "Robotics Engineering",
@@ -559,7 +649,13 @@
             "futureScope": [
               "High growth as automation expands across industries"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹4–7 LPA",
+              "midLevel": "₹7–14 LPA",
+              "senior": "₹14–28+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "biotech": {
             "name": "Biotechnology Engineering",
@@ -589,7 +685,13 @@
             "futureScope": [
               "Growing with India's biotech & pharma sector"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "biomedical": {
             "name": "Biomedical Engineering",
@@ -619,7 +721,13 @@
             "futureScope": [
               "Rising demand with growing healthcare technology"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "agricultural": {
             "name": "Agricultural Engineering",
@@ -648,7 +756,13 @@
             "futureScope": [
               "Steady demand with focus on agri-mechanization"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–5 LPA",
+              "midLevel": "₹5–9 LPA",
+              "senior": "₹9–16+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "mining": {
             "name": "Mining Engineering",
@@ -676,7 +790,13 @@
             "futureScope": [
               "Stable demand in resource-rich states"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹4–7 LPA",
+              "midLevel": "₹7–14 LPA",
+              "senior": "₹14–25+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "petroleum": {
             "name": "Petroleum Engineering",
@@ -705,7 +825,13 @@
             "futureScope": [
               "Niche but well-paying, tied to energy sector"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹5–8 LPA",
+              "midLevel": "₹8–16 LPA",
+              "senior": "₹16–30+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "foodtech": {
             "name": "Food Technology",
@@ -735,7 +861,13 @@
             "futureScope": [
               "Growing with India's packaged food industry"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–5 LPA",
+              "midLevel": "₹5–9 LPA",
+              "senior": "₹9–16+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "textile": {
             "name": "Textile Engineering",
@@ -764,7 +896,13 @@
             "futureScope": [
               "Strong in textile-hub states"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–5 LPA",
+              "midLevel": "₹5–9 LPA",
+              "senior": "₹9–16+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "metallurgical": {
             "name": "Metallurgical Engineering",
@@ -792,7 +930,13 @@
             "futureScope": [
               "Steady demand tied to manufacturing & infrastructure"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹3–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "marine": {
             "name": "Marine Engineering",
@@ -820,7 +964,13 @@
             "futureScope": [
               "Stable demand tied to maritime trade"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹5–8 LPA",
+              "midLevel": "₹8–16 LPA",
+              "senior": "₹16–28+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           }
         }
       },
@@ -859,7 +1009,13 @@
             "futureScope": [
               "Good stepping stone into software roles"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–9 LPA",
+              "senior": "₹9–16+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bsc_physics": {
             "name": "B.Sc Physics",
@@ -891,7 +1047,13 @@
             "futureScope": [
               "Strong for research & academic careers"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–9 LPA",
+              "senior": "₹9–16+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bsc_maths": {
             "name": "B.Sc Mathematics",
@@ -923,7 +1085,13 @@
             "futureScope": [
               "Opens both data & teaching career paths"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bsc_stats": {
             "name": "B.Sc Statistics",
@@ -953,7 +1121,13 @@
             "futureScope": [
               "Rising demand with data-driven decision making"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–22+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bsc_datascience": {
             "name": "B.Sc Data Science",
@@ -982,7 +1156,13 @@
             "futureScope": [
               "Fast-growing field, strong entry-level demand"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹3–7 LPA",
+              "midLevel": "₹7–14 LPA",
+              "senior": "₹14–25+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bca": {
             "name": "BCA — Computer Applications",
@@ -1013,7 +1193,13 @@
             "futureScope": [
               "Practical, job-ready alternative to B.Tech CSE"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bba": {
             "name": "BBA — Business Administration",
@@ -1048,7 +1234,13 @@
             "futureScope": [
               "Strong if paired with an MBA later"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           }
         }
       },
@@ -1074,7 +1266,13 @@
         "futureScope": [
           "Prestigious, stable career with early responsibility"
         ],
-        "duration": "Varies"
+        "duration": "Varies",
+        "salary": {
+          "fresher": "₹7–10 LPA",
+          "midLevel": "₹10–15 LPA",
+          "senior": "₹15–25+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "architecture": {
         "name": "Architecture",
@@ -1201,7 +1399,13 @@
             "futureScope": [
               "India's private space sector is opening up fast alongside ISRO"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹4–7 LPA",
+              "midLevel": "₹7–14 LPA",
+              "senior": "₹14–25+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "isro": {
             "name": "ISRO Scientist/Engineer",
@@ -1319,7 +1523,13 @@
             "futureScope": [
               "Consistently high demand, respected profession"
             ],
-            "duration": "5.5 years"
+            "duration": "5.5 years",
+            "salary": {
+              "fresher": "₹6–12 LPA",
+              "midLevel": "₹10–20 LPA",
+              "senior": "₹20–40+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bds": {
             "name": "BDS — Dental",
@@ -1342,7 +1552,13 @@
             "futureScope": [
               "Growing private dental care market"
             ],
-            "duration": "5 years"
+            "duration": "5 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–25+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bams": {
             "name": "BAMS — Ayurvedic Medicine",
@@ -1369,7 +1585,13 @@
             "futureScope": [
               "Growing interest in traditional & wellness medicine"
             ],
-            "duration": "5.5 years"
+            "duration": "5.5 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–20+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bhms": {
             "name": "BHMS — Homeopathic Medicine",
@@ -1395,7 +1617,13 @@
             "futureScope": [
               "Steady demand in alternative medicine"
             ],
-            "duration": "5.5 years"
+            "duration": "5.5 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–20+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bums": {
             "name": "BUMS — Unani Medicine",
@@ -1421,7 +1649,13 @@
             "futureScope": [
               "Niche, steady demand in traditional medicine"
             ],
-            "duration": "5.5 years"
+            "duration": "5.5 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–20+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           }
         }
       },
@@ -1453,7 +1687,13 @@
             "futureScope": [
               "Strong with growing pharma industry"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–9 LPA",
+              "senior": "₹9–16+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "pharmd": {
             "name": "Pharm.D",
@@ -1479,7 +1719,13 @@
             "futureScope": [
               "Growing role in hospital-based patient care"
             ],
-            "duration": "6 years"
+            "duration": "6 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bscnursing": {
             "name": "B.Sc Nursing",
@@ -1505,7 +1751,13 @@
             "futureScope": [
               "High global demand, strong abroad opportunities"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–9 LPA",
+              "senior": "₹9–15+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "gnm": {
             "name": "GNM — General Nursing & Midwifery",
@@ -1533,7 +1785,13 @@
             "futureScope": [
               "Faster entry into nursing than B.Sc route"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2–4 LPA",
+              "midLevel": "₹4–7 LPA",
+              "senior": "₹7–12+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           }
         }
       },
@@ -1707,7 +1965,13 @@
             "futureScope": [
               "Growing with rising health & fitness awareness"
             ],
-            "duration": "4.5 years"
+            "duration": "4.5 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–9 LPA",
+              "senior": "₹9–15+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bmlt": {
             "name": "BMLT — Medical Lab Technology",
@@ -1733,7 +1997,13 @@
             "futureScope": [
               "Steady with growing diagnostics industry"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2–4 LPA",
+              "midLevel": "₹4–7 LPA",
+              "senior": "₹7–12+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "radiology": {
             "name": "Radiology Technology",
@@ -1759,7 +2029,13 @@
             "futureScope": [
               "Growing with expanding diagnostic imaging use"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–9 LPA",
+              "senior": "₹9–15+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "ottech": {
             "name": "Operation Theatre Technology",
@@ -1785,7 +2061,13 @@
             "futureScope": [
               "Steady hospital-based demand"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2–4 LPA",
+              "midLevel": "₹4–7 LPA",
+              "senior": "₹7–12+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "optometry": {
             "name": "Optometry",
@@ -1811,7 +2093,13 @@
             "futureScope": [
               "Growing with rising eye-care awareness"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–9 LPA",
+              "senior": "₹9–15+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "dialysis": {
             "name": "Dialysis Technology",
@@ -1837,7 +2125,13 @@
             "futureScope": [
               "Rising demand with increasing kidney disease cases"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2–4 LPA",
+              "midLevel": "₹4–7 LPA",
+              "senior": "₹7–12+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "cardiaccare": {
             "name": "Cardiac Care Technology",
@@ -1863,7 +2157,13 @@
             "futureScope": [
               "Growing with rising cardiac care needs"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–9 LPA",
+              "senior": "₹9–15+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "respiratory": {
             "name": "Respiratory Therapy",
@@ -1889,7 +2189,13 @@
             "futureScope": [
               "Rising demand post-pandemic awareness"
             ],
-            "duration": "4 years"
+            "duration": "4 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–9 LPA",
+              "senior": "₹9–15+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "emt": {
             "name": "Emergency Medical Technology",
@@ -1916,7 +2222,13 @@
             "futureScope": [
               "Growing with expanding emergency care infrastructure"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2–4 LPA",
+              "midLevel": "₹4–7 LPA",
+              "senior": "₹7–12+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           }
         }
       },
@@ -2187,7 +2499,13 @@
             "futureScope": [
               "Stable, broad entry point into finance/commerce careers"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–9 LPA",
+              "senior": "₹9–16+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bcomcomputers": {
             "name": "B.Com Computers",
@@ -2216,7 +2534,13 @@
             "futureScope": [
               "Useful blend for finance + tech roles"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bcomhonours": {
             "name": "B.Com Honours",
@@ -2245,7 +2569,13 @@
             "futureScope": [
               "Strong foundation for CA/CS/finance careers"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bcomaccfin": {
             "name": "B.Com Accounting & Finance",
@@ -2273,7 +2603,13 @@
             "futureScope": [
               "Good foundation for finance-specialist careers"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–20+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bcombankins": {
             "name": "B.Com Banking & Insurance",
@@ -2300,7 +2636,13 @@
             "futureScope": [
               "Direct pipeline into banking/insurance sector jobs"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹3–6 LPA",
+              "midLevel": "₹6–12 LPA",
+              "senior": "₹12–20+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           }
         }
       },
@@ -2337,7 +2679,13 @@
             "futureScope": [
               "Strong if paired with an MBA later"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "bbm": {
             "name": "BBM — Business Management",
@@ -2364,7 +2712,13 @@
             "futureScope": [
               "Similar trajectory to BBA, strong with MBA"
             ],
-            "duration": "3 years"
+            "duration": "3 years",
+            "salary": {
+              "fresher": "₹2.5–5 LPA",
+              "midLevel": "₹5–10 LPA",
+              "senior": "₹10–18+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           }
         },
         "jobRoles": [
@@ -2402,7 +2756,13 @@
             "futureScope": [
               "Consistently high demand, prestigious & well-paying"
             ],
-            "duration": "Varies"
+            "duration": "Varies",
+            "salary": {
+              "fresher": "₹6–10 LPA",
+              "midLevel": "₹10–20 LPA",
+              "senior": "₹20–40+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "cma": {
             "name": "CMA — Cost & Management Accounting",
@@ -2426,7 +2786,13 @@
             "futureScope": [
               "Growing demand in cost & management accounting"
             ],
-            "duration": "Varies"
+            "duration": "Varies",
+            "salary": {
+              "fresher": "₹5–9 LPA",
+              "midLevel": "₹9–16 LPA",
+              "senior": "₹16–30+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           },
           "cs": {
             "name": "CS — Company Secretary",
@@ -2450,7 +2816,13 @@
             "futureScope": [
               "Steady demand for corporate governance roles"
             ],
-            "duration": "Varies"
+            "duration": "Varies",
+            "salary": {
+              "fresher": "₹5–9 LPA",
+              "midLevel": "₹9–16 LPA",
+              "senior": "₹16–30+ LPA",
+              "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+            }
           }
         }
       },
@@ -2698,7 +3070,13 @@
         "futureScope": [
           "Strong with MBA later"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2.5–5 LPA",
+          "midLevel": "₹5–10 LPA",
+          "senior": "₹10–18+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "bbm": {
         "name": "BBM",
@@ -2724,7 +3102,13 @@
         "futureScope": [
           "Similar to BBA trajectory"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2.5–5 LPA",
+          "midLevel": "₹5–10 LPA",
+          "senior": "₹10–18+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "ba": {
         "name": "BA (Civics-focused)",
@@ -2846,7 +3230,13 @@
         "futureScope": [
           "Strong & respected career, growing corporate legal demand"
         ],
-        "duration": "3 or 5 years"
+        "duration": "3 or 5 years",
+        "salary": {
+          "fresher": "₹3–6 LPA",
+          "midLevel": "₹6–12 LPA",
+          "senior": "₹12–25+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "journalism": {
         "name": "Journalism & Mass Communication",
@@ -2876,7 +3266,13 @@
         "futureScope": [
           "Shifting fast toward digital & content-driven media"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2.5–5 LPA",
+          "midLevel": "₹5–9 LPA",
+          "senior": "₹9–16+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "hotelmanagement": {
         "name": "Hotel Management",
@@ -2907,7 +3303,13 @@
         "futureScope": [
           "Growing with India's tourism & hospitality sector"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2.5–5 LPA",
+          "midLevel": "₹5–9 LPA",
+          "senior": "₹9–16+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "traveltourism": {
         "name": "Travel & Tourism",
@@ -2936,7 +3338,13 @@
         "futureScope": [
           "Growing with rising domestic & international travel"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2.5–5 LPA",
+          "midLevel": "₹5–8 LPA",
+          "senior": "₹8–15+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "eventmanagement": {
         "name": "Event Management",
@@ -2966,7 +3374,13 @@
         "futureScope": [
           "Growing with expanding events & experiential marketing industry"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2.5–5 LPA",
+          "midLevel": "₹5–9 LPA",
+          "senior": "₹9–16+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "business": {
         "name": "Business Owner / Entrepreneur",
@@ -3278,7 +3692,13 @@
         "futureScope": [
           "Strong & respected career, growing corporate legal demand"
         ],
-        "duration": "3 or 5 years"
+        "duration": "3 or 5 years",
+        "salary": {
+          "fresher": "₹3–6 LPA",
+          "midLevel": "₹6–12 LPA",
+          "senior": "₹12–25+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "journalism": {
         "name": "Journalism & Mass Communication",
@@ -3308,7 +3728,13 @@
         "futureScope": [
           "Shifting fast toward digital & content-driven media"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2.5–5 LPA",
+          "midLevel": "₹5–9 LPA",
+          "senior": "₹9–16+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "librarysci": {
         "name": "Library Science",
@@ -3564,7 +3990,13 @@
         "futureScope": [
           "Steady demand for skilled technicians"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2–4 LPA",
+          "midLevel": "₹4–7 LPA",
+          "senior": "₹7–12+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "dce": {
         "name": "DCE — Civil Engineering",
@@ -3599,7 +4031,13 @@
         "futureScope": [
           "Consistent demand from construction sector"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2–4 LPA",
+          "midLevel": "₹4–7 LPA",
+          "senior": "₹7–12+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "deee": {
         "name": "DEEE — Electrical & Electronics",
@@ -3631,7 +4069,13 @@
         "futureScope": [
           "Steady with electrification & infrastructure growth"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2–4 LPA",
+          "midLevel": "₹4–7 LPA",
+          "senior": "₹7–12+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "dece": {
         "name": "DECE — Electronics & Communication",
@@ -3662,7 +4106,13 @@
         "futureScope": [
           "Growing with electronics manufacturing push"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2–4 LPA",
+          "midLevel": "₹4–7 LPA",
+          "senior": "₹7–12+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "dcse": {
         "name": "DCSE — Computer Science",
@@ -3693,7 +4143,13 @@
         "futureScope": [
           "Good entry point into software/support roles"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2.5–5 LPA",
+          "midLevel": "₹5–9 LPA",
+          "senior": "₹9–16+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "automobile": {
         "name": "Automobile Engineering",
@@ -3724,7 +4180,13 @@
         "futureScope": [
           "Shifting toward EV servicing demand"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹3–5 LPA",
+          "midLevel": "₹5–10 LPA",
+          "senior": "₹10–18+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "daiml": {
         "name": "Diploma in AI & ML",
@@ -3752,7 +4214,13 @@
         "futureScope": [
           "Growing entry point into the AI industry"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2.5–5 LPA",
+          "midLevel": "₹5–10 LPA",
+          "senior": "₹10–18+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "daids": {
         "name": "Diploma in AI & Data Science",
@@ -3778,7 +4246,13 @@
         "futureScope": [
           "Entry point into growing data science field"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2.5–5 LPA",
+          "midLevel": "₹5–10 LPA",
+          "senior": "₹10–18+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "dit": {
         "name": "Diploma in Information Technology",
@@ -3806,7 +4280,13 @@
         "futureScope": [
           "Steady demand for support & junior technical roles"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2.5–5 LPA",
+          "midLevel": "₹5–9 LPA",
+          "senior": "₹9–16+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "dcybersecurity": {
         "name": "Diploma in Cyber Security",
@@ -3832,7 +4312,13 @@
         "futureScope": [
           "Growing entry point into cybersecurity field"
         ],
-        "duration": "3 years"
+        "duration": "3 years",
+        "salary": {
+          "fresher": "₹2.5–5 LPA",
+          "midLevel": "₹5–10 LPA",
+          "senior": "₹10–18+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "dchemical": {
         "name": "Diploma in Chemical Engineering",
@@ -4058,7 +4544,13 @@
         "futureScope": [
           "Steady, essential-skill demand everywhere"
         ],
-        "duration": "2 years"
+        "duration": "2 years",
+        "salary": {
+          "fresher": "₹1.8–3 LPA",
+          "midLevel": "₹3–5 LPA",
+          "senior": "₹5–8+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "fitter": {
         "name": "Fitter",
@@ -4085,7 +4577,13 @@
         "futureScope": [
           "Steady demand in manufacturing sector"
         ],
-        "duration": "2 years"
+        "duration": "2 years",
+        "salary": {
+          "fresher": "₹1.8–3 LPA",
+          "midLevel": "₹3–5 LPA",
+          "senior": "₹5–8+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "welder": {
         "name": "Welder",
@@ -4112,7 +4610,13 @@
         "futureScope": [
           "High demand, including overseas opportunities"
         ],
-        "duration": "1 year"
+        "duration": "1 year",
+        "salary": {
+          "fresher": "₹1.8–3 LPA",
+          "midLevel": "₹3–5 LPA",
+          "senior": "₹5–8+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "turner": {
         "name": "Turner",
@@ -4139,7 +4643,13 @@
         "futureScope": [
           "Steady demand in precision manufacturing"
         ],
-        "duration": "2 years"
+        "duration": "2 years",
+        "salary": {
+          "fresher": "₹1.8–3 LPA",
+          "midLevel": "₹3–5 LPA",
+          "senior": "₹5–8+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "machinist": {
         "name": "Machinist",
@@ -4166,7 +4676,13 @@
         "futureScope": [
           "Growing with CNC & precision manufacturing demand"
         ],
-        "duration": "2 years"
+        "duration": "2 years",
+        "salary": {
+          "fresher": "₹1.8–3 LPA",
+          "midLevel": "₹3–5 LPA",
+          "senior": "₹5–8+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "mechanicdiesel": {
         "name": "Mechanic (Diesel)",
@@ -4249,7 +4765,13 @@
         "futureScope": [
           "Steady demand for basic computer/office roles"
         ],
-        "duration": "1 year"
+        "duration": "1 year",
+        "salary": {
+          "fresher": "₹2–4 LPA",
+          "midLevel": "₹4–7 LPA",
+          "senior": "₹7–12+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "stenographer": {
         "name": "Stenographer",
@@ -5106,7 +5628,13 @@
         "futureScope": [
           "Prestigious, stable career with early leadership responsibility"
         ],
-        "duration": "Varies"
+        "duration": "Varies",
+        "salary": {
+          "fresher": "₹7–10 LPA",
+          "midLevel": "₹10–15 LPA",
+          "senior": "₹15–25+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "defenceplanning": {
         "name": "General Defence Career Planning",
@@ -5172,7 +5700,13 @@
         "futureScope": [
           "Stable, secure government career with steady openings"
         ],
-        "duration": "Not applicable"
+        "duration": "Not applicable",
+        "salary": {
+          "fresher": "₹3–6 LPA",
+          "midLevel": "₹5–9 LPA",
+          "senior": "₹9–15+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "ssc": {
         "name": "SSC (Staff Selection Commission)",
@@ -5200,7 +5734,13 @@
         "futureScope": [
           "Stable, wide range of departments & postings"
         ],
-        "duration": "Not applicable"
+        "duration": "Not applicable",
+        "salary": {
+          "fresher": "₹3–6 LPA",
+          "midLevel": "₹5–9 LPA",
+          "senior": "₹9–15+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "police": {
         "name": "Police & Paramilitary",
@@ -5228,7 +5768,13 @@
         "futureScope": [
           "Stable career with steady recruitment drives"
         ],
-        "duration": "Not applicable"
+        "duration": "Not applicable",
+        "salary": {
+          "fresher": "₹3–6 LPA",
+          "midLevel": "₹5–9 LPA",
+          "senior": "₹9–15+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "govbanking": {
         "name": "Banking (Government)",
@@ -5255,7 +5801,13 @@
         "futureScope": [
           "Stable with steady annual recruitment"
         ],
-        "duration": "Not applicable"
+        "duration": "Not applicable",
+        "salary": {
+          "fresher": "₹4–7 LPA",
+          "midLevel": "₹7–12 LPA",
+          "senior": "₹12–18+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "stategovt": {
         "name": "State Government Jobs",
@@ -5284,7 +5836,13 @@
         "futureScope": [
           "Stable, region-specific government career"
         ],
-        "duration": "Not applicable"
+        "duration": "Not applicable",
+        "salary": {
+          "fresher": "₹3–6 LPA",
+          "midLevel": "₹5–9 LPA",
+          "senior": "₹9–15+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       },
       "postal": {
         "name": "India Post (Postman / GDS / Postal Assistant)",
@@ -5315,7 +5873,13 @@
         "futureScope": [
           "Steady government job with permanence after probation and a clear promotion path"
         ],
-        "duration": "Not applicable"
+        "duration": "Not applicable",
+        "salary": {
+          "fresher": "₹2.5–5 LPA",
+          "midLevel": "₹4–7 LPA",
+          "senior": "₹7–12+ LPA",
+          "note": "Indicative India salary range. Actual salary varies by role, company, location, skills and experience."
+        }
       }
     }
   }

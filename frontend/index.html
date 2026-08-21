@@ -1214,11 +1214,100 @@ function renderLeaf(main, crumb, stream, idPath, node, trail){
       <h2>Job roles</h2>
       <ul class="plain">${node.jobRoles.map(s=>`<li>${s}</li>`).join('')}</ul>
     </div>
-    <div class="detail-section" style="--lc:${stream.color}">
+
+
+
+
+        <div class="detail-section" style="--lc:${stream.color}">
       <h2>Skills you need</h2>
       <ul class="plain">${node.skills.map(s=>`<li>${s}</li>`).join('')}</ul>
     </div>
+
+    ${node.salary ? `
+    <div class="detail-section" style="--lc:${stream.color}">
+      <h2>Salary</h2>
+
+      <div style="
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+        gap:10px;
+      ">
+
+        <div style="
+          padding:12px;
+          border:1px solid var(--rail);
+          border-radius:8px;
+          background:var(--card);
+        ">
+          <div style="
+            font-size:0.72rem;
+            color:var(--ink-soft);
+            text-transform:uppercase;
+            letter-spacing:0.08em;
+            margin-bottom:5px;
+          ">
+            Fresher
+          </div>
+
+          <strong>${node.salary.fresher || 'Not specified'}</strong>
+        </div>
+
+        <div style="
+          padding:12px;
+          border:1px solid var(--rail);
+          border-radius:8px;
+          background:var(--card);
+        ">
+          <div style="
+            font-size:0.72rem;
+            color:var(--ink-soft);
+            text-transform:uppercase;
+            letter-spacing:0.08em;
+            margin-bottom:5px;
+          ">
+            Mid Level
+          </div>
+
+          <strong>${node.salary.midLevel || 'Not specified'}</strong>
+        </div>
+
+        <div style="
+          padding:12px;
+          border:1px solid var(--rail);
+          border-radius:8px;
+          background:var(--card);
+        ">
+          <div style="
+            font-size:0.72rem;
+            color:var(--ink-soft);
+            text-transform:uppercase;
+            letter-spacing:0.08em;
+            margin-bottom:5px;
+          ">
+            Senior
+          </div>
+
+          <strong>${node.salary.senior || 'Not specified'}</strong>
+        </div>
+
+      </div>
+
+      ${node.salary.note ? `
+      <p style="
+        margin-top:10px;
+        font-size:0.76rem;
+        color:var(--ink-soft);
+      ">
+        ${node.salary.note}
+      </p>
+      ` : ''}
+    </div>
+    ` : ''}
+
     ${node.higherStudies ? `
+
+
+
     <div class="detail-section" style="--lc:${stream.color}">
       <h2>Higher studies</h2>
       <ul class="plain">${node.higherStudies.map(s=>`<li>${s}</li>`).join('')}</ul>
