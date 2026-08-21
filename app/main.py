@@ -220,18 +220,39 @@ def save_path(
     return row
 
 
-@app.get("/api/saved-paths", response_model=list[schemas.SavedPathOut])
-def list_saved_paths(
+@app.get("/api/admin/saved-paths")
+def admin_saved_paths(
     db: Session = Depends(get_db),
-    user_id: str = Depends(get_current_user),
+    _admin=Depends(require_admin),
 ):
-    """All paths the logged-in student has bookmarked."""
-    return (
+    """
+    ADMIN ONLY.
+    Returns saved career paths grouped by student.
+    """
+    rows = (
         db.query(models.SavedPath)
-        .filter(models.SavedPath.user_id == user_id)
-        .order_by(models.SavedPath.created_at.desc())
+        .order_by(
+            models.SavedPath.user_id,
+            models.SavedPath.created_at.desc()
+        )
         .all()
     )
+
+    by_student = {}
+
+    for row in rows:
+        by_student.setdefault(row.user_id, []).append({
+            "id": row.id,
+            "stream_id": row.stream_id,
+            "path_id": row.path_id,
+            "node_id": row.node_id,
+            "label": row.label,
+            "created_at": row.created_at.isoformat()
+            if row.created_at else None,
+        })
+
+    return by_student
+    
 
 
 @app.delete("/api/saved-paths/{saved_id}")
