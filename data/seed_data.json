@@ -46,7 +46,8 @@
             "futureScope": [
               "High demand across every industry",
               "Strong freelance/startup potential"
-            ]
+            ],
+            "duration": "4 years"
           },
           "aids": {
             "name": "AI & Data Science",
@@ -83,7 +84,8 @@
             "futureScope": [
               "One of the fastest-growing tech fields",
               "Strong demand across finance, retail, healthcare"
-            ]
+            ],
+            "duration": "4 years"
           },
           "aiml": {
             "name": "AI & Machine Learning",
@@ -120,7 +122,8 @@
             "futureScope": [
               "Core to almost every future product",
               "High research & industry demand"
-            ]
+            ],
+            "duration": "4 years"
           },
           "it": {
             "name": "IT — Information Technology",
@@ -155,7 +158,8 @@
             "futureScope": [
               "Steady demand across every industry",
               "Good entry point into cloud/DevOps"
-            ]
+            ],
+            "duration": "4 years"
           },
           "cybersecurity": {
             "name": "Cyber Security",
@@ -192,7 +196,8 @@
             "futureScope": [
               "Rapidly growing due to rising cyber threats",
               "High-paying specialist demand"
-            ]
+            ],
+            "duration": "4 years"
           },
           "datascience": {
             "name": "Data Science",
@@ -226,7 +231,8 @@
             ],
             "futureScope": [
               "Strong demand across every data-heavy industry"
-            ]
+            ],
+            "duration": "4 years"
           },
           "ece": {
             "name": "ECE — Electronics & Communication",
@@ -261,7 +267,8 @@
             ],
             "futureScope": [
               "Core to IoT, 5G and semiconductor growth"
-            ]
+            ],
+            "duration": "4 years"
           },
           "eee": {
             "name": "EEE — Electrical & Electronics",
@@ -294,7 +301,8 @@
             ],
             "futureScope": [
               "Growing demand in renewable energy sector"
-            ]
+            ],
+            "duration": "4 years"
           },
           "mechanical": {
             "name": "Mechanical Engineering",
@@ -327,7 +335,8 @@
             ],
             "futureScope": [
               "Steady demand in manufacturing, automotive & energy"
-            ]
+            ],
+            "duration": "4 years"
           },
           "civil": {
             "name": "Civil Engineering",
@@ -361,7 +370,8 @@
             ],
             "futureScope": [
               "Consistent demand from infrastructure & urban growth"
-            ]
+            ],
+            "duration": "4 years"
           },
           "chemical": {
             "name": "Chemical Engineering",
@@ -391,7 +401,8 @@
             ],
             "futureScope": [
               "Strong demand in petrochemicals, pharma & materials"
-            ]
+            ],
+            "duration": "4 years"
           },
           "aeronautical": {
             "name": "Aeronautical Engineering",
@@ -421,7 +432,8 @@
             ],
             "futureScope": [
               "Niche but growing with India's aerospace push"
-            ]
+            ],
+            "duration": "4 years"
           },
           "aerospace": {
             "name": "Aerospace Engineering",
@@ -452,7 +464,8 @@
             ],
             "futureScope": [
               "Expanding with India's space & satellite industry"
-            ]
+            ],
+            "duration": "4 years"
           },
           "automobile": {
             "name": "Automobile Engineering",
@@ -482,7 +495,8 @@
             ],
             "futureScope": [
               "Shifting fast toward EVs — strong future demand"
-            ]
+            ],
+            "duration": "4 years"
           },
           "mechatronics": {
             "name": "Mechatronics Engineering",
@@ -512,7 +526,8 @@
             ],
             "futureScope": [
               "Growing fast with factory automation & robotics"
-            ]
+            ],
+            "duration": "4 years"
           },
           "robotics": {
             "name": "Robotics Engineering",
@@ -543,7 +558,8 @@
             ],
             "futureScope": [
               "High growth as automation expands across industries"
-            ]
+            ],
+            "duration": "4 years"
           },
           "biotech": {
             "name": "Biotechnology Engineering",
@@ -572,7 +588,8 @@
             ],
             "futureScope": [
               "Growing with India's biotech & pharma sector"
-            ]
+            ],
+            "duration": "4 years"
           },
           "biomedical": {
             "name": "Biomedical Engineering",
@@ -601,7 +618,8 @@
             ],
             "futureScope": [
               "Rising demand with growing healthcare technology"
-            ]
+            ],
+            "duration": "4 years"
           },
           "agricultural": {
             "name": "Agricultural Engineering",
@@ -629,7 +647,8 @@
             ],
             "futureScope": [
               "Steady demand with focus on agri-mechanization"
-            ]
+            ],
+            "duration": "4 years"
           },
           "mining": {
             "name": "Mining Engineering",
@@ -656,7 +675,8 @@
             ],
             "futureScope": [
               "Stable demand in resource-rich states"
-            ]
+            ],
+            "duration": "4 years"
           },
           "petroleum": {
             "name": "Petroleum Engineering",
@@ -684,7 +704,8 @@
             ],
             "futureScope": [
               "Niche but well-paying, tied to energy sector"
-            ]
+            ],
+            "duration": "4 years"
           },
           "foodtech": {
             "name": "Food Technology",
@@ -713,7 +734,8 @@
             ],
             "futureScope": [
               "Growing with India's packaged food industry"
-            ]
+            ],
+            "duration": "4 years"
           },
           "textile": {
             "name": "Textile Engineering",
@@ -741,7 +763,8 @@
             ],
             "futureScope": [
               "Strong in textile-hub states"
-            ]
+            ],
+            "duration": "4 years"
           },
           "metallurgical": {
             "name": "Metallurgical Engineering",
@@ -768,7 +791,8 @@
             ],
             "futureScope": [
               "Steady demand tied to manufacturing & infrastructure"
-            ]
+            ],
+            "duration": "4 years"
           },
           "marine": {
             "name": "Marine Engineering",
@@ -795,7 +819,8 @@
             ],
             "futureScope": [
               "Stable demand tied to maritime trade"
-            ]
+            ],
+            "duration": "4 years"
           }
         }
       },
@@ -833,7 +858,8 @@
             ],
             "futureScope": [
               "Good stepping stone into software roles"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bsc_physics": {
             "name": "B.Sc Physics",
@@ -864,7 +890,8 @@
             ],
             "futureScope": [
               "Strong for research & academic careers"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bsc_maths": {
             "name": "B.Sc Mathematics",
@@ -895,7 +922,8 @@
             ],
             "futureScope": [
               "Opens both data & teaching career paths"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bsc_stats": {
             "name": "B.Sc Statistics",
@@ -924,7 +952,8 @@
             ],
             "futureScope": [
               "Rising demand with data-driven decision making"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bsc_datascience": {
             "name": "B.Sc Data Science",
@@ -952,7 +981,8 @@
             ],
             "futureScope": [
               "Fast-growing field, strong entry-level demand"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bca": {
             "name": "BCA — Computer Applications",
@@ -982,7 +1012,8 @@
             ],
             "futureScope": [
               "Practical, job-ready alternative to B.Tech CSE"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bba": {
             "name": "BBA — Business Administration",
@@ -1016,7 +1047,8 @@
             ],
             "futureScope": [
               "Strong if paired with an MBA later"
-            ]
+            ],
+            "duration": "3 years"
           }
         }
       },
@@ -1041,7 +1073,8 @@
         ],
         "futureScope": [
           "Prestigious, stable career with early responsibility"
-        ]
+        ],
+        "duration": "Varies"
       },
       "architecture": {
         "name": "Architecture",
@@ -1068,7 +1101,8 @@
         ],
         "futureScope": [
           "Growing with urban development & real estate"
-        ]
+        ],
+        "duration": "5 years"
       },
       "commercialpilot": {
         "name": "Commercial Pilot",
@@ -1100,7 +1134,8 @@
         ],
         "futureScope": [
           "High-paying, growing with expanding aviation sector"
-        ]
+        ],
+        "duration": "Varies"
       },
       "merchantnavy": {
         "name": "Merchant Navy",
@@ -1129,7 +1164,8 @@
         ],
         "futureScope": [
           "High pay, global career, tied to international trade"
-        ]
+        ],
+        "duration": "Varies"
       },
       "space": {
         "name": "Space & Aerospace (ISRO & beyond)",
@@ -1164,7 +1200,8 @@
             ],
             "futureScope": [
               "India's private space sector is opening up fast alongside ISRO"
-            ]
+            ],
+            "duration": "4 years"
           },
           "isro": {
             "name": "ISRO Scientist/Engineer",
@@ -1187,7 +1224,8 @@
             ],
             "futureScope": [
               "Steady government scientist career with high national impact"
-            ]
+            ],
+            "duration": "Varies"
           },
           "remotesensing": {
             "name": "Remote Sensing & GIS",
@@ -1210,7 +1248,8 @@
             ],
             "futureScope": [
               "Growing demand as satellite data becomes central to planning & climate work"
-            ]
+            ],
+            "duration": "3 years"
           },
           "astronaut": {
             "name": "Astronaut",
@@ -1239,7 +1278,8 @@
             ],
             "futureScope": [
               "India's human spaceflight program (Gaganyaan) is opening this path domestically for the first time"
-            ]
+            ],
+            "duration": "Varies"
           }
         }
       }
@@ -1278,7 +1318,8 @@
             ],
             "futureScope": [
               "Consistently high demand, respected profession"
-            ]
+            ],
+            "duration": "5.5 years"
           },
           "bds": {
             "name": "BDS — Dental",
@@ -1300,7 +1341,8 @@
             ],
             "futureScope": [
               "Growing private dental care market"
-            ]
+            ],
+            "duration": "5 years"
           },
           "bams": {
             "name": "BAMS — Ayurvedic Medicine",
@@ -1326,7 +1368,8 @@
             ],
             "futureScope": [
               "Growing interest in traditional & wellness medicine"
-            ]
+            ],
+            "duration": "5.5 years"
           },
           "bhms": {
             "name": "BHMS — Homeopathic Medicine",
@@ -1351,7 +1394,8 @@
             ],
             "futureScope": [
               "Steady demand in alternative medicine"
-            ]
+            ],
+            "duration": "5.5 years"
           },
           "bums": {
             "name": "BUMS — Unani Medicine",
@@ -1376,7 +1420,8 @@
             ],
             "futureScope": [
               "Niche, steady demand in traditional medicine"
-            ]
+            ],
+            "duration": "5.5 years"
           }
         }
       },
@@ -1407,7 +1452,8 @@
             ],
             "futureScope": [
               "Strong with growing pharma industry"
-            ]
+            ],
+            "duration": "4 years"
           },
           "pharmd": {
             "name": "Pharm.D",
@@ -1432,7 +1478,8 @@
             ],
             "futureScope": [
               "Growing role in hospital-based patient care"
-            ]
+            ],
+            "duration": "6 years"
           },
           "bscnursing": {
             "name": "B.Sc Nursing",
@@ -1457,7 +1504,8 @@
             ],
             "futureScope": [
               "High global demand, strong abroad opportunities"
-            ]
+            ],
+            "duration": "4 years"
           },
           "gnm": {
             "name": "GNM — General Nursing & Midwifery",
@@ -1484,7 +1532,8 @@
             ],
             "futureScope": [
               "Faster entry into nursing than B.Sc route"
-            ]
+            ],
+            "duration": "3 years"
           }
         }
       },
@@ -1515,7 +1564,8 @@
             ],
             "futureScope": [
               "Steady with focus on agri-tech & food security"
-            ]
+            ],
+            "duration": "4 years"
           },
           "horticulture": {
             "name": "B.Sc Horticulture",
@@ -1541,7 +1591,8 @@
             ],
             "futureScope": [
               "Growing with commercial farming & exports"
-            ]
+            ],
+            "duration": "4 years"
           },
           "forestry": {
             "name": "B.Sc Forestry",
@@ -1568,7 +1619,8 @@
             ],
             "futureScope": [
               "Growing with environmental conservation focus"
-            ]
+            ],
+            "duration": "4 years"
           },
           "fisheries": {
             "name": "B.Sc Fisheries",
@@ -1594,7 +1646,8 @@
             ],
             "futureScope": [
               "Growing with rising aquaculture demand"
-            ]
+            ],
+            "duration": "4 years"
           },
           "dairytech": {
             "name": "Dairy Technology",
@@ -1620,7 +1673,8 @@
             ],
             "futureScope": [
               "Steady with growing organized dairy sector"
-            ]
+            ],
+            "duration": "4 years"
           }
         }
       },
@@ -1652,7 +1706,8 @@
             ],
             "futureScope": [
               "Growing with rising health & fitness awareness"
-            ]
+            ],
+            "duration": "4.5 years"
           },
           "bmlt": {
             "name": "BMLT — Medical Lab Technology",
@@ -1677,7 +1732,8 @@
             ],
             "futureScope": [
               "Steady with growing diagnostics industry"
-            ]
+            ],
+            "duration": "3 years"
           },
           "radiology": {
             "name": "Radiology Technology",
@@ -1702,7 +1758,8 @@
             ],
             "futureScope": [
               "Growing with expanding diagnostic imaging use"
-            ]
+            ],
+            "duration": "3 years"
           },
           "ottech": {
             "name": "Operation Theatre Technology",
@@ -1727,7 +1784,8 @@
             ],
             "futureScope": [
               "Steady hospital-based demand"
-            ]
+            ],
+            "duration": "3 years"
           },
           "optometry": {
             "name": "Optometry",
@@ -1752,7 +1810,8 @@
             ],
             "futureScope": [
               "Growing with rising eye-care awareness"
-            ]
+            ],
+            "duration": "4 years"
           },
           "dialysis": {
             "name": "Dialysis Technology",
@@ -1777,7 +1836,8 @@
             ],
             "futureScope": [
               "Rising demand with increasing kidney disease cases"
-            ]
+            ],
+            "duration": "3 years"
           },
           "cardiaccare": {
             "name": "Cardiac Care Technology",
@@ -1802,7 +1862,8 @@
             ],
             "futureScope": [
               "Growing with rising cardiac care needs"
-            ]
+            ],
+            "duration": "3 years"
           },
           "respiratory": {
             "name": "Respiratory Therapy",
@@ -1827,7 +1888,8 @@
             ],
             "futureScope": [
               "Rising demand post-pandemic awareness"
-            ]
+            ],
+            "duration": "4 years"
           },
           "emt": {
             "name": "Emergency Medical Technology",
@@ -1853,7 +1915,8 @@
             ],
             "futureScope": [
               "Growing with expanding emergency care infrastructure"
-            ]
+            ],
+            "duration": "3 years"
           }
         }
       },
@@ -1884,7 +1947,8 @@
             ],
             "futureScope": [
               "Strong growth in biotech research & industry"
-            ]
+            ],
+            "duration": "3 years"
           },
           "microbiology": {
             "name": "Microbiology",
@@ -1911,7 +1975,8 @@
             ],
             "futureScope": [
               "Growing with pharma & food safety industries"
-            ]
+            ],
+            "duration": "3 years"
           },
           "biochemistry": {
             "name": "Biochemistry",
@@ -1938,7 +2003,8 @@
             ],
             "futureScope": [
               "Strong for research-oriented careers"
-            ]
+            ],
+            "duration": "3 years"
           },
           "genetics": {
             "name": "Genetics",
@@ -1965,7 +2031,8 @@
             ],
             "futureScope": [
               "Expanding with genomics & precision medicine"
-            ]
+            ],
+            "duration": "3 years"
           },
           "zoology": {
             "name": "Zoology",
@@ -1993,7 +2060,8 @@
             ],
             "futureScope": [
               "Niche, steady in conservation & research"
-            ]
+            ],
+            "duration": "3 years"
           },
           "botany": {
             "name": "Botany",
@@ -2021,7 +2089,8 @@
             ],
             "futureScope": [
               "Niche, steady in research & agriculture"
-            ]
+            ],
+            "duration": "3 years"
           },
           "nutrition": {
             "name": "Nutrition & Dietetics",
@@ -2047,7 +2116,8 @@
             ],
             "futureScope": [
               "Growing with rising health & wellness awareness"
-            ]
+            ],
+            "duration": "3 years"
           }
         }
       },
@@ -2072,7 +2142,8 @@
         ],
         "futureScope": [
           "Steady demand tied to livestock & pet care industry"
-        ]
+        ],
+        "duration": "5.5 years"
       }
     }
   },
@@ -2115,7 +2186,8 @@
             ],
             "futureScope": [
               "Stable, broad entry point into finance/commerce careers"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bcomcomputers": {
             "name": "B.Com Computers",
@@ -2143,7 +2215,8 @@
             ],
             "futureScope": [
               "Useful blend for finance + tech roles"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bcomhonours": {
             "name": "B.Com Honours",
@@ -2171,7 +2244,8 @@
             ],
             "futureScope": [
               "Strong foundation for CA/CS/finance careers"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bcomaccfin": {
             "name": "B.Com Accounting & Finance",
@@ -2198,7 +2272,8 @@
             ],
             "futureScope": [
               "Good foundation for finance-specialist careers"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bcombankins": {
             "name": "B.Com Banking & Insurance",
@@ -2224,7 +2299,8 @@
             ],
             "futureScope": [
               "Direct pipeline into banking/insurance sector jobs"
-            ]
+            ],
+            "duration": "3 years"
           }
         }
       },
@@ -2260,7 +2336,8 @@
             ],
             "futureScope": [
               "Strong if paired with an MBA later"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bbm": {
             "name": "BBM — Business Management",
@@ -2286,7 +2363,8 @@
             ],
             "futureScope": [
               "Similar trajectory to BBA, strong with MBA"
-            ]
+            ],
+            "duration": "3 years"
           }
         },
         "jobRoles": [
@@ -2323,7 +2401,8 @@
             ],
             "futureScope": [
               "Consistently high demand, prestigious & well-paying"
-            ]
+            ],
+            "duration": "Varies"
           },
           "cma": {
             "name": "CMA — Cost & Management Accounting",
@@ -2346,7 +2425,8 @@
             ],
             "futureScope": [
               "Growing demand in cost & management accounting"
-            ]
+            ],
+            "duration": "Varies"
           },
           "cs": {
             "name": "CS — Company Secretary",
@@ -2369,7 +2449,8 @@
             ],
             "futureScope": [
               "Steady demand for corporate governance roles"
-            ]
+            ],
+            "duration": "Varies"
           }
         }
       },
@@ -2405,7 +2486,8 @@
             ],
             "futureScope": [
               "Good foundation for policy, research & analytics careers"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bsceconomics": {
             "name": "B.Sc Economics",
@@ -2432,7 +2514,8 @@
             ],
             "futureScope": [
               "Strong quantitative career foundation"
-            ]
+            ],
+            "duration": "3 years"
           }
         }
       },
@@ -2465,7 +2548,8 @@
         ],
         "futureScope": [
           "Stable government-adjacent career with steady growth"
-        ]
+        ],
+        "duration": "Not applicable"
       },
       "finance": {
         "name": "Finance",
@@ -2494,7 +2578,8 @@
         ],
         "futureScope": [
           "High-growth with expanding financial services sector"
-        ]
+        ],
+        "duration": "Varies"
       },
       "investment": {
         "name": "Investment",
@@ -2523,7 +2608,8 @@
         ],
         "futureScope": [
           "Growing with expanding retail investing in India"
-        ]
+        ],
+        "duration": "Varies"
       },
       "actuarial": {
         "name": "Actuarial Science",
@@ -2546,7 +2632,8 @@
         ],
         "futureScope": [
           "High-paying, in-demand niche field"
-        ]
+        ],
+        "duration": "Varies"
       }
     }
   },
@@ -2582,7 +2669,8 @@
         ],
         "futureScope": [
           "Broad entry into finance & commerce roles"
-        ]
+        ],
+        "duration": "3 years"
       },
       "bba": {
         "name": "BBA",
@@ -2609,7 +2697,8 @@
         ],
         "futureScope": [
           "Strong with MBA later"
-        ]
+        ],
+        "duration": "3 years"
       },
       "bbm": {
         "name": "BBM",
@@ -2634,7 +2723,8 @@
         ],
         "futureScope": [
           "Similar to BBA trajectory"
-        ]
+        ],
+        "duration": "3 years"
       },
       "ba": {
         "name": "BA (Civics-focused)",
@@ -2667,7 +2757,8 @@
             ],
             "futureScope": [
               "Strong foundation for civil services & policy careers"
-            ]
+            ],
+            "duration": "3 years"
           },
           "baeconomics": {
             "name": "BA Economics",
@@ -2694,7 +2785,8 @@
             ],
             "futureScope": [
               "Good foundation for civil services & policy roles"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bapublicadmin": {
             "name": "BA Public Administration",
@@ -2721,7 +2813,8 @@
             ],
             "futureScope": [
               "Direct pipeline toward civil services careers"
-            ]
+            ],
+            "duration": "3 years"
           }
         }
       },
@@ -2752,7 +2845,8 @@
         ],
         "futureScope": [
           "Strong & respected career, growing corporate legal demand"
-        ]
+        ],
+        "duration": "3 or 5 years"
       },
       "journalism": {
         "name": "Journalism & Mass Communication",
@@ -2781,7 +2875,8 @@
         ],
         "futureScope": [
           "Shifting fast toward digital & content-driven media"
-        ]
+        ],
+        "duration": "3 years"
       },
       "hotelmanagement": {
         "name": "Hotel Management",
@@ -2811,7 +2906,8 @@
         ],
         "futureScope": [
           "Growing with India's tourism & hospitality sector"
-        ]
+        ],
+        "duration": "3 years"
       },
       "traveltourism": {
         "name": "Travel & Tourism",
@@ -2839,7 +2935,8 @@
         ],
         "futureScope": [
           "Growing with rising domestic & international travel"
-        ]
+        ],
+        "duration": "3 years"
       },
       "eventmanagement": {
         "name": "Event Management",
@@ -2868,7 +2965,8 @@
         ],
         "futureScope": [
           "Growing with expanding events & experiential marketing industry"
-        ]
+        ],
+        "duration": "3 years"
       },
       "business": {
         "name": "Business Owner / Entrepreneur",
@@ -2900,7 +2998,8 @@
         ],
         "futureScope": [
           "Government schemes like Mudra loans and Startup India make it easier to begin small"
-        ]
+        ],
+        "duration": "Varies"
       },
       "realestate": {
         "name": "Real Estate Agent / Broker",
@@ -2930,7 +3029,8 @@
         ],
         "futureScope": [
           "Steady demand tied to real estate market growth in growing towns and cities"
-        ]
+        ],
+        "duration": "Varies"
       }
     }
   },
@@ -2971,7 +3071,8 @@
             ],
             "futureScope": [
               "Steady for teaching, research & civil services"
-            ]
+            ],
+            "duration": "3 years"
           },
           "baeconomics": {
             "name": "BA Economics",
@@ -2998,7 +3099,8 @@
             ],
             "futureScope": [
               "Good foundation for civil services & policy roles"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bapolisci": {
             "name": "BA Political Science",
@@ -3026,7 +3128,8 @@
             ],
             "futureScope": [
               "Strong foundation for civil services & policy careers"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bapublicadmin": {
             "name": "BA Public Administration",
@@ -3053,7 +3156,8 @@
             ],
             "futureScope": [
               "Direct pipeline toward civil services careers"
-            ]
+            ],
+            "duration": "3 years"
           },
           "basociology": {
             "name": "BA Sociology",
@@ -3082,7 +3186,8 @@
             ],
             "futureScope": [
               "Growing with focus on social development sector"
-            ]
+            ],
+            "duration": "3 years"
           },
           "bapsychology": {
             "name": "BA Psychology",
@@ -3111,7 +3216,8 @@
             ],
             "futureScope": [
               "Rapidly growing with rising mental health awareness"
-            ]
+            ],
+            "duration": "3 years"
           }
         }
       },
@@ -3141,7 +3247,8 @@
         ],
         "futureScope": [
           "Growing with expanding social sector & CSR initiatives"
-        ]
+        ],
+        "duration": "3 years"
       },
       "llb": {
         "name": "LLB — Law",
@@ -3170,7 +3277,8 @@
         ],
         "futureScope": [
           "Strong & respected career, growing corporate legal demand"
-        ]
+        ],
+        "duration": "3 or 5 years"
       },
       "journalism": {
         "name": "Journalism & Mass Communication",
@@ -3199,7 +3307,8 @@
         ],
         "futureScope": [
           "Shifting fast toward digital & content-driven media"
-        ]
+        ],
+        "duration": "3 years"
       },
       "librarysci": {
         "name": "Library Science",
@@ -3227,7 +3336,8 @@
         ],
         "futureScope": [
           "Stable, niche demand across educational institutions"
-        ]
+        ],
+        "duration": "3 years"
       },
       "teaching": {
         "name": "Teaching (after B.Ed)",
@@ -3256,7 +3366,8 @@
         ],
         "futureScope": [
           "Stable, essential profession with steady demand"
-        ]
+        ],
+        "duration": "Varies"
       },
       "civilservices": {
         "name": "Civil Services (UPSC/APPSC)",
@@ -3280,7 +3391,8 @@
         ],
         "futureScope": [
           "Highly prestigious, secure, impactful career"
-        ]
+        ],
+        "duration": "Varies"
       },
       "politics": {
         "name": "Politics / Public Representative",
@@ -3311,7 +3423,8 @@
         ],
         "futureScope": [
           "A long-term path built through community involvement well before contesting elections"
-        ]
+        ],
+        "duration": "Varies"
       },
       "professor": {
         "name": "College Professor (any subject)",
@@ -3340,7 +3453,8 @@
         ],
         "futureScope": [
           "Stable, respected career; PhD holders are increasingly in demand as colleges expand"
-        ]
+        ],
+        "duration": "Varies"
       },
       "allindiaservices": {
         "name": "All-India & Central Civil Services (IAS/IFS/IRS)",
@@ -3370,7 +3484,8 @@
         ],
         "futureScope": [
           "Prestigious, stable careers with significant administrative or enforcement authority"
-        ]
+        ],
+        "duration": "Varies"
       },
       "judiciary": {
         "name": "Judiciary (Magistrate / Judge)",
@@ -3400,7 +3515,8 @@
         ],
         "futureScope": [
           "Respected, stable career; a long path from LLB through judicial exams or years of practice"
-        ]
+        ],
+        "duration": "Varies"
       }
     }
   },
@@ -3447,7 +3563,8 @@
         ],
         "futureScope": [
           "Steady demand for skilled technicians"
-        ]
+        ],
+        "duration": "3 years"
       },
       "dce": {
         "name": "DCE — Civil Engineering",
@@ -3481,7 +3598,8 @@
         ],
         "futureScope": [
           "Consistent demand from construction sector"
-        ]
+        ],
+        "duration": "3 years"
       },
       "deee": {
         "name": "DEEE — Electrical & Electronics",
@@ -3512,7 +3630,8 @@
         ],
         "futureScope": [
           "Steady with electrification & infrastructure growth"
-        ]
+        ],
+        "duration": "3 years"
       },
       "dece": {
         "name": "DECE — Electronics & Communication",
@@ -3542,7 +3661,8 @@
         ],
         "futureScope": [
           "Growing with electronics manufacturing push"
-        ]
+        ],
+        "duration": "3 years"
       },
       "dcse": {
         "name": "DCSE — Computer Science",
@@ -3572,7 +3692,8 @@
         ],
         "futureScope": [
           "Good entry point into software/support roles"
-        ]
+        ],
+        "duration": "3 years"
       },
       "automobile": {
         "name": "Automobile Engineering",
@@ -3602,7 +3723,8 @@
         ],
         "futureScope": [
           "Shifting toward EV servicing demand"
-        ]
+        ],
+        "duration": "3 years"
       },
       "daiml": {
         "name": "Diploma in AI & ML",
@@ -3629,7 +3751,8 @@
         ],
         "futureScope": [
           "Growing entry point into the AI industry"
-        ]
+        ],
+        "duration": "3 years"
       },
       "daids": {
         "name": "Diploma in AI & Data Science",
@@ -3654,7 +3777,8 @@
         ],
         "futureScope": [
           "Entry point into growing data science field"
-        ]
+        ],
+        "duration": "3 years"
       },
       "dit": {
         "name": "Diploma in Information Technology",
@@ -3681,7 +3805,8 @@
         ],
         "futureScope": [
           "Steady demand for support & junior technical roles"
-        ]
+        ],
+        "duration": "3 years"
       },
       "dcybersecurity": {
         "name": "Diploma in Cyber Security",
@@ -3706,7 +3831,8 @@
         ],
         "futureScope": [
           "Growing entry point into cybersecurity field"
-        ]
+        ],
+        "duration": "3 years"
       },
       "dchemical": {
         "name": "Diploma in Chemical Engineering",
@@ -3732,7 +3858,8 @@
         ],
         "futureScope": [
           "Steady demand in process industries"
-        ]
+        ],
+        "duration": "3 years"
       },
       "dmining": {
         "name": "Diploma in Mining Engineering",
@@ -3758,7 +3885,8 @@
         ],
         "futureScope": [
           "Stable in resource-rich regions"
-        ]
+        ],
+        "duration": "3 years"
       },
       "dmetallurgical": {
         "name": "Diploma in Metallurgical Engineering",
@@ -3783,7 +3911,8 @@
         ],
         "futureScope": [
           "Steady demand tied to manufacturing sector"
-        ]
+        ],
+        "duration": "3 years"
       },
       "dagricultural": {
         "name": "Diploma in Agricultural Engineering",
@@ -3807,7 +3936,8 @@
         ],
         "futureScope": [
           "Steady with agri-mechanization growth"
-        ]
+        ],
+        "duration": "3 years"
       },
       "dtextile": {
         "name": "Diploma in Textile Technology",
@@ -3831,7 +3961,8 @@
         ],
         "futureScope": [
           "Strong in textile-hub regions"
-        ]
+        ],
+        "duration": "3 years"
       },
       "dprinting": {
         "name": "Diploma in Printing Technology",
@@ -3856,7 +3987,8 @@
         ],
         "futureScope": [
           "Steady niche demand in packaging & publishing"
-        ]
+        ],
+        "duration": "3 years"
       },
       "darchitecture": {
         "name": "Architecture Assistantship (Diploma)",
@@ -3883,7 +4015,8 @@
         ],
         "futureScope": [
           "Steady support-role demand in construction industry"
-        ]
+        ],
+        "duration": "3 years"
       }
     }
   },
@@ -3924,7 +4057,8 @@
         ],
         "futureScope": [
           "Steady, essential-skill demand everywhere"
-        ]
+        ],
+        "duration": "2 years"
       },
       "fitter": {
         "name": "Fitter",
@@ -3950,7 +4084,8 @@
         ],
         "futureScope": [
           "Steady demand in manufacturing sector"
-        ]
+        ],
+        "duration": "2 years"
       },
       "welder": {
         "name": "Welder",
@@ -3976,7 +4111,8 @@
         ],
         "futureScope": [
           "High demand, including overseas opportunities"
-        ]
+        ],
+        "duration": "1 year"
       },
       "turner": {
         "name": "Turner",
@@ -4002,7 +4138,8 @@
         ],
         "futureScope": [
           "Steady demand in precision manufacturing"
-        ]
+        ],
+        "duration": "2 years"
       },
       "machinist": {
         "name": "Machinist",
@@ -4028,7 +4165,8 @@
         ],
         "futureScope": [
           "Growing with CNC & precision manufacturing demand"
-        ]
+        ],
+        "duration": "2 years"
       },
       "mechanicdiesel": {
         "name": "Mechanic (Diesel)",
@@ -4054,7 +4192,8 @@
         ],
         "futureScope": [
           "Steady demand tied to commercial vehicle fleet"
-        ]
+        ],
+        "duration": "1 year"
       },
       "mechanicmv": {
         "name": "Mechanic (Motor Vehicle)",
@@ -4080,7 +4219,8 @@
         ],
         "futureScope": [
           "Shifting toward EV servicing — strong future demand"
-        ]
+        ],
+        "duration": "2 years"
       },
       "copa": {
         "name": "COPA — Computer Operator & Programming Assistant",
@@ -4108,7 +4248,8 @@
         ],
         "futureScope": [
           "Steady demand for basic computer/office roles"
-        ]
+        ],
+        "duration": "1 year"
       },
       "stenographer": {
         "name": "Stenographer",
@@ -4135,7 +4276,8 @@
         ],
         "futureScope": [
           "Niche, steady government-office demand"
-        ]
+        ],
+        "duration": "1 year"
       },
       "plumber": {
         "name": "Plumber",
@@ -4161,7 +4303,8 @@
         ],
         "futureScope": [
           "Steady, essential-skill demand everywhere"
-        ]
+        ],
+        "duration": "1 year"
       },
       "refrigerationac": {
         "name": "Refrigeration & Air Conditioning",
@@ -4187,7 +4330,8 @@
         ],
         "futureScope": [
           "Growing with rising AC/cooling demand"
-        ]
+        ],
+        "duration": "2 years"
       },
       "wireman": {
         "name": "Wireman",
@@ -4213,7 +4357,8 @@
         ],
         "futureScope": [
           "Steady demand tied to construction activity"
-        ]
+        ],
+        "duration": "2 years"
       },
       "electronicsmechanic": {
         "name": "Electronics Mechanic",
@@ -4239,7 +4384,8 @@
         ],
         "futureScope": [
           "Steady demand for repair & servicing roles"
-        ]
+        ],
+        "duration": "2 years"
       },
       "surveyor": {
         "name": "Surveyor",
@@ -4265,7 +4411,8 @@
         ],
         "futureScope": [
           "Steady demand tied to construction & real estate"
-        ]
+        ],
+        "duration": "2 years"
       },
       "draughtsman": {
         "name": "Draughtsman (Civil/Mechanical)",
@@ -4291,7 +4438,8 @@
         ],
         "futureScope": [
           "Steady demand for technical drawing support roles"
-        ]
+        ],
+        "duration": "2 years"
       },
       "driver": {
         "name": "Professional Driver",
@@ -4322,7 +4470,8 @@
         ],
         "futureScope": [
           "Steady demand; government staff driver posts (like in India Post) offer job security"
-        ]
+        ],
+        "duration": "Varies"
       }
     }
   },
@@ -4356,7 +4505,8 @@
         ],
         "futureScope": [
           "Steady with growing organized agriculture"
-        ]
+        ],
+        "duration": "Varies"
       },
       "healthcarevoc": {
         "name": "Health Care (Vocational)",
@@ -4382,7 +4532,8 @@
         ],
         "futureScope": [
           "Growing with expanding healthcare & elder-care needs"
-        ]
+        ],
+        "duration": "Varies"
       },
       "tourismvoc": {
         "name": "Tourism (Vocational)",
@@ -4408,7 +4559,8 @@
         ],
         "futureScope": [
           "Growing with rising domestic tourism"
-        ]
+        ],
+        "duration": "Varies"
       },
       "retailvoc": {
         "name": "Retail (Vocational)",
@@ -4434,7 +4586,8 @@
         ],
         "futureScope": [
           "Steady with expanding organized retail sector"
-        ]
+        ],
+        "duration": "Varies"
       },
       "computerappsvoc": {
         "name": "Computer Applications (Vocational)",
@@ -4460,7 +4613,8 @@
         ],
         "futureScope": [
           "Steady demand for basic computer-literate roles"
-        ]
+        ],
+        "duration": "Varies"
       },
       "multimediavoc": {
         "name": "Multimedia (Vocational)",
@@ -4486,7 +4640,8 @@
         ],
         "futureScope": [
           "Growing with rising digital content demand"
-        ]
+        ],
+        "duration": "Varies"
       },
       "farmervoc": {
         "name": "Farmer / Agri-Entrepreneur",
@@ -4517,7 +4672,8 @@
         ],
         "futureScope": [
           "Strong push toward organic & precision farming, agri-tech tools (drones, sensors), and direct market access via FPOs"
-        ]
+        ],
+        "duration": "Varies"
       },
       "ruralhealthworker": {
         "name": "RMP — Rural Medical Practitioner / Health Worker",
@@ -4550,7 +4706,8 @@
         "futureScope": [
           "Steady government demand for rural healthcare staffing"
         ],
-        "note": "Important: only a certified doctor (MBBS + State Medical Council registration) can legally diagnose and prescribe allopathic medicine. Titles like 'RMP' sold by private, unrecognized institutes for village-level practice without a medical degree are not legal authorization to practice medicine — pursue one of the certified roles above instead."
+        "note": "Important: only a certified doctor (MBBS + State Medical Council registration) can legally diagnose and prescribe allopathic medicine. Titles like 'RMP' sold by private, unrecognized institutes for village-level practice without a medical degree are not legal authorization to practice medicine — pursue one of the certified roles above instead.",
+        "duration": "Varies"
       },
       "chef": {
         "name": "Chef / Culinary Arts",
@@ -4583,7 +4740,8 @@
         ],
         "futureScope": [
           "Strong growth with hospitality & food business expansion; skilled chefs are in demand abroad too"
-        ]
+        ],
+        "duration": "Varies"
       },
       "security": {
         "name": "Security Guard / Security Services",
@@ -4614,7 +4772,8 @@
         ],
         "futureScope": [
           "Consistent demand across malls, offices, and gated communities in growing towns"
-        ]
+        ],
+        "duration": "Varies"
       },
       "filmmusic": {
         "name": "Film & Music Direction",
@@ -4646,7 +4805,8 @@
         ],
         "futureScope": [
           "OTT/streaming boom has massively increased demand for content and directors"
-        ]
+        ],
+        "duration": "Varies"
       },
       "fashiondesign": {
         "name": "Fashion Designer",
@@ -4679,7 +4839,8 @@
         ],
         "futureScope": [
           "Growing domestic fashion industry plus opportunities in sustainable/ethical fashion"
-        ]
+        ],
+        "duration": "Varies"
       },
       "hairstyling": {
         "name": "Hair Stylist / Beauty & Wellness",
@@ -4709,7 +4870,8 @@
         ],
         "futureScope": [
           "Steady demand; strong potential to become self-employed once skilled"
-        ]
+        ],
+        "duration": "Varies"
       }
     }
   },
@@ -4743,7 +4905,8 @@
         ],
         "futureScope": [
           "Strong foundation for any tech career"
-        ]
+        ],
+        "duration": "Varies"
       },
       "graphicdesignsd": {
         "name": "Graphic Design",
@@ -4770,7 +4933,8 @@
         ],
         "futureScope": [
           "Steady with growing digital content & branding needs"
-        ]
+        ],
+        "duration": "Varies"
       },
       "digitalmarketingsd": {
         "name": "Digital Marketing",
@@ -4798,7 +4962,8 @@
         ],
         "futureScope": [
           "Rapidly growing as businesses go digital"
-        ]
+        ],
+        "duration": "Varies"
       },
       "videoeditingsd": {
         "name": "Video Editing",
@@ -4824,7 +4989,8 @@
         ],
         "futureScope": [
           "Growing fast with rising video content demand"
-        ]
+        ],
+        "duration": "Varies"
       },
       "webdevsd": {
         "name": "Web Development",
@@ -4850,7 +5016,8 @@
         ],
         "futureScope": [
           "Consistently strong demand across all industries"
-        ]
+        ],
+        "duration": "Varies"
       },
       "aidataanalyticssd": {
         "name": "AI & Data Analytics",
@@ -4876,7 +5043,8 @@
         ],
         "futureScope": [
           "One of the fastest-growing skill areas today"
-        ]
+        ],
+        "duration": "Varies"
       }
     }
   },
@@ -4909,7 +5077,8 @@
         ],
         "futureScope": [
           "Strong pipeline into officer-level defence careers"
-        ]
+        ],
+        "duration": "Varies"
       },
       "ndaprep": {
         "name": "NDA Preparation (after 12th)",
@@ -4936,7 +5105,8 @@
         ],
         "futureScope": [
           "Prestigious, stable career with early leadership responsibility"
-        ]
+        ],
+        "duration": "Varies"
       },
       "defenceplanning": {
         "name": "General Defence Career Planning",
@@ -4963,7 +5133,8 @@
         ],
         "futureScope": [
           "Multiple entry points for different qualification levels"
-        ]
+        ],
+        "duration": "Varies"
       }
     }
   },
@@ -5000,7 +5171,8 @@
         ],
         "futureScope": [
           "Stable, secure government career with steady openings"
-        ]
+        ],
+        "duration": "Not applicable"
       },
       "ssc": {
         "name": "SSC (Staff Selection Commission)",
@@ -5027,7 +5199,8 @@
         ],
         "futureScope": [
           "Stable, wide range of departments & postings"
-        ]
+        ],
+        "duration": "Not applicable"
       },
       "police": {
         "name": "Police & Paramilitary",
@@ -5054,7 +5227,8 @@
         ],
         "futureScope": [
           "Stable career with steady recruitment drives"
-        ]
+        ],
+        "duration": "Not applicable"
       },
       "govbanking": {
         "name": "Banking (Government)",
@@ -5080,7 +5254,8 @@
         ],
         "futureScope": [
           "Stable with steady annual recruitment"
-        ]
+        ],
+        "duration": "Not applicable"
       },
       "stategovt": {
         "name": "State Government Jobs",
@@ -5108,7 +5283,8 @@
         ],
         "futureScope": [
           "Stable, region-specific government career"
-        ]
+        ],
+        "duration": "Not applicable"
       },
       "postal": {
         "name": "India Post (Postman / GDS / Postal Assistant)",
@@ -5138,7 +5314,8 @@
         ],
         "futureScope": [
           "Steady government job with permanence after probation and a clear promotion path"
-        ]
+        ],
+        "duration": "Not applicable"
       }
     }
   }
