@@ -15,6 +15,7 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from datetime import datetime
+from firebase_admin import auth
 
 from . import models, schemas
 from .database import SessionLocal, engine
@@ -240,8 +241,9 @@ def admin_saved_paths(
 ):
     """
     ADMIN ONLY.
-    Returns saved career paths grouped by student.
+    Returns saved career paths grouped by student email.
     """
+
     rows = (
         db.query(models.SavedPath)
         .order_by(
@@ -254,19 +256,28 @@ def admin_saved_paths(
     by_student = {}
 
     for row in rows:
-        by_student.setdefault(row.user_id, []).append({
+
+        # Convert Firebase UID to student email
+        try:
+            firebase_user = auth.get_user(row.user_id)
+            student_email = firebase_user.email or row.user_id
+        except Exception:
+            # If Firebase user cannot be found, keep UID
+            student_email = row.user_id
+
+        by_student.setdefault(student_email, []).append({
             "id": row.id,
             "stream_id": row.stream_id,
             "path_id": row.path_id,
             "node_id": row.node_id,
             "label": row.label,
-            "created_at": row.created_at.isoformat()
-            if row.created_at else None,
+            "created_at": (
+                row.created_at.isoformat()
+                if row.created_at else None
+            ),
         })
 
     return by_student
-    
-
 
 @app.delete("/api/saved-paths/{saved_id}")
 def delete_saved_path(
