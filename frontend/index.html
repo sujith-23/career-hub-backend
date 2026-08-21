@@ -351,12 +351,10 @@
 
   <div class="search-wrap" style="position:relative;max-width:1000px;margin:8px auto 0;padding:0 20px;">
   <div style="display:flex;align-items:stretch;gap:10px;">
-    
     <div style="position:relative;flex:1;">
       <input id="careerSearch" type="text"
         placeholder="Search a career, e.g. 'data scientist'…"
         style="width:100%;height:44px;padding:10px 14px;border-radius:8px;border:1px solid #ccc;box-sizing:border-box;font-size:15px;">
-      
       <div id="searchResults"
         style="display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border:1px solid #ddd;border-radius:8px;margin-top:4px;max-height:320px;overflow-y:auto;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,.15);">
       </div>
@@ -1392,6 +1390,8 @@ function renderRecommendations(){
       if(stream !== 'all' && !DATA[stream]) return;
 
       let score = 0;
+      const reasons = [];
+      const mismatches = [];
 
       const text = [
         name,
@@ -1404,9 +1404,19 @@ function renderRecommendations(){
       ].join(' ').toLowerCase();
 
       // Stream match
-      score += 40;
 
-      // Interest matching
+
+            // =========================
+      // RECOMMENDATION SCORING
+      // =========================
+
+      // 1. Stream match = 30 points
+
+	// Stream compatibility
+// Stream match
+score += 20;
+reasons.push('Matches your selected stream');
+      // 2. Interest match = 30 points
       const interestWords = {
         technology: ['computer','software','programming','technology','data','ai','machine','coding','web'],
         math: ['mathematics','math','statistics','data','engineering','analytics','accounting'],
@@ -1418,11 +1428,23 @@ function renderRecommendations(){
         agriculture: ['agriculture','farming','horticulture','forestry','fisheries','dairy']
       };
 
-      if((interestWords[interest] || []).some(word => text.includes(word))){
-        score += 25;
+      const interestMatches =
+        (interestWords[interest] || []).filter(word => text.includes(word));
+
+      if(interestMatches.length >= 3){
+        score += 30;
+        reasons.push('Strong match with your interest');
+      } else if(interestMatches.length === 2){
+        score += 20;
+        reasons.push('Good match with your interest');
+      } else if(interestMatches.length === 1){
+        score += 10;
+        reasons.push('Partial match with your interest');
+      } else {
+        mismatches.push('Limited match with your interest');
       }
 
-      // Career goal matching
+      // 3. Career goal match = 20 points
       const goalWords = {
         private: ['software','developer','engineer','technology','data','business','finance'],
         government: ['government','civil','public','administration','police','railway','postal'],
@@ -1432,11 +1454,24 @@ function renderRecommendations(){
         defence: ['defence','defense','army','navy','air force','military','nda']
       };
 
-      if((goalWords[goal] || []).some(word => text.includes(word))){
-        score += 20;
+      const goalMatches =
+        (goalWords[goal] || []).filter(word => text.includes(word));
+
+
+        if(goalMatches.length >= 3){
+  score += 25;
+  reasons.push('Strong match with your career goal');
+} else if(goalMatches.length === 2){
+  score += 17;
+        reasons.push('Good match with your career goal');
+      } else if(goalMatches.length === 1){
+        score += 8;
+        reasons.push('Partial match with your career goal');
+      } else {
+        mismatches.push('Limited match with your career goal');
       }
 
-      // Work type matching
+      // 4. Work preference match = 20 points
       const workWords = {
         computer: ['computer','software','programming','data','technology','developer'],
         healthcare: ['medical','health','hospital','nursing','pharmacy','dental','physio'],
@@ -1446,19 +1481,42 @@ function renderRecommendations(){
         technical: ['engineering','technology','mechanical','electrical','electronics','software']
       };
 
-      if((workWords[work] || []).some(word => text.includes(word))){
-        score += 15;
+      const workMatches =
+        (workWords[work] || []).filter(word => text.includes(word));
+
+      if(workMatches.length >= 3){
+        score += 25;
+        reasons.push('Strong match with your preferred work type');
+      } else if(workMatches.length === 2){
+        score += 17;
+        reasons.push('Good match with your preferred work type');
+      } else if(workMatches.length === 1){
+        score += 8;
+        reasons.push('Partial match with your preferred work type');
+      } else {
+        mismatches.push('Limited match with your preferred work type');
       }
+
+      score = Math.min(score, 100);
+
 
       recommendations.push({
         name,
         score,
+	reasons,
+	mismatches,
         breadcrumb: trail.join(' → '),
         path: `${stream}/${pathIds.join('/')}`
       });
     }
 
-    walk(DATA[stream], [], []);
+    Object.entries(DATA[stream].paths || {}).forEach(([pathId, pathNode]) => {
+  walk(
+    pathNode,
+    [pathId],
+    [DATA[stream].name]
+  );
+});
 
     recommendations.sort((a,b) => b.score - a.score);
 
@@ -1482,17 +1540,52 @@ function renderRecommendations(){
       </div>
 
       ${top.map((course,index) => `
-        <div class="detail-section" style="--lc:var(--ink);margin-top:12px;">
-          <h2>${index + 1}. ${course.name}</h2>
-          <p><strong>Match:</strong> ${Math.min(course.score,100)}%</p>
-          <p style="font-size:0.85rem;color:var(--ink-soft);">
-            ${course.breadcrumb}
-          </p>
-          <a class="btn" href="#/${course.path}">
-            View course
-          </a>
-        </div>
+  <div class="detail-section" style="--lc:var(--ink);margin-top:12px;">
+
+    <h2>${index + 1}. ${course.name}</h2>
+
+    <p>
+      <strong>Match:</strong> ${Math.min(course.score,100)}%
+    </p>
+
+    <p style="font-size:0.85rem;color:var(--ink-soft);">
+      ${course.breadcrumb}
+    </p>
+
+    <div style="
+      margin-top:14px;
+      padding:12px;
+      border:1px solid var(--rail);
+      border-radius:8px;
+      background:var(--card);
+    ">
+	${course.mismatches.length ? `
+  <div style="margin-top:14px;">
+    <strong>Things to consider</strong>
+
+    <ul class="plain" style="margin-top:8px;">
+      ${course.mismatches.map(item => `
+        <li>⚠ ${item}</li>
       `).join('')}
+    </ul>
+  </div>
+` : ''}
+
+      <strong>Why this is recommended</strong>
+
+      <ul class="plain" style="margin-top:8px;">
+        ${course.reasons.map(reason => `
+          <li>✓ ${reason}</li>
+        `).join('')}
+      </ul>
+    </div>
+
+    <a class="btn" href="#/${course.path}" style="margin-top:12px;">
+      View course
+    </a>
+
+  </div>
+`).join('')}
     `;
   });
 }
