@@ -345,11 +345,33 @@
     </div>
     <div id="authBox" style="display:flex;align-items:center;gap:10px;font-size:14px;"></div>
   </header>
-  <div class="search-wrap" style="position:relative;max-width:760px;margin:8px auto 0;padding:0 20px;">
-    <input id="careerSearch" type="text" placeholder="Search a career, e.g. 'data scientist'…"
-      style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #ccc;box-sizing:border-box;font-size:15px;">
-    <div id="searchResults" style="display:none;position:absolute;left:16px;right:16px;top:100%;background:#fff;border:1px solid #ddd;border-radius:8px;margin-top:4px;max-height:320px;overflow-y:auto;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,.15);"></div>
+
+
+
+
+  <div class="search-wrap" style="position:relative;max-width:1000px;margin:8px auto 0;padding:0 20px;">
+  <div style="display:flex;align-items:stretch;gap:10px;">
+    
+    <div style="position:relative;flex:1;">
+      <input id="careerSearch" type="text"
+        placeholder="Search a career, e.g. 'data scientist'…"
+        style="width:100%;height:44px;padding:10px 14px;border-radius:8px;border:1px solid #ccc;box-sizing:border-box;font-size:15px;">
+      
+      <div id="searchResults"
+        style="display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border:1px solid #ddd;border-radius:8px;margin-top:4px;max-height:320px;overflow-y:auto;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,.15);">
+      </div>
+    </div>
+
+    <a href="#/recommend"
+      class="btn"
+      style="height:44px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;">
+      🎯 Course Recommendation
+    </a>
+
   </div>
+</div>
+
+
   <main id="main"></main>
   <footer>Built for Grama Vaani · Career routes for students after 10th class</footer>
 </div>
@@ -399,6 +421,7 @@ window.scrollTo(0, 0);
   if(parts[0] === 'saved'){ renderSavedPaths(); return; }
   if(parts[0] === 'courses'){ renderCourseComparison(); return; }
   if(parts[0] === 'exams'){ renderEntranceExams(); return; }
+  if(parts[0] === 'recommend'){ renderRecommendations(); return; }
 
   if(parts[0] === 'analytics'){
     if(!currentUser){
@@ -1241,6 +1264,239 @@ const COURSE_LINKS = {
   document.getElementById('examSearch').addEventListener('input', e => renderExams(e.target.value));
   renderExams();
 }
+
+
+function renderRecommendations(){
+  const main = document.getElementById('main');
+  const crumb = document.getElementById('crumb');
+
+  setCrumb(crumb, [{label:'Course Recommendation', hash:'recommend'}]);
+
+  main.innerHTML = `
+    <a class="back-link" href="#/">‹ Back to home</a>
+
+    <div class="page-head">
+      <div class="code">CAREER TOOL</div>
+      <h1>Find the right course for you</h1>
+      <p>Answer a few questions and we'll suggest courses that match your interests and goals.</p>
+    </div>
+
+    <div class="detail-section" style="--lc:var(--ink);">
+      <h2>1. What is your stream?</h2>
+
+      <select id="recommendStream"
+        style="width:100%;padding:12px;border:1px solid var(--rail);
+        border-radius:8px;background:var(--card);font:inherit;">
+        <option value="">Select your stream</option>
+        <option value="mpc">MPC</option>
+        <option value="bipc">BiPC</option>
+        <option value="mec">MEC</option>
+        <option value="cec">CEC</option>
+        <option value="hec">HEC</option>
+        <option value="polytechnic">Polytechnic</option>
+        <option value="iti">ITI</option>
+        <option value="vocational">Vocational</option>
+      </select>
+    </div>
+
+    <div class="detail-section" style="--lc:var(--ink);">
+      <h2>2. What are you interested in?</h2>
+
+      <select id="recommendInterest"
+        style="width:100%;padding:12px;border:1px solid var(--rail);
+        border-radius:8px;background:var(--card);font:inherit;">
+        <option value="">Select your interest</option>
+        <option value="technology">Coding & Technology</option>
+        <option value="math">Mathematics & Problem Solving</option>
+        <option value="biology">Biology & Healthcare</option>
+        <option value="business">Business & Finance</option>
+        <option value="government">Government Jobs</option>
+        <option value="defence">Defence</option>
+        <option value="design">Design & Architecture</option>
+        <option value="agriculture">Agriculture</option>
+      </select>
+    </div>
+
+    <div class="detail-section" style="--lc:var(--ink);">
+      <h2>3. What is your career goal?</h2>
+
+      <select id="recommendGoal"
+        style="width:100%;padding:12px;border:1px solid var(--rail);
+        border-radius:8px;background:var(--card);font:inherit;">
+        <option value="">Select your career goal</option>
+        <option value="private">High-paying private job</option>
+        <option value="government">Government job</option>
+        <option value="medical">Medical / Healthcare career</option>
+        <option value="business">Business / Entrepreneurship</option>
+        <option value="research">Research / Higher studies</option>
+        <option value="defence">Defence career</option>
+      </select>
+    </div>
+
+    <div class="detail-section" style="--lc:var(--ink);">
+      <h2>4. What type of work do you prefer?</h2>
+
+      <select id="recommendWork"
+        style="width:100%;padding:12px;border:1px solid var(--rail);
+        border-radius:8px;background:var(--card);font:inherit;">
+        <option value="">Select work type</option>
+        <option value="computer">Computer / Office work</option>
+        <option value="healthcare">Hospital / Healthcare</option>
+        <option value="field">Field work</option>
+        <option value="business">Business / Management</option>
+        <option value="government">Government / Administration</option>
+        <option value="technical">Technical / Engineering</option>
+      </select>
+    </div>
+
+    <button id="getRecommendations" class="btn" style="margin-top:16px;">
+      Find my courses
+    </button>
+
+    <div id="recommendResults" style="margin-top:24px;"></div>
+  `;
+
+  document.getElementById('getRecommendations').addEventListener('click', () => {
+    const stream = document.getElementById('recommendStream').value;
+    const interest = document.getElementById('recommendInterest').value;
+    const goal = document.getElementById('recommendGoal').value;
+    const work = document.getElementById('recommendWork').value;
+    const results = document.getElementById('recommendResults');
+
+    if(!stream || !interest || !goal || !work){
+      results.innerHTML = `
+        <div class="detail-section" style="--lc:#A2402F;">
+          <strong>Please answer all four questions.</strong>
+        </div>
+      `;
+      return;
+    }
+
+    const recommendations = [];
+
+    function walk(node, pathIds, breadcrumb){
+      if(!node || typeof node !== 'object') return;
+
+      const name = node.name || pathIds[pathIds.length - 1] || 'Course';
+      const trail = breadcrumb.concat(name);
+
+      if(node.children && typeof node.children === 'object' &&
+         Object.keys(node.children).length > 0){
+
+        for(const [childId, child] of Object.entries(node.children)){
+          walk(child, pathIds.concat(childId), trail);
+        }
+        return;
+      }
+
+      if(stream !== 'all' && !DATA[stream]) return;
+
+      let score = 0;
+
+      const text = [
+        name,
+        node.desc,
+        ...(node.coreSubjects || []),
+        ...(node.jobRoles || []),
+        ...(node.skills || []),
+        ...(node.higherStudies || []),
+        ...(node.futureScope || [])
+      ].join(' ').toLowerCase();
+
+      // Stream match
+      score += 40;
+
+      // Interest matching
+      const interestWords = {
+        technology: ['computer','software','programming','technology','data','ai','machine','coding','web'],
+        math: ['mathematics','math','statistics','data','engineering','analytics','accounting'],
+        biology: ['medical','medicine','biology','health','nursing','pharmacy','dental','physio','veterinary'],
+        business: ['business','management','finance','commerce','accounting','marketing','entrepreneur'],
+        government: ['government','civil','public','administration','upsc','police','railway'],
+        defence: ['defence','defense','army','navy','air force','military','nda'],
+        design: ['architecture','design','creative','multimedia','fashion'],
+        agriculture: ['agriculture','farming','horticulture','forestry','fisheries','dairy']
+      };
+
+      if((interestWords[interest] || []).some(word => text.includes(word))){
+        score += 25;
+      }
+
+      // Career goal matching
+      const goalWords = {
+        private: ['software','developer','engineer','technology','data','business','finance'],
+        government: ['government','civil','public','administration','police','railway','postal'],
+        medical: ['medical','medicine','dental','pharmacy','nursing','health','physio','veterinary'],
+        business: ['business','management','finance','commerce','accounting','marketing','entrepreneur'],
+        research: ['research','science','data','technology','engineering','higher studies'],
+        defence: ['defence','defense','army','navy','air force','military','nda']
+      };
+
+      if((goalWords[goal] || []).some(word => text.includes(word))){
+        score += 20;
+      }
+
+      // Work type matching
+      const workWords = {
+        computer: ['computer','software','programming','data','technology','developer'],
+        healthcare: ['medical','health','hospital','nursing','pharmacy','dental','physio'],
+        field: ['agriculture','civil','mechanical','mining','forestry','fisheries'],
+        business: ['business','management','finance','commerce','accounting','marketing'],
+        government: ['government','civil','public','administration','police','railway'],
+        technical: ['engineering','technology','mechanical','electrical','electronics','software']
+      };
+
+      if((workWords[work] || []).some(word => text.includes(word))){
+        score += 15;
+      }
+
+      recommendations.push({
+        name,
+        score,
+        breadcrumb: trail.join(' → '),
+        path: `${stream}/${pathIds.join('/')}`
+      });
+    }
+
+    walk(DATA[stream], [], []);
+
+    recommendations.sort((a,b) => b.score - a.score);
+
+    const top = recommendations.slice(0,3);
+
+    if(!top.length){
+      results.innerHTML = `
+        <div class="detail-section">
+          <h2>No recommendations found</h2>
+          <p>Try different answers.</p>
+        </div>
+      `;
+      return;
+    }
+
+    results.innerHTML = `
+      <div class="page-head">
+        <div class="code">YOUR RESULTS</div>
+        <h2>Recommended courses</h2>
+        <p>These courses best match the answers you provided.</p>
+      </div>
+
+      ${top.map((course,index) => `
+        <div class="detail-section" style="--lc:var(--ink);margin-top:12px;">
+          <h2>${index + 1}. ${course.name}</h2>
+          <p><strong>Match:</strong> ${Math.min(course.score,100)}%</p>
+          <p style="font-size:0.85rem;color:var(--ink-soft);">
+            ${course.breadcrumb}
+          </p>
+          <a class="btn" href="#/${course.path}">
+            View course
+          </a>
+        </div>
+      `).join('')}
+    `;
+  });
+}
+
 
 function renderHome(main, crumb){
   crumb.innerHTML = '';
