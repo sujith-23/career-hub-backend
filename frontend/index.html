@@ -1264,13 +1264,227 @@ const COURSE_LINKS = {
 }
 
 
-function renderRecommendations(){
+  function renderRecommendations(){
   const main = document.getElementById('main');
   const crumb = document.getElementById('crumb');
 
   setCrumb(crumb, [{label:'Course Recommendation', hash:'recommend'}]);
 
+  const recommendationOptions = {
+
+    // MPC
+
+        mpc: {
+      interests: [
+        ['technology', 'Coding & Technology'],
+        ['math', 'Mathematics & Problem Solving'],
+        ['engineering', 'Engineering & Physics'],
+        ['ai', 'AI & Data Science'],
+        ['research', 'Research & Innovation'],
+        ['design', 'Architecture & Design'],
+        ['defence', 'Defence']
+      ],
+      goals: [
+        ['software', 'Software / IT Career'],
+        ['engineering', 'Engineering Career'],
+        ['ai', 'AI / Data Science Career'],
+        ['research', 'Research / Higher Studies'],
+        ['defence', 'Defence Career'],
+        ['architecture', 'Architecture Career']
+      ],
+      work: [
+        ['computer', 'Computer / Office Work'],
+        ['technical', 'Engineering / Technical'],
+        ['laboratory', 'Research / Laboratory'],
+        ['defence', 'Defence / Military'],
+        ['design', 'Design / Architecture']
+      ]
+    },
+
+    bipc: {
+      interests: [
+        ['biology', 'Biology & Healthcare'],
+        ['medicine', 'Medicine'],
+        ['pharmacy', 'Pharmacy'],
+        ['biotech', 'Biotechnology'],
+        ['agriculture', 'Agriculture & Life Sciences'],
+        ['research', 'Research']
+      ],
+      goals: [
+        ['medical', 'Medical Career'],
+        ['healthcare', 'Healthcare Career'],
+        ['pharmacy', 'Pharmacy Career'],
+        ['biotech', 'Biotechnology Career'],
+        ['research', 'Research / Higher Studies'],
+        ['government', 'Government Healthcare']
+      ],
+      work: [
+        ['healthcare', 'Hospital / Healthcare'],
+        ['laboratory', 'Laboratory / Research'],
+        ['pharmacy', 'Pharmacy'],
+        ['field', 'Field / Agriculture'],
+        ['government', 'Government / Healthcare']
+      ]
+    },
+
+    mec: {
+      interests: [
+        ['business', 'Business & Finance'],
+        ['accounting', 'Accounting'],
+        ['economics', 'Economics'],
+        ['management', 'Management'],
+        ['mathematics', 'Mathematics & Analytics'],
+        ['entrepreneurship', 'Entrepreneurship']
+      ],
+      goals: [
+        ['finance', 'Finance Career'],
+        ['accounting', 'Accounting Career'],
+        ['business', 'Business Career'],
+        ['management', 'Management Career'],
+        ['entrepreneurship', 'Entrepreneurship'],
+        ['research', 'Research / Higher Studies']
+      ],
+      work: [
+        ['business', 'Business / Management'],
+        ['finance', 'Finance / Banking'],
+        ['office', 'Office / Corporate'],
+        ['accounting', 'Accounting'],
+        ['government', 'Government / Administration']
+      ]
+    },
+
+    cec: {
+      interests: [
+        ['business', 'Business & Commerce'],
+        ['finance', 'Finance'],
+        ['accounting', 'Accounting'],
+        ['economics', 'Economics'],
+        ['law', 'Law & Governance'],
+        ['management', 'Management']
+      ],
+      goals: [
+        ['business', 'Business Career'],
+        ['finance', 'Finance Career'],
+        ['accounting', 'Accounting Career'],
+        ['law', 'Law Career'],
+        ['government', 'Government Career'],
+        ['management', 'Management Career']
+      ],
+      work: [
+        ['business', 'Business / Management'],
+        ['finance', 'Finance / Banking'],
+        ['office', 'Office / Corporate'],
+        ['government', 'Government / Administration'],
+        ['law', 'Legal / Administration']
+      ]
+    },
+
+    hec: {
+      interests: [
+        ['history', 'History'],
+        ['politics', 'Political Science'],
+        ['economics', 'Economics'],
+        ['law', 'Law & Governance'],
+        ['writing', 'Writing & Journalism'],
+        ['social', 'Social Sciences']
+      ],
+      goals: [
+        ['government', 'Government / Civil Services'],
+        ['law', 'Law Career'],
+        ['journalism', 'Journalism / Media'],
+        ['teaching', 'Teaching Career'],
+        ['research', 'Research / Higher Studies']
+      ],
+      work: [
+        ['government', 'Government / Administration'],
+        ['office', 'Office / Administration'],
+        ['law', 'Legal Work'],
+        ['media', 'Media / Journalism'],
+        ['teaching', 'Teaching / Education']
+      ]
+    },
+
+    polytechnic: {
+      interests: [
+        ['engineering', 'Engineering & Technology'],
+        ['mechanical', 'Mechanical'],
+        ['civil', 'Civil Engineering'],
+        ['electrical', 'Electrical Engineering'],
+        ['computer', 'Computer Technology'],
+        ['automobile', 'Automobile']
+      ],
+      goals: [
+        ['engineering', 'Engineering Career'],
+        ['technical', 'Technical Career'],
+        ['government', 'Government Technical Job'],
+        ['private', 'Private Technical Job'],
+        ['higher', 'Higher Studies / B.Tech']
+      ],
+      work: [
+        ['technical', 'Technical Work'],
+        ['field', 'Field Work'],
+        ['engineering', 'Engineering Work'],
+        ['computer', 'Computer / IT Work'],
+        ['government', 'Government Technical Work']
+      ]
+    },
+
+    iti: {
+      interests: [
+        ['technical', 'Technical Skills'],
+        ['electrical', 'Electrical'],
+        ['mechanical', 'Mechanical'],
+        ['automobile', 'Automobile'],
+        ['electronics', 'Electronics'],
+        ['computer', 'Computer / IT']
+      ],
+      goals: [
+        ['technical', 'Technical Career'],
+        ['government', 'Government Job'],
+        ['private', 'Private Technical Job'],
+        ['business', 'Self Employment / Business'],
+        ['higher', 'Higher Technical Studies']
+      ],
+      work: [
+        ['technical', 'Technical Work'],
+        ['field', 'Field Work'],
+        ['workshop', 'Workshop Work'],
+        ['computer', 'Computer / IT Work'],
+        ['government', 'Government Technical Work']
+      ]
+    },
+
+    vocational: {
+      interests: [
+        ['technical', 'Technical Skills'],
+        ['business', 'Business'],
+        ['design', 'Design & Creativity'],
+        ['computer', 'Computer Skills'],
+        ['agriculture', 'Agriculture'],
+        ['hospitality', 'Hospitality']
+      ],
+      goals: [
+        ['private', 'Private Job'],
+        ['business', 'Business / Self Employment'],
+        ['technical', 'Technical Career'],
+        ['government', 'Government Job'],
+        ['higher', 'Higher Studies']
+      ],
+      work: [
+        ['technical', 'Technical Work'],
+        ['business', 'Business / Management'],
+        ['field', 'Field Work'],
+        ['computer', 'Computer / Office'],
+        ['service', 'Service / Hospitality']
+      ]
+    }
+
+
+
+  };
+
   main.innerHTML = `
+
     <a class="back-link" href="#/">‹ Back to home</a>
 
     <div class="page-head">
@@ -1283,79 +1497,93 @@ function renderRecommendations(){
       <h2>1. What is your stream?</h2>
 
       <select id="recommendStream"
-        style="width:100%;padding:12px;border:1px solid var(--rail);
-        border-radius:8px;background:var(--card);font:inherit;">
-        <option value="">Select your stream</option>
-        <option value="mpc">MPC</option>
-        <option value="bipc">BiPC</option>
-        <option value="mec">MEC</option>
-        <option value="cec">CEC</option>
-        <option value="hec">HEC</option>
-        <option value="polytechnic">Polytechnic</option>
-        <option value="iti">ITI</option>
-        <option value="vocational">Vocational</option>
-      </select>
-    </div>
+  style="width:100%;padding:12px;border:1px solid var(--rail);
+  border-radius:8px;background:var(--card);font:inherit;">
+  <option value="">Select your stream</option>
+  <option value="mpc">MPC</option>
+  <option value="bipc">BiPC</option>
+  <option value="mec">MEC</option>
+  <option value="cec">CEC</option>
+  <option value="hec">HEC</option>
+  <option value="polytechnic">Polytechnic</option>
+  <option value="iti">ITI</option>
+  <option value="vocational">Vocational</option>
+</select>    </div>
 
     <div class="detail-section" style="--lc:var(--ink);">
-      <h2>2. What are you interested in?</h2>
+  <h2>2. What are you interested in?</h2>
 
-      <select id="recommendInterest"
-        style="width:100%;padding:12px;border:1px solid var(--rail);
-        border-radius:8px;background:var(--card);font:inherit;">
-        <option value="">Select your interest</option>
-        <option value="technology">Coding & Technology</option>
-        <option value="math">Mathematics & Problem Solving</option>
-        <option value="biology">Biology & Healthcare</option>
-        <option value="business">Business & Finance</option>
-        <option value="government">Government Jobs</option>
-        <option value="defence">Defence</option>
-        <option value="design">Design & Architecture</option>
-        <option value="agriculture">Agriculture</option>
-      </select>
-    </div>
+  <select id="recommendInterest"
+    style="width:100%;padding:12px;border:1px solid var(--rail);
+    border-radius:8px;background:var(--card);font:inherit;">
+    <option value="">Select your interest</option>
+  </select>
+</div>
 
-    <div class="detail-section" style="--lc:var(--ink);">
-      <h2>3. What is your career goal?</h2>
+<div class="detail-section" style="--lc:var(--ink);">
+  <h2>3. What is your career goal?</h2>
 
-      <select id="recommendGoal"
-        style="width:100%;padding:12px;border:1px solid var(--rail);
-        border-radius:8px;background:var(--card);font:inherit;">
-        <option value="">Select your career goal</option>
-        <option value="private">High-paying private job</option>
-        <option value="government">Government job</option>
-        <option value="medical">Medical / Healthcare career</option>
-        <option value="business">Business / Entrepreneurship</option>
-        <option value="research">Research / Higher studies</option>
-        <option value="defence">Defence career</option>
-      </select>
-    </div>
+  <select id="recommendGoal"
+    style="width:100%;padding:12px;border:1px solid var(--rail);
+    border-radius:8px;background:var(--card);font:inherit;">
+    <option value="">Select your career goal</option>
+  </select>
+</div>
 
-    <div class="detail-section" style="--lc:var(--ink);">
-      <h2>4. What type of work do you prefer?</h2>
+<div class="detail-section" style="--lc:var(--ink);">
+  <h2>4. What type of work do you prefer?</h2>
 
-      <select id="recommendWork"
-        style="width:100%;padding:12px;border:1px solid var(--rail);
-        border-radius:8px;background:var(--card);font:inherit;">
-        <option value="">Select work type</option>
-        <option value="computer">Computer / Office work</option>
-        <option value="healthcare">Hospital / Healthcare</option>
-        <option value="field">Field work</option>
-        <option value="business">Business / Management</option>
-        <option value="government">Government / Administration</option>
-        <option value="technical">Technical / Engineering</option>
-      </select>
-    </div>
-
-    <button id="getRecommendations" class="btn" style="margin-top:16px;">
+  <select id="recommendWork"
+    style="width:100%;padding:12px;border:1px solid var(--rail);
+    border-radius:8px;background:var(--card);font:inherit;">
+    <option value="">Select work type</option>
+  </select>
+</div>    <button id="getRecommendations" class="btn" style="margin-top:16px;">
       Find my courses
     </button>
 
-    <div id="recommendResults" style="margin-top:24px;"></div>
+        <div id="recommendResults" style="margin-top:24px;"></div>
   `;
 
-  document.getElementById('getRecommendations').addEventListener('click', () => {
-    const stream = document.getElementById('recommendStream').value;
+  const streamSelect = document.getElementById('recommendStream');
+  const interestSelect = document.getElementById('recommendInterest');
+  const goalSelect = document.getElementById('recommendGoal');
+  const workSelect = document.getElementById('recommendWork');
+
+  function updateRecommendationOptions() {
+    const selectedStream = streamSelect.value;
+    const options = recommendationOptions[selectedStream];
+
+    interestSelect.innerHTML =
+      '<option value="">Select your interest</option>';
+
+    goalSelect.innerHTML =
+      '<option value="">Select your career goal</option>';
+
+    workSelect.innerHTML =
+      '<option value="">Select work type</option>';
+
+    if (!options) return;
+
+    options.interests.forEach(([value, label]) => {
+      interestSelect.innerHTML +=
+        `<option value="${value}">${label}</option>`;
+    });
+
+    options.goals.forEach(([value, label]) => {
+      goalSelect.innerHTML +=
+        `<option value="${value}">${label}</option>`;
+    });
+
+    options.work.forEach(([value, label]) => {
+      workSelect.innerHTML +=
+        `<option value="${value}">${label}</option>`;
+    });
+  }
+
+  streamSelect.addEventListener('change', updateRecommendationOptions);
+
+  document.getElementById('getRecommendations').addEventListener('click', () => {    const stream = document.getElementById('recommendStream').value;
     const interest = document.getElementById('recommendInterest').value;
     const goal = document.getElementById('recommendGoal').value;
     const work = document.getElementById('recommendWork').value;
@@ -1372,8 +1600,50 @@ function renderRecommendations(){
 
     const recommendations = [];
 
-    function walk(node, pathIds, breadcrumb){
-      if(!node || typeof node !== 'object') return;
+const coursePriority = {
+  mpc: {
+    ai: ['artificial intelligence', 'ai', 'data science', 'machine learning'],
+    technology: ['computer science', 'software', 'information technology', 'cyber security'],
+    engineering: ['engineering', 'mechanical', 'civil', 'electrical', 'electronics'],
+    math: ['mathematics', 'statistics', 'analytics']
+  },
+
+  bipc: {
+    biology: ['biology', 'life science', 'biological'],
+    medicine: ['mbbs', 'medicine', 'medical', 'doctor'],
+    healthcare: ['healthcare', 'hospital', 'nursing'],
+    pharmacy: ['pharmacy', 'pharmaceutical'],
+    biotech: ['biotechnology', 'biotech', 'genetics', 'microbiology'],
+    agriculture: ['agriculture', 'horticulture', 'forestry', 'fisheries']
+  },
+
+  mec: {
+    finance: ['finance', 'banking', 'investment'],
+    accounting: ['accounting', 'audit', 'taxation'],
+    business: ['business', 'management', 'marketing'],
+    economics: ['economics', 'commerce', 'statistics']
+  },
+
+  cec: {
+    business: ['business', 'management', 'marketing'],
+    finance: ['finance', 'banking', 'investment'],
+    accounting: ['accounting', 'audit', 'taxation'],
+    law: ['law', 'legal', 'judiciary'],
+    government: ['government', 'civil services', 'administration']
+  },
+
+  hec: {
+    history: ['history', 'historical', 'archaeology'],
+    politics: ['political science', 'politics', 'governance'],
+    economics: ['economics', 'economic'],
+    law: ['law', 'legal', 'judiciary'],
+    writing: ['journalism', 'writing', 'media'],
+    social: ['social science', 'sociology', 'psychology']
+  }
+};
+
+function walk(node, pathIds, breadcrumb){
+  if(!node || typeof node !== 'object') return;
 
       const name = node.name || pathIds[pathIds.length - 1] || 'Course';
       const trail = breadcrumb.concat(name);
@@ -1404,101 +1674,525 @@ function renderRecommendations(){
       ].join(' ').toLowerCase();
 
       // Stream match
-
+      // Stream-specific course priority
 
             // =========================
-      // RECOMMENDATION SCORING
-      // =========================
+// RECOMMENDATION SCORING
+// =========================
 
-      // 1. Stream match = 30 points
+// Maximum = 100 points
+// Stream       = 25
+// Interest     = 35
+// Career goal  = 25
+// Work type    = 15
 
-	// Stream compatibility
-// Stream match
-score += 20;
+// 1. Stream match
+score += 25;
 reasons.push('Matches your selected stream');
-      // 2. Interest match = 30 points
-      const interestWords = {
-        technology: ['computer','software','programming','technology','data','ai','machine','coding','web'],
-        math: ['mathematics','math','statistics','data','engineering','analytics','accounting'],
-        biology: ['medical','medicine','biology','health','nursing','pharmacy','dental','physio','veterinary'],
-        business: ['business','management','finance','commerce','accounting','marketing','entrepreneur'],
-        government: ['government','civil','public','administration','upsc','police','railway'],
-        defence: ['defence','defense','army','navy','air force','military','nda'],
-        design: ['architecture','design','creative','multimedia','fashion'],
-        agriculture: ['agriculture','farming','horticulture','forestry','fisheries','dairy']
-      };
 
-      const interestMatches =
-        (interestWords[interest] || []).filter(word => text.includes(word));
+// 2. Interest matching
+const interestWords = {
+  technology: [
+    'computer',
+    'software',
+    'programming',
+    'coding',
+    'developer',
+    'web',
+    'app',
+    'information technology',
+    'artificial intelligence',
+    'machine learning',
+    'data science',
+    'data analytics',
+    'cyber security'
+  ],
 
-      if(interestMatches.length >= 3){
-        score += 30;
-        reasons.push('Strong match with your interest');
-      } else if(interestMatches.length === 2){
-        score += 20;
-        reasons.push('Good match with your interest');
-      } else if(interestMatches.length === 1){
-        score += 10;
-        reasons.push('Partial match with your interest');
-      } else {
-        mismatches.push('Limited match with your interest');
-      }
+  math: [
+    'mathematics',
+    'math',
+    'statistics',
+    'analytics',
+    'algorithm',
+    'engineering',
+    'physics',
+    'problem solving'
+  ],
 
-      // 3. Career goal match = 20 points
-      const goalWords = {
-        private: ['software','developer','engineer','technology','data','business','finance'],
-        government: ['government','civil','public','administration','police','railway','postal'],
-        medical: ['medical','medicine','dental','pharmacy','nursing','health','physio','veterinary'],
-        business: ['business','management','finance','commerce','accounting','marketing','entrepreneur'],
-        research: ['research','science','data','technology','engineering','higher studies'],
-        defence: ['defence','defense','army','navy','air force','military','nda']
-      };
+  engineering: [
+    'engineering',
+    'mechanical',
+    'civil',
+    'electrical',
+    'electronics',
+    'automobile',
+    'technology'
+  ],
 
-      const goalMatches =
-        (goalWords[goal] || []).filter(word => text.includes(word));
+  ai: [
+    'artificial intelligence',
+    'ai',
+    'machine learning',
+    'data science',
+    'data analytics',
+    'deep learning',
+    'python'
+  ],
+
+  research: [
+    'research',
+    'scientist',
+    'laboratory',
+    'science',
+    'higher studies',
+    'research and development'
+  ],
+
+  design: [
+    'architecture',
+    'design',
+    'creative',
+    'multimedia',
+    'animation',
+    'fashion'
+  ],
+
+  defence: [
+    'defence',
+    'defense',
+    'army',
+    'navy',
+    'air force',
+    'military',
+    'nda'
+  ],
+
+  biology: [
+    'biology',
+    'life science',
+    'biological',
+    'biochemistry',
+    'zoology',
+    'botany'
+  ],
+
+  healthcare: [
+    'medical',
+    'medicine',
+    'health',
+    'healthcare',
+    'hospital',
+    'clinical',
+    'patient'
+  ],
+
+  medicine: [
+    'mbbs',
+    'medicine',
+    'medical',
+    'doctor',
+    'clinical',
+    'hospital',
+    'patient'
+  ],
+
+  pharmacy: [
+    'pharmacy',
+    'pharmaceutical',
+    'pharmacology',
+    'drug',
+    'medicine'
+  ],
+
+  biotech: [
+    'biotechnology',
+    'biotech',
+    'genetics',
+    'molecular biology',
+    'microbiology'
+  ],
+
+  agriculture: [
+    'agriculture',
+    'farming',
+    'horticulture',
+    'forestry',
+    'fisheries',
+    'dairy'
+  ],
+
+  business: [
+    'business',
+    'management',
+    'entrepreneur',
+    'entrepreneurship',
+    'startup',
+    'marketing'
+  ],
+
+  finance: [
+    'finance',
+    'banking',
+    'investment',
+    'accounting',
+    'financial'
+  ],
+
+  accounting: [
+    'accounting',
+    'accounts',
+    'audit',
+    'taxation',
+    'finance'
+  ],
+
+  economics: [
+    'economics',
+    'economic',
+    'finance',
+    'commerce',
+    'statistics'
+  ],
+
+  law: [
+    'law',
+    'legal',
+    'legislation',
+    'constitution',
+    'judiciary'
+  ],
+
+  politics: [
+    'political science',
+    'politics',
+    'government',
+    'public policy',
+    'governance'
+  ],
+
+  history: [
+    'history',
+    'historical',
+    'heritage',
+    'archaeology'
+  ]
+};
+
+const interestMatches =
+  (interestWords[interest] || [])
+    .filter(word => text.includes(word));
+
+if(interestMatches.length >= 4){
+  score += 35;
+  reasons.push('Strong match with your interest');
+} else if(interestMatches.length >= 2){
+  score += 25;
+  reasons.push('Good match with your interest');
+} else if(interestMatches.length === 1){
+  score += 12;
+  reasons.push('Partial match with your interest');
+} else {
+  score -= 5;
+  mismatches.push('Limited match with your interest');
+}
 
 
-        if(goalMatches.length >= 3){
+// 3. Career goal matching
+const goalWords = {
+  software: [
+    'software',
+    'programming',
+    'developer',
+    'computer',
+    'web',
+    'app',
+    'information technology',
+    'software development'
+  ],
+
+  engineering: [
+    'engineering',
+    'engineer',
+    'mechanical',
+    'civil',
+    'electrical',
+    'electronics',
+    'automobile'
+  ],
+
+  ai: [
+    'artificial intelligence',
+    'ai',
+    'machine learning',
+    'data science',
+    'data analytics',
+    'deep learning'
+  ],
+
+  research: [
+    'research',
+    'scientist',
+    'laboratory',
+    'science',
+    'higher studies',
+    'research and development'
+  ],
+
+  defence: [
+    'defence',
+    'defense',
+    'army',
+    'navy',
+    'air force',
+    'military',
+    'nda'
+  ],
+
+  architecture: [
+    'architecture',
+    'architect',
+    'building design',
+    'design'
+  ],
+
+  medical: [
+    'mbbs',
+    'medicine',
+    'medical',
+    'doctor',
+    'clinical',
+    'hospital'
+  ],
+
+  healthcare: [
+    'healthcare',
+    'hospital',
+    'nursing',
+    'medical',
+    'health'
+  ],
+
+  pharmacy: [
+    'pharmacy',
+    'pharmaceutical',
+    'pharmacology',
+    'drug'
+  ],
+
+  biotechnology: [
+    'biotechnology',
+    'biotech',
+    'genetics',
+    'microbiology',
+    'molecular biology'
+  ],
+
+  government: [
+    'government',
+    'civil services',
+    'administration',
+    'public service',
+    'police',
+    'railway',
+    'upsc'
+  ],
+
+  business: [
+    'business',
+    'management',
+    'entrepreneur',
+    'entrepreneurship',
+    'startup'
+  ],
+
+  finance: [
+    'finance',
+    'banking',
+    'accounting',
+    'investment'
+  ],
+
+  accounting: [
+    'accounting',
+    'accounts',
+    'audit',
+    'taxation'
+  ],
+
+  management: [
+    'management',
+    'business administration',
+    'marketing',
+    'human resources'
+  ],
+
+  law: [
+    'law',
+    'legal',
+    'judiciary',
+    'legislation',
+    'constitution'
+  ],
+
+  teaching: [
+    'teaching',
+    'teacher',
+    'education',
+    'lecturer',
+    'professor'
+  ],
+
+  journalism: [
+    'journalism',
+    'media',
+    'news',
+    'reporter',
+    'communication'
+  ]
+};
+
+const goalMatches =
+  (goalWords[goal] || [])
+    .filter(word => text.includes(word));
+
+if(goalMatches.length >= 3){
   score += 25;
   reasons.push('Strong match with your career goal');
 } else if(goalMatches.length === 2){
-  score += 17;
-        reasons.push('Good match with your career goal');
-      } else if(goalMatches.length === 1){
-        score += 8;
-        reasons.push('Partial match with your career goal');
-      } else {
-        mismatches.push('Limited match with your career goal');
-      }
+  score += 18;
+  reasons.push('Good match with your career goal');
+} else if(goalMatches.length === 1){
+  score += 10;
+  reasons.push('Partial match with your career goal');
+} else {
+  score -= 5;
+  mismatches.push('Limited match with your career goal');
+}
 
-      // 4. Work preference match = 20 points
-      const workWords = {
-        computer: ['computer','software','programming','data','technology','developer'],
-        healthcare: ['medical','health','hospital','nursing','pharmacy','dental','physio'],
-        field: ['agriculture','civil','mechanical','mining','forestry','fisheries'],
-        business: ['business','management','finance','commerce','accounting','marketing'],
-        government: ['government','civil','public','administration','police','railway'],
-        technical: ['engineering','technology','mechanical','electrical','electronics','software']
-      };
 
-      const workMatches =
-        (workWords[work] || []).filter(word => text.includes(word));
+// 4. Work preference matching
+const workWords = {
+  computer: [
+    'computer',
+    'software',
+    'programming',
+    'developer',
+    'data',
+    'technology',
+    'information technology'
+  ],
 
-      if(workMatches.length >= 3){
-        score += 25;
-        reasons.push('Strong match with your preferred work type');
-      } else if(workMatches.length === 2){
-        score += 17;
-        reasons.push('Good match with your preferred work type');
-      } else if(workMatches.length === 1){
-        score += 8;
-        reasons.push('Partial match with your preferred work type');
-      } else {
-        mismatches.push('Limited match with your preferred work type');
-      }
+  technical: [
+    'engineering',
+    'technical',
+    'mechanical',
+    'electrical',
+    'electronics',
+    'civil',
+    'automobile'
+  ],
 
-      score = Math.min(score, 100);
+  laboratory: [
+    'laboratory',
+    'research',
+    'science',
+    'chemistry',
+    'biology',
+    'biotechnology'
+  ],
 
+  defence: [
+    'defence',
+    'defense',
+    'army',
+    'navy',
+    'air force',
+    'military'
+  ],
+
+  design: [
+    'architecture',
+    'design',
+    'creative',
+    'animation',
+    'multimedia'
+  ],
+
+  healthcare: [
+    'hospital',
+    'healthcare',
+    'medical',
+    'medicine',
+    'nursing',
+    'patient'
+  ],
+
+  pharmacy: [
+    'pharmacy',
+    'pharmaceutical',
+    'pharmacology',
+    'drug'
+  ],
+
+  field: [
+    'agriculture',
+    'civil',
+    'construction',
+    'mechanical',
+    'mining',
+    'forestry',
+    'fisheries'
+  ],
+
+  business: [
+    'business',
+    'management',
+    'marketing',
+    'finance',
+    'commerce',
+    'accounting'
+  ],
+
+  government: [
+    'government',
+    'administration',
+    'civil services',
+    'police',
+    'railway',
+    'public service'
+  ],
+
+  office: [
+    'office',
+    'administration',
+    'management',
+    'business',
+    'finance',
+    'accounting'
+  ]
+};
+
+const workMatches =
+  (workWords[work] || [])
+    .filter(word => text.includes(word));
+
+if(workMatches.length >= 3){
+  score += 15;
+  reasons.push('Strong match with your preferred work type');
+} else if(workMatches.length === 2){
+  score += 11;
+  reasons.push('Good match with your preferred work type');
+} else if(workMatches.length === 1){
+  score += 6;
+  reasons.push('Partial match with your preferred work type');
+} else {
+  score -= 3;
+  mismatches.push('Limited match with your preferred work type');
+}
+
+
+// Keep score between 0 and 100
+score = Math.max(0, Math.min(score, 100));
 
       recommendations.push({
         name,
