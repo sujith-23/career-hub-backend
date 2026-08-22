@@ -1,0 +1,5322 @@
+{
+  "mpc": {
+    "name": "MPC",
+    "full": "Maths, Physics, Chemistry",
+    "color": "var(--line-mpc)",
+    "desc": "The engineering & science stream. Opens the door to B.Tech, defense, architecture, pure sciences and every entrance-exam-based career.",
+    "paths": {
+      "engineering": {
+        "name": "Engineering (B.Tech)",
+        "desc": "4-year degree. Choose a branch based on interest, not just 'placements'.",
+        "entrance": "JEE Main / JEE Advanced / EAMCET / BITSAT",
+        "children": {
+          "cse": {
+            "name": "CSE — Computer Science",
+            "desc": "Software, systems & problem-solving.",
+            "coreSubjects": [
+              "Programming (C/C++/Java/Python)",
+              "Data Structures & Algorithms",
+              "DBMS",
+              "Operating Systems",
+              "Computer Networks"
+            ],
+            "jobRoles": [
+              "Software Engineer",
+              "Full Stack Developer",
+              "Backend/Frontend Developer",
+              "Mobile App Developer",
+              "QA/Test Engineer"
+            ],
+            "skills": [
+              "Strong DSA practice (LeetCode/Codeforces)",
+              "One language deeply",
+              "SQL & databases",
+              "Git & version control"
+            ],
+            "higherStudies": [
+              "M.Tech CSE",
+              "MS abroad",
+              "MBA (Tech Management)"
+            ],
+            "topRecruiters": [
+              "TCS, Infosys, Wipro",
+              "Amazon, Microsoft, Google",
+              "Product startups"
+            ],
+            "futureScope": [
+              "High demand across every industry",
+              "Strong freelance/startup potential"
+            ],
+            "duration": "4 years"
+          },
+          "aids": {
+            "name": "AI & Data Science",
+            "desc": "Building data-driven, intelligent systems.",
+            "coreSubjects": [
+              "Python",
+              "Statistics",
+              "Machine Learning",
+              "Big Data",
+              "Data Visualization"
+            ],
+            "jobRoles": [
+              "AI Engineer",
+              "Data Scientist",
+              "Data Analyst",
+              "Business Intelligence Analyst"
+            ],
+            "skills": [
+              "Python & ML libraries",
+              "Statistics",
+              "SQL",
+              "Communicating insights clearly"
+            ],
+            "higherStudies": [
+              "M.Tech AI/DS",
+              "MS in Data Science",
+              "MBA Analytics"
+            ],
+            "topRecruiters": [
+              "Accenture, TCS Digital",
+              "Amazon, Flipkart",
+              "Analytics consultancies"
+            ],
+            "futureScope": [
+              "One of the fastest-growing tech fields",
+              "Strong demand across finance, retail, healthcare"
+            ],
+            "duration": "4 years"
+          },
+          "aiml": {
+            "name": "AI & Machine Learning",
+            "desc": "Designing learning algorithms & intelligent agents.",
+            "coreSubjects": [
+              "Machine Learning",
+              "Deep Learning",
+              "Neural Networks",
+              "Reinforcement Learning",
+              "NLP"
+            ],
+            "jobRoles": [
+              "ML Engineer",
+              "AI Developer",
+              "Research Engineer",
+              "Deep Learning Engineer"
+            ],
+            "skills": [
+              "Python",
+              "Maths (linear algebra, probability)",
+              "TensorFlow/PyTorch",
+              "Model evaluation"
+            ],
+            "higherStudies": [
+              "M.Tech AI/ML",
+              "MS abroad",
+              "PhD (research path)"
+            ],
+            "topRecruiters": [
+              "Google, Microsoft, NVIDIA",
+              "AI-focused startups",
+              "R&D labs"
+            ],
+            "futureScope": [
+              "Core to almost every future product",
+              "High research & industry demand"
+            ],
+            "duration": "4 years"
+          },
+          "it": {
+            "name": "IT — Information Technology",
+            "desc": "Keeping systems, networks & support running.",
+            "coreSubjects": [
+              "Programming",
+              "Networking",
+              "Databases",
+              "Cloud",
+              "Web Technologies"
+            ],
+            "jobRoles": [
+              "Software Developer",
+              "System Administrator",
+              "Network Engineer",
+              "Cloud Engineer"
+            ],
+            "skills": [
+              "Networking basics",
+              "OS troubleshooting",
+              "Cloud fundamentals (AWS/Azure)"
+            ],
+            "higherStudies": [
+              "M.Tech IT",
+              "MBA IT Management",
+              "Cloud certifications"
+            ],
+            "topRecruiters": [
+              "TCS, Cognizant, HCL",
+              "Capgemini, IBM"
+            ],
+            "futureScope": [
+              "Steady demand across every industry",
+              "Good entry point into cloud/DevOps"
+            ],
+            "duration": "4 years"
+          },
+          "cybersecurity": {
+            "name": "Cyber Security",
+            "desc": "Protecting systems, networks & data.",
+            "coreSubjects": [
+              "Ethical Hacking",
+              "Network Security",
+              "Cryptography",
+              "Penetration Testing",
+              "Digital Forensics"
+            ],
+            "jobRoles": [
+              "Cyber Security Analyst",
+              "Ethical Hacker",
+              "SOC Analyst",
+              "Penetration Tester"
+            ],
+            "skills": [
+              "Networking fundamentals",
+              "Linux",
+              "Wireshark, Nmap, Burp Suite",
+              "CEH/Security+ certifications"
+            ],
+            "higherStudies": [
+              "M.Tech Cyber Security",
+              "OSCP/CISSP certifications",
+              "MS in Information Security"
+            ],
+            "topRecruiters": [
+              "Banks & fintechs",
+              "IT security firms",
+              "Government cyber cells"
+            ],
+            "futureScope": [
+              "Rapidly growing due to rising cyber threats",
+              "High-paying specialist demand"
+            ],
+            "duration": "4 years"
+          },
+          "datascience": {
+            "name": "Data Science",
+            "desc": "Turning raw data into decisions.",
+            "coreSubjects": [
+              "Python",
+              "SQL",
+              "Statistics",
+              "Machine Learning",
+              "Data Visualization"
+            ],
+            "jobRoles": [
+              "Data Scientist",
+              "Data Analyst",
+              "BI Analyst",
+              "Data Engineer"
+            ],
+            "skills": [
+              "Python (Pandas, NumPy)",
+              "SQL",
+              "Statistics",
+              "Power BI/Tableau"
+            ],
+            "higherStudies": [
+              "M.Sc/M.Tech Data Science",
+              "MS abroad"
+            ],
+            "topRecruiters": [
+              "Analytics firms",
+              "E-commerce & fintech companies"
+            ],
+            "futureScope": [
+              "Strong demand across every data-heavy industry"
+            ],
+            "duration": "4 years"
+          },
+          "ece": {
+            "name": "ECE — Electronics & Communication",
+            "desc": "Circuits, signals & communication systems.",
+            "coreSubjects": [
+              "Digital Electronics",
+              "Analog Electronics",
+              "Embedded Systems",
+              "VLSI",
+              "IoT"
+            ],
+            "jobRoles": [
+              "Embedded Engineer",
+              "VLSI Engineer",
+              "Electronics Engineer",
+              "IoT Engineer",
+              "Telecom Engineer"
+            ],
+            "skills": [
+              "Circuit design",
+              "Embedded C",
+              "Microcontrollers",
+              "VLSI tools (basic)"
+            ],
+            "higherStudies": [
+              "M.Tech ECE/VLSI/Embedded Systems",
+              "MS abroad"
+            ],
+            "topRecruiters": [
+              "Qualcomm, Intel, Texas Instruments",
+              "Telecom companies (Jio, Airtel)"
+            ],
+            "futureScope": [
+              "Core to IoT, 5G and semiconductor growth"
+            ],
+            "duration": "4 years"
+          },
+          "eee": {
+            "name": "EEE — Electrical & Electronics",
+            "desc": "Power systems, machines & control.",
+            "coreSubjects": [
+              "Electrical Machines",
+              "Power Systems",
+              "Control Systems",
+              "Renewable Energy",
+              "Power Electronics"
+            ],
+            "jobRoles": [
+              "Electrical Engineer",
+              "Power Systems Engineer",
+              "Maintenance Engineer",
+              "Design Engineer"
+            ],
+            "skills": [
+              "Circuit theory",
+              "MATLAB",
+              "PLC/SCADA basics"
+            ],
+            "higherStudies": [
+              "M.Tech Power Systems",
+              "MBA Energy Management"
+            ],
+            "topRecruiters": [
+              "Power grid & utility companies",
+              "Manufacturing plants"
+            ],
+            "futureScope": [
+              "Growing demand in renewable energy sector"
+            ],
+            "duration": "4 years"
+          },
+          "mechanical": {
+            "name": "Mechanical Engineering",
+            "desc": "Design, manufacturing & machines.",
+            "coreSubjects": [
+              "CAD/CAM",
+              "Manufacturing",
+              "Thermodynamics",
+              "Robotics",
+              "Automobile Systems"
+            ],
+            "jobRoles": [
+              "Mechanical Engineer",
+              "Production Engineer",
+              "Design Engineer",
+              "Quality Engineer"
+            ],
+            "skills": [
+              "CAD software (AutoCAD/SolidWorks)",
+              "Manufacturing process knowledge",
+              "Problem-solving"
+            ],
+            "higherStudies": [
+              "M.Tech Mechanical/Design/Thermal",
+              "MBA Operations"
+            ],
+            "topRecruiters": [
+              "Tata Motors, L&T, Mahindra",
+              "Manufacturing & automotive companies"
+            ],
+            "futureScope": [
+              "Steady demand in manufacturing, automotive & energy"
+            ],
+            "duration": "4 years"
+          },
+          "civil": {
+            "name": "Civil Engineering",
+            "desc": "Building the structures around us.",
+            "coreSubjects": [
+              "Structural Engineering",
+              "Surveying",
+              "Construction Management",
+              "Transportation",
+              "Environmental Engineering"
+            ],
+            "jobRoles": [
+              "Civil Engineer",
+              "Site Engineer",
+              "Structural Engineer",
+              "Project Engineer"
+            ],
+            "skills": [
+              "AutoCAD",
+              "STAAD Pro",
+              "Surveying",
+              "Project management"
+            ],
+            "higherStudies": [
+              "M.Tech Structural/Transportation Engg",
+              "MBA Construction Management"
+            ],
+            "topRecruiters": [
+              "L&T, Shapoorji Pallonji",
+              "Government infrastructure bodies"
+            ],
+            "futureScope": [
+              "Consistent demand from infrastructure & urban growth"
+            ],
+            "duration": "4 years"
+          },
+          "chemical": {
+            "name": "Chemical Engineering",
+            "desc": "Processes that turn raw materials into products.",
+            "coreSubjects": [
+              "Chemical Process Engineering",
+              "Thermodynamics",
+              "Reaction Engineering",
+              "Plant Design"
+            ],
+            "jobRoles": [
+              "Process Engineer",
+              "Plant Engineer",
+              "Quality Control Engineer"
+            ],
+            "skills": [
+              "Process simulation software",
+              "Safety & compliance knowledge",
+              "Problem-solving"
+            ],
+            "higherStudies": [
+              "M.Tech Chemical Engineering",
+              "MS abroad"
+            ],
+            "topRecruiters": [
+              "Reliance, ONGC, pharma & petrochemical companies"
+            ],
+            "futureScope": [
+              "Strong demand in petrochemicals, pharma & materials"
+            ],
+            "duration": "4 years"
+          },
+          "aeronautical": {
+            "name": "Aeronautical Engineering",
+            "desc": "Design and building of aircraft.",
+            "coreSubjects": [
+              "Aerodynamics",
+              "Aircraft Structures",
+              "Propulsion",
+              "Flight Mechanics"
+            ],
+            "jobRoles": [
+              "Aeronautical Engineer",
+              "Design Engineer",
+              "Maintenance Engineer"
+            ],
+            "skills": [
+              "CAD/CFD software",
+              "Precision & analytical thinking"
+            ],
+            "higherStudies": [
+              "M.Tech Aeronautical/Aerospace",
+              "MS abroad"
+            ],
+            "topRecruiters": [
+              "HAL, DRDO, ISRO",
+              "Aviation companies"
+            ],
+            "futureScope": [
+              "Niche but growing with India's aerospace push"
+            ],
+            "duration": "4 years"
+          },
+          "aerospace": {
+            "name": "Aerospace Engineering",
+            "desc": "Aircraft and spacecraft systems.",
+            "coreSubjects": [
+              "Spacecraft Design",
+              "Propulsion Systems",
+              "Orbital Mechanics",
+              "Avionics"
+            ],
+            "jobRoles": [
+              "Aerospace Engineer",
+              "Systems Engineer",
+              "Research Engineer"
+            ],
+            "skills": [
+              "CAD/simulation tools",
+              "Strong maths & physics fundamentals"
+            ],
+            "higherStudies": [
+              "M.Tech Aerospace",
+              "MS abroad",
+              "PhD research"
+            ],
+            "topRecruiters": [
+              "ISRO, DRDO",
+              "Aerospace & defence companies"
+            ],
+            "futureScope": [
+              "Expanding with India's space & satellite industry"
+            ],
+            "duration": "4 years"
+          },
+          "automobile": {
+            "name": "Automobile Engineering",
+            "desc": "Vehicle design, systems & manufacturing.",
+            "coreSubjects": [
+              "Automotive Systems",
+              "Engine Design",
+              "Vehicle Dynamics",
+              "Manufacturing"
+            ],
+            "jobRoles": [
+              "Automobile Engineer",
+              "Design Engineer",
+              "Quality Engineer"
+            ],
+            "skills": [
+              "CAD tools",
+              "Diagnostic knowledge",
+              "Manufacturing process understanding"
+            ],
+            "higherStudies": [
+              "M.Tech Automobile Engineering",
+              "MBA Operations"
+            ],
+            "topRecruiters": [
+              "Tata Motors, Maruti Suzuki, Bajaj Auto"
+            ],
+            "futureScope": [
+              "Shifting fast toward EVs — strong future demand"
+            ],
+            "duration": "4 years"
+          },
+          "mechatronics": {
+            "name": "Mechatronics Engineering",
+            "desc": "Where mechanical, electronics & computing meet.",
+            "coreSubjects": [
+              "Robotics",
+              "Control Systems",
+              "Embedded Systems",
+              "Automation"
+            ],
+            "jobRoles": [
+              "Mechatronics Engineer",
+              "Automation Engineer",
+              "Robotics Engineer"
+            ],
+            "skills": [
+              "Programming + hardware skills",
+              "Control systems knowledge"
+            ],
+            "higherStudies": [
+              "M.Tech Mechatronics/Robotics",
+              "MS abroad"
+            ],
+            "topRecruiters": [
+              "Manufacturing automation companies",
+              "Robotics startups"
+            ],
+            "futureScope": [
+              "Growing fast with factory automation & robotics"
+            ],
+            "duration": "4 years"
+          },
+          "robotics": {
+            "name": "Robotics Engineering",
+            "desc": "Designing and programming robots.",
+            "coreSubjects": [
+              "Robotics",
+              "AI for Robotics",
+              "Control Systems",
+              "Sensors & Actuators"
+            ],
+            "jobRoles": [
+              "Robotics Engineer",
+              "Automation Engineer",
+              "R&D Engineer"
+            ],
+            "skills": [
+              "Programming (Python/C++)",
+              "Control systems",
+              "Hardware-software integration"
+            ],
+            "higherStudies": [
+              "M.Tech Robotics",
+              "MS abroad"
+            ],
+            "topRecruiters": [
+              "Robotics & automation companies",
+              "Manufacturing R&D units"
+            ],
+            "futureScope": [
+              "High growth as automation expands across industries"
+            ],
+            "duration": "4 years"
+          },
+          "biotech": {
+            "name": "Biotechnology Engineering",
+            "desc": "Applying engineering to biological systems.",
+            "coreSubjects": [
+              "Bioprocess Engineering",
+              "Genetic Engineering",
+              "Bioinformatics"
+            ],
+            "jobRoles": [
+              "Biotech Engineer",
+              "Process Engineer",
+              "R&D Associate"
+            ],
+            "skills": [
+              "Lab + engineering skills",
+              "Research methodology"
+            ],
+            "higherStudies": [
+              "M.Tech Biotechnology",
+              "MS abroad",
+              "PhD research"
+            ],
+            "topRecruiters": [
+              "Biocon, pharma & biotech companies"
+            ],
+            "futureScope": [
+              "Growing with India's biotech & pharma sector"
+            ],
+            "duration": "4 years"
+          },
+          "biomedical": {
+            "name": "Biomedical Engineering",
+            "desc": "Engineering for healthcare & medical devices.",
+            "coreSubjects": [
+              "Medical Instrumentation",
+              "Biomechanics",
+              "Signal Processing"
+            ],
+            "jobRoles": [
+              "Biomedical Engineer",
+              "Clinical Engineer",
+              "Medical Device Designer"
+            ],
+            "skills": [
+              "Engineering + biology fundamentals",
+              "Precision & regulatory awareness"
+            ],
+            "higherStudies": [
+              "M.Tech Biomedical Engineering",
+              "MS abroad"
+            ],
+            "topRecruiters": [
+              "Medical device companies",
+              "Hospitals' biomedical departments"
+            ],
+            "futureScope": [
+              "Rising demand with growing healthcare technology"
+            ],
+            "duration": "4 years"
+          },
+          "agricultural": {
+            "name": "Agricultural Engineering",
+            "desc": "Engineering solutions for farming & food systems.",
+            "coreSubjects": [
+              "Farm Machinery",
+              "Irrigation Engineering",
+              "Soil & Water Conservation"
+            ],
+            "jobRoles": [
+              "Agricultural Engineer",
+              "Irrigation Engineer",
+              "Farm Equipment Designer"
+            ],
+            "skills": [
+              "Engineering fundamentals",
+              "Understanding of agricultural practices"
+            ],
+            "higherStudies": [
+              "M.Tech Agricultural Engineering"
+            ],
+            "topRecruiters": [
+              "Government agri departments",
+              "Farm equipment manufacturers"
+            ],
+            "futureScope": [
+              "Steady demand with focus on agri-mechanization"
+            ],
+            "duration": "4 years"
+          },
+          "mining": {
+            "name": "Mining Engineering",
+            "desc": "Extraction of minerals & resources safely.",
+            "coreSubjects": [
+              "Mine Planning",
+              "Mineral Processing",
+              "Mine Safety"
+            ],
+            "jobRoles": [
+              "Mining Engineer",
+              "Safety Officer",
+              "Mine Planner"
+            ],
+            "skills": [
+              "Technical + safety knowledge",
+              "Fieldwork capability"
+            ],
+            "higherStudies": [
+              "M.Tech Mining Engineering"
+            ],
+            "topRecruiters": [
+              "Coal India, mining companies"
+            ],
+            "futureScope": [
+              "Stable demand in resource-rich states"
+            ],
+            "duration": "4 years"
+          },
+          "petroleum": {
+            "name": "Petroleum Engineering",
+            "desc": "Exploration and production of oil & gas.",
+            "coreSubjects": [
+              "Reservoir Engineering",
+              "Drilling Engineering",
+              "Petroleum Production"
+            ],
+            "jobRoles": [
+              "Petroleum Engineer",
+              "Drilling Engineer",
+              "Production Engineer"
+            ],
+            "skills": [
+              "Technical modelling software",
+              "Fieldwork readiness"
+            ],
+            "higherStudies": [
+              "M.Tech Petroleum Engineering",
+              "MS abroad"
+            ],
+            "topRecruiters": [
+              "ONGC, Reliance, oil & gas companies"
+            ],
+            "futureScope": [
+              "Niche but well-paying, tied to energy sector"
+            ],
+            "duration": "4 years"
+          },
+          "foodtech": {
+            "name": "Food Technology",
+            "desc": "Science and technology of food processing.",
+            "coreSubjects": [
+              "Food Processing",
+              "Food Chemistry",
+              "Quality Control",
+              "Packaging Technology"
+            ],
+            "jobRoles": [
+              "Food Technologist",
+              "Quality Control Officer",
+              "R&D Associate"
+            ],
+            "skills": [
+              "Food science fundamentals",
+              "Quality/regulatory awareness"
+            ],
+            "higherStudies": [
+              "M.Tech Food Technology",
+              "MBA Food Business"
+            ],
+            "topRecruiters": [
+              "FMCG & food processing companies (ITC, Nestlé)"
+            ],
+            "futureScope": [
+              "Growing with India's packaged food industry"
+            ],
+            "duration": "4 years"
+          },
+          "textile": {
+            "name": "Textile Engineering",
+            "desc": "Design & manufacturing of textiles.",
+            "coreSubjects": [
+              "Textile Manufacturing",
+              "Fabric Technology",
+              "Textile Chemistry"
+            ],
+            "jobRoles": [
+              "Textile Engineer",
+              "Production Manager",
+              "Quality Analyst"
+            ],
+            "skills": [
+              "Technical textile knowledge",
+              "Process management"
+            ],
+            "higherStudies": [
+              "M.Tech Textile Engineering",
+              "Fashion/textile management courses"
+            ],
+            "topRecruiters": [
+              "Textile mills & garment export companies"
+            ],
+            "futureScope": [
+              "Strong in textile-hub states"
+            ],
+            "duration": "4 years"
+          },
+          "metallurgical": {
+            "name": "Metallurgical Engineering",
+            "desc": "Science of metals & materials.",
+            "coreSubjects": [
+              "Extractive Metallurgy",
+              "Material Science",
+              "Metal Processing"
+            ],
+            "jobRoles": [
+              "Metallurgical Engineer",
+              "Quality Engineer",
+              "R&D Associate"
+            ],
+            "skills": [
+              "Materials knowledge",
+              "Lab & process skills"
+            ],
+            "higherStudies": [
+              "M.Tech Metallurgy/Material Science"
+            ],
+            "topRecruiters": [
+              "Tata Steel, SAIL and other steel/metal companies"
+            ],
+            "futureScope": [
+              "Steady demand tied to manufacturing & infrastructure"
+            ],
+            "duration": "4 years"
+          },
+          "marine": {
+            "name": "Marine Engineering",
+            "desc": "Design & engineering of ships and marine systems.",
+            "coreSubjects": [
+              "Naval Architecture",
+              "Marine Propulsion",
+              "Ship Design"
+            ],
+            "jobRoles": [
+              "Marine Engineer",
+              "Ship Design Engineer",
+              "Port/Dockyard Engineer"
+            ],
+            "skills": [
+              "Technical + fieldwork skills",
+              "Willingness for sea postings (some roles)"
+            ],
+            "higherStudies": [
+              "M.Tech Marine Engineering"
+            ],
+            "topRecruiters": [
+              "Shipping companies, ports, navy dockyards"
+            ],
+            "futureScope": [
+              "Stable demand tied to maritime trade"
+            ],
+            "duration": "4 years"
+          }
+        }
+      },
+      "degree": {
+        "name": "Degree (B.Sc / BCA / BBA)",
+        "desc": "General 3-year degree route after MPC — no entrance exam needed for most colleges, and it keeps management, IT and science careers open.",
+        "entrance": "College-level admissions / CUET",
+        "children": {
+          "bsc_cs": {
+            "name": "B.Sc Computer Science",
+            "desc": "Computer science fundamentals with a science-degree structure.",
+            "coreSubjects": [
+              "Programming",
+              "DBMS",
+              "Data Structures",
+              "Computer Networks"
+            ],
+            "jobRoles": [
+              "Software Developer",
+              "Web Developer",
+              "IT Support"
+            ],
+            "skills": [
+              "Programming (Python/Java)",
+              "SQL",
+              "Problem-solving"
+            ],
+            "higherStudies": [
+              "M.Sc Computer Science",
+              "MCA"
+            ],
+            "topRecruiters": [
+              "IT services companies",
+              "Startups"
+            ],
+            "futureScope": [
+              "Good stepping stone into software roles"
+            ],
+            "duration": "3 years"
+          },
+          "bsc_physics": {
+            "name": "B.Sc Physics",
+            "desc": "Core physics degree.",
+            "coreSubjects": [
+              "Classical & modern physics",
+              "Mathematical methods",
+              "Lab work"
+            ],
+            "jobRoles": [
+              "Lab Assistant",
+              "Research Assistant",
+              "Teacher (after B.Ed)"
+            ],
+            "skills": [
+              "Strong maths & physics fundamentals",
+              "Lab skills",
+              "Analytical thinking"
+            ],
+            "higherStudies": [
+              "M.Sc Physics",
+              "PhD (research)",
+              "B.Ed for teaching"
+            ],
+            "topRecruiters": [
+              "Research labs",
+              "Schools/colleges (after B.Ed)"
+            ],
+            "futureScope": [
+              "Strong for research & academic careers"
+            ],
+            "duration": "3 years"
+          },
+          "bsc_maths": {
+            "name": "B.Sc Mathematics",
+            "desc": "Core mathematics degree.",
+            "coreSubjects": [
+              "Algebra & Calculus",
+              "Statistics",
+              "Discrete Mathematics"
+            ],
+            "jobRoles": [
+              "Data Analyst",
+              "Teacher (after B.Ed)",
+              "Actuarial Trainee"
+            ],
+            "skills": [
+              "Strong maths fundamentals",
+              "Statistics",
+              "Logical reasoning"
+            ],
+            "higherStudies": [
+              "M.Sc Mathematics",
+              "Actuarial Science certification",
+              "B.Ed for teaching"
+            ],
+            "topRecruiters": [
+              "Analytics firms",
+              "Schools/colleges"
+            ],
+            "futureScope": [
+              "Opens both data & teaching career paths"
+            ],
+            "duration": "3 years"
+          },
+          "bsc_stats": {
+            "name": "B.Sc Statistics",
+            "desc": "Core statistics degree.",
+            "coreSubjects": [
+              "Probability",
+              "Statistical Methods",
+              "Data Analysis"
+            ],
+            "jobRoles": [
+              "Data Analyst",
+              "Statistician",
+              "Research Assistant"
+            ],
+            "skills": [
+              "Statistical software (R/SPSS)",
+              "Analytical thinking"
+            ],
+            "higherStudies": [
+              "M.Sc Statistics",
+              "Actuarial Science"
+            ],
+            "topRecruiters": [
+              "Analytics & research firms",
+              "Government statistical departments"
+            ],
+            "futureScope": [
+              "Rising demand with data-driven decision making"
+            ],
+            "duration": "3 years"
+          },
+          "bsc_datascience": {
+            "name": "B.Sc Data Science",
+            "desc": "Undergraduate data science degree.",
+            "coreSubjects": [
+              "Python",
+              "Statistics",
+              "Machine Learning basics",
+              "Data Visualization"
+            ],
+            "jobRoles": [
+              "Junior Data Analyst",
+              "Data Science Trainee"
+            ],
+            "skills": [
+              "Python",
+              "SQL",
+              "Basic ML"
+            ],
+            "higherStudies": [
+              "M.Sc/M.Tech Data Science"
+            ],
+            "topRecruiters": [
+              "Analytics & product companies"
+            ],
+            "futureScope": [
+              "Fast-growing field, strong entry-level demand"
+            ],
+            "duration": "3 years"
+          },
+          "bca": {
+            "name": "BCA — Computer Applications",
+            "desc": "3-year computer-focused degree, a practical alternative to B.Tech CSE.",
+            "coreSubjects": [
+              "Programming",
+              "Web Development",
+              "DBMS",
+              "Networking basics"
+            ],
+            "jobRoles": [
+              "Software Developer",
+              "Web Developer",
+              "IT Support"
+            ],
+            "skills": [
+              "Programming",
+              "Web development basics",
+              "Database fundamentals"
+            ],
+            "higherStudies": [
+              "MCA (Master of Computer Applications)",
+              "M.Sc Computer Science"
+            ],
+            "topRecruiters": [
+              "IT services companies"
+            ],
+            "futureScope": [
+              "Practical, job-ready alternative to B.Tech CSE"
+            ],
+            "duration": "3 years"
+          },
+          "bba": {
+            "name": "BBA — Business Administration",
+            "desc": "3-year general management & business degree.",
+            "coreSubjects": [
+              "Business fundamentals",
+              "Marketing basics",
+              "Accounting basics",
+              "Organizational behaviour"
+            ],
+            "jobRoles": [
+              "Business Analyst",
+              "Management Trainee",
+              "Operations Executive",
+              "Marketing Executive"
+            ],
+            "skills": [
+              "Communication & presentation",
+              "Business fundamentals",
+              "Basic analytics",
+              "Teamwork"
+            ],
+            "nextSteps": [
+              "MBA — Master of Business Administration (2 years, via CAT/MAT/CMAT). Opens senior management, consulting, HR, marketing and finance leadership roles"
+            ],
+            "higherStudies": [
+              "MBA — via CAT/MAT/CMAT"
+            ],
+            "topRecruiters": [
+              "Corporates across all sectors"
+            ],
+            "futureScope": [
+              "Strong if paired with an MBA later"
+            ],
+            "duration": "3 years"
+          }
+        }
+      },
+      "nda": {
+        "name": "NDA — Defense",
+        "desc": "Direct entry into Army, Navy or Air Force after 12th.",
+        "entrance": "NDA Exam (UPSC) + SSB Interview",
+        "jobRoles": [
+          "Army / Navy / Air Force Officer"
+        ],
+        "skills": [
+          "Physical fitness",
+          "Discipline & leadership",
+          "General knowledge",
+          "Quick decision-making"
+        ],
+        "higherStudies": [
+          "Further training at IMA, Naval Academy, Air Force Academy"
+        ],
+        "topRecruiters": [
+          "Indian Army, Navy, Air Force"
+        ],
+        "futureScope": [
+          "Prestigious, stable career with early responsibility"
+        ],
+        "duration": "Varies"
+      },
+      "architecture": {
+        "name": "Architecture",
+        "desc": "Designing buildings & spaces.",
+        "entrance": "NATA",
+        "jobRoles": [
+          "Architect",
+          "Urban Designer",
+          "Interior Designer"
+        ],
+        "skills": [
+          "Drawing & sketching",
+          "Spatial visualization",
+          "Design software (AutoCAD, SketchUp)",
+          "Creativity + technical precision"
+        ],
+        "higherStudies": [
+          "M.Arch",
+          "Urban Planning postgrad"
+        ],
+        "topRecruiters": [
+          "Architecture firms",
+          "Real estate & construction companies"
+        ],
+        "futureScope": [
+          "Growing with urban development & real estate"
+        ],
+        "duration": "5 years"
+      },
+      "commercialpilot": {
+        "name": "Commercial Pilot",
+        "desc": "Flight training license to fly commercial aircraft.",
+        "entrance": "DGCA-approved flying school + medical fitness",
+        "coreSubjects": [
+          "Flight theory",
+          "Navigation",
+          "Meteorology",
+          "Aircraft systems"
+        ],
+        "jobRoles": [
+          "Commercial Pilot",
+          "First Officer",
+          "Captain (with experience)",
+          "Airline Pilot"
+        ],
+        "skills": [
+          "Flying hours & license (CPL)",
+          "Physical fitness",
+          "Quick decision-making"
+        ],
+        "higherStudies": [
+          "Type rating courses",
+          "ATPL (Airline Transport Pilot License)"
+        ],
+        "topRecruiters": [
+          "IndiGo, Air India, Vistara"
+        ],
+        "futureScope": [
+          "High-paying, growing with expanding aviation sector"
+        ],
+        "duration": "Varies"
+      },
+      "merchantnavy": {
+        "name": "Merchant Navy",
+        "desc": "Careers at sea — cargo ships, tankers & cruise lines.",
+        "entrance": "Maritime entrance exams (IMU-CET) + medical fitness",
+        "coreSubjects": [
+          "Nautical Science",
+          "Marine Engineering basics",
+          "Navigation"
+        ],
+        "jobRoles": [
+          "Deck Officer",
+          "Marine Engineer",
+          "Ship Captain (with experience)"
+        ],
+        "skills": [
+          "Physical fitness",
+          "Willingness for long sea voyages",
+          "Technical aptitude"
+        ],
+        "higherStudies": [
+          "Higher marine certifications (Chief Officer, Captain)"
+        ],
+        "topRecruiters": [
+          "Shipping companies (Maersk, MSC)"
+        ],
+        "futureScope": [
+          "High pay, global career, tied to international trade"
+        ],
+        "duration": "Varies"
+      },
+      "space": {
+        "name": "Space & Aerospace (ISRO & beyond)",
+        "desc": "Building rockets, satellites, and the systems that get them there.",
+        "entrance": "JEE (for aerospace B.Tech) / IIST entrance / GATE (for ISRO)",
+        "children": {
+          "aerospace": {
+            "name": "Aerospace / Aeronautical Engineering",
+            "desc": "Core engineering degree behind rockets, satellites, and aircraft.",
+            "coreSubjects": [
+              "Aerodynamics",
+              "Propulsion",
+              "Structures",
+              "Orbital mechanics"
+            ],
+            "jobRoles": [
+              "Aerospace Engineer",
+              "Propulsion Engineer",
+              "Satellite Systems Engineer"
+            ],
+            "skills": [
+              "Physics & math foundations",
+              "CAD/simulation tools",
+              "Systems thinking"
+            ],
+            "higherStudies": [
+              "M.Tech Aerospace",
+              "MS abroad (aerospace)"
+            ],
+            "topRecruiters": [
+              "ISRO, DRDO, HAL, private space startups (Skyroot, Agnikul)"
+            ],
+            "futureScope": [
+              "India's private space sector is opening up fast alongside ISRO"
+            ],
+            "duration": "4 years"
+          },
+          "isro": {
+            "name": "ISRO Scientist/Engineer",
+            "desc": "Joining India's space agency directly as a scientist or engineer.",
+            "entrance": "ISRO Centralised Recruitment Board (ICRB) exam, or via IIST direct placement",
+            "jobRoles": [
+              "Scientist/Engineer 'SC' at ISRO",
+              "Mission Design Engineer",
+              "Ground Systems Engineer"
+            ],
+            "skills": [
+              "Strong fundamentals in engineering/physics",
+              "Problem-solving under exams like GATE"
+            ],
+            "higherStudies": [
+              "M.Tech / PhD for research roles within ISRO"
+            ],
+            "topRecruiters": [
+              "ISRO centres (VSSC, SAC, URSC and others)"
+            ],
+            "futureScope": [
+              "Steady government scientist career with high national impact"
+            ],
+            "duration": "Varies"
+          },
+          "remotesensing": {
+            "name": "Remote Sensing & GIS",
+            "desc": "Using satellite data for agriculture, disaster management, urban planning.",
+            "jobRoles": [
+              "GIS Analyst",
+              "Remote Sensing Scientist",
+              "Geospatial Data Engineer"
+            ],
+            "skills": [
+              "GIS software",
+              "Satellite image analysis",
+              "Data analysis"
+            ],
+            "higherStudies": [
+              "M.Sc/M.Tech Geoinformatics or Remote Sensing"
+            ],
+            "topRecruiters": [
+              "ISRO/NRSC, state remote sensing centres, agri-tech & urban-planning firms"
+            ],
+            "futureScope": [
+              "Growing demand as satellite data becomes central to planning & climate work"
+            ],
+            "duration": "3 years"
+          },
+          "astronaut": {
+            "name": "Astronaut",
+            "desc": "Flying to space as part of a national or international space mission — India's own astronaut program (Gaganyaan) plus routes through NASA/international agencies.",
+            "entrance": "Selected from Engineering/Science graduates (often with test pilot or advanced degree background) via ISRO's Astronaut Selection or international agency programs",
+            "coreSubjects": [
+              "Engineering or applied science background",
+              "Physical fitness & aviation medicine",
+              "Systems training (spacecraft operations)"
+            ],
+            "jobRoles": [
+              "Astronaut (ISRO Gaganyaan Programme)",
+              "Astronaut (NASA / international space agencies, for those pursuing opportunities abroad)"
+            ],
+            "skills": [
+              "Extreme physical & mental fitness",
+              "Engineering/piloting background",
+              "Teamwork under high-pressure conditions"
+            ],
+            "higherStudies": [
+              "Engineering degree + often a master's; test pilot training is a common route"
+            ],
+            "topRecruiters": [
+              "ISRO (Gaganyaan Programme)",
+              "NASA and other international space agencies (for globally competitive candidates)"
+            ],
+            "futureScope": [
+              "India's human spaceflight program (Gaganyaan) is opening this path domestically for the first time"
+            ],
+            "duration": "Varies"
+          }
+        }
+      }
+    }
+  },
+  "bipc": {
+    "name": "BiPC",
+    "full": "Biology, Physics, Chemistry",
+    "color": "var(--line-bipc)",
+    "desc": "The medical & life-sciences stream — leads to MBBS, pharmacy, agriculture, nursing and biotech careers.",
+    "paths": {
+      "medical": {
+        "name": "Medical Degrees (MBBS & alternatives)",
+        "desc": "Full medical degrees — mainstream and traditional systems.",
+        "entrance": "NEET",
+        "children": {
+          "mbbs": {
+            "name": "MBBS — Medicine",
+            "desc": "5.5 year degree to become a doctor.",
+            "jobRoles": [
+              "Doctor (General/Specialist after PG)",
+              "Medical Officer"
+            ],
+            "skills": [
+              "Deep subject mastery in Biology/Chemistry",
+              "Long-term study discipline",
+              "Patience & empathy",
+              "NEET preparation"
+            ],
+            "higherStudies": [
+              "MD/MS (Specialization)",
+              "Super-specialization (DM/MCh)"
+            ],
+            "topRecruiters": [
+              "Government & private hospitals"
+            ],
+            "futureScope": [
+              "Consistently high demand, respected profession"
+            ],
+            "duration": "5.5 years"
+          },
+          "bds": {
+            "name": "BDS — Dental",
+            "desc": "Dentistry degree.",
+            "jobRoles": [
+              "Dentist",
+              "Oral Surgeon (after MDS)"
+            ],
+            "skills": [
+              "Precision & fine motor skills",
+              "Patient communication",
+              "Biology fundamentals"
+            ],
+            "higherStudies": [
+              "MDS (Specialization)"
+            ],
+            "topRecruiters": [
+              "Dental clinics & hospitals"
+            ],
+            "futureScope": [
+              "Growing private dental care market"
+            ],
+            "duration": "5 years"
+          },
+          "bams": {
+            "name": "BAMS — Ayurvedic Medicine",
+            "desc": "Ayurvedic medical degree.",
+            "coreSubjects": [
+              "Ayurvedic pharmacology",
+              "Anatomy",
+              "Panchakarma"
+            ],
+            "jobRoles": [
+              "Ayurvedic Doctor",
+              "Consultant"
+            ],
+            "skills": [
+              "Biology fundamentals",
+              "Patient care"
+            ],
+            "higherStudies": [
+              "MD (Ayurveda)"
+            ],
+            "topRecruiters": [
+              "Ayurvedic hospitals & wellness centers"
+            ],
+            "futureScope": [
+              "Growing interest in traditional & wellness medicine"
+            ],
+            "duration": "5.5 years"
+          },
+          "bhms": {
+            "name": "BHMS — Homeopathic Medicine",
+            "desc": "Homeopathic medical degree.",
+            "coreSubjects": [
+              "Homeopathic pharmacology",
+              "Materia Medica",
+              "Repertory"
+            ],
+            "jobRoles": [
+              "Homeopathic Doctor"
+            ],
+            "skills": [
+              "Biology fundamentals",
+              "Patient counselling"
+            ],
+            "higherStudies": [
+              "MD (Homeopathy)"
+            ],
+            "topRecruiters": [
+              "Homeopathic clinics & hospitals"
+            ],
+            "futureScope": [
+              "Steady demand in alternative medicine"
+            ],
+            "duration": "5.5 years"
+          },
+          "bums": {
+            "name": "BUMS — Unani Medicine",
+            "desc": "Unani medical degree.",
+            "coreSubjects": [
+              "Unani pharmacology",
+              "Anatomy",
+              "Ilaj-Bit-Tadbeer"
+            ],
+            "jobRoles": [
+              "Unani Doctor"
+            ],
+            "skills": [
+              "Biology fundamentals",
+              "Patient care"
+            ],
+            "higherStudies": [
+              "MD (Unani)"
+            ],
+            "topRecruiters": [
+              "Unani hospitals & clinics"
+            ],
+            "futureScope": [
+              "Niche, steady demand in traditional medicine"
+            ],
+            "duration": "5.5 years"
+          }
+        }
+      },
+      "pharmacynursing": {
+        "name": "Pharmacy & Nursing",
+        "desc": "Drug science & patient-care courses.",
+        "entrance": "EAMCET / State entrance",
+        "children": {
+          "bpharm": {
+            "name": "B.Pharm — Pharmacy",
+            "desc": "Study of drugs & medicine formulation.",
+            "jobRoles": [
+              "Pharmacist",
+              "Drug Inspector",
+              "R&D Associate in pharma companies"
+            ],
+            "skills": [
+              "Chemistry fundamentals",
+              "Attention to detail",
+              "Regulatory knowledge"
+            ],
+            "higherStudies": [
+              "M.Pharm",
+              "Pharm.D"
+            ],
+            "topRecruiters": [
+              "Cipla, Sun Pharma and other pharma companies"
+            ],
+            "futureScope": [
+              "Strong with growing pharma industry"
+            ],
+            "duration": "4 years"
+          },
+          "pharmd": {
+            "name": "Pharm.D",
+            "desc": "Doctor of Pharmacy — clinical pharmacy focus.",
+            "coreSubjects": [
+              "Clinical Pharmacy",
+              "Pharmacotherapeutics"
+            ],
+            "jobRoles": [
+              "Clinical Pharmacist",
+              "Hospital Pharmacist"
+            ],
+            "skills": [
+              "Clinical knowledge",
+              "Patient counselling"
+            ],
+            "higherStudies": [
+              "Further clinical specialization"
+            ],
+            "topRecruiters": [
+              "Hospitals & clinical research organizations"
+            ],
+            "futureScope": [
+              "Growing role in hospital-based patient care"
+            ],
+            "duration": "6 years"
+          },
+          "bscnursing": {
+            "name": "B.Sc Nursing",
+            "desc": "Patient care & clinical practice.",
+            "entrance": "State entrance exams",
+            "jobRoles": [
+              "Staff Nurse",
+              "Nurse Practitioner",
+              "Hospital Administrator"
+            ],
+            "skills": [
+              "Patient care skills",
+              "Stamina & composure under pressure",
+              "Clinical knowledge"
+            ],
+            "higherStudies": [
+              "M.Sc Nursing",
+              "Nurse Practitioner courses"
+            ],
+            "topRecruiters": [
+              "Hospitals (India & abroad)"
+            ],
+            "futureScope": [
+              "High global demand, strong abroad opportunities"
+            ],
+            "duration": "4 years"
+          },
+          "gnm": {
+            "name": "GNM — General Nursing & Midwifery",
+            "desc": "Diploma nursing course.",
+            "entrance": "State entrance exams",
+            "coreSubjects": [
+              "Nursing fundamentals",
+              "Midwifery",
+              "Community health"
+            ],
+            "jobRoles": [
+              "Staff Nurse",
+              "Midwife"
+            ],
+            "skills": [
+              "Patient care",
+              "Clinical procedures"
+            ],
+            "higherStudies": [
+              "B.Sc Nursing (via bridge course)"
+            ],
+            "topRecruiters": [
+              "Hospitals & clinics"
+            ],
+            "futureScope": [
+              "Faster entry into nursing than B.Sc route"
+            ],
+            "duration": "3 years"
+          }
+        }
+      },
+      "agriculture": {
+        "name": "Agriculture & Allied Sciences",
+        "desc": "Farming science, agri-business & related fields.",
+        "entrance": "ICAR / State entrance",
+        "children": {
+          "bscagri": {
+            "name": "B.Sc Agriculture",
+            "desc": "Core agricultural science degree.",
+            "jobRoles": [
+              "Agricultural Officer",
+              "Agri-Business Manager",
+              "Extension Officer"
+            ],
+            "skills": [
+              "Soil & crop science knowledge",
+              "Field work capability",
+              "Farmer communication"
+            ],
+            "higherStudies": [
+              "M.Sc Agriculture",
+              "MBA Agribusiness"
+            ],
+            "topRecruiters": [
+              "Government agri departments, agribusiness firms"
+            ],
+            "futureScope": [
+              "Steady with focus on agri-tech & food security"
+            ],
+            "duration": "4 years"
+          },
+          "horticulture": {
+            "name": "B.Sc Horticulture",
+            "desc": "Fruit, vegetable & ornamental plant science.",
+            "coreSubjects": [
+              "Fruit science",
+              "Vegetable science",
+              "Floriculture"
+            ],
+            "jobRoles": [
+              "Horticulture Officer",
+              "Farm Manager"
+            ],
+            "skills": [
+              "Plant science knowledge",
+              "Fieldwork"
+            ],
+            "higherStudies": [
+              "M.Sc Horticulture"
+            ],
+            "topRecruiters": [
+              "Government horticulture depts, agri-businesses"
+            ],
+            "futureScope": [
+              "Growing with commercial farming & exports"
+            ],
+            "duration": "4 years"
+          },
+          "forestry": {
+            "name": "B.Sc Forestry",
+            "desc": "Forest management & conservation.",
+            "coreSubjects": [
+              "Forest ecology",
+              "Wildlife management",
+              "Silviculture"
+            ],
+            "jobRoles": [
+              "Forest Officer",
+              "Conservation Scientist"
+            ],
+            "skills": [
+              "Fieldwork ability",
+              "Environmental knowledge"
+            ],
+            "higherStudies": [
+              "M.Sc Forestry",
+              "IFS (via UPSC)"
+            ],
+            "topRecruiters": [
+              "Forest departments, conservation NGOs"
+            ],
+            "futureScope": [
+              "Growing with environmental conservation focus"
+            ],
+            "duration": "4 years"
+          },
+          "fisheries": {
+            "name": "B.Sc Fisheries",
+            "desc": "Aquaculture & fisheries science.",
+            "coreSubjects": [
+              "Aquaculture",
+              "Fish processing",
+              "Marine biology"
+            ],
+            "jobRoles": [
+              "Fisheries Officer",
+              "Aquaculture Manager"
+            ],
+            "skills": [
+              "Fieldwork ability",
+              "Biology fundamentals"
+            ],
+            "higherStudies": [
+              "M.Sc Fisheries Science"
+            ],
+            "topRecruiters": [
+              "Fisheries departments, aquaculture companies"
+            ],
+            "futureScope": [
+              "Growing with rising aquaculture demand"
+            ],
+            "duration": "4 years"
+          },
+          "dairytech": {
+            "name": "Dairy Technology",
+            "desc": "Milk processing & dairy product science.",
+            "coreSubjects": [
+              "Dairy chemistry",
+              "Food processing",
+              "Quality control"
+            ],
+            "jobRoles": [
+              "Dairy Technologist",
+              "Quality Control Officer"
+            ],
+            "skills": [
+              "Food science knowledge",
+              "Process management"
+            ],
+            "higherStudies": [
+              "M.Tech Dairy Technology"
+            ],
+            "topRecruiters": [
+              "Amul and other dairy cooperatives & companies"
+            ],
+            "futureScope": [
+              "Steady with growing organized dairy sector"
+            ],
+            "duration": "4 years"
+          }
+        }
+      },
+      "alliedhealth": {
+        "name": "Allied Health Sciences",
+        "desc": "Specialised hospital & diagnostic support careers.",
+        "entrance": "State entrance exams",
+        "children": {
+          "bpt": {
+            "name": "BPT — Physiotherapy",
+            "desc": "Physical rehabilitation & therapy.",
+            "coreSubjects": [
+              "Anatomy",
+              "Exercise therapy",
+              "Rehabilitation"
+            ],
+            "jobRoles": [
+              "Physiotherapist"
+            ],
+            "skills": [
+              "Patient handling",
+              "Physical stamina"
+            ],
+            "higherStudies": [
+              "MPT (Master's)"
+            ],
+            "topRecruiters": [
+              "Hospitals, sports teams, rehab centers"
+            ],
+            "futureScope": [
+              "Growing with rising health & fitness awareness"
+            ],
+            "duration": "4.5 years"
+          },
+          "bmlt": {
+            "name": "BMLT — Medical Lab Technology",
+            "desc": "Diagnostic lab testing.",
+            "coreSubjects": [
+              "Clinical pathology",
+              "Microbiology",
+              "Biochemistry"
+            ],
+            "jobRoles": [
+              "Medical Lab Technologist"
+            ],
+            "skills": [
+              "Lab techniques",
+              "Attention to detail"
+            ],
+            "higherStudies": [
+              "M.Sc Medical Lab Technology"
+            ],
+            "topRecruiters": [
+              "Diagnostic labs & hospitals"
+            ],
+            "futureScope": [
+              "Steady with growing diagnostics industry"
+            ],
+            "duration": "3 years"
+          },
+          "radiology": {
+            "name": "Radiology Technology",
+            "desc": "Medical imaging technology.",
+            "coreSubjects": [
+              "Radiographic techniques",
+              "Imaging equipment",
+              "Radiation safety"
+            ],
+            "jobRoles": [
+              "Radiology Technologist"
+            ],
+            "skills": [
+              "Equipment handling",
+              "Precision"
+            ],
+            "higherStudies": [
+              "M.Sc Radiology/Imaging Technology"
+            ],
+            "topRecruiters": [
+              "Hospitals & diagnostic centers"
+            ],
+            "futureScope": [
+              "Growing with expanding diagnostic imaging use"
+            ],
+            "duration": "3 years"
+          },
+          "ottech": {
+            "name": "Operation Theatre Technology",
+            "desc": "Assisting in surgical procedures.",
+            "coreSubjects": [
+              "OT procedures",
+              "Sterilization",
+              "Anaesthesia assistance"
+            ],
+            "jobRoles": [
+              "OT Technician"
+            ],
+            "skills": [
+              "Precision under pressure",
+              "Hygiene protocols"
+            ],
+            "higherStudies": [
+              "M.Sc OT Technology"
+            ],
+            "topRecruiters": [
+              "Hospitals & surgical centers"
+            ],
+            "futureScope": [
+              "Steady hospital-based demand"
+            ],
+            "duration": "3 years"
+          },
+          "optometry": {
+            "name": "Optometry",
+            "desc": "Eye care & vision science.",
+            "coreSubjects": [
+              "Ocular anatomy",
+              "Vision science",
+              "Contact lens fitting"
+            ],
+            "jobRoles": [
+              "Optometrist"
+            ],
+            "skills": [
+              "Patient examination skills",
+              "Precision"
+            ],
+            "higherStudies": [
+              "M.Optom"
+            ],
+            "topRecruiters": [
+              "Eye hospitals, optical chains"
+            ],
+            "futureScope": [
+              "Growing with rising eye-care awareness"
+            ],
+            "duration": "4 years"
+          },
+          "dialysis": {
+            "name": "Dialysis Technology",
+            "desc": "Kidney dialysis treatment support.",
+            "coreSubjects": [
+              "Renal physiology",
+              "Dialysis procedures",
+              "Patient monitoring"
+            ],
+            "jobRoles": [
+              "Dialysis Technician"
+            ],
+            "skills": [
+              "Technical precision",
+              "Patient care"
+            ],
+            "higherStudies": [
+              "Advanced certification courses"
+            ],
+            "topRecruiters": [
+              "Hospitals & dialysis centers"
+            ],
+            "futureScope": [
+              "Rising demand with increasing kidney disease cases"
+            ],
+            "duration": "3 years"
+          },
+          "cardiaccare": {
+            "name": "Cardiac Care Technology",
+            "desc": "Supporting cardiac diagnosis & treatment.",
+            "coreSubjects": [
+              "Cardiac physiology",
+              "ECG/Echo techniques",
+              "Cath lab procedures"
+            ],
+            "jobRoles": [
+              "Cardiac Care Technologist"
+            ],
+            "skills": [
+              "Equipment handling",
+              "Attention to detail"
+            ],
+            "higherStudies": [
+              "Advanced cardiac certifications"
+            ],
+            "topRecruiters": [
+              "Cardiac hospitals & centers"
+            ],
+            "futureScope": [
+              "Growing with rising cardiac care needs"
+            ],
+            "duration": "3 years"
+          },
+          "respiratory": {
+            "name": "Respiratory Therapy",
+            "desc": "Treating breathing & lung disorders.",
+            "coreSubjects": [
+              "Respiratory physiology",
+              "Ventilator management",
+              "Pulmonary function tests"
+            ],
+            "jobRoles": [
+              "Respiratory Therapist"
+            ],
+            "skills": [
+              "Equipment handling",
+              "Patient care"
+            ],
+            "higherStudies": [
+              "Advanced respiratory care certifications"
+            ],
+            "topRecruiters": [
+              "ICUs & hospitals"
+            ],
+            "futureScope": [
+              "Rising demand post-pandemic awareness"
+            ],
+            "duration": "4 years"
+          },
+          "emt": {
+            "name": "Emergency Medical Technology",
+            "desc": "Emergency & trauma care.",
+            "coreSubjects": [
+              "Emergency response",
+              "Trauma care",
+              "Ambulance procedures"
+            ],
+            "jobRoles": [
+              "Emergency Medical Technician",
+              "Paramedic"
+            ],
+            "skills": [
+              "Quick decision-making",
+              "Physical fitness"
+            ],
+            "higherStudies": [
+              "Advanced paramedic certifications"
+            ],
+            "topRecruiters": [
+              "Hospitals, ambulance services"
+            ],
+            "futureScope": [
+              "Growing with expanding emergency care infrastructure"
+            ],
+            "duration": "3 years"
+          }
+        }
+      },
+      "science": {
+        "name": "Pure Life Sciences",
+        "desc": "Research-oriented biology degrees.",
+        "entrance": "College-level admissions",
+        "children": {
+          "biotechsci": {
+            "name": "Biotechnology",
+            "desc": "Applying biology to develop products & technology.",
+            "jobRoles": [
+              "Biotech Researcher",
+              "Lab Scientist",
+              "Quality Analyst"
+            ],
+            "skills": [
+              "Lab techniques",
+              "Research methodology",
+              "Attention to detail"
+            ],
+            "higherStudies": [
+              "M.Sc Biotechnology",
+              "PhD research"
+            ],
+            "topRecruiters": [
+              "Biotech & pharma companies"
+            ],
+            "futureScope": [
+              "Strong growth in biotech research & industry"
+            ],
+            "duration": "3 years"
+          },
+          "microbiology": {
+            "name": "Microbiology",
+            "desc": "Study of microorganisms.",
+            "coreSubjects": [
+              "Bacteriology",
+              "Virology",
+              "Immunology"
+            ],
+            "jobRoles": [
+              "Microbiologist",
+              "Lab Scientist"
+            ],
+            "skills": [
+              "Lab techniques",
+              "Research methodology"
+            ],
+            "higherStudies": [
+              "M.Sc Microbiology",
+              "PhD"
+            ],
+            "topRecruiters": [
+              "Pharma, food & research labs"
+            ],
+            "futureScope": [
+              "Growing with pharma & food safety industries"
+            ],
+            "duration": "3 years"
+          },
+          "biochemistry": {
+            "name": "Biochemistry",
+            "desc": "Chemical processes within living organisms.",
+            "coreSubjects": [
+              "Metabolism",
+              "Enzymology",
+              "Molecular biology"
+            ],
+            "jobRoles": [
+              "Biochemist",
+              "Research Associate"
+            ],
+            "skills": [
+              "Lab techniques",
+              "Analytical thinking"
+            ],
+            "higherStudies": [
+              "M.Sc Biochemistry",
+              "PhD"
+            ],
+            "topRecruiters": [
+              "Pharma & research institutions"
+            ],
+            "futureScope": [
+              "Strong for research-oriented careers"
+            ],
+            "duration": "3 years"
+          },
+          "genetics": {
+            "name": "Genetics",
+            "desc": "Study of heredity & genes.",
+            "coreSubjects": [
+              "Molecular genetics",
+              "Genomics",
+              "Bioinformatics basics"
+            ],
+            "jobRoles": [
+              "Geneticist",
+              "Research Assistant"
+            ],
+            "skills": [
+              "Lab techniques",
+              "Data analysis"
+            ],
+            "higherStudies": [
+              "M.Sc Genetics",
+              "PhD"
+            ],
+            "topRecruiters": [
+              "Research institutes & biotech firms"
+            ],
+            "futureScope": [
+              "Expanding with genomics & precision medicine"
+            ],
+            "duration": "3 years"
+          },
+          "zoology": {
+            "name": "Zoology",
+            "desc": "Study of animal life.",
+            "coreSubjects": [
+              "Animal physiology",
+              "Ecology",
+              "Taxonomy"
+            ],
+            "jobRoles": [
+              "Wildlife Biologist",
+              "Research Assistant",
+              "Teacher (after B.Ed)"
+            ],
+            "skills": [
+              "Fieldwork ability",
+              "Observation skills"
+            ],
+            "higherStudies": [
+              "M.Sc Zoology",
+              "PhD"
+            ],
+            "topRecruiters": [
+              "Wildlife/conservation organizations, research institutes"
+            ],
+            "futureScope": [
+              "Niche, steady in conservation & research"
+            ],
+            "duration": "3 years"
+          },
+          "botany": {
+            "name": "Botany",
+            "desc": "Study of plant life.",
+            "coreSubjects": [
+              "Plant physiology",
+              "Taxonomy",
+              "Ecology"
+            ],
+            "jobRoles": [
+              "Botanist",
+              "Research Assistant",
+              "Teacher (after B.Ed)"
+            ],
+            "skills": [
+              "Fieldwork ability",
+              "Lab skills"
+            ],
+            "higherStudies": [
+              "M.Sc Botany",
+              "PhD"
+            ],
+            "topRecruiters": [
+              "Research institutes, agri-companies"
+            ],
+            "futureScope": [
+              "Niche, steady in research & agriculture"
+            ],
+            "duration": "3 years"
+          },
+          "nutrition": {
+            "name": "Nutrition & Dietetics",
+            "desc": "Science of food & health.",
+            "coreSubjects": [
+              "Human nutrition",
+              "Diet planning",
+              "Food science"
+            ],
+            "jobRoles": [
+              "Dietitian",
+              "Nutrition Consultant"
+            ],
+            "skills": [
+              "Diet planning knowledge",
+              "Patient counselling"
+            ],
+            "higherStudies": [
+              "M.Sc Nutrition & Dietetics"
+            ],
+            "topRecruiters": [
+              "Hospitals, wellness & fitness companies"
+            ],
+            "futureScope": [
+              "Growing with rising health & wellness awareness"
+            ],
+            "duration": "3 years"
+          }
+        }
+      },
+      "veterinary": {
+        "name": "Veterinary Science",
+        "desc": "Animal healthcare.",
+        "entrance": "NEET",
+        "jobRoles": [
+          "Veterinary Doctor",
+          "Livestock Officer"
+        ],
+        "skills": [
+          "Animal handling",
+          "Biology fundamentals",
+          "Patience"
+        ],
+        "higherStudies": [
+          "MVSc (Master's)"
+        ],
+        "topRecruiters": [
+          "Government livestock depts, animal hospitals"
+        ],
+        "futureScope": [
+          "Steady demand tied to livestock & pet care industry"
+        ],
+        "duration": "5.5 years"
+      }
+    }
+  },
+  "mec": {
+    "name": "MEC",
+    "full": "Maths, Economics, Commerce",
+    "color": "var(--line-mec)",
+    "desc": "Combines maths with commerce/economics — leads to economics, analytics and finance-heavy careers.",
+    "paths": {
+      "commerce": {
+        "name": "Commerce (B.Com variants)",
+        "desc": "Different B.Com specialisations.",
+        "entrance": "College-level admissions / CUET",
+        "children": {
+          "bcomgeneral": {
+            "name": "B.Com General",
+            "desc": "Foundational commerce degree.",
+            "coreSubjects": [
+              "Financial Accounting",
+              "Business Law",
+              "Economics",
+              "Taxation"
+            ],
+            "jobRoles": [
+              "Accountant",
+              "Banking Associate",
+              "Finance Executive"
+            ],
+            "skills": [
+              "Accounting basics",
+              "Excel",
+              "Communication"
+            ],
+            "higherStudies": [
+              "M.Com",
+              "MBA"
+            ],
+            "topRecruiters": [
+              "Banks, accounting firms, corporates"
+            ],
+            "futureScope": [
+              "Stable, broad entry point into finance/commerce careers"
+            ],
+            "duration": "3 years"
+          },
+          "bcomcomputers": {
+            "name": "B.Com Computers",
+            "desc": "Commerce with computer applications.",
+            "coreSubjects": [
+              "Accounting",
+              "Computer Applications",
+              "Programming basics"
+            ],
+            "jobRoles": [
+              "Accounts Executive",
+              "ERP/Tally Executive"
+            ],
+            "skills": [
+              "Accounting + basic computer skills",
+              "Excel",
+              "Tally/ERP software"
+            ],
+            "higherStudies": [
+              "M.Com",
+              "MBA"
+            ],
+            "topRecruiters": [
+              "Accounting & IT-enabled finance firms"
+            ],
+            "futureScope": [
+              "Useful blend for finance + tech roles"
+            ],
+            "duration": "3 years"
+          },
+          "bcomhonours": {
+            "name": "B.Com Honours",
+            "desc": "Advanced, research-oriented commerce degree.",
+            "coreSubjects": [
+              "Advanced accounting",
+              "Corporate law",
+              "Financial management"
+            ],
+            "jobRoles": [
+              "Financial Analyst",
+              "Accountant"
+            ],
+            "skills": [
+              "Strong analytical skills",
+              "Accounting depth"
+            ],
+            "higherStudies": [
+              "M.Com",
+              "MBA",
+              "CA/CS alongside"
+            ],
+            "topRecruiters": [
+              "Corporates, audit & finance firms"
+            ],
+            "futureScope": [
+              "Strong foundation for CA/CS/finance careers"
+            ],
+            "duration": "3 years"
+          },
+          "bcomaccfin": {
+            "name": "B.Com Accounting & Finance",
+            "desc": "Specialised accounting & finance focus.",
+            "coreSubjects": [
+              "Financial Accounting",
+              "Corporate Finance",
+              "Auditing"
+            ],
+            "jobRoles": [
+              "Financial Analyst",
+              "Accounts Manager"
+            ],
+            "skills": [
+              "Accounting software",
+              "Financial modelling basics"
+            ],
+            "higherStudies": [
+              "M.Com Finance",
+              "MBA Finance"
+            ],
+            "topRecruiters": [
+              "Banks, financial services firms"
+            ],
+            "futureScope": [
+              "Good foundation for finance-specialist careers"
+            ],
+            "duration": "3 years"
+          },
+          "bcombankins": {
+            "name": "B.Com Banking & Insurance",
+            "desc": "Specialised banking & insurance focus.",
+            "coreSubjects": [
+              "Banking operations",
+              "Insurance principles",
+              "Risk management"
+            ],
+            "jobRoles": [
+              "Bank Associate",
+              "Insurance Executive"
+            ],
+            "skills": [
+              "Banking product knowledge",
+              "Customer service"
+            ],
+            "higherStudies": [
+              "MBA Banking & Finance"
+            ],
+            "topRecruiters": [
+              "Banks & insurance companies"
+            ],
+            "futureScope": [
+              "Direct pipeline into banking/insurance sector jobs"
+            ],
+            "duration": "3 years"
+          }
+        }
+      },
+      "management": {
+        "name": "Management (BBA/BBM)",
+        "desc": "General business administration degrees.",
+        "entrance": "College-level admissions / CUET",
+        "children": {
+          "bba": {
+            "name": "BBA",
+            "desc": "General management & business degree.",
+            "coreSubjects": [
+              "Business fundamentals",
+              "Marketing basics",
+              "Accounting basics",
+              "Organizational behaviour"
+            ],
+            "jobRoles": [
+              "Business Analyst",
+              "Management Trainee",
+              "Operations Executive"
+            ],
+            "skills": [
+              "Business fundamentals",
+              "Communication & presentation",
+              "Basic analytics"
+            ],
+            "higherStudies": [
+              "MBA — via CAT/MAT/CMAT"
+            ],
+            "topRecruiters": [
+              "Corporates across all sectors"
+            ],
+            "futureScope": [
+              "Strong if paired with an MBA later"
+            ],
+            "duration": "3 years"
+          },
+          "bbm": {
+            "name": "BBM — Business Management",
+            "desc": "Similar to BBA, business management focus.",
+            "coreSubjects": [
+              "Management principles",
+              "Marketing",
+              "Finance basics"
+            ],
+            "jobRoles": [
+              "Management Trainee",
+              "Business Development Executive"
+            ],
+            "skills": [
+              "Communication",
+              "Business fundamentals"
+            ],
+            "higherStudies": [
+              "MBA"
+            ],
+            "topRecruiters": [
+              "Corporates, retail & service companies"
+            ],
+            "futureScope": [
+              "Similar trajectory to BBA, strong with MBA"
+            ],
+            "duration": "3 years"
+          }
+        },
+        "jobRoles": [
+          "Labour/HR Manager",
+          "Business Consultant",
+          "Sales Executive"
+        ]
+      },
+      "professional": {
+        "name": "Professional Courses (CA/CMA/CS)",
+        "desc": "Multi-level professional certification courses.",
+        "entrance": "Institute-level foundation exams",
+        "children": {
+          "ca": {
+            "name": "CA — Chartered Accountancy",
+            "desc": "Multi-level professional exam (Foundation → Intermediate → Final) alongside articleship.",
+            "entrance": "ICAI Foundation Exam",
+            "jobRoles": [
+              "Chartered Accountant",
+              "Auditor",
+              "Tax Consultant"
+            ],
+            "skills": [
+              "Accounting fundamentals",
+              "Discipline for long exam prep",
+              "Attention to detail",
+              "Excel"
+            ],
+            "higherStudies": [
+              "Post-qualification specialisations (International Tax, etc.)"
+            ],
+            "topRecruiters": [
+              "Big 4 firms (Deloitte, EY, KPMG, PwC), corporates"
+            ],
+            "futureScope": [
+              "Consistently high demand, prestigious & well-paying"
+            ],
+            "duration": "Varies"
+          },
+          "cma": {
+            "name": "CMA — Cost & Management Accounting",
+            "desc": "Cost accounting & financial management.",
+            "entrance": "ICMAI Foundation Exam",
+            "jobRoles": [
+              "Cost Accountant",
+              "Financial Analyst"
+            ],
+            "skills": [
+              "Cost accounting",
+              "Financial analysis",
+              "Excel"
+            ],
+            "higherStudies": [
+              "Advanced CMA certifications (US CMA)"
+            ],
+            "topRecruiters": [
+              "Manufacturing & corporate finance departments"
+            ],
+            "futureScope": [
+              "Growing demand in cost & management accounting"
+            ],
+            "duration": "Varies"
+          },
+          "cs": {
+            "name": "CS — Company Secretary",
+            "desc": "Corporate law & governance professional course.",
+            "entrance": "ICSI Foundation Exam",
+            "jobRoles": [
+              "Company Secretary",
+              "Compliance Officer"
+            ],
+            "skills": [
+              "Corporate law knowledge",
+              "Documentation & compliance",
+              "Communication"
+            ],
+            "higherStudies": [
+              "Advanced corporate law certifications"
+            ],
+            "topRecruiters": [
+              "Corporates, law firms"
+            ],
+            "futureScope": [
+              "Steady demand for corporate governance roles"
+            ],
+            "duration": "Varies"
+          }
+        }
+      },
+      "economics": {
+        "name": "Economics Degrees",
+        "desc": "Theoretical & quantitative economics.",
+        "entrance": "College-level admissions / CUET",
+        "children": {
+          "baeconomics": {
+            "name": "BA Economics",
+            "desc": "Economic theory & policy.",
+            "coreSubjects": [
+              "Microeconomics",
+              "Macroeconomics",
+              "Statistics"
+            ],
+            "jobRoles": [
+              "Economist",
+              "Policy Analyst",
+              "Research Associate"
+            ],
+            "skills": [
+              "Statistics",
+              "Economic theory",
+              "Data analysis"
+            ],
+            "higherStudies": [
+              "MA Economics",
+              "MBA"
+            ],
+            "topRecruiters": [
+              "Research institutes, consulting firms, government"
+            ],
+            "futureScope": [
+              "Good foundation for policy, research & analytics careers"
+            ],
+            "duration": "3 years"
+          },
+          "bsceconomics": {
+            "name": "B.Sc Economics",
+            "desc": "Quantitative approach to economics.",
+            "coreSubjects": [
+              "Mathematical Economics",
+              "Econometrics",
+              "Statistics"
+            ],
+            "jobRoles": [
+              "Economic Analyst",
+              "Data Analyst"
+            ],
+            "skills": [
+              "Strong maths & statistics",
+              "Data analysis tools"
+            ],
+            "higherStudies": [
+              "MA/M.Sc Economics",
+              "MBA"
+            ],
+            "topRecruiters": [
+              "Analytics firms, research institutes"
+            ],
+            "futureScope": [
+              "Strong quantitative career foundation"
+            ],
+            "duration": "3 years"
+          }
+        }
+      },
+      "banking": {
+        "name": "Banking (Direct exams)",
+        "desc": "Enter banking directly via competitive exams after graduation.",
+        "entrance": "IBPS PO/Clerk, SBI PO",
+        "coreSubjects": [
+          "Quantitative aptitude",
+          "Reasoning",
+          "Banking awareness"
+        ],
+        "jobRoles": [
+          "Bank PO",
+          "Bank Clerk",
+          "Financial Analyst",
+          "Bank Manager (via promotion after PO)"
+        ],
+        "skills": [
+          "Quantitative aptitude",
+          "Reasoning",
+          "Current affairs & banking awareness"
+        ],
+        "higherStudies": [
+          "JAIIB/CAIIB (banking certifications)",
+          "MBA Banking"
+        ],
+        "topRecruiters": [
+          "SBI, IBPS-affiliated public sector banks"
+        ],
+        "futureScope": [
+          "Stable government-adjacent career with steady growth"
+        ],
+        "duration": "Not applicable"
+      },
+      "finance": {
+        "name": "Finance",
+        "desc": "Corporate finance & financial services careers.",
+        "entrance": "Via B.Com/BBA/MBA route",
+        "coreSubjects": [
+          "Financial management",
+          "Investment analysis",
+          "Corporate finance"
+        ],
+        "jobRoles": [
+          "Financial Analyst",
+          "Investment Analyst"
+        ],
+        "skills": [
+          "Financial modelling",
+          "Analytical thinking",
+          "Excel"
+        ],
+        "higherStudies": [
+          "MBA Finance",
+          "CFA certification"
+        ],
+        "topRecruiters": [
+          "Banks, NBFCs, financial services firms"
+        ],
+        "futureScope": [
+          "High-growth with expanding financial services sector"
+        ],
+        "duration": "Varies"
+      },
+      "investment": {
+        "name": "Investment",
+        "desc": "Careers in investment management & markets.",
+        "entrance": "Via B.Com/BBA/MBA route",
+        "coreSubjects": [
+          "Portfolio management",
+          "Equity & derivatives",
+          "Risk management"
+        ],
+        "jobRoles": [
+          "Investment Analyst",
+          "Portfolio Manager (with experience)"
+        ],
+        "skills": [
+          "Market analysis",
+          "CFA/NISM certifications",
+          "Analytical thinking"
+        ],
+        "higherStudies": [
+          "MBA Finance",
+          "CFA"
+        ],
+        "topRecruiters": [
+          "Asset management firms, brokerages"
+        ],
+        "futureScope": [
+          "Growing with expanding retail investing in India"
+        ],
+        "duration": "Varies"
+      },
+      "actuarial": {
+        "name": "Actuarial Science",
+        "desc": "Maths-heavy risk & insurance analysis.",
+        "entrance": "IFoA/Actuaries India exams (alongside a degree)",
+        "jobRoles": [
+          "Actuary",
+          "Risk Analyst"
+        ],
+        "skills": [
+          "Advanced maths & statistics",
+          "Passing actuarial exams progressively",
+          "Analytical precision"
+        ],
+        "higherStudies": [
+          "Progressive actuarial exams (Institute of Actuaries)"
+        ],
+        "topRecruiters": [
+          "Insurance & consulting firms"
+        ],
+        "futureScope": [
+          "High-paying, in-demand niche field"
+        ],
+        "duration": "Varies"
+      }
+    }
+  },
+  "cec": {
+    "name": "CEC",
+    "full": "Civics, Economics, Commerce",
+    "color": "var(--line-cec)",
+    "desc": "The civics & commerce stream — leads to law, business, hospitality and government-adjacent careers.",
+    "paths": {
+      "bcom": {
+        "name": "B.Com",
+        "desc": "General commerce degree.",
+        "entrance": "College-level admissions / CUET",
+        "coreSubjects": [
+          "Accounting",
+          "Business Law",
+          "Economics"
+        ],
+        "jobRoles": [
+          "Accountant",
+          "Banking Associate"
+        ],
+        "skills": [
+          "Accounting basics",
+          "Excel"
+        ],
+        "higherStudies": [
+          "M.Com",
+          "MBA"
+        ],
+        "topRecruiters": [
+          "Banks, accounting firms"
+        ],
+        "futureScope": [
+          "Broad entry into finance & commerce roles"
+        ],
+        "duration": "3 years"
+      },
+      "bba": {
+        "name": "BBA",
+        "desc": "Business management degree.",
+        "entrance": "College-level admissions / CUET",
+        "coreSubjects": [
+          "Business fundamentals",
+          "Marketing",
+          "Finance basics"
+        ],
+        "jobRoles": [
+          "Business Analyst",
+          "HR Executive"
+        ],
+        "skills": [
+          "Communication",
+          "Business fundamentals"
+        ],
+        "higherStudies": [
+          "MBA"
+        ],
+        "topRecruiters": [
+          "Corporates across sectors"
+        ],
+        "futureScope": [
+          "Strong with MBA later"
+        ],
+        "duration": "3 years"
+      },
+      "bbm": {
+        "name": "BBM",
+        "desc": "Business management degree, similar to BBA.",
+        "entrance": "College-level admissions / CUET",
+        "coreSubjects": [
+          "Management principles",
+          "Marketing"
+        ],
+        "jobRoles": [
+          "Management Trainee"
+        ],
+        "skills": [
+          "Communication",
+          "Business fundamentals"
+        ],
+        "higherStudies": [
+          "MBA"
+        ],
+        "topRecruiters": [
+          "Corporates, retail companies"
+        ],
+        "futureScope": [
+          "Similar to BBA trajectory"
+        ],
+        "duration": "3 years"
+      },
+      "ba": {
+        "name": "BA (Civics-focused)",
+        "desc": "Political science, economics & public administration.",
+        "entrance": "College-level admissions / CUET",
+        "children": {
+          "bapolisci": {
+            "name": "BA Political Science",
+            "desc": "Study of governance & politics.",
+            "coreSubjects": [
+              "Political theory",
+              "Indian politics",
+              "International relations"
+            ],
+            "jobRoles": [
+              "Government Officer",
+              "Policy Analyst",
+              "Teacher (after B.Ed)"
+            ],
+            "skills": [
+              "Analytical thinking",
+              "Writing ability"
+            ],
+            "higherStudies": [
+              "MA Political Science",
+              "Civil Services prep"
+            ],
+            "topRecruiters": [
+              "Government departments, NGOs, media"
+            ],
+            "futureScope": [
+              "Strong foundation for civil services & policy careers"
+            ],
+            "duration": "3 years"
+          },
+          "baeconomics": {
+            "name": "BA Economics",
+            "desc": "Economic theory with a civics/commerce lens.",
+            "coreSubjects": [
+              "Microeconomics",
+              "Macroeconomics",
+              "Indian economy"
+            ],
+            "jobRoles": [
+              "Economic Analyst",
+              "Government Officer"
+            ],
+            "skills": [
+              "Economic theory",
+              "Data analysis basics"
+            ],
+            "higherStudies": [
+              "MA Economics",
+              "Civil Services prep"
+            ],
+            "topRecruiters": [
+              "Government departments, research institutes"
+            ],
+            "futureScope": [
+              "Good foundation for civil services & policy roles"
+            ],
+            "duration": "3 years"
+          },
+          "bapublicadmin": {
+            "name": "BA Public Administration",
+            "desc": "Study of public policy & administration.",
+            "coreSubjects": [
+              "Public policy",
+              "Administrative law",
+              "Governance"
+            ],
+            "jobRoles": [
+              "Administrative Officer",
+              "Government Officer"
+            ],
+            "skills": [
+              "Analytical thinking",
+              "Understanding of governance systems"
+            ],
+            "higherStudies": [
+              "MA Public Administration",
+              "Civil Services prep"
+            ],
+            "topRecruiters": [
+              "Government departments"
+            ],
+            "futureScope": [
+              "Direct pipeline toward civil services careers"
+            ],
+            "duration": "3 years"
+          }
+        }
+      },
+      "llb": {
+        "name": "LLB — Law",
+        "desc": "Law degree (after graduation, 3 years) or integrated 5-year BA LLB.",
+        "entrance": "CLAT",
+        "coreSubjects": [
+          "Constitutional law",
+          "Contract law",
+          "Criminal law"
+        ],
+        "jobRoles": [
+          "Lawyer / Advocate",
+          "Legal Advisor"
+        ],
+        "skills": [
+          "Reading & argumentation",
+          "Research ability",
+          "Public speaking"
+        ],
+        "higherStudies": [
+          "LLM (Master of Law)",
+          "Judiciary exams"
+        ],
+        "topRecruiters": [
+          "Law firms, corporates, judiciary"
+        ],
+        "futureScope": [
+          "Strong & respected career, growing corporate legal demand"
+        ],
+        "duration": "3 or 5 years"
+      },
+      "journalism": {
+        "name": "Journalism & Mass Communication",
+        "desc": "Media, reporting & content careers.",
+        "entrance": "College-level entrance",
+        "coreSubjects": [
+          "Reporting",
+          "Media law",
+          "Editing",
+          "Digital media"
+        ],
+        "jobRoles": [
+          "Journalist",
+          "Content Writer",
+          "News Anchor"
+        ],
+        "skills": [
+          "Writing & storytelling",
+          "Communication"
+        ],
+        "higherStudies": [
+          "MA Journalism & Mass Communication"
+        ],
+        "topRecruiters": [
+          "News channels, publications, digital media companies"
+        ],
+        "futureScope": [
+          "Shifting fast toward digital & content-driven media"
+        ],
+        "duration": "3 years"
+      },
+      "hotelmanagement": {
+        "name": "Hotel Management",
+        "desc": "Hospitality & hotel operations degree.",
+        "entrance": "NCHM JEE",
+        "coreSubjects": [
+          "Food production",
+          "Housekeeping",
+          "Front office operations",
+          "Hospitality management"
+        ],
+        "jobRoles": [
+          "Hotel Manager",
+          "Front Office Executive",
+          "Chef"
+        ],
+        "skills": [
+          "Customer service",
+          "Multitasking",
+          "Communication"
+        ],
+        "higherStudies": [
+          "MBA Hospitality Management"
+        ],
+        "topRecruiters": [
+          "Taj, Oberoi, Marriott hotel chains"
+        ],
+        "futureScope": [
+          "Growing with India's tourism & hospitality sector"
+        ],
+        "duration": "3 years"
+      },
+      "traveltourism": {
+        "name": "Travel & Tourism",
+        "desc": "Tourism operations & travel management.",
+        "entrance": "College-level admissions",
+        "coreSubjects": [
+          "Tour operations",
+          "Travel geography",
+          "Customer service"
+        ],
+        "jobRoles": [
+          "Travel Consultant",
+          "Tour Manager"
+        ],
+        "skills": [
+          "Communication",
+          "Destination knowledge",
+          "Customer service"
+        ],
+        "higherStudies": [
+          "MBA Tourism Management"
+        ],
+        "topRecruiters": [
+          "Travel agencies, airlines, tourism boards"
+        ],
+        "futureScope": [
+          "Growing with rising domestic & international travel"
+        ],
+        "duration": "3 years"
+      },
+      "eventmanagement": {
+        "name": "Event Management",
+        "desc": "Planning & executing events.",
+        "entrance": "College-level admissions",
+        "coreSubjects": [
+          "Event planning",
+          "Marketing",
+          "Logistics management"
+        ],
+        "jobRoles": [
+          "Event Manager",
+          "Wedding Planner",
+          "Marketing Executive"
+        ],
+        "skills": [
+          "Organisation",
+          "Creativity",
+          "Client management"
+        ],
+        "higherStudies": [
+          "MBA Event/Marketing Management"
+        ],
+        "topRecruiters": [
+          "Event management companies, agencies"
+        ],
+        "futureScope": [
+          "Growing with expanding events & experiential marketing industry"
+        ],
+        "duration": "3 years"
+      },
+      "business": {
+        "name": "Business Owner / Entrepreneur",
+        "desc": "Starting and running your own business rather than working for someone else.",
+        "entrance": "No fixed entrance — a B.Com/BBA helps but isn't mandatory",
+        "coreSubjects": [
+          "Basic accounting",
+          "Marketing",
+          "Business law basics"
+        ],
+        "jobRoles": [
+          "Small Business Owner",
+          "Startup Founder",
+          "Trader/Retailer",
+          "Start a Startup Company"
+        ],
+        "skills": [
+          "Risk-taking",
+          "Basic financial planning",
+          "Sales & negotiation",
+          "Persistence"
+        ],
+        "higherStudies": [
+          "BBA/B.Com for foundation",
+          "MBA later for scaling a business"
+        ],
+        "topRecruiters": [
+          "Self-employed — success depends on the business idea and execution"
+        ],
+        "futureScope": [
+          "Government schemes like Mudra loans and Startup India make it easier to begin small"
+        ],
+        "duration": "Varies"
+      },
+      "realestate": {
+        "name": "Real Estate Agent / Broker",
+        "desc": "Helping people buy, sell, and rent property — earning through commission.",
+        "entrance": "No formal entrance — RERA agent registration required to operate legally in most states",
+        "coreSubjects": [
+          "Property law basics",
+          "Local market knowledge",
+          "Negotiation"
+        ],
+        "jobRoles": [
+          "Real Estate Agent",
+          "Property Broker",
+          "Real Estate Consultant"
+        ],
+        "skills": [
+          "Communication & negotiation",
+          "Local property market knowledge",
+          "Networking"
+        ],
+        "higherStudies": [
+          "RERA certification (mandatory to legally practice)",
+          "B.Com/BBA helps but isn't required"
+        ],
+        "topRecruiters": [
+          "Self-employed or with real estate agencies (e.g. NoBroker, Housing.com partners)"
+        ],
+        "futureScope": [
+          "Steady demand tied to real estate market growth in growing towns and cities"
+        ],
+        "duration": "Varies"
+      }
+    }
+  },
+  "hec": {
+    "name": "HEC",
+    "full": "History, Economics, Civics",
+    "color": "var(--line-hec)",
+    "desc": "The humanities & governance stream — leads to law, civil services, journalism, teaching and social work.",
+    "paths": {
+      "humanities": {
+        "name": "BA Humanities",
+        "desc": "History, political science, sociology, psychology — broad foundation for many paths.",
+        "entrance": "College-level admissions / CUET",
+        "children": {
+          "bahistory": {
+            "name": "BA History",
+            "desc": "Study of past events & civilizations.",
+            "coreSubjects": [
+              "Ancient/Medieval/Modern history",
+              "Historiography"
+            ],
+            "jobRoles": [
+              "Historian",
+              "Teacher (after B.Ed)",
+              "Researcher"
+            ],
+            "skills": [
+              "Research ability",
+              "Writing",
+              "Analytical thinking"
+            ],
+            "higherStudies": [
+              "MA History",
+              "Civil Services prep"
+            ],
+            "topRecruiters": [
+              "Educational institutions, research bodies, government"
+            ],
+            "futureScope": [
+              "Steady for teaching, research & civil services"
+            ],
+            "duration": "3 years"
+          },
+          "baeconomics": {
+            "name": "BA Economics",
+            "desc": "Economic theory & policy.",
+            "coreSubjects": [
+              "Microeconomics",
+              "Macroeconomics",
+              "Indian economy"
+            ],
+            "jobRoles": [
+              "Economic Analyst",
+              "Government Officer"
+            ],
+            "skills": [
+              "Economic theory",
+              "Data analysis basics"
+            ],
+            "higherStudies": [
+              "MA Economics",
+              "Civil Services prep"
+            ],
+            "topRecruiters": [
+              "Government departments, research institutes"
+            ],
+            "futureScope": [
+              "Good foundation for civil services & policy roles"
+            ],
+            "duration": "3 years"
+          },
+          "bapolisci": {
+            "name": "BA Political Science",
+            "desc": "Study of governance & politics.",
+            "coreSubjects": [
+              "Political theory",
+              "Indian politics",
+              "International relations"
+            ],
+            "jobRoles": [
+              "Government Officer",
+              "Policy Analyst",
+              "Teacher (after B.Ed)"
+            ],
+            "skills": [
+              "Analytical thinking",
+              "Writing ability"
+            ],
+            "higherStudies": [
+              "MA Political Science",
+              "Civil Services prep"
+            ],
+            "topRecruiters": [
+              "Government departments, NGOs, media"
+            ],
+            "futureScope": [
+              "Strong foundation for civil services & policy careers"
+            ],
+            "duration": "3 years"
+          },
+          "bapublicadmin": {
+            "name": "BA Public Administration",
+            "desc": "Study of public policy & administration.",
+            "coreSubjects": [
+              "Public policy",
+              "Administrative law",
+              "Governance"
+            ],
+            "jobRoles": [
+              "Administrative Officer",
+              "Government Officer"
+            ],
+            "skills": [
+              "Analytical thinking",
+              "Understanding of governance systems"
+            ],
+            "higherStudies": [
+              "MA Public Administration",
+              "Civil Services prep"
+            ],
+            "topRecruiters": [
+              "Government departments"
+            ],
+            "futureScope": [
+              "Direct pipeline toward civil services careers"
+            ],
+            "duration": "3 years"
+          },
+          "basociology": {
+            "name": "BA Sociology",
+            "desc": "Study of society & social behaviour.",
+            "coreSubjects": [
+              "Social theory",
+              "Research methods",
+              "Indian society"
+            ],
+            "jobRoles": [
+              "Social Researcher",
+              "Teacher (after B.Ed)",
+              "NGO Program Officer"
+            ],
+            "skills": [
+              "Research ability",
+              "Communication",
+              "Empathy"
+            ],
+            "higherStudies": [
+              "MA Sociology",
+              "MSW"
+            ],
+            "topRecruiters": [
+              "NGOs, research institutes, government"
+            ],
+            "futureScope": [
+              "Growing with focus on social development sector"
+            ],
+            "duration": "3 years"
+          },
+          "bapsychology": {
+            "name": "BA Psychology",
+            "desc": "Study of human behaviour & mind.",
+            "coreSubjects": [
+              "Cognitive psychology",
+              "Developmental psychology",
+              "Counselling basics"
+            ],
+            "jobRoles": [
+              "Counselor",
+              "HR Associate",
+              "Research Assistant"
+            ],
+            "skills": [
+              "Active listening",
+              "Empathy",
+              "Analytical thinking"
+            ],
+            "higherStudies": [
+              "MA/M.Sc Psychology",
+              "M.Phil Clinical Psychology"
+            ],
+            "topRecruiters": [
+              "Schools, hospitals, HR departments, NGOs"
+            ],
+            "futureScope": [
+              "Rapidly growing with rising mental health awareness"
+            ],
+            "duration": "3 years"
+          }
+        }
+      },
+      "bsw": {
+        "name": "BSW — Social Work",
+        "desc": "Professional social work degree.",
+        "entrance": "College-level admissions / CUET",
+        "coreSubjects": [
+          "Social work practice",
+          "Community development",
+          "Social policy"
+        ],
+        "jobRoles": [
+          "Social Worker",
+          "NGO Program Officer"
+        ],
+        "skills": [
+          "Empathy",
+          "Communication",
+          "Community engagement"
+        ],
+        "higherStudies": [
+          "MSW (Master of Social Work)"
+        ],
+        "topRecruiters": [
+          "NGOs, government welfare departments"
+        ],
+        "futureScope": [
+          "Growing with expanding social sector & CSR initiatives"
+        ],
+        "duration": "3 years"
+      },
+      "llb": {
+        "name": "LLB — Law",
+        "desc": "Law degree (after graduation) or integrated 5-year BA LLB.",
+        "entrance": "CLAT",
+        "coreSubjects": [
+          "Constitutional law",
+          "Contract law",
+          "Criminal law"
+        ],
+        "jobRoles": [
+          "Lawyer / Advocate",
+          "Legal Advisor"
+        ],
+        "skills": [
+          "Reading & argumentation",
+          "Research ability",
+          "Public speaking"
+        ],
+        "higherStudies": [
+          "LLM (Master of Law)",
+          "Judiciary exams"
+        ],
+        "topRecruiters": [
+          "Law firms, corporates, judiciary"
+        ],
+        "futureScope": [
+          "Strong & respected career, growing corporate legal demand"
+        ],
+        "duration": "3 or 5 years"
+      },
+      "journalism": {
+        "name": "Journalism & Mass Communication",
+        "desc": "Media, reporting & content careers.",
+        "entrance": "College-level entrance",
+        "coreSubjects": [
+          "Reporting",
+          "Media law",
+          "Editing",
+          "Digital media"
+        ],
+        "jobRoles": [
+          "Journalist",
+          "Content Writer",
+          "News Anchor"
+        ],
+        "skills": [
+          "Writing & storytelling",
+          "Communication"
+        ],
+        "higherStudies": [
+          "MA Journalism & Mass Communication"
+        ],
+        "topRecruiters": [
+          "News channels, publications, digital media companies"
+        ],
+        "futureScope": [
+          "Shifting fast toward digital & content-driven media"
+        ],
+        "duration": "3 years"
+      },
+      "librarysci": {
+        "name": "Library Science",
+        "desc": "Information & library management.",
+        "entrance": "College-level admissions / CUET",
+        "coreSubjects": [
+          "Library management",
+          "Information systems",
+          "Cataloguing"
+        ],
+        "jobRoles": [
+          "Librarian",
+          "Information Officer"
+        ],
+        "skills": [
+          "Organisation",
+          "Information management",
+          "Attention to detail"
+        ],
+        "higherStudies": [
+          "M.Lib.Sc"
+        ],
+        "topRecruiters": [
+          "Schools, colleges, public libraries, institutions"
+        ],
+        "futureScope": [
+          "Stable, niche demand across educational institutions"
+        ],
+        "duration": "3 years"
+      },
+      "teaching": {
+        "name": "Teaching (after B.Ed)",
+        "desc": "Becoming a school teacher via B.Ed after any BA.",
+        "entrance": "B.Ed entrance exams",
+        "coreSubjects": [
+          "Pedagogy",
+          "Child psychology",
+          "Subject specialization"
+        ],
+        "jobRoles": [
+          "School Teacher",
+          "Subject Coordinator"
+        ],
+        "skills": [
+          "Communication",
+          "Patience",
+          "Subject mastery"
+        ],
+        "higherStudies": [
+          "M.Ed",
+          "Further subject postgrad"
+        ],
+        "topRecruiters": [
+          "Government & private schools"
+        ],
+        "futureScope": [
+          "Stable, essential profession with steady demand"
+        ],
+        "duration": "Varies"
+      },
+      "civilservices": {
+        "name": "Civil Services (UPSC/APPSC)",
+        "desc": "Administrative services — usually pursued after any degree.",
+        "entrance": "UPSC / APPSC exams",
+        "jobRoles": [
+          "IAS / IPS Officer",
+          "State Civil Servant"
+        ],
+        "skills": [
+          "Current affairs knowledge",
+          "Long-term exam discipline",
+          "Writing ability",
+          "Leadership"
+        ],
+        "higherStudies": [
+          "Continuing in civil service cadre training"
+        ],
+        "topRecruiters": [
+          "UPSC/State PSC appointed government roles"
+        ],
+        "futureScope": [
+          "Highly prestigious, secure, impactful career"
+        ],
+        "duration": "Varies"
+      },
+      "politics": {
+        "name": "Politics / Public Representative",
+        "desc": "Serving your community as an elected representative — from local panchayat to state or national level.",
+        "entrance": "No formal entrance — minimum age varies by post (21 for MLA/MP, 21 for most local body elections)",
+        "coreSubjects": [
+          "Political science / public administration (helpful, not required)",
+          "Public speaking",
+          "Local governance"
+        ],
+        "jobRoles": [
+          "Panchayat/Ward Member",
+          "MLA",
+          "MP",
+          "Political Party Worker/Organizer"
+        ],
+        "skills": [
+          "Public speaking",
+          "Community organizing",
+          "Understanding local issues",
+          "Building trust"
+        ],
+        "higherStudies": [
+          "B.A. Political Science or Law degree often helps but is not mandatory"
+        ],
+        "topRecruiters": [
+          "Elected by the public — success depends on grassroots work and public trust"
+        ],
+        "futureScope": [
+          "A long-term path built through community involvement well before contesting elections"
+        ],
+        "duration": "Varies"
+      },
+      "professor": {
+        "name": "College Professor (any subject)",
+        "desc": "Teaching and researching at the college/university level, in any subject you specialize in — Engineering, Science, Commerce, Arts, and more.",
+        "entrance": "Postgraduate degree in your subject + UGC-NET/SET (or GATE for engineering fields) + PhD for higher posts",
+        "coreSubjects": [
+          "Deep subject specialization (varies by branch)",
+          "Research methodology"
+        ],
+        "jobRoles": [
+          "Assistant Professor",
+          "Associate Professor",
+          "Professor (with PhD & experience)"
+        ],
+        "skills": [
+          "Subject mastery",
+          "Research & publishing",
+          "Teaching & mentoring students"
+        ],
+        "higherStudies": [
+          "PhD in the subject (required for senior positions)",
+          "Post-doctoral research (optional)"
+        ],
+        "topRecruiters": [
+          "Government & private colleges/universities across every stream — Engineering, Science, Commerce, Arts"
+        ],
+        "futureScope": [
+          "Stable, respected career; PhD holders are increasingly in demand as colleges expand"
+        ],
+        "duration": "Varies"
+      },
+      "allindiaservices": {
+        "name": "All-India & Central Civil Services (IAS/IFS/IRS)",
+        "desc": "Specialized government services beyond general administration — forestry, revenue, and municipal leadership — mostly entered via UPSC exams.",
+        "entrance": "UPSC Civil Services Exam (for IAS/IRS) or UPSC Indian Forest Service Exam (for IFS) — after any bachelor's degree",
+        "coreSubjects": [
+          "General studies",
+          "Optional subject of choice",
+          "Public administration basics"
+        ],
+        "jobRoles": [
+          "Municipal Commissioner (senior IAS posting)",
+          "Forest Officer (Indian Forest Service — separate UPSC exam)",
+          "Income Tax Officer (Indian Revenue Service — Income Tax)",
+          "Customs Officer (Indian Revenue Service — Customs)"
+        ],
+        "skills": [
+          "General knowledge & current affairs",
+          "Long-term self-study discipline",
+          "Decision-making under pressure"
+        ],
+        "higherStudies": [
+          "Departmental training academies (LBSNAA, IFS Academy, National Academy of Direct Taxes) after selection"
+        ],
+        "topRecruiters": [
+          "Government of India — assigned to state/central cadres after selection"
+        ],
+        "futureScope": [
+          "Prestigious, stable careers with significant administrative or enforcement authority"
+        ],
+        "duration": "Varies"
+      },
+      "judiciary": {
+        "name": "Judiciary (Magistrate / Judge)",
+        "desc": "Serving as a judge — deciding cases rather than arguing them.",
+        "entrance": "LLB + State Judicial Services Exam (direct entry as Magistrate); District/High Court judges typically rise from years of practice or lower judiciary",
+        "coreSubjects": [
+          "Law (LLB, 3 or 5 years)",
+          "Constitutional & procedural law"
+        ],
+        "jobRoles": [
+          "Judicial Magistrate (via State Judicial Services Exam)",
+          "Civil Judge",
+          "District Judge (with experience)",
+          "High Court / Supreme Court Judge (senior appointment)"
+        ],
+        "skills": [
+          "Legal reasoning",
+          "Impartial judgment",
+          "Deep knowledge of law",
+          "Writing clear judgments"
+        ],
+        "higherStudies": [
+          "LLM (optional, helps for higher judiciary)"
+        ],
+        "topRecruiters": [
+          "State Judicial Services (via State Public Service Commissions)"
+        ],
+        "futureScope": [
+          "Respected, stable career; a long path from LLB through judicial exams or years of practice"
+        ],
+        "duration": "Varies"
+      }
+    }
+  },
+  "polytechnic": {
+    "name": "Polytechnic",
+    "full": "Diploma — direct after 10th (3 years)",
+    "color": "var(--line-poly)",
+    "desc": "A hands-on technical diploma you can join right after 10th, without doing intermediate first. Three years, practical + theory, and it keeps two doors open afterwards: a job, or lateral entry straight into 2nd year B.Tech.",
+    "afterCompletion": [
+      "Lateral entry to B.Tech 2nd year in a matching branch, via the ECET entrance exam — skips repeating 1st year",
+      "Direct jobs as Junior Engineer / Technician / Supervisor in your branch's industry",
+      "Government technical jobs via diploma-level exams: SSC JE, RRB JE (Railways), state PSC junior engineer posts",
+      "Higher diploma or specialised certification courses to move into a specific skill (e.g. CAD, embedded systems)",
+      "Start your own workshop, contracting, or servicing business using the trade skills learned"
+    ],
+    "paths": {
+      "dme": {
+        "name": "DME — Mechanical Engineering",
+        "desc": "Machines, manufacturing & maintenance.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Workshop practice",
+          "Machine drawing",
+          "Thermal engineering basics",
+          "Production technology"
+        ],
+        "jobRoles": [
+          "Junior Mechanical Engineer",
+          "Maintenance Technician",
+          "Production Supervisor",
+          "CAD Draftsman"
+        ],
+        "skills": [
+          "Hands-on workshop skills",
+          "AutoCAD/basic CAD",
+          "Reading engineering drawings",
+          "Machine maintenance basics"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech Mechanical"
+        ],
+        "topRecruiters": [
+          "Manufacturing & automotive companies"
+        ],
+        "futureScope": [
+          "Steady demand for skilled technicians"
+        ],
+        "duration": "3 years"
+      },
+      "dce": {
+        "name": "DCE — Civil Engineering",
+        "desc": "Construction, surveying & site work.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Surveying",
+          "Building construction",
+          "Estimation & costing",
+          "Construction materials"
+        ],
+        "jobRoles": [
+          "Site Supervisor",
+          "Junior Civil Engineer",
+          "Draftsman",
+          "Quantity Surveyor",
+          "Construction Manager (with experience)",
+          "Road Contractor / Building Contractor (self-employed, after experience)"
+        ],
+        "skills": [
+          "Surveying instruments",
+          "AutoCAD",
+          "Site measurement & estimation",
+          "On-site coordination"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech Civil"
+        ],
+        "topRecruiters": [
+          "Construction & infrastructure companies"
+        ],
+        "futureScope": [
+          "Consistent demand from construction sector"
+        ],
+        "duration": "3 years"
+      },
+      "deee": {
+        "name": "DEEE — Electrical & Electronics",
+        "desc": "Wiring, power systems & maintenance.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Electrical machines",
+          "Wiring practice",
+          "Power systems basics",
+          "Control panels"
+        ],
+        "jobRoles": [
+          "Junior Electrical Engineer",
+          "Maintenance Technician",
+          "Panel Wireman/Supervisor"
+        ],
+        "skills": [
+          "Circuit reading & wiring",
+          "Safety practices",
+          "Basic troubleshooting",
+          "Panel/PLC exposure"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech EEE"
+        ],
+        "topRecruiters": [
+          "Power & electrical companies"
+        ],
+        "futureScope": [
+          "Steady with electrification & infrastructure growth"
+        ],
+        "duration": "3 years"
+      },
+      "dece": {
+        "name": "DECE — Electronics & Communication",
+        "desc": "Circuits, devices & communication equipment.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Basic electronics",
+          "Digital circuits",
+          "Communication systems",
+          "Microcontrollers basics"
+        ],
+        "jobRoles": [
+          "Junior Electronics Technician",
+          "Field Service Engineer",
+          "Telecom Technician"
+        ],
+        "skills": [
+          "Circuit troubleshooting",
+          "Soldering & assembly",
+          "Basic microcontroller handling"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech ECE"
+        ],
+        "topRecruiters": [
+          "Electronics & telecom companies"
+        ],
+        "futureScope": [
+          "Growing with electronics manufacturing push"
+        ],
+        "duration": "3 years"
+      },
+      "dcse": {
+        "name": "DCSE — Computer Science",
+        "desc": "Programming & computer maintenance, practical focus.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Programming basics (C/Java)",
+          "Web development basics",
+          "Computer hardware & networking",
+          "DBMS basics"
+        ],
+        "jobRoles": [
+          "Junior Software Developer",
+          "Computer Hardware Technician",
+          "IT Support"
+        ],
+        "skills": [
+          "Basic programming",
+          "Networking fundamentals",
+          "Hardware troubleshooting"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech CSE"
+        ],
+        "topRecruiters": [
+          "IT services companies"
+        ],
+        "futureScope": [
+          "Good entry point into software/support roles"
+        ],
+        "duration": "3 years"
+      },
+      "automobile": {
+        "name": "Automobile Engineering",
+        "desc": "Vehicle design, servicing & manufacturing.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Automotive systems",
+          "Engine servicing",
+          "Vehicle maintenance",
+          "Manufacturing basics"
+        ],
+        "jobRoles": [
+          "Service Engineer",
+          "Junior Automobile Engineer",
+          "Quality Inspector"
+        ],
+        "skills": [
+          "Engine & vehicle systems knowledge",
+          "Hands-on servicing skills",
+          "Diagnostic tools"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech Automobile Engineering"
+        ],
+        "topRecruiters": [
+          "Automobile service & manufacturing companies"
+        ],
+        "futureScope": [
+          "Shifting toward EV servicing demand"
+        ],
+        "duration": "3 years"
+      },
+      "daiml": {
+        "name": "Diploma in AI & ML",
+        "desc": "Practical diploma in AI & machine learning.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Python basics",
+          "ML fundamentals",
+          "Data handling"
+        ],
+        "jobRoles": [
+          "Junior AI/ML Technician",
+          "Data Entry & Analysis Support"
+        ],
+        "skills": [
+          "Basic programming",
+          "ML fundamentals"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech AI & ML"
+        ],
+        "topRecruiters": [
+          "IT support & analytics firms"
+        ],
+        "futureScope": [
+          "Growing entry point into the AI industry"
+        ],
+        "duration": "3 years"
+      },
+      "daids": {
+        "name": "Diploma in AI & Data Science",
+        "desc": "Practical diploma in AI & data science.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Python basics",
+          "Data analysis fundamentals"
+        ],
+        "jobRoles": [
+          "Junior Data Analyst"
+        ],
+        "skills": [
+          "Basic programming",
+          "Data handling"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech AI & DS"
+        ],
+        "topRecruiters": [
+          "IT & analytics support companies"
+        ],
+        "futureScope": [
+          "Entry point into growing data science field"
+        ],
+        "duration": "3 years"
+      },
+      "dit": {
+        "name": "Diploma in Information Technology",
+        "desc": "IT fundamentals diploma.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Networking",
+          "Programming basics",
+          "Web development basics"
+        ],
+        "jobRoles": [
+          "IT Support Technician",
+          "Junior Web Developer"
+        ],
+        "skills": [
+          "Networking basics",
+          "Basic programming"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech IT"
+        ],
+        "topRecruiters": [
+          "IT services companies"
+        ],
+        "futureScope": [
+          "Steady demand for support & junior technical roles"
+        ],
+        "duration": "3 years"
+      },
+      "dcybersecurity": {
+        "name": "Diploma in Cyber Security",
+        "desc": "Practical security fundamentals diploma.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Networking basics",
+          "Security fundamentals"
+        ],
+        "jobRoles": [
+          "Junior Security Technician"
+        ],
+        "skills": [
+          "Networking basics",
+          "Security tools awareness"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech Cyber Security"
+        ],
+        "topRecruiters": [
+          "IT security support firms"
+        ],
+        "futureScope": [
+          "Growing entry point into cybersecurity field"
+        ],
+        "duration": "3 years"
+      },
+      "dchemical": {
+        "name": "Diploma in Chemical Engineering",
+        "desc": "Chemical process diploma.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Process operations",
+          "Plant safety"
+        ],
+        "jobRoles": [
+          "Plant Operator",
+          "Junior Process Technician"
+        ],
+        "skills": [
+          "Process knowledge",
+          "Safety awareness"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech Chemical Engineering"
+        ],
+        "topRecruiters": [
+          "Petrochemical & manufacturing plants"
+        ],
+        "futureScope": [
+          "Steady demand in process industries"
+        ],
+        "duration": "3 years"
+      },
+      "dmining": {
+        "name": "Diploma in Mining Engineering",
+        "desc": "Mining operations diploma.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Mine operations",
+          "Safety procedures"
+        ],
+        "jobRoles": [
+          "Mining Supervisor",
+          "Safety Officer"
+        ],
+        "skills": [
+          "Technical + safety knowledge",
+          "Fieldwork readiness"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech Mining Engineering"
+        ],
+        "topRecruiters": [
+          "Mining companies"
+        ],
+        "futureScope": [
+          "Stable in resource-rich regions"
+        ],
+        "duration": "3 years"
+      },
+      "dmetallurgical": {
+        "name": "Diploma in Metallurgical Engineering",
+        "desc": "Metals & materials diploma.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Metal processing",
+          "Material testing"
+        ],
+        "jobRoles": [
+          "Junior Metallurgical Technician"
+        ],
+        "skills": [
+          "Materials knowledge",
+          "Lab skills"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech Metallurgy"
+        ],
+        "topRecruiters": [
+          "Steel & metal manufacturing companies"
+        ],
+        "futureScope": [
+          "Steady demand tied to manufacturing sector"
+        ],
+        "duration": "3 years"
+      },
+      "dagricultural": {
+        "name": "Diploma in Agricultural Engineering",
+        "desc": "Farm technology diploma.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Farm machinery",
+          "Irrigation basics"
+        ],
+        "jobRoles": [
+          "Junior Agricultural Technician"
+        ],
+        "skills": [
+          "Technical + fieldwork skills"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech Agricultural Engineering"
+        ],
+        "topRecruiters": [
+          "Agri-equipment companies, government agri departments"
+        ],
+        "futureScope": [
+          "Steady with agri-mechanization growth"
+        ],
+        "duration": "3 years"
+      },
+      "dtextile": {
+        "name": "Diploma in Textile Technology",
+        "desc": "Textile manufacturing diploma.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Textile manufacturing",
+          "Fabric technology"
+        ],
+        "jobRoles": [
+          "Textile Production Supervisor"
+        ],
+        "skills": [
+          "Technical textile knowledge"
+        ],
+        "higherStudies": [
+          "Lateral entry to B.Tech Textile Engineering"
+        ],
+        "topRecruiters": [
+          "Textile mills & garment companies"
+        ],
+        "futureScope": [
+          "Strong in textile-hub regions"
+        ],
+        "duration": "3 years"
+      },
+      "dprinting": {
+        "name": "Diploma in Printing Technology",
+        "desc": "Printing & publishing technology diploma.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Printing processes",
+          "Prepress technology"
+        ],
+        "jobRoles": [
+          "Printing Technician",
+          "Production Supervisor"
+        ],
+        "skills": [
+          "Technical printing knowledge"
+        ],
+        "higherStudies": [
+          "Advanced printing/publishing courses"
+        ],
+        "topRecruiters": [
+          "Printing & packaging companies"
+        ],
+        "futureScope": [
+          "Steady niche demand in packaging & publishing"
+        ],
+        "duration": "3 years"
+      },
+      "darchitecture": {
+        "name": "Architecture Assistantship (Diploma)",
+        "desc": "Support role diploma for architecture & drafting.",
+        "entrance": "POLYCET / SBTET",
+        "coreSubjects": [
+          "Drafting",
+          "AutoCAD",
+          "Building basics"
+        ],
+        "jobRoles": [
+          "Draftsman",
+          "Architecture Assistant"
+        ],
+        "skills": [
+          "AutoCAD",
+          "Drawing & drafting"
+        ],
+        "higherStudies": [
+          "Lateral entry-adjacent routes into B.Arch (via separate entrance)"
+        ],
+        "topRecruiters": [
+          "Architecture & construction firms"
+        ],
+        "futureScope": [
+          "Steady support-role demand in construction industry"
+        ],
+        "duration": "3 years"
+      }
+    }
+  },
+  "iti": {
+    "name": "ITI",
+    "full": "Industrial Training Institute — direct after 10th (6 months–2 years)",
+    "color": "var(--line-iti)",
+    "desc": "Short-term trade courses focused entirely on hands-on technical skills — the fastest route into a skilled job.",
+    "afterCompletion": [
+      "Apply directly for skilled/semi-skilled jobs in your trade",
+      "Apprenticeship under the Apprenticeship Act with a stipend",
+      "Lateral entry to Diploma (Polytechnic) 2nd year in some states",
+      "Government technical jobs via ITI-level exams (Railways Group D/Track maintainer, etc.)"
+    ],
+    "paths": {
+      "electrician": {
+        "name": "Electrician",
+        "desc": "Wiring, electrical installation & maintenance.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Electrical wiring",
+          "Motor & control systems"
+        ],
+        "jobRoles": [
+          "Electrician",
+          "Maintenance Technician"
+        ],
+        "skills": [
+          "Wiring & safety practices",
+          "Basic troubleshooting"
+        ],
+        "higherStudies": [
+          "Advanced ITI certifications",
+          "Lateral entry to Diploma EEE"
+        ],
+        "topRecruiters": [
+          "Construction firms, factories, electrical contractors"
+        ],
+        "futureScope": [
+          "Steady, essential-skill demand everywhere"
+        ],
+        "duration": "2 years"
+      },
+      "fitter": {
+        "name": "Fitter",
+        "desc": "Assembling & fitting mechanical components.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Fitting & assembly",
+          "Machine tools"
+        ],
+        "jobRoles": [
+          "Fitter",
+          "Maintenance Technician"
+        ],
+        "skills": [
+          "Precision fitting",
+          "Tool handling"
+        ],
+        "higherStudies": [
+          "Lateral entry to Diploma Mechanical"
+        ],
+        "topRecruiters": [
+          "Manufacturing plants, workshops"
+        ],
+        "futureScope": [
+          "Steady demand in manufacturing sector"
+        ],
+        "duration": "2 years"
+      },
+      "welder": {
+        "name": "Welder",
+        "desc": "Joining metal parts using welding techniques.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Welding techniques",
+          "Metal joining safety"
+        ],
+        "jobRoles": [
+          "Welder",
+          "Fabrication Technician"
+        ],
+        "skills": [
+          "Welding precision",
+          "Safety practices"
+        ],
+        "higherStudies": [
+          "Advanced welding certifications (international codes)"
+        ],
+        "topRecruiters": [
+          "Construction, fabrication & shipbuilding companies"
+        ],
+        "futureScope": [
+          "High demand, including overseas opportunities"
+        ],
+        "duration": "1 year"
+      },
+      "turner": {
+        "name": "Turner",
+        "desc": "Operating lathe machines to shape metal.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Lathe operations",
+          "Metal machining"
+        ],
+        "jobRoles": [
+          "Turner",
+          "Machine Operator"
+        ],
+        "skills": [
+          "Precision machining",
+          "Tool handling"
+        ],
+        "higherStudies": [
+          "Lateral entry to Diploma Mechanical"
+        ],
+        "topRecruiters": [
+          "Manufacturing & machine tool companies"
+        ],
+        "futureScope": [
+          "Steady demand in precision manufacturing"
+        ],
+        "duration": "2 years"
+      },
+      "machinist": {
+        "name": "Machinist",
+        "desc": "Operating machine tools to produce precision parts.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "CNC/manual machining",
+          "Blueprint reading"
+        ],
+        "jobRoles": [
+          "Machinist",
+          "CNC Operator"
+        ],
+        "skills": [
+          "Precision machining",
+          "Reading technical drawings"
+        ],
+        "higherStudies": [
+          "CNC programming certifications"
+        ],
+        "topRecruiters": [
+          "Manufacturing & tooling companies"
+        ],
+        "futureScope": [
+          "Growing with CNC & precision manufacturing demand"
+        ],
+        "duration": "2 years"
+      },
+      "mechanicdiesel": {
+        "name": "Mechanic (Diesel)",
+        "desc": "Servicing & repairing diesel engines.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Diesel engine systems",
+          "Vehicle maintenance"
+        ],
+        "jobRoles": [
+          "Diesel Mechanic",
+          "Service Technician"
+        ],
+        "skills": [
+          "Engine diagnostics",
+          "Hands-on repair skills"
+        ],
+        "higherStudies": [
+          "Advanced automotive certifications"
+        ],
+        "topRecruiters": [
+          "Transport companies, service centers"
+        ],
+        "futureScope": [
+          "Steady demand tied to commercial vehicle fleet"
+        ],
+        "duration": "1 year"
+      },
+      "mechanicmv": {
+        "name": "Mechanic (Motor Vehicle)",
+        "desc": "Servicing & repairing cars & two-wheelers.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Vehicle systems",
+          "Engine servicing"
+        ],
+        "jobRoles": [
+          "Vehicle Mechanic",
+          "Service Technician"
+        ],
+        "skills": [
+          "Diagnostic skills",
+          "Hands-on repair"
+        ],
+        "higherStudies": [
+          "EV servicing certifications"
+        ],
+        "topRecruiters": [
+          "Automobile service centers, dealerships"
+        ],
+        "futureScope": [
+          "Shifting toward EV servicing — strong future demand"
+        ],
+        "duration": "2 years"
+      },
+      "copa": {
+        "name": "COPA — Computer Operator & Programming Assistant",
+        "desc": "Basic computer operations & office applications.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Computer fundamentals",
+          "MS Office",
+          "Basic programming"
+        ],
+        "jobRoles": [
+          "Computer Operator",
+          "Data Entry Operator",
+          "Office Assistant"
+        ],
+        "skills": [
+          "Typing & computer proficiency",
+          "MS Office"
+        ],
+        "higherStudies": [
+          "Advanced computer certifications, BCA (via bridge routes)"
+        ],
+        "topRecruiters": [
+          "Offices, government departments, BPOs"
+        ],
+        "futureScope": [
+          "Steady demand for basic computer/office roles"
+        ],
+        "duration": "1 year"
+      },
+      "stenographer": {
+        "name": "Stenographer",
+        "desc": "Shorthand & fast transcription for offices/courts.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Shorthand",
+          "Typing",
+          "Transcription"
+        ],
+        "jobRoles": [
+          "Stenographer",
+          "Personal Assistant"
+        ],
+        "skills": [
+          "Shorthand speed",
+          "Typing accuracy"
+        ],
+        "higherStudies": [
+          "Advanced stenography certifications"
+        ],
+        "topRecruiters": [
+          "Government offices, courts, corporates"
+        ],
+        "futureScope": [
+          "Niche, steady government-office demand"
+        ],
+        "duration": "1 year"
+      },
+      "plumber": {
+        "name": "Plumber",
+        "desc": "Pipe fitting & water/sanitation systems.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Pipefitting",
+          "Sanitary systems"
+        ],
+        "jobRoles": [
+          "Plumber",
+          "Maintenance Technician"
+        ],
+        "skills": [
+          "Pipefitting skills",
+          "Problem-solving"
+        ],
+        "higherStudies": [
+          "Advanced plumbing certifications"
+        ],
+        "topRecruiters": [
+          "Construction companies, facility management firms"
+        ],
+        "futureScope": [
+          "Steady, essential-skill demand everywhere"
+        ],
+        "duration": "1 year"
+      },
+      "refrigerationac": {
+        "name": "Refrigeration & Air Conditioning",
+        "desc": "Installing & servicing cooling systems.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Refrigeration systems",
+          "AC servicing"
+        ],
+        "jobRoles": [
+          "RAC Technician",
+          "Service Engineer"
+        ],
+        "skills": [
+          "Technical servicing skills",
+          "Diagnostic ability"
+        ],
+        "higherStudies": [
+          "Advanced HVAC certifications"
+        ],
+        "topRecruiters": [
+          "AC service companies, facility management firms"
+        ],
+        "futureScope": [
+          "Growing with rising AC/cooling demand"
+        ],
+        "duration": "2 years"
+      },
+      "wireman": {
+        "name": "Wireman",
+        "desc": "Electrical wiring for buildings & installations.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Building wiring",
+          "Electrical safety"
+        ],
+        "jobRoles": [
+          "Wireman",
+          "Electrical Technician"
+        ],
+        "skills": [
+          "Wiring skills",
+          "Safety practices"
+        ],
+        "higherStudies": [
+          "Advanced electrical certifications"
+        ],
+        "topRecruiters": [
+          "Construction & electrical contracting firms"
+        ],
+        "futureScope": [
+          "Steady demand tied to construction activity"
+        ],
+        "duration": "2 years"
+      },
+      "electronicsmechanic": {
+        "name": "Electronics Mechanic",
+        "desc": "Repairing electronic devices & equipment.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Electronic circuits",
+          "Device repair"
+        ],
+        "jobRoles": [
+          "Electronics Technician",
+          "Repair Engineer"
+        ],
+        "skills": [
+          "Circuit troubleshooting",
+          "Soldering"
+        ],
+        "higherStudies": [
+          "Lateral entry to Diploma ECE"
+        ],
+        "topRecruiters": [
+          "Electronics service centers, manufacturing units"
+        ],
+        "futureScope": [
+          "Steady demand for repair & servicing roles"
+        ],
+        "duration": "2 years"
+      },
+      "surveyor": {
+        "name": "Surveyor",
+        "desc": "Land measurement & mapping for construction.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Surveying instruments",
+          "Land measurement"
+        ],
+        "jobRoles": [
+          "Surveyor",
+          "Site Assistant"
+        ],
+        "skills": [
+          "Instrument handling",
+          "Precision measurement"
+        ],
+        "higherStudies": [
+          "Lateral entry to Diploma Civil"
+        ],
+        "topRecruiters": [
+          "Construction & infrastructure companies"
+        ],
+        "futureScope": [
+          "Steady demand tied to construction & real estate"
+        ],
+        "duration": "2 years"
+      },
+      "draughtsman": {
+        "name": "Draughtsman (Civil/Mechanical)",
+        "desc": "Preparing technical drawings & plans.",
+        "entrance": "Direct admission (10th marks-based)",
+        "coreSubjects": [
+          "Technical drawing",
+          "AutoCAD"
+        ],
+        "jobRoles": [
+          "Draughtsman",
+          "CAD Operator"
+        ],
+        "skills": [
+          "AutoCAD",
+          "Precision drawing"
+        ],
+        "higherStudies": [
+          "Lateral entry to Diploma Civil/Mechanical"
+        ],
+        "topRecruiters": [
+          "Construction & manufacturing companies"
+        ],
+        "futureScope": [
+          "Steady demand for technical drawing support roles"
+        ],
+        "duration": "2 years"
+      },
+      "driver": {
+        "name": "Professional Driver",
+        "desc": "Driving as a skilled profession — commercial, heavy vehicle, or government staff driver roles.",
+        "entrance": "10th pass + valid driving licence (light or heavy motor vehicle, based on role)",
+        "coreSubjects": [
+          "Traffic rules",
+          "Vehicle maintenance basics",
+          "Safe driving practice"
+        ],
+        "jobRoles": [
+          "Commercial Driver",
+          "Heavy Vehicle Driver",
+          "Govt. Staff Car Driver",
+          "Delivery/Cab Driver"
+        ],
+        "skills": [
+          "Safe driving",
+          "Basic vehicle troubleshooting",
+          "Route knowledge",
+          "Discipline"
+        ],
+        "higherStudies": [
+          "Heavy Motor Vehicle (HMV) licence for higher-paying roles"
+        ],
+        "topRecruiters": [
+          "Govt departments (staff car drivers), logistics companies, cab aggregators, private employers"
+        ],
+        "futureScope": [
+          "Steady demand; government staff driver posts (like in India Post) offer job security"
+        ],
+        "duration": "Varies"
+      }
+    }
+  },
+  "vocational": {
+    "name": "Vocational",
+    "full": "Vocational Courses — short-term, skill-focused after 10th",
+    "color": "var(--line-vocational)",
+    "desc": "Short vocational programs (6 months–2 years) in high-demand practical fields, often through NSDC/state skill missions.",
+    "paths": {
+      "agriculturevoc": {
+        "name": "Agriculture (Vocational)",
+        "desc": "Practical farming & agri-business skills.",
+        "entrance": "Direct/state skill mission admission",
+        "coreSubjects": [
+          "Crop management",
+          "Agri-business basics"
+        ],
+        "jobRoles": [
+          "Farm Supervisor",
+          "Agri-Input Sales Executive"
+        ],
+        "skills": [
+          "Practical farming knowledge",
+          "Basic agri-business skills"
+        ],
+        "higherStudies": [
+          "B.Sc Agriculture (via further study)"
+        ],
+        "topRecruiters": [
+          "Agri-input companies, farms"
+        ],
+        "futureScope": [
+          "Steady with growing organized agriculture"
+        ],
+        "duration": "Varies"
+      },
+      "healthcarevoc": {
+        "name": "Health Care (Vocational)",
+        "desc": "Entry-level healthcare support skills.",
+        "entrance": "Direct/state skill mission admission",
+        "coreSubjects": [
+          "Patient care basics",
+          "Hygiene & safety"
+        ],
+        "jobRoles": [
+          "Health Care Assistant",
+          "Home Care Attendant"
+        ],
+        "skills": [
+          "Basic patient care",
+          "First aid"
+        ],
+        "higherStudies": [
+          "GNM/B.Sc Nursing (via further study)"
+        ],
+        "topRecruiters": [
+          "Hospitals, home healthcare agencies"
+        ],
+        "futureScope": [
+          "Growing with expanding healthcare & elder-care needs"
+        ],
+        "duration": "Varies"
+      },
+      "tourismvoc": {
+        "name": "Tourism (Vocational)",
+        "desc": "Entry-level tourism & hospitality skills.",
+        "entrance": "Direct/state skill mission admission",
+        "coreSubjects": [
+          "Tourism basics",
+          "Customer service"
+        ],
+        "jobRoles": [
+          "Tourist Guide",
+          "Travel Desk Assistant"
+        ],
+        "skills": [
+          "Communication",
+          "Destination knowledge"
+        ],
+        "higherStudies": [
+          "Travel & Tourism degree (via further study)"
+        ],
+        "topRecruiters": [
+          "Travel agencies, tourism boards"
+        ],
+        "futureScope": [
+          "Growing with rising domestic tourism"
+        ],
+        "duration": "Varies"
+      },
+      "retailvoc": {
+        "name": "Retail (Vocational)",
+        "desc": "Retail sales & store operations skills.",
+        "entrance": "Direct/state skill mission admission",
+        "coreSubjects": [
+          "Retail operations",
+          "Sales techniques"
+        ],
+        "jobRoles": [
+          "Retail Sales Associate",
+          "Store Supervisor"
+        ],
+        "skills": [
+          "Customer service",
+          "Basic inventory management"
+        ],
+        "higherStudies": [
+          "BBA Retail Management (via further study)"
+        ],
+        "topRecruiters": [
+          "Retail chains, malls, e-commerce warehouses"
+        ],
+        "futureScope": [
+          "Steady with expanding organized retail sector"
+        ],
+        "duration": "Varies"
+      },
+      "computerappsvoc": {
+        "name": "Computer Applications (Vocational)",
+        "desc": "Basic computer & office skills.",
+        "entrance": "Direct/state skill mission admission",
+        "coreSubjects": [
+          "Computer fundamentals",
+          "Office applications"
+        ],
+        "jobRoles": [
+          "Computer Operator",
+          "Office Assistant"
+        ],
+        "skills": [
+          "MS Office",
+          "Typing & basic computer use"
+        ],
+        "higherStudies": [
+          "BCA/Diploma IT (via further study)"
+        ],
+        "topRecruiters": [
+          "Offices, BPOs, government departments"
+        ],
+        "futureScope": [
+          "Steady demand for basic computer-literate roles"
+        ],
+        "duration": "Varies"
+      },
+      "multimediavoc": {
+        "name": "Multimedia (Vocational)",
+        "desc": "Basic graphic design & multimedia skills.",
+        "entrance": "Direct/state skill mission admission",
+        "coreSubjects": [
+          "Graphic design basics",
+          "Video editing basics"
+        ],
+        "jobRoles": [
+          "Graphic Design Assistant",
+          "Multimedia Operator"
+        ],
+        "skills": [
+          "Basic design software",
+          "Creativity"
+        ],
+        "higherStudies": [
+          "Diploma in Multimedia/Animation (via further study)"
+        ],
+        "topRecruiters": [
+          "Design studios, media & advertising agencies"
+        ],
+        "futureScope": [
+          "Growing with rising digital content demand"
+        ],
+        "duration": "Varies"
+      },
+      "farmervoc": {
+        "name": "Farmer / Agri-Entrepreneur",
+        "desc": "Practical, modern farming — running your own land as a skilled, income-generating business rather than traditional subsistence farming.",
+        "entrance": "No formal entrance — open to anyone with access to land; training via Krishi Vigyan Kendra (KVK) is recommended",
+        "coreSubjects": [
+          "Soil & water management",
+          "Crop planning",
+          "Organic/precision farming basics",
+          "Farm economics"
+        ],
+        "jobRoles": [
+          "Progressive Farmer",
+          "Agri-Entrepreneur",
+          "FPO (Farmer Producer Organisation) Member/Leader"
+        ],
+        "skills": [
+          "Modern farming techniques",
+          "Basic accounting for farm income",
+          "Government scheme awareness (PM-KISAN, KCC loans)"
+        ],
+        "higherStudies": [
+          "Krishi Vigyan Kendra (KVK) short courses",
+          "B.Sc Agriculture (if pursuing formal study later)"
+        ],
+        "topRecruiters": [
+          "Self-employed; sells via local mandis, FPOs, or direct-to-consumer"
+        ],
+        "futureScope": [
+          "Strong push toward organic & precision farming, agri-tech tools (drones, sensors), and direct market access via FPOs"
+        ],
+        "duration": "Varies"
+      },
+      "ruralhealthworker": {
+        "name": "RMP — Rural Medical Practitioner / Health Worker",
+        "desc": "Recognized, legal entry points into serving your village or community in healthcare — without needing a full MBBS.",
+        "entrance": "10th/12th pass + certificate or diploma course (varies by role)",
+        "coreSubjects": [
+          "Basic primary healthcare",
+          "First aid & maternal-child health",
+          "Community health outreach"
+        ],
+        "jobRoles": [
+          "RMP (Registered Medical Practitioner, via MBBS route)",
+          "ANM (Auxiliary Nurse Midwife)",
+          "Multi-Purpose Health Worker (MPHW)",
+          "Community Health Officer (via B.Sc/Diploma)"
+        ],
+        "skills": [
+          "Basic clinical & first-aid skills",
+          "Community communication",
+          "Record-keeping for health programs"
+        ],
+        "higherStudies": [
+          "GNM Nursing",
+          "B.Sc Nursing",
+          "B.Sc Community Health"
+        ],
+        "topRecruiters": [
+          "Primary Health Centres (PHCs), National Health Mission, state health departments"
+        ],
+        "futureScope": [
+          "Steady government demand for rural healthcare staffing"
+        ],
+        "note": "Important: only a certified doctor (MBBS + State Medical Council registration) can legally diagnose and prescribe allopathic medicine. Titles like 'RMP' sold by private, unrecognized institutes for village-level practice without a medical degree are not legal authorization to practice medicine — pursue one of the certified roles above instead.",
+        "duration": "Varies"
+      },
+      "chef": {
+        "name": "Chef / Culinary Arts",
+        "desc": "Professional cooking — from hotel kitchens to running your own restaurant.",
+        "entrance": "Direct admission to Diploma/Certificate in Culinary Arts (some via NCHMCT JEE for degree route)",
+        "coreSubjects": [
+          "Food production",
+          "Kitchen management",
+          "Hygiene & food safety",
+          "Menu planning"
+        ],
+        "jobRoles": [
+          "Commis Chef",
+          "Sous Chef",
+          "Head Chef / Executive Chef",
+          "Restaurant Owner"
+        ],
+        "skills": [
+          "Cooking technique",
+          "Speed under pressure",
+          "Creativity",
+          "Team coordination"
+        ],
+        "higherStudies": [
+          "Advanced culinary diplomas",
+          "Specialization (baking, international cuisine)"
+        ],
+        "topRecruiters": [
+          "Hotels, restaurants, cruise lines, catering companies"
+        ],
+        "futureScope": [
+          "Strong growth with hospitality & food business expansion; skilled chefs are in demand abroad too"
+        ],
+        "duration": "Varies"
+      },
+      "security": {
+        "name": "Security Guard / Security Services",
+        "desc": "Protecting people, property, and premises — a widely available entry-level role.",
+        "entrance": "10th pass + basic physical fitness; private security agency training (PSARA licensed)",
+        "coreSubjects": [
+          "Basic security protocols",
+          "Physical fitness",
+          "Emergency response basics"
+        ],
+        "jobRoles": [
+          "Security Guard",
+          "Security Supervisor",
+          "Security Officer (with experience)"
+        ],
+        "skills": [
+          "Alertness",
+          "Discipline",
+          "Basic communication",
+          "Physical fitness"
+        ],
+        "higherStudies": [
+          "Supervisor-level certifications",
+          "Fire & safety courses for advancement"
+        ],
+        "topRecruiters": [
+          "Private security agencies, malls, corporate offices, residential societies, banks"
+        ],
+        "futureScope": [
+          "Consistent demand across malls, offices, and gated communities in growing towns"
+        ],
+        "duration": "Varies"
+      },
+      "filmmusic": {
+        "name": "Film & Music Direction",
+        "desc": "Directing films, music videos, or albums — leading the creative vision from script/sound to screen.",
+        "entrance": "No fixed entrance — film institutes (FTII, SRFTI) have entrance exams; many directors also learn on the job as assistants",
+        "coreSubjects": [
+          "Storytelling & screenwriting",
+          "Cinematography basics",
+          "Sound & music production"
+        ],
+        "jobRoles": [
+          "Film Director",
+          "Music Director/Composer",
+          "Assistant Director",
+          "Video/Content Director"
+        ],
+        "skills": [
+          "Creative vision",
+          "Team leadership",
+          "Technical understanding of camera/sound",
+          "Storytelling"
+        ],
+        "higherStudies": [
+          "Diploma from FTII/SRFTI or private film schools",
+          "Working as an assistant is the most common real path in"
+        ],
+        "topRecruiters": [
+          "Film production houses, OTT platforms, music labels, ad agencies"
+        ],
+        "futureScope": [
+          "OTT/streaming boom has massively increased demand for content and directors"
+        ],
+        "duration": "Varies"
+      },
+      "fashiondesign": {
+        "name": "Fashion Designer",
+        "desc": "Designing clothing and accessories — from sketch to finished garment.",
+        "entrance": "NIFT entrance exam (for top institutes) or direct admission to private fashion design diplomas",
+        "coreSubjects": [
+          "Garment construction",
+          "Textile knowledge",
+          "Illustration & design",
+          "Trend forecasting"
+        ],
+        "jobRoles": [
+          "Fashion Designer",
+          "Textile Designer",
+          "Costume Designer",
+          "Boutique Owner"
+        ],
+        "skills": [
+          "Sketching & design software",
+          "Sewing/pattern-making",
+          "Creativity",
+          "Trend awareness"
+        ],
+        "higherStudies": [
+          "NIFT/NID degree",
+          "Specialization (bridal, sustainable fashion, etc.)"
+        ],
+        "topRecruiters": [
+          "Fashion brands & labels, export houses, or self-employed as a designer/boutique owner"
+        ],
+        "futureScope": [
+          "Growing domestic fashion industry plus opportunities in sustainable/ethical fashion"
+        ],
+        "duration": "Varies"
+      },
+      "hairstyling": {
+        "name": "Hair Stylist / Beauty & Wellness",
+        "desc": "Professional hairstyling and salon work — a practical skill-based career with fast entry.",
+        "entrance": "No formal entrance — certificate/diploma courses from beauty academies (a few months to a year)",
+        "coreSubjects": [
+          "Hair cutting & styling techniques",
+          "Hair color theory",
+          "Client service basics"
+        ],
+        "jobRoles": [
+          "Hair Stylist",
+          "Salon Manager (with experience)",
+          "Salon Owner"
+        ],
+        "skills": [
+          "Precision & technique",
+          "Creativity",
+          "Client communication",
+          "Keeping up with trends"
+        ],
+        "higherStudies": [
+          "Advanced styling/coloring certifications from brands like L'Oréal, Toni & Guy academies"
+        ],
+        "topRecruiters": [
+          "Salons & spas, or self-employed running your own salon"
+        ],
+        "futureScope": [
+          "Steady demand; strong potential to become self-employed once skilled"
+        ],
+        "duration": "Varies"
+      }
+    }
+  },
+  "skilldev": {
+    "name": "Skill Dev",
+    "full": "Skill Development Courses — short courses to build one in-demand skill",
+    "color": "var(--line-skilldev)",
+    "desc": "Focused, short-term courses (weeks to months) that build one specific in-demand skill — often done alongside or after school.",
+    "paths": {
+      "programmingsd": {
+        "name": "Programming",
+        "desc": "Learning to code from scratch.",
+        "entrance": "Open enrollment (online/offline courses)",
+        "coreSubjects": [
+          "Programming fundamentals",
+          "Basic projects"
+        ],
+        "jobRoles": [
+          "Junior Programmer",
+          "Trainee Developer"
+        ],
+        "skills": [
+          "A programming language (Python/Java/C++)",
+          "Logical thinking"
+        ],
+        "higherStudies": [
+          "Formal degree (BCA/B.Tech) for career depth"
+        ],
+        "topRecruiters": [
+          "Startups, freelance projects, IT firms (entry level)"
+        ],
+        "futureScope": [
+          "Strong foundation for any tech career"
+        ],
+        "duration": "Varies"
+      },
+      "graphicdesignsd": {
+        "name": "Graphic Design",
+        "desc": "Visual design skills for print & digital media.",
+        "entrance": "Open enrollment",
+        "coreSubjects": [
+          "Design principles",
+          "Typography",
+          "Branding basics"
+        ],
+        "jobRoles": [
+          "Junior Graphic Designer",
+          "Freelance Designer"
+        ],
+        "skills": [
+          "Design software (Photoshop, Illustrator, Canva)",
+          "Creativity"
+        ],
+        "higherStudies": [
+          "Diploma/Degree in Design"
+        ],
+        "topRecruiters": [
+          "Design agencies, marketing teams, freelance clients"
+        ],
+        "futureScope": [
+          "Steady with growing digital content & branding needs"
+        ],
+        "duration": "Varies"
+      },
+      "digitalmarketingsd": {
+        "name": "Digital Marketing",
+        "desc": "Marketing products & brands online.",
+        "entrance": "Open enrollment",
+        "coreSubjects": [
+          "SEO",
+          "Social media marketing",
+          "Content marketing"
+        ],
+        "jobRoles": [
+          "Digital Marketing Executive",
+          "Social Media Manager"
+        ],
+        "skills": [
+          "SEO/SEM basics",
+          "Social media strategy",
+          "Analytics tools"
+        ],
+        "higherStudies": [
+          "MBA Marketing (later)"
+        ],
+        "topRecruiters": [
+          "Marketing agencies, e-commerce companies, startups"
+        ],
+        "futureScope": [
+          "Rapidly growing as businesses go digital"
+        ],
+        "duration": "Varies"
+      },
+      "videoeditingsd": {
+        "name": "Video Editing",
+        "desc": "Editing & producing video content.",
+        "entrance": "Open enrollment",
+        "coreSubjects": [
+          "Video editing techniques",
+          "Storytelling basics"
+        ],
+        "jobRoles": [
+          "Video Editor",
+          "Content Creator"
+        ],
+        "skills": [
+          "Editing software (Premiere Pro, Final Cut)",
+          "Storytelling"
+        ],
+        "higherStudies": [
+          "Diploma in Film/Media Production"
+        ],
+        "topRecruiters": [
+          "Media houses, YouTube creators, marketing agencies"
+        ],
+        "futureScope": [
+          "Growing fast with rising video content demand"
+        ],
+        "duration": "Varies"
+      },
+      "webdevsd": {
+        "name": "Web Development",
+        "desc": "Building websites & web applications.",
+        "entrance": "Open enrollment",
+        "coreSubjects": [
+          "Web fundamentals",
+          "Frontend basics"
+        ],
+        "jobRoles": [
+          "Junior Web Developer",
+          "Freelance Developer"
+        ],
+        "skills": [
+          "HTML/CSS/JavaScript",
+          "A framework (React) eventually"
+        ],
+        "higherStudies": [
+          "Formal degree (BCA/B.Tech) for career depth"
+        ],
+        "topRecruiters": [
+          "Web agencies, startups, freelance clients"
+        ],
+        "futureScope": [
+          "Consistently strong demand across all industries"
+        ],
+        "duration": "Varies"
+      },
+      "aidataanalyticssd": {
+        "name": "AI & Data Analytics",
+        "desc": "Practical intro to AI tools & data analysis.",
+        "entrance": "Open enrollment",
+        "coreSubjects": [
+          "Data analysis basics",
+          "Intro to AI/ML concepts"
+        ],
+        "jobRoles": [
+          "Junior Data Analyst",
+          "AI Tools Associate"
+        ],
+        "skills": [
+          "Excel/Python basics",
+          "Using AI tools effectively"
+        ],
+        "higherStudies": [
+          "Formal degree (Data Science/AI) for career depth"
+        ],
+        "topRecruiters": [
+          "Startups, analytics teams (entry level)"
+        ],
+        "futureScope": [
+          "One of the fastest-growing skill areas today"
+        ],
+        "duration": "Varies"
+      }
+    }
+  },
+  "defence": {
+    "name": "Defence",
+    "full": "Defence Career Preparation — Army, Navy & Air Force",
+    "color": "var(--line-defence)",
+    "desc": "Structured preparation paths for a career in the armed forces, starting right after 10th.",
+    "paths": {
+      "sainikschool": {
+        "name": "Sainik School / Military School",
+        "desc": "Residential schools preparing students for a defence career from a young age.",
+        "entrance": "AISSEE (All India Sainik Schools Entrance Exam)",
+        "coreSubjects": [
+          "Regular academics + military training & discipline"
+        ],
+        "jobRoles": [
+          "Prepares for NDA & other defence entries"
+        ],
+        "skills": [
+          "Physical fitness",
+          "Discipline",
+          "Academic strength"
+        ],
+        "higherStudies": [
+          "NDA after Class 12"
+        ],
+        "topRecruiters": [
+          "Feeds into Indian Armed Forces via NDA"
+        ],
+        "futureScope": [
+          "Strong pipeline into officer-level defence careers"
+        ],
+        "duration": "Varies"
+      },
+      "ndaprep": {
+        "name": "NDA Preparation (after 12th)",
+        "desc": "Preparing for the National Defence Academy exam during intermediate.",
+        "entrance": "NDA Exam (UPSC) + SSB Interview",
+        "coreSubjects": [
+          "Maths & English (NDA exam)",
+          "General knowledge",
+          "Physical training"
+        ],
+        "jobRoles": [
+          "Army / Navy / Air Force Officer (after training)"
+        ],
+        "skills": [
+          "Physical fitness",
+          "General knowledge",
+          "Quick decision-making"
+        ],
+        "higherStudies": [
+          "Training at NDA, IMA, Naval/Air Force Academy"
+        ],
+        "topRecruiters": [
+          "Indian Army, Navy, Air Force"
+        ],
+        "futureScope": [
+          "Prestigious, stable career with early leadership responsibility"
+        ],
+        "duration": "Varies"
+      },
+      "defenceplanning": {
+        "name": "General Defence Career Planning",
+        "desc": "Other ways to join defence forces without NDA — after 10th, 12th, or graduation.",
+        "entrance": "Varies: Agniveer (10th/12th), CDS (after graduation), technical entries",
+        "coreSubjects": [
+          "Physical training",
+          "Trade-specific technical training (post-selection)"
+        ],
+        "jobRoles": [
+          "Agniveer (Army/Navy/Air Force)",
+          "Soldier/Technical tradesman"
+        ],
+        "skills": [
+          "Physical fitness",
+          "Discipline",
+          "Basic technical aptitude (for technical trades)"
+        ],
+        "higherStudies": [
+          "Permanent Commission opportunities (limited, competitive)"
+        ],
+        "topRecruiters": [
+          "Indian Army, Navy, Air Force"
+        ],
+        "futureScope": [
+          "Multiple entry points for different qualification levels"
+        ],
+        "duration": "Varies"
+      }
+    }
+  },
+  "govtjobs": {
+    "name": "Govt Jobs",
+    "full": "Government Job Preparation — for stable, secure public sector careers",
+    "color": "var(--line-govtjobs)",
+    "desc": "Preparing for competitive government exams — the qualification you need depends on the exam, from 10th pass to graduate-level.",
+    "paths": {
+      "railways": {
+        "name": "Railways (RRB)",
+        "desc": "Jobs in Indian Railways via RRB exams.",
+        "entrance": "RRB Group D (10th pass), RRB NTPC/JE (12th/graduate)",
+        "coreSubjects": [
+          "Maths, reasoning & general science (as per exam level)"
+        ],
+        "jobRoles": [
+          "Track Maintainer",
+          "Junior Engineer",
+          "Station Master",
+          "Ticket Collector",
+          "Loco Pilot"
+        ],
+        "skills": [
+          "Quantitative aptitude",
+          "Reasoning",
+          "General awareness"
+        ],
+        "higherStudies": [
+          "Departmental promotions with experience"
+        ],
+        "topRecruiters": [
+          "Indian Railways"
+        ],
+        "futureScope": [
+          "Stable, secure government career with steady openings"
+        ],
+        "duration": "Not applicable"
+      },
+      "ssc": {
+        "name": "SSC (Staff Selection Commission)",
+        "desc": "Central government jobs via SSC exams.",
+        "entrance": "SSC CHSL (12th pass), SSC CGL (graduate)",
+        "coreSubjects": [
+          "Maths, reasoning, English, general knowledge"
+        ],
+        "jobRoles": [
+          "Clerk",
+          "Tax Assistant",
+          "Inspector (CGL)"
+        ],
+        "skills": [
+          "Quantitative aptitude",
+          "Reasoning",
+          "English & general awareness"
+        ],
+        "higherStudies": [
+          "Departmental promotions, further competitive exams"
+        ],
+        "topRecruiters": [
+          "Central government departments"
+        ],
+        "futureScope": [
+          "Stable, wide range of departments & postings"
+        ],
+        "duration": "Not applicable"
+      },
+      "police": {
+        "name": "Police & Paramilitary",
+        "desc": "State police and paramilitary force jobs.",
+        "entrance": "State Police Constable exam (10th/12th), SI exams (graduate)",
+        "coreSubjects": [
+          "Physical training",
+          "General knowledge & reasoning"
+        ],
+        "jobRoles": [
+          "Police Constable",
+          "Sub-Inspector (with further exams)"
+        ],
+        "skills": [
+          "Physical fitness",
+          "Discipline",
+          "General knowledge"
+        ],
+        "higherStudies": [
+          "Promotional exams within the force"
+        ],
+        "topRecruiters": [
+          "State Police, CRPF, BSF and other paramilitary forces"
+        ],
+        "futureScope": [
+          "Stable career with steady recruitment drives"
+        ],
+        "duration": "Not applicable"
+      },
+      "govbanking": {
+        "name": "Banking (Government)",
+        "desc": "Public sector bank jobs.",
+        "entrance": "IBPS PO/Clerk, SBI PO/Clerk (graduate level)",
+        "coreSubjects": [
+          "Maths, reasoning, English, banking awareness"
+        ],
+        "jobRoles": [
+          "Bank PO",
+          "Bank Clerk"
+        ],
+        "skills": [
+          "Quantitative aptitude",
+          "Reasoning",
+          "Banking awareness"
+        ],
+        "higherStudies": [
+          "JAIIB/CAIIB certifications, promotional exams"
+        ],
+        "topRecruiters": [
+          "SBI, public sector banks"
+        ],
+        "futureScope": [
+          "Stable with steady annual recruitment"
+        ],
+        "duration": "Not applicable"
+      },
+      "stategovt": {
+        "name": "State Government Jobs",
+        "desc": "State-level government posts across departments.",
+        "entrance": "State PSC exams (varies by post & qualification)",
+        "coreSubjects": [
+          "General studies",
+          "State-specific general knowledge"
+        ],
+        "jobRoles": [
+          "Village Revenue Officer",
+          "Junior Assistant",
+          "State Department Officer"
+        ],
+        "skills": [
+          "General knowledge",
+          "State-specific awareness",
+          "Reasoning"
+        ],
+        "higherStudies": [
+          "Departmental promotions, further competitive exams"
+        ],
+        "topRecruiters": [
+          "State government departments"
+        ],
+        "futureScope": [
+          "Stable, region-specific government career"
+        ],
+        "duration": "Not applicable"
+      },
+      "postal": {
+        "name": "India Post (Postman / GDS / Postal Assistant)",
+        "desc": "Joining India's postal department — from village-level Gramin Dak Sevak to Postal Assistant.",
+        "entrance": "GDS: 10th pass, merit-based on 10th marks, no written exam. Postman/Mail Guard: 12th pass. Postal Assistant: 12th pass + exam.",
+        "coreSubjects": [
+          "Local language proficiency",
+          "Basic computer knowledge"
+        ],
+        "jobRoles": [
+          "Gramin Dak Sevak (GDS)",
+          "Postman",
+          "Postal Assistant / Sorting Assistant",
+          "Branch Postmaster"
+        ],
+        "skills": [
+          "Reliability",
+          "Local area knowledge",
+          "Basic computer use",
+          "Customer service"
+        ],
+        "higherStudies": [
+          "Departmental promotion exams to Postal Assistant, Postmaster, and higher grades"
+        ],
+        "topRecruiters": [
+          "Department of Posts, Ministry of Communications, Government of India"
+        ],
+        "futureScope": [
+          "Steady government job with permanence after probation and a clear promotion path"
+        ],
+        "duration": "Not applicable"
+      }
+    }
+  }
+}

@@ -345,31 +345,11 @@
     </div>
     <div id="authBox" style="display:flex;align-items:center;gap:10px;font-size:14px;"></div>
   </header>
-
-
-
-
-  <div class="search-wrap" style="position:relative;max-width:1000px;margin:8px auto 0;padding:0 20px;">
-  <div style="display:flex;align-items:stretch;gap:10px;">
-    <div style="position:relative;flex:1;">
-      <input id="careerSearch" type="text"
-        placeholder="Search a career, e.g. 'data scientist'…"
-        style="width:100%;height:44px;padding:10px 14px;border-radius:8px;border:1px solid #ccc;box-sizing:border-box;font-size:15px;">
-      <div id="searchResults"
-        style="display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border:1px solid #ddd;border-radius:8px;margin-top:4px;max-height:320px;overflow-y:auto;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,.15);">
-      </div>
-    </div>
-
-    <a href="#/recommend"
-      class="btn"
-      style="height:44px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;">
-      🎯 Course Recommendation
-    </a>
-
+  <div class="search-wrap" style="position:relative;max-width:760px;margin:8px auto 0;padding:0 20px;">
+    <input id="careerSearch" type="text" placeholder="Search a career, e.g. 'data scientist'…"
+      style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #ccc;box-sizing:border-box;font-size:15px;">
+    <div id="searchResults" style="display:none;position:absolute;left:16px;right:16px;top:100%;background:#fff;border:1px solid #ddd;border-radius:8px;margin-top:4px;max-height:320px;overflow-y:auto;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,.15);"></div>
   </div>
-</div>
-
-
   <main id="main"></main>
   <footer>Built for Grama Vaani · Career routes for students after 10th class</footer>
 </div>
@@ -389,9 +369,6 @@ function parseHash(){
 }
 
 function render(){
-window.scrollTo(0, 0);
-  document.documentElement.scrollTop = 0;
-  document.body.scrollTop = 0;
   const parts = parseHash();
   const main = document.getElementById('main');
   const crumb = document.getElementById('crumb');
@@ -419,7 +396,6 @@ window.scrollTo(0, 0);
   if(parts[0] === 'saved'){ renderSavedPaths(); return; }
   if(parts[0] === 'courses'){ renderCourseComparison(); return; }
   if(parts[0] === 'exams'){ renderEntranceExams(); return; }
-  if(parts[0] === 'recommend'){ renderRecommendations(); return; }
 
   if(parts[0] === 'analytics'){
     if(!currentUser){
@@ -437,21 +413,13 @@ window.scrollTo(0, 0);
     return;
   }
 
-  if(parts[0] === 'students'){
-  renderStudentInterest();
-  return;
-}
-
-if(parts[0] === 'profile'){
-  renderProfile();
-  return;
-}
-
-if(parts[0] === 'admin-saved'){
+  if(parts[0] === 'students'){ renderStudentInterest(); return; }
+  if(parts[0] === 'admin-saved'){
   if(!currentUser){
     location.hash = '#/login';
     return;
   }
+
   if(!ADMIN_EMAILS.includes((currentUser.email || '').toLowerCase())){
     main.innerHTML = `
       <a class="back-link" href="#/">‹ Back to home</a>
@@ -588,7 +556,6 @@ function buildCourseComparisonData(){
           Array.isArray(node.higherStudies) && node.higherStudies.length
             ? node.higherStudies.join(', ')
             : '',
-	salary: node.salary || null,
         color: stream.color || 'var(--ink)',
         streamId,
         pathId: pathIds[0] || null,
@@ -604,9 +571,6 @@ function buildCourseComparisonData(){
   return options;
 }
 
-
-
-
 const ENTRANCE_EXAM_DATA = [
 
   {
@@ -615,17 +579,7 @@ const ENTRANCE_EXAM_DATA = [
     purpose: "Admission to participating engineering colleges and eligibility route for JEE Advanced.",
     suitable: "MPC / PCM students",
     stage: "After 12th",
-    note: "Check the current year NTA eligibility and participating-institute rules.",
-    courses: [
-  "B.Tech CSE",
-  "B.Tech AI & Data Science",
-  "B.Tech AI & Machine Learning",
-  "B.Tech IT",
-  "B.Tech ECE",
-  "B.Tech EEE",
-  "B.Tech Mechanical",
-  "B.Tech Civil"
-]
+    note: "Check the current year NTA eligibility and participating-institute rules."
   },
   {
     name: "JEE Advanced",
@@ -633,18 +587,7 @@ const ENTRANCE_EXAM_DATA = [
     purpose: "Entrance examination for undergraduate programmes at IITs, subject to eligibility.",
     suitable: "PCM students who meet JEE Advanced eligibility",
     stage: "After 12th",
-    note: "Eligibility and attempt rules change by year.",
-courses: [
-    "B.Tech CSE",
-    "B.Tech AI & Data Science",
-    "B.Tech AI & Machine Learning",
-    "B.Tech ECE",
-    "B.Tech Mechanical",
-    "B.Tech Civil",
-    "B.Tech Chemical",
-    "B.Tech Aerospace",
-    "B.Tech Biotechnology"
-  ]
+    note: "Eligibility and attempt rules change by year."
   },
   {
     name: "AP EAMCET / AP EAPCET",
@@ -652,21 +595,7 @@ courses: [
     purpose: "State-level admission route for participating professional courses in Andhra Pradesh.",
     suitable: "Eligible AP/other-state students",
     stage: "After 12th",
-    note: "Use the official notification for the current year's exact eligibility and counselling rules.",
-courses: [
-    "B.Tech CSE",
-    "B.Tech AI & Data Science",
-    "B.Tech AI & Machine Learning",
-    "B.Tech IT",
-    "B.Tech ECE",
-    "B.Tech EEE",
-    "B.Tech Mechanical",
-    "B.Tech Civil",
-    "B.Tech Chemical",
-    "B.Tech Agricultural Engineering",
-    "B.Sc Agriculture",
-    "B.Pharm"
-  ]
+    note: "Use the official notification for the current year's exact eligibility and counselling rules."
   },
   {
     name: "NEET-UG",
@@ -674,16 +603,7 @@ courses: [
     purpose: "National entrance route for undergraduate medical education and other programmes covered by the current rules.",
     suitable: "BiPC / PCB students",
     stage: "After 12th",
-    note: "Check the current NTA and counselling authority rules for the exact course.",
-courses: [
-    "MBBS",
-    "BDS",
-    "BAMS",
-    "BHMS",
-    "BUMS",
-    "B.Sc Nursing",
-    "Veterinary Science"
-  ]
+    note: "Check the current NTA and counselling authority rules for the exact course."
   },
   {
     name: "CUET-UG",
@@ -691,22 +611,7 @@ courses: [
     purpose: "Common entrance route used by participating universities for undergraduate admissions.",
     suitable: "Students meeting the selected university/course requirements",
     stage: "After 12th",
-    note: "Subject combinations and participating universities vary by year.",
-courses: [
-    "B.Sc Computer Science",
-    "B.Sc Physics",
-    "B.Sc Mathematics",
-    "B.Sc Statistics",
-    "B.Sc Data Science",
-    "BCA",
-    "BBA",
-    "B.Com",
-    "BA Economics",
-    "BA Political Science",
-    "BA History",
-    "BA Psychology",
-    "BSW"
-  ]
+    note: "Subject combinations and participating universities vary by year."
   },
   {
     name: "NDA",
@@ -714,12 +619,7 @@ courses: [
     purpose: "UPSC examination route for entry to National Defence Academy pathways.",
     suitable: "Eligible 12th-pass candidates",
     stage: "After 12th",
-    note: "Check the latest UPSC notification for age, education, gender and physical requirements.",
-courses: [
-  "NDA — Defense",
-  "NDA Preparation"
-]
-
+    note: "Check the latest UPSC notification for age, education, gender and physical requirements."
   },
   {
     name: "NATA",
@@ -727,193 +627,92 @@ courses: [
     purpose: "Aptitude examination used for architecture admissions under the applicable rules.",
     suitable: "Students meeting B.Arch eligibility",
     stage: "After 12th",
-    note: "Confirm current Council of Architecture and institution admission requirements.",
-courses: [
-  "Architecture"
-]
+    note: "Confirm current Council of Architecture and institution admission requirements."
   }
 ];
-
-
-
-
 
 function renderCourseComparison(){
   const main = document.getElementById('main');
   const crumb = document.getElementById('crumb');
-
   setCrumb(crumb, [{label:'Compare Courses', hash:'courses'}]);
 
-  /*
-   * Stream -> Course 1 -> Course 2
-   * Course 1 and Course 2 are always taken from the
-   * currently selected stream.
-   */
-  const coursesByStream = {};
+  const comparisonData = buildCourseComparisonData();
 
-  function collectCourses(streamId, stream, node, pathIds, breadcrumb){
-    if(!node || typeof node !== 'object') return;
-
-    const name =
-      node.name ||
-      pathIds[pathIds.length - 1] ||
-      'Course';
-
-    const trail = breadcrumb.concat(name);
-
-    if(
-      node.children &&
-      typeof node.children === 'object' &&
-      Object.keys(node.children).length > 0
-    ){
-      for(const [childId, child] of Object.entries(node.children)){
-        collectCourses(
-          streamId,
-          stream,
-          child,
-          pathIds.concat(childId),
-          trail
-        );
-      }
-      return;
-    }
-
-    if(!coursesByStream[streamId]){
-      coursesByStream[streamId] = {
-        id: streamId,
-        name: stream.name || streamId,
-        courses: []
-      };
-    }
-
-    coursesByStream[streamId].courses.push({
-      id: `${streamId}/${pathIds.join('/')}`,
-      name: name,
-      stream: stream.name || streamId,
-      streamId: streamId,
-      breadcrumb: trail.slice(1).join(' → '),
-
-      duration:
-        node.duration ||
-        node.courseDuration ||
-        node.durationYears ||
-        'Not specified',
-
-      entrance:
-        node.entrance ||
-        'See current admission notification',
-
-      focus:
-        node.focus ||
-        node.desc ||
-        (
-          Array.isArray(node.coreSubjects)
-            ? node.coreSubjects.join(', ')
-            : 'Not specified'
-        ),
-
-      careers:
-        Array.isArray(node.jobRoles) && node.jobRoles.length
-          ? node.jobRoles.join(', ')
-          : 'Not specified',
-
-      skills:
-        Array.isArray(node.skills) && node.skills.length
-          ? node.skills.join(', ')
-          : 'Not specified',
-
-      higherStudies:
-        Array.isArray(node.higherStudies) && node.higherStudies.length
-          ? node.higherStudies.join(', ')
-          : 'Not specified',
-	salary: node.salary || null,
-    });
-  }
-
-
-
-
-
-  for(const [streamId, stream] of Object.entries(DATA || {})){
-    if(!stream) continue;
-
-    for(const [pathId, pathNode] of Object.entries(stream.paths || {})){
-      collectCourses(
-        streamId,
-        stream,
-        pathNode,
-        [pathId],
-        [stream.name || streamId]
-      );
-    }
-  }
-
-  const streamList = Object.values(coursesByStream);
-
-  if(!streamList.length){
+  if(comparisonData.length < 2){
     main.innerHTML = `
       <a class="back-link" href="#/">‹ Back to home</a>
       <div class="page-head">
         <div class="code">CAREER TOOLS</div>
         <h1>Compare Courses</h1>
-        <p>No courses are currently available.</p>
+        <p>Career data is still loading or fewer than two comparison options are available.</p>
       </div>
     `;
     return;
   }
 
-  const escapeHtml = value =>
-    String(value ?? '')
-      .replace(/&/g,'&amp;')
-      .replace(/</g,'&lt;')
-      .replace(/>/g,'&gt;')
-      .replace(/"/g,'&quot;')
-      .replace(/'/g,'&#039;');
+  const streamOptions = comparisonData.filter(c => c.type === 'stream');
+  const courseOptions = comparisonData.filter(c => c.type === 'course');
+
+  const makeOptions = (selectedId) => {
+    let html = '';
+
+    if(streamOptions.length){
+      html += `
+        <optgroup label="Streams">
+          ${streamOptions.map(c => `
+            <option value="${c.id}" ${c.id === selectedId ? 'selected' : ''}>
+              ${c.name}
+            </option>
+          `).join('')}
+        </optgroup>
+      `;
+    }
+
+    const groupedCourses = {};
+    for(const course of courseOptions){
+      const key = course.stream || 'Other';
+      if(!groupedCourses[key]) groupedCourses[key] = [];
+      groupedCourses[key].push(course);
+    }
+
+    for(const [streamName, courses] of Object.entries(groupedCourses)){
+      html += `
+        <optgroup label="${streamName} — Courses">
+          ${courses.map(c => `
+            <option value="${c.id}" ${c.id === selectedId ? 'selected' : ''}>
+              ${c.name}${c.breadcrumb ? ` — ${c.breadcrumb}` : ''}
+            </option>
+          `).join('')}
+        </optgroup>
+      `;
+    }
+
+    return html;
+  };
+
+  const firstId = comparisonData[0].id;
+  const secondId = comparisonData[1].id;
 
   main.innerHTML = `
     <a class="back-link" href="#/">‹ Back to home</a>
 
     <div class="page-head">
       <div class="code">CAREER TOOLS</div>
-      <h1>Compare Courses</h1>
+      <h1>Compare Courses & Streams</h1>
       <p>
-        Select a stream first, then choose any two courses
-        from that same stream.
+        Compare every stream and every final course/career path available
+        in the backend data.
       </p>
     </div>
 
     <div style="
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:14px;
       margin-bottom:18px;
     ">
-
-      <label style="
-        font-size:0.82rem;
-        font-weight:600;
-      ">
-        Stream
-
-        <select id="compareStream" style="
-          display:block;
-          width:100%;
-          margin-top:6px;
-          padding:11px;
-          border:1px solid var(--rail);
-          border-radius:8px;
-          background:var(--card);
-          color:var(--ink);
-          font:inherit;
-        "></select>
-      </label>
-
-      <label style="
-        font-size:0.82rem;
-        font-weight:600;
-      ">
-        Course 1
-
+      <label style="font-size:0.82rem;font-weight:600;">
+        Course / Stream 1
         <select id="compareCourse1" style="
           display:block;
           width:100%;
@@ -922,17 +721,14 @@ function renderCourseComparison(){
           border:1px solid var(--rail);
           border-radius:8px;
           background:var(--card);
-          color:var(--ink);
           font:inherit;
-        "></select>
+        ">
+          ${makeOptions(firstId)}
+        </select>
       </label>
 
-      <label style="
-        font-size:0.82rem;
-        font-weight:600;
-      ">
-        Course 2
-
+      <label style="font-size:0.82rem;font-weight:600;">
+        Course / Stream 2
         <select id="compareCourse2" style="
           display:block;
           width:100%;
@@ -941,14 +737,14 @@ function renderCourseComparison(){
           border:1px solid var(--rail);
           border-radius:8px;
           background:var(--card);
-          color:var(--ink);
           font:inherit;
-        "></select>
+        ">
+          ${makeOptions(secondId)}
+        </select>
       </label>
-
     </div>
 
-    <div id="compareInfo" style="
+    <div style="
       margin-bottom:18px;
       padding:12px 14px;
       background:var(--paper-deep);
@@ -956,132 +752,44 @@ function renderCourseComparison(){
       border-radius:8px;
       font-size:0.8rem;
       color:var(--ink-soft);
-    "></div>
+    ">
+      <strong>${streamOptions.length}</strong> streams ·
+      <strong>${courseOptions.length}</strong> courses / career paths available
+    </div>
 
     <div id="comparisonTable"></div>
   `;
 
-  const streamSelect = document.getElementById('compareStream');
-  const course1Select = document.getElementById('compareCourse1');
-  const course2Select = document.getElementById('compareCourse2');
-  const compareInfo = document.getElementById('compareInfo');
-  const comparisonTable = document.getElementById('comparisonTable');
+  const getItem = (id) => comparisonData.find(c => c.id === id);
 
-  streamSelect.innerHTML = streamList.map((stream,index) => `
-    <option value="${escapeHtml(stream.id)}" ${index === 0 ? 'selected' : ''}>
-      ${escapeHtml(stream.name)}
-    </option>
-  `).join('');
+  const escapeHtml = (value) => String(value ?? '')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#039;');
 
-  function getSelectedStream(){
-    return coursesByStream[streamSelect.value] || {
-      id: streamSelect.value,
-      name: streamSelect.value,
-      courses: []
-    };
-  }
+  const renderComparison = () => {
+    const c1 = getItem(document.getElementById('compareCourse1').value);
+    const c2 = getItem(document.getElementById('compareCourse2').value);
 
-  function populateCourses(){
-    const selectedStream = getSelectedStream();
-    const courses = selectedStream.courses || [];
-
-    compareInfo.innerHTML = `
-      <strong>${escapeHtml(selectedStream.name)}</strong>
-      — ${courses.length} course/career path${courses.length === 1 ? '' : 's'} available.
-      ${courses.length >= 2
-        ? ' Choose any two courses from this stream.'
-        : ' At least two courses are required for comparison.'}
-    `;
-
-    if(courses.length < 2){
-      course1Select.innerHTML = courses.length
-        ? `<option value="${escapeHtml(courses[0].id)}">${escapeHtml(courses[0].name)}</option>`
-        : `<option value="">No courses available</option>`;
-
-      course2Select.innerHTML =
-        `<option value="">No second course available</option>`;
-
-      course1Select.disabled = courses.length === 0;
-      course2Select.disabled = true;
-      comparisonTable.innerHTML = '';
-      return;
-    }
-
-    course1Select.disabled = false;
-    course2Select.disabled = false;
-
-    course1Select.innerHTML = courses.map((course,index) => `
-      <option value="${escapeHtml(course.id)}" ${index === 0 ? 'selected' : ''}>
-        ${escapeHtml(course.name)}
-      </option>
-    `).join('');
-
-    course2Select.innerHTML = courses.map((course,index) => `
-      <option value="${escapeHtml(course.id)}" ${index === 1 ? 'selected' : ''}>
-        ${escapeHtml(course.name)}
-      </option>
-    `).join('');
-
-    renderComparison();
-  }
-
-  function renderComparison(){
-    const selectedStream = getSelectedStream();
-    const courses = selectedStream.courses || [];
-
-    if(courses.length < 2){
-      comparisonTable.innerHTML = '';
-      return;
-    }
-
-    let c1 = courses.find(c => c.id === course1Select.value);
-    let c2 = courses.find(c => c.id === course2Select.value);
-
-    if(!c1) c1 = courses[0];
-    if(!c2) c2 = courses[1];
-
-    if(c1.id === c2.id){
-      const replacement = courses.find(c => c.id !== c1.id);
-      if(replacement){
-        c2 = replacement;
-        course2Select.value = replacement.id;
-      }
-    }
-
-
-
+    if(!c1 || !c2) return;
 
     const rows = [
-  ['Stream', selectedStream.name, selectedStream.name],
-  ['Course', c1.name, c2.name],
-  ['Course path', c1.breadcrumb || 'Not specified', c2.breadcrumb || 'Not specified'],
-  ['Duration', c1.duration || 'Not specified', c2.duration || 'Not specified'],
+      ["Type", c1.type === 'stream' ? 'Stream' : 'Course / Career Path',
+                c2.type === 'stream' ? 'Stream' : 'Course / Career Path'],
+      ["Name", c1.name, c2.name],
+      ["Stream", c1.stream, c2.stream],
+      ["Duration", c1.duration, c2.duration],
+      ["Entrance route", c1.entrance, c2.entrance],
+      ["Main focus", c1.focus, c2.focus],
+      ["Career options", c1.careers, c2.careers],
+      ["Important skills", c1.skills, c2.skills],
+      ["Higher studies", c1.higherStudies || 'See individual course/path',
+                         c2.higherStudies || 'See individual course/path']
+    ];
 
-  ['Fresher salary',
-    c1.salary?.fresher || 'Not specified',
-    c2.salary?.fresher || 'Not specified'
-  ],
-
-  ['Mid-level salary',
-    c1.salary?.midLevel || 'Not specified',
-    c2.salary?.midLevel || 'Not specified'
-  ],
-
-  ['Senior salary',
-    c1.salary?.senior || 'Not specified',
-    c2.salary?.senior || 'Not specified'
-  ],
-
-  ['Entrance route', c1.entrance || 'Not specified', c2.entrance || 'Not specified'],
-  ['Main focus', c1.focus || 'Not specified', c2.focus || 'Not specified'],
-  ['Career options', c1.careers || 'Not specified', c2.careers || 'Not specified'],
-  ['Important skills', c1.skills || 'Not specified', c2.skills || 'Not specified'],
-  ['Higher studies', c1.higherStudies || 'Not specified', c2.higherStudies || 'Not specified']
-];
-
-
-
-    comparisonTable.innerHTML = `
+    document.getElementById('comparisonTable').innerHTML = `
       <div style="overflow-x:auto;">
         <table style="
           width:100%;
@@ -1117,28 +825,28 @@ function renderCourseComparison(){
           </thead>
 
           <tbody>
-            ${rows.map(row => `
+            ${rows.map(r => `
               <tr>
                 <td style="
                   padding:12px;
                   border-bottom:1px solid var(--rail);
                   font-weight:700;
                   vertical-align:top;
-                ">${escapeHtml(row[0])}</td>
+                ">${escapeHtml(r[0])}</td>
 
                 <td style="
                   padding:12px;
                   border-bottom:1px solid var(--rail);
                   border-left:1px solid var(--rail);
                   vertical-align:top;
-                ">${escapeHtml(row[1] || 'Not specified')}</td>
+                ">${escapeHtml(r[1])}</td>
 
                 <td style="
                   padding:12px;
                   border-bottom:1px solid var(--rail);
                   border-left:1px solid var(--rail);
                   vertical-align:top;
-                ">${escapeHtml(row[2] || 'Not specified')}</td>
+                ">${escapeHtml(r[2])}</td>
               </tr>
             `).join('')}
           </tbody>
@@ -1150,18 +858,22 @@ function renderCourseComparison(){
         color:var(--ink-soft);
         margin-top:10px;
       ">
-        Both courses belong to the selected stream.
-        Verify current admission requirements before applying.
+        Course and stream options are generated from the career data returned
+        by the backend. Admission requirements and entrance names should be
+        verified against the current official notification.
       </p>
     `;
-  }
+  };
 
-  streamSelect.addEventListener('change', populateCourses);
-  course1Select.addEventListener('change', renderComparison);
-  course2Select.addEventListener('change', renderComparison);
+  document.getElementById('compareCourse1')
+    .addEventListener('change', renderComparison);
 
-  populateCourses();
+  document.getElementById('compareCourse2')
+    .addEventListener('change', renderComparison);
+
+  renderComparison();
 }
+
 function renderEntranceExams(){
   const main = document.getElementById('main');
   const crumb = document.getElementById('crumb');
@@ -1182,45 +894,6 @@ function renderEntranceExams(){
 
     <div id="examList" class="stations" style="--lc:var(--ink);margin-top:0;"></div>
   `;
-const COURSE_LINKS = {
-  "B.Tech CSE": "#/mpc/engineering/cse",
-  "B.Tech AI & Data Science": "#/mpc/engineering/aids",
-  "B.Tech AI & Machine Learning": "#/mpc/engineering/aiml",
-  "B.Tech IT": "#/mpc/engineering/it",
-  "B.Tech ECE": "#/mpc/engineering/ece",
-  "B.Tech EEE": "#/mpc/engineering/eee",
-  "B.Tech Mechanical": "#/mpc/engineering/mechanical",
-  "B.Tech Civil": "#/mpc/engineering/civil",
-  "B.Tech Chemical": "#/mpc/engineering/chemical",
-  "B.Tech Agricultural Engineering": "#/mpc/engineering/agricultural",
-  "B.Sc Agriculture": "#/bipc/agriculture/bscagri",
-  "B.Pharm": "#/bipc/pharmacynursing/bpharm",
-  "MBBS": "#/bipc/medical/mbbs",
-  "BDS": "#/bipc/medical/bds",
-  "BAMS": "#/bipc/medical/bams",
-  "BHMS": "#/bipc/medical/bhms",
-  "BUMS": "#/bipc/medical/bums",
-  "B.Sc Nursing": "#/bipc/pharmacynursing/bscnursing",
-  "Veterinary Science": "#/bipc/veterinary",
-  "B.Sc Computer Science": "#/mpc/degree/bsc_cs",
-  "B.Sc Physics": "#/mpc/degree/bsc_physics",
-  "B.Sc Mathematics": "#/mpc/degree/bsc_maths",
-  "B.Sc Statistics": "#/mpc/degree/bsc_stats",
-  "B.Sc Data Science": "#/mpc/degree/bsc_datascience",
-  "BCA": "#/mpc/degree/bca",
-  "BBA": "#/mpc/degree/bba",
-  "B.Com": "#/cec/bcom",
-  "BA Economics": "#/cec/ba/baeconomics",
-  "BA Political Science": "#/cec/ba/bapolisci",
-  "BA History": "#/hec/humanities/bahistory",
-  "BA Psychology": "#/hec/humanities/bapsychology",
-  "BSW": "#/hec/bsw",
-  "NDA — Defense": "#/mpc/nda",
-"NDA Preparation": "#/defence/ndaprep",
-"Architecture": "#/mpc/architecture"
-};
-
-
 
   const renderExams = (query='') => {
     const q = query.trim().toLowerCase();
@@ -1245,23 +918,6 @@ const COURSE_LINKS = {
           <div class="station-desc"><strong>Stage:</strong> ${e.stage}</div>
           <div class="station-desc" style="margin-top:7px;">${e.purpose}</div>
           <div class="station-desc" style="margin-top:6px;">${e.note}</div>
-	  ${e.courses && e.courses.length ? `
-  <div class="station-desc" style="margin-top:12px;">
-    <strong>Courses available:</strong>
-    <ul style="margin:6px 0 0 20px; padding:0;">
-
-      ${e.courses.map(course => `
-  <li style="margin:3px 0;">
-    ${COURSE_LINKS[course]
-      ? `<a href="${COURSE_LINKS[course]}" style="color:inherit;text-decoration:underline;">${course}</a>`
-      : course}
-  </li>
-`).join('')}
-
-
-    </ul>
-  </div>
-` : ''}
         </div>
       </div>
     `).join('');
@@ -1270,1219 +926,6 @@ const COURSE_LINKS = {
   document.getElementById('examSearch').addEventListener('input', e => renderExams(e.target.value));
   renderExams();
 }
-
-
-  function renderRecommendations(){
-  const main = document.getElementById('main');
-  const crumb = document.getElementById('crumb');
-
-  setCrumb(crumb, [{label:'Course Recommendation', hash:'recommend'}]);
-
-  const recommendationOptions = {
-
-    // MPC
-
-        mpc: {
-      interests: [
-        ['technology', 'Coding & Technology'],
-        ['math', 'Mathematics & Problem Solving'],
-        ['engineering', 'Engineering & Physics'],
-        ['ai', 'AI & Data Science'],
-        ['research', 'Research & Innovation'],
-        ['design', 'Architecture & Design'],
-        ['defence', 'Defence']
-      ],
-      goals: [
-        ['software', 'Software / IT Career'],
-        ['engineering', 'Engineering Career'],
-        ['ai', 'AI / Data Science Career'],
-        ['research', 'Research / Higher Studies'],
-        ['defence', 'Defence Career'],
-        ['architecture', 'Architecture Career']
-      ],
-      work: [
-        ['computer', 'Computer / Office Work'],
-        ['technical', 'Engineering / Technical'],
-        ['laboratory', 'Research / Laboratory'],
-        ['defence', 'Defence / Military'],
-        ['design', 'Design / Architecture']
-      ]
-    },
-
-    bipc: {
-      interests: [
-        ['biology', 'Biology & Healthcare'],
-        ['medicine', 'Medicine'],
-        ['pharmacy', 'Pharmacy'],
-        ['biotech', 'Biotechnology'],
-        ['agriculture', 'Agriculture & Life Sciences'],
-        ['research', 'Research']
-      ],
-      goals: [
-        ['medical', 'Medical Career'],
-        ['healthcare', 'Healthcare Career'],
-        ['pharmacy', 'Pharmacy Career'],
-        ['biotech', 'Biotechnology Career'],
-        ['research', 'Research / Higher Studies'],
-        ['government', 'Government Healthcare']
-      ],
-      work: [
-        ['healthcare', 'Hospital / Healthcare'],
-        ['laboratory', 'Laboratory / Research'],
-        ['pharmacy', 'Pharmacy'],
-        ['field', 'Field / Agriculture'],
-        ['government', 'Government / Healthcare']
-      ]
-    },
-
-    mec: {
-      interests: [
-        ['business', 'Business & Finance'],
-        ['accounting', 'Accounting'],
-        ['economics', 'Economics'],
-        ['management', 'Management'],
-        ['mathematics', 'Mathematics & Analytics'],
-        ['entrepreneurship', 'Entrepreneurship']
-      ],
-      goals: [
-        ['finance', 'Finance Career'],
-        ['accounting', 'Accounting Career'],
-        ['business', 'Business Career'],
-        ['management', 'Management Career'],
-        ['entrepreneurship', 'Entrepreneurship'],
-        ['research', 'Research / Higher Studies']
-      ],
-      work: [
-        ['business', 'Business / Management'],
-        ['finance', 'Finance / Banking'],
-        ['office', 'Office / Corporate'],
-        ['accounting', 'Accounting'],
-        ['government', 'Government / Administration']
-      ]
-    },
-
-    cec: {
-      interests: [
-        ['business', 'Business & Commerce'],
-        ['finance', 'Finance'],
-        ['accounting', 'Accounting'],
-        ['economics', 'Economics'],
-        ['law', 'Law & Governance'],
-        ['management', 'Management']
-      ],
-      goals: [
-        ['business', 'Business Career'],
-        ['finance', 'Finance Career'],
-        ['accounting', 'Accounting Career'],
-        ['law', 'Law Career'],
-        ['government', 'Government Career'],
-        ['management', 'Management Career']
-      ],
-      work: [
-        ['business', 'Business / Management'],
-        ['finance', 'Finance / Banking'],
-        ['office', 'Office / Corporate'],
-        ['government', 'Government / Administration'],
-        ['law', 'Legal / Administration']
-      ]
-    },
-
-    hec: {
-      interests: [
-        ['history', 'History'],
-        ['politics', 'Political Science'],
-        ['economics', 'Economics'],
-        ['law', 'Law & Governance'],
-        ['writing', 'Writing & Journalism'],
-        ['social', 'Social Sciences']
-      ],
-      goals: [
-        ['government', 'Government / Civil Services'],
-        ['law', 'Law Career'],
-        ['journalism', 'Journalism / Media'],
-        ['teaching', 'Teaching Career'],
-        ['research', 'Research / Higher Studies']
-      ],
-      work: [
-        ['government', 'Government / Administration'],
-        ['office', 'Office / Administration'],
-        ['law', 'Legal Work'],
-        ['media', 'Media / Journalism'],
-        ['teaching', 'Teaching / Education']
-      ]
-    },
-
-    polytechnic: {
-      interests: [
-        ['engineering', 'Engineering & Technology'],
-        ['mechanical', 'Mechanical'],
-        ['civil', 'Civil Engineering'],
-        ['electrical', 'Electrical Engineering'],
-        ['computer', 'Computer Technology'],
-        ['automobile', 'Automobile']
-      ],
-      goals: [
-        ['engineering', 'Engineering Career'],
-        ['technical', 'Technical Career'],
-        ['government', 'Government Technical Job'],
-        ['private', 'Private Technical Job'],
-        ['higher', 'Higher Studies / B.Tech']
-      ],
-      work: [
-        ['technical', 'Technical Work'],
-        ['field', 'Field Work'],
-        ['engineering', 'Engineering Work'],
-        ['computer', 'Computer / IT Work'],
-        ['government', 'Government Technical Work']
-      ]
-    },
-
-    iti: {
-      interests: [
-        ['technical', 'Technical Skills'],
-        ['electrical', 'Electrical'],
-        ['mechanical', 'Mechanical'],
-        ['automobile', 'Automobile'],
-        ['electronics', 'Electronics'],
-        ['computer', 'Computer / IT']
-      ],
-      goals: [
-        ['technical', 'Technical Career'],
-        ['government', 'Government Job'],
-        ['private', 'Private Technical Job'],
-        ['business', 'Self Employment / Business'],
-        ['higher', 'Higher Technical Studies']
-      ],
-      work: [
-        ['technical', 'Technical Work'],
-        ['field', 'Field Work'],
-        ['workshop', 'Workshop Work'],
-        ['computer', 'Computer / IT Work'],
-        ['government', 'Government Technical Work']
-      ]
-    },
-
-    vocational: {
-      interests: [
-        ['technical', 'Technical Skills'],
-        ['business', 'Business'],
-        ['design', 'Design & Creativity'],
-        ['computer', 'Computer Skills'],
-        ['agriculture', 'Agriculture'],
-        ['hospitality', 'Hospitality']
-      ],
-      goals: [
-        ['private', 'Private Job'],
-        ['business', 'Business / Self Employment'],
-        ['technical', 'Technical Career'],
-        ['government', 'Government Job'],
-        ['higher', 'Higher Studies']
-      ],
-      work: [
-        ['technical', 'Technical Work'],
-        ['business', 'Business / Management'],
-        ['field', 'Field Work'],
-        ['computer', 'Computer / Office'],
-        ['service', 'Service / Hospitality']
-      ]
-    }
-};
-
-  main.innerHTML = `
-
-    <a class="back-link" href="#/">‹ Back to home</a>
-
-    <div class="page-head">
-      <div class="code">CAREER TOOL</div>
-      <h1>Find the right course for you</h1>
-      <p>Answer a few questions and we'll suggest courses that match your interests and goals.</p>
-    </div>
-
-    <div class="detail-section" style="--lc:var(--ink);">
-      <h2>1. What is your stream?</h2>
-
-      <select id="recommendStream"
-  style="width:100%;padding:12px;border:1px solid var(--rail);
-  border-radius:8px;background:var(--card);font:inherit;">
-  <option value="">Select your stream</option>
-  <option value="mpc">MPC</option>
-  <option value="bipc">BiPC</option>
-  <option value="mec">MEC</option>
-  <option value="cec">CEC</option>
-  <option value="hec">HEC</option>
-  <option value="polytechnic">Polytechnic</option>
-  <option value="iti">ITI</option>
-  <option value="vocational">Vocational</option>
-</select>    </div>
-
-    <div class="detail-section" style="--lc:var(--ink);">
-  <h2>2. What are you interested in?</h2>
-
-  <select id="recommendInterest"
-    style="width:100%;padding:12px;border:1px solid var(--rail);
-    border-radius:8px;background:var(--card);font:inherit;">
-    <option value="">Select your interest</option>
-  </select>
-</div>
-
-<div class="detail-section" style="--lc:var(--ink);">
-  <h2>3. What is your career goal?</h2>
-
-  <select id="recommendGoal"
-    style="width:100%;padding:12px;border:1px solid var(--rail);
-    border-radius:8px;background:var(--card);font:inherit;">
-    <option value="">Select your career goal</option>
-  </select>
-</div>
-
-<div class="detail-section" style="--lc:var(--ink);">
-  <h2>4. What type of work do you prefer?</h2>
-
-  <select id="recommendWork"
-    style="width:100%;padding:12px;border:1px solid var(--rail);
-    border-radius:8px;background:var(--card);font:inherit;">
-    <option value="">Select work type</option>
-  </select>
-</div>    <button id="getRecommendations" class="btn" style="margin-top:16px;">
-      Find my courses
-    </button>
-
-        <div id="recommendResults" style="margin-top:24px;"></div>
-  `;
-
-  const streamSelect = document.getElementById('recommendStream');
-  const interestSelect = document.getElementById('recommendInterest');
-  const goalSelect = document.getElementById('recommendGoal');
-  const workSelect = document.getElementById('recommendWork');
-
-  function updateRecommendationOptions() {
-    const selectedStream = streamSelect.value;
-    const options = recommendationOptions[selectedStream];
-
-    interestSelect.innerHTML =
-      '<option value="">Select your interest</option>';
-
-    goalSelect.innerHTML =
-      '<option value="">Select your career goal</option>';
-
-    workSelect.innerHTML =
-      '<option value="">Select work type</option>';
-
-    if (!options) return;
-
-    options.interests.forEach(([value, label]) => {
-      interestSelect.innerHTML +=
-        `<option value="${value}">${label}</option>`;
-    });
-
-    options.goals.forEach(([value, label]) => {
-      goalSelect.innerHTML +=
-        `<option value="${value}">${label}</option>`;
-    });
-
-    options.work.forEach(([value, label]) => {
-      workSelect.innerHTML +=
-        `<option value="${value}">${label}</option>`;
-    });
-  }
-
-  streamSelect.addEventListener('change', updateRecommendationOptions);
-
-  document.getElementById('getRecommendations').addEventListener('click', () => {    const stream = document.getElementById('recommendStream').value;
-    const interest = document.getElementById('recommendInterest').value;
-    const goal = document.getElementById('recommendGoal').value;
-    const work = document.getElementById('recommendWork').value;
-    const results = document.getElementById('recommendResults');
-
-    if(!stream || !interest || !goal || !work){
-      results.innerHTML = `
-        <div class="detail-section" style="--lc:#A2402F;">
-          <strong>Please answer all four questions.</strong>
-        </div>
-      `;
-      return;
-    }
-
-    const recommendations = [];
-
-const coursePriority = {
-  mpc: {
-    ai: ['artificial intelligence', 'ai', 'data science', 'machine learning'],
-    technology: ['computer science', 'software', 'information technology', 'cyber security'],
-    engineering: ['engineering', 'mechanical', 'civil', 'electrical', 'electronics'],
-    math: ['mathematics', 'statistics', 'analytics']
-  },
-
-  bipc: {
-    biology: ['biology', 'life science', 'biological'],
-    medicine: ['mbbs', 'medicine', 'medical', 'doctor'],
-    healthcare: ['healthcare', 'hospital', 'nursing'],
-    pharmacy: ['pharmacy', 'pharmaceutical'],
-    biotech: ['biotechnology', 'biotech', 'genetics', 'microbiology'],
-    agriculture: ['agriculture', 'horticulture', 'forestry', 'fisheries']
-  },
-
-  mec: {
-    finance: ['finance', 'banking', 'investment'],
-    accounting: ['accounting', 'audit', 'taxation'],
-    business: ['business', 'management', 'marketing'],
-    economics: ['economics', 'commerce', 'statistics']
-  },
-
-  cec: {
-    business: ['business', 'management', 'marketing'],
-    finance: ['finance', 'banking', 'investment'],
-    accounting: ['accounting', 'audit', 'taxation'],
-    law: ['law', 'legal', 'judiciary'],
-    government: ['government', 'civil services', 'administration']
-  },
-
-  hec: {
-    history: ['history', 'historical', 'archaeology'],
-    politics: ['political science', 'politics', 'governance'],
-    economics: ['economics', 'economic'],
-    law: ['law', 'legal', 'judiciary'],
-    writing: ['journalism', 'writing', 'media'],
-    social: ['social science', 'sociology', 'psychology']
-  }
-};
-
-function walk(node, pathIds, breadcrumb){
-  if(!node || typeof node !== 'object') return;
-
-      const name = node.name || pathIds[pathIds.length - 1] || 'Course';
-      const trail = breadcrumb.concat(name);
-
-      if(node.children && typeof node.children === 'object' &&
-         Object.keys(node.children).length > 0){
-
-        for(const [childId, child] of Object.entries(node.children)){
-          walk(child, pathIds.concat(childId), trail);
-        }
-        return;
-      }
-
-      if(stream !== 'all' && !DATA[stream]) return;
-
-      let score = 0;
-      const reasons = [];
-      const mismatches = [];
-
-      const text = [
-        name,
-        node.desc,
-        ...(node.coreSubjects || []),
-        ...(node.jobRoles || []),
-        ...(node.skills || []),
-        ...(node.higherStudies || []),
-        ...(node.futureScope || [])
-      ].join(' ').toLowerCase();
-
-      // Stream match
-      // Stream-specific course priority
-
-            // =========================
-// RECOMMENDATION SCORING
-// =========================
-
-// Maximum = 100 points
-// Stream       = 25
-// Interest     = 35
-// Career goal  = 25
-// Work type    = 15
-
-// 1. Stream match
-score += 25;
-reasons.push('Matches your selected stream');
-
-// 2. Interest matching
-const interestWords = {
-  technology: [
-    'computer',
-    'software',
-    'programming',
-    'coding',
-    'developer',
-    'web',
-    'app',
-    'information technology',
-    'artificial intelligence',
-    'machine learning',
-    'data science',
-    'data analytics',
-    'cyber security'
-  ],
-
-  math: [
-    'mathematics',
-    'math',
-    'statistics',
-    'analytics',
-    'algorithm',
-    'engineering',
-    'physics',
-    'problem solving'
-  ],
-
-  engineering: [
-    'engineering',
-    'mechanical',
-    'civil',
-    'electrical',
-    'electronics',
-    'automobile',
-    'technology'
-  ],
-
-  ai: [
-    'artificial intelligence',
-    'ai',
-    'machine learning',
-    'data science',
-    'data analytics',
-    'deep learning',
-    'python'
-  ],
-
-  research: [
-    'research',
-    'scientist',
-    'laboratory',
-    'science',
-    'higher studies',
-    'research and development'
-  ],
-
-  design: [
-    'architecture',
-    'design',
-    'creative',
-    'multimedia',
-    'animation',
-    'fashion'
-  ],
-
-  defence: [
-    'defence',
-    'defense',
-    'army',
-    'navy',
-    'air force',
-    'military',
-    'nda'
-  ],
-
-  biology: [
-    'biology',
-    'life science',
-    'biological',
-    'biochemistry',
-    'zoology',
-    'botany'
-  ],
-
-  healthcare: [
-    'medical',
-    'medicine',
-    'health',
-    'healthcare',
-    'hospital',
-    'clinical',
-    'patient'
-  ],
-
-  medicine: [
-    'mbbs',
-    'medicine',
-    'medical',
-    'doctor',
-    'clinical',
-    'hospital',
-    'patient'
-  ],
-
-  pharmacy: [
-    'pharmacy',
-    'pharmaceutical',
-    'pharmacology',
-    'drug',
-    'medicine'
-  ],
-
-  biotech: [
-    'biotechnology',
-    'biotech',
-    'genetics',
-    'molecular biology',
-    'microbiology'
-  ],
-
-  agriculture: [
-    'agriculture',
-    'farming',
-    'horticulture',
-    'forestry',
-    'fisheries',
-    'dairy'
-  ],
-
-  business: [
-    'business',
-    'management',
-    'entrepreneur',
-    'entrepreneurship',
-    'startup',
-    'marketing'
-  ],
-
-  finance: [
-    'finance',
-    'banking',
-    'investment',
-    'accounting',
-    'financial'
-  ],
-
-  accounting: [
-    'accounting',
-    'accounts',
-    'audit',
-    'taxation',
-    'finance'
-  ],
-
-  economics: [
-    'economics',
-    'economic',
-    'finance',
-    'commerce',
-    'statistics'
-  ],
-
-  law: [
-    'law',
-    'legal',
-    'legislation',
-    'constitution',
-    'judiciary'
-  ],
-
-  politics: [
-    'political science',
-    'politics',
-    'government',
-    'public policy',
-    'governance'
-  ],
-
-  history: [
-    'history',
-    'historical',
-    'heritage',
-    'archaeology'
-  ]
-};
-
-const interestMatches =
-  (interestWords[interest] || [])
-    .filter(word => text.includes(word));
-
-if(interestMatches.length >= 4){
-  score += 35;
-  reasons.push('Strong match with your interest');
-} else if(interestMatches.length >= 2){
-  score += 25;
-  reasons.push('Good match with your interest');
-} else if(interestMatches.length === 1){
-  score += 12;
-  reasons.push('Partial match with your interest');
-} else {
-  score -= 5;
-  mismatches.push('Limited match with your interest');
-}
-
-
-// 3. Career goal matching
-const goalWords = {
-  software: [
-    'software',
-    'programming',
-    'developer',
-    'computer',
-    'web',
-    'app',
-    'information technology',
-    'software development'
-  ],
-
-  engineering: [
-    'engineering',
-    'engineer',
-    'mechanical',
-    'civil',
-    'electrical',
-    'electronics',
-    'automobile'
-  ],
-
-  ai: [
-    'artificial intelligence',
-    'ai',
-    'machine learning',
-    'data science',
-    'data analytics',
-    'deep learning'
-  ],
-
-  research: [
-    'research',
-    'scientist',
-    'laboratory',
-    'science',
-    'higher studies',
-    'research and development'
-  ],
-
-  defence: [
-    'defence',
-    'defense',
-    'army',
-    'navy',
-    'air force',
-    'military',
-    'nda'
-  ],
-
-  architecture: [
-    'architecture',
-    'architect',
-    'building design',
-    'design'
-  ],
-
-  medical: [
-    'mbbs',
-    'medicine',
-    'medical',
-    'doctor',
-    'clinical',
-    'hospital'
-  ],
-
-  healthcare: [
-    'healthcare',
-    'hospital',
-    'nursing',
-    'medical',
-    'health'
-  ],
-
-  pharmacy: [
-    'pharmacy',
-    'pharmaceutical',
-    'pharmacology',
-    'drug'
-  ],
-
-  biotechnology: [
-    'biotechnology',
-    'biotech',
-    'genetics',
-    'microbiology',
-    'molecular biology'
-  ],
-
-  government: [
-    'government',
-    'civil services',
-    'administration',
-    'public service',
-    'police',
-    'railway',
-    'upsc'
-  ],
-
-  business: [
-    'business',
-    'management',
-    'entrepreneur',
-    'entrepreneurship',
-    'startup'
-  ],
-
-  finance: [
-    'finance',
-    'banking',
-    'accounting',
-    'investment'
-  ],
-
-  accounting: [
-    'accounting',
-    'accounts',
-    'audit',
-    'taxation'
-  ],
-
-  management: [
-    'management',
-    'business administration',
-    'marketing',
-    'human resources'
-  ],
-
-  law: [
-    'law',
-    'legal',
-    'judiciary',
-    'legislation',
-    'constitution'
-  ],
-
-  teaching: [
-    'teaching',
-    'teacher',
-    'education',
-    'lecturer',
-    'professor'
-  ],
-
-  journalism: [
-    'journalism',
-    'media',
-    'news',
-    'reporter',
-    'communication'
-  ]
-};
-
-const goalMatches =
-  (goalWords[goal] || [])
-    .filter(word => text.includes(word));
-
-if(goalMatches.length >= 3){
-  score += 25;
-  reasons.push('Strong match with your career goal');
-} else if(goalMatches.length === 2){
-  score += 18;
-  reasons.push('Good match with your career goal');
-} else if(goalMatches.length === 1){
-  score += 10;
-  reasons.push('Partial match with your career goal');
-} else {
-  score -= 5;
-  mismatches.push('Limited match with your career goal');
-}
-
-
-// 4. Work preference matching
-const workWords = {
-  computer: [
-    'computer',
-    'software',
-    'programming',
-    'developer',
-    'data',
-    'technology',
-    'information technology'
-  ],
-
-  technical: [
-    'engineering',
-    'technical',
-    'mechanical',
-    'electrical',
-    'electronics',
-    'civil',
-    'automobile'
-  ],
-
-  laboratory: [
-    'laboratory',
-    'research',
-    'science',
-    'chemistry',
-    'biology',
-    'biotechnology'
-  ],
-
-  defence: [
-    'defence',
-    'defense',
-    'army',
-    'navy',
-    'air force',
-    'military'
-  ],
-
-  design: [
-    'architecture',
-    'design',
-    'creative',
-    'animation',
-    'multimedia'
-  ],
-
-  healthcare: [
-    'hospital',
-    'healthcare',
-    'medical',
-    'medicine',
-    'nursing',
-    'patient'
-  ],
-
-  pharmacy: [
-    'pharmacy',
-    'pharmaceutical',
-    'pharmacology',
-    'drug'
-  ],
-
-  field: [
-    'agriculture',
-    'civil',
-    'construction',
-    'mechanical',
-    'mining',
-    'forestry',
-    'fisheries'
-  ],
-
-  business: [
-    'business',
-    'management',
-    'marketing',
-    'finance',
-    'commerce',
-    'accounting'
-  ],
-
-  government: [
-    'government',
-    'administration',
-    'civil services',
-    'police',
-    'railway',
-    'public service'
-  ],
-
-  office: [
-    'office',
-    'administration',
-    'management',
-    'business',
-    'finance',
-    'accounting'
-  ]
-};
-
-const workMatches =
-  (workWords[work] || [])
-    .filter(word => text.includes(word));
-
-if(workMatches.length >= 3){
-  score += 15;
-  reasons.push('Strong match with your preferred work type');
-} else if(workMatches.length === 2){
-  score += 11;
-  reasons.push('Good match with your preferred work type');
-} else if(workMatches.length === 1){
-  score += 6;
-  reasons.push('Partial match with your preferred work type');
-} else {
-  score -= 3;
-  mismatches.push('Limited match with your preferred work type');
-}
-
-
-// Keep score between 0 and 100
-score = Math.max(0, Math.min(score, 100));
-
-      recommendations.push({
-        name,
-        score,
-	reasons,
-	mismatches,
-        breadcrumb: trail.join(' → '),
-        path: `${stream}/${pathIds.join('/')}`
-      });
-    }
-
-    Object.entries(DATA[stream].paths || {}).forEach(([pathId, pathNode]) => {
-  walk(
-    pathNode,
-    [pathId],
-    [DATA[stream].name]
-  );
-});
-
-    recommendations.sort((a,b) => b.score - a.score);
-
-    const top = recommendations.slice(0,3);
-
-    if(!top.length){
-      results.innerHTML = `
-        <div class="detail-section">
-          <h2>No recommendations found</h2>
-          <p>Try different answers.</p>
-        </div>
-      `;
-      return;
-    }
-
-    results.innerHTML = `
-      <div class="page-head">
-        <div class="code">YOUR RESULTS</div>
-        <h2>Recommended courses</h2>
-        <p>These courses best match the answers you provided.</p>
-      </div>
-
-      ${top.map((course,index) => `
-  <div class="detail-section" style="--lc:var(--ink);margin-top:12px;">
-
-    <h2>${index + 1}. ${course.name}</h2>
-
-    <p>
-      <strong>Match:</strong> ${Math.min(course.score,100)}%
-    </p>
-
-    <p style="font-size:0.85rem;color:var(--ink-soft);">
-      ${course.breadcrumb}
-    </p>
-
-    <div style="
-      margin-top:14px;
-      padding:12px;
-      border:1px solid var(--rail);
-      border-radius:8px;
-      background:var(--card);
-    ">
-	${course.mismatches.length ? `
-  <div style="margin-top:14px;">
-    <strong>Things to consider</strong>
-
-    <ul class="plain" style="margin-top:8px;">
-      ${course.mismatches.map(item => `
-        <li>⚠ ${item}</li>
-      `).join('')}
-    </ul>
-  </div>
-` : ''}
-
-      <strong>Why this is recommended</strong>
-
-      <ul class="plain" style="margin-top:8px;">
-        ${course.reasons.map(reason => `
-          <li>✓ ${reason}</li>
-        `).join('')}
-      </ul>
-    </div>
-
-    <a class="btn" href="#/${course.path}" style="margin-top:12px;">
-      View course
-    </a>
-
-  </div>
-`).join('')}
-`;
-});
-}
-
-
-async function renderProfile(){
-  const main = document.getElementById('main');
-  const crumb = document.getElementById('crumb');
-
-  if(!currentUser){
-    location.hash = '#/login';
-    return;
-  }
-
-  setCrumb(crumb, [
-    {label:'Student Profile', hash:'profile'}
-  ]);
-
-  main.innerHTML = `
-    <a class="back-link" href="#/">‹ Back to home</a>
-
-    <div class="page-head">
-      <div class="code">STUDENT PROFILE</div>
-      <h1>Your Profile</h1>
-      <p>Manage your personal information.</p>
-    </div>
-
-    <div class="detail-section">
-
-      <div style="margin-bottom:20px;">
-        <strong>Name</strong>
-        <div id="profileName"
-          style="margin-top:6px;padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;">
-          Loading...
-        </div>
-      </div>
-
-      <div style="margin-bottom:20px;">
-        <strong>Phone Number</strong>
-        <div id="profilePhone"
-          style="margin-top:6px;padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;">
-          Loading...
-        </div>
-      </div>
-
-      <div style="margin-bottom:20px;">
-        <strong>Email</strong>
-        <div id="profileEmail"
-          style="margin-top:6px;padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;">
-${currentUser.email || ''}
-        </div>
-      </div>
-
-      <button id="editProfileBtn" class="btn">
-        ✏️ Edit Profile
-      </button>
-
-    </div>
-
-    <div id="profileMessage" style="margin-top:16px;"></div>
-  `;
-
-  try {
-    const token = await currentUser.getIdToken();
-
-    const res = await fetch(`${API_BASE}/api/profile`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    });
-
-    if(!res.ok){
-      throw new Error('Failed to load profile');
-    }
-
-    const profile = await res.json();
-
-    document.getElementById('profileName').textContent =
-      profile.name || 'Not set';
-
-    document.getElementById('profilePhone').textContent =
-      profile.phone || 'Not set';
-
-    document.getElementById('editProfileBtn')
-      .addEventListener('click', () => {
-        showEditProfile(profile);
-      });
-
-  } catch(error) {
-    document.getElementById('profileMessage').innerHTML = `
-      <div class="detail-section" style="--lc:#A2402F;">
-        Unable to load your profile.
-      </div>
-    `;
-
-    console.error(error);
-  }
-}
-
-function showEditProfile(profile){
-  const message = document.getElementById('profileMessage');
-
-  message.innerHTML = `
-    <div class="detail-section" style="margin-top:16px;">
-      <h2>Edit Profile</h2>
-
-      <div style="margin-bottom:16px;">
-        <strong>Name</strong>
-        <input
-          id="editProfileName"
-          type="text"
-          value="${profile.name || ''}"
-          style="width:100%;padding:12px;margin-top:6px;
-          border:1px solid var(--rail);
-          border-radius:8px;
-          background:var(--card);
-          font:inherit;">
-      </div>
-
-      <div style="margin-bottom:16px;">
-        <strong>Phone Number</strong>
-        <input
-          id="editProfilePhone"
-          type="tel"
-          value="${profile.phone || ''}"
-          style="width:100%;padding:12px;margin-top:6px;
-          border:1px solid var(--rail);
-          border-radius:8px;
-          background:var(--card);
-          font:inherit;">
-      </div>
-
-      <button id="saveProfileBtn" class="btn">
-        Save Profile
-      </button>
-
-      <button id="cancelProfileBtn" class="btn" style="margin-left:8px;">
-        Cancel
-      </button>
-    </div>
-  `;
-
-  document.getElementById('cancelProfileBtn')
-    .addEventListener('click', () => {
-      renderProfile();
-    });
-
-  document.getElementById('saveProfileBtn')
-    .addEventListener('click', async () => {
-
-      const name =
-        document.getElementById('editProfileName').value.trim();
-
-      const phone =
-        document.getElementById('editProfilePhone').value.trim();
-
-      try {
-        const token = await currentUser.getIdToken();
-
-        const res = await fetch(`${API_BASE}/api/profile`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          },
-          body: JSON.stringify({
-            name,
-            phone
-          })
-        });
-
-        if(!res.ok){
-          throw new Error('Failed to save profile');
-        }
-
-        await res.json();
-
-        renderProfile();
-
-      } catch(error) {
-        message.innerHTML = `
-          <div class="detail-section" style="--lc:#A2402F;">
-            Unable to save your profile.
-          </div>
-        `;
-
-        console.error(error);
-      }
-    });
-}
-
-
 
 function renderHome(main, crumb){
   crumb.innerHTML = '';
@@ -2613,100 +1056,11 @@ function renderLeaf(main, crumb, stream, idPath, node, trail){
       <h2>Job roles</h2>
       <ul class="plain">${node.jobRoles.map(s=>`<li>${s}</li>`).join('')}</ul>
     </div>
-
-
-
-
-        <div class="detail-section" style="--lc:${stream.color}">
+    <div class="detail-section" style="--lc:${stream.color}">
       <h2>Skills you need</h2>
       <ul class="plain">${node.skills.map(s=>`<li>${s}</li>`).join('')}</ul>
     </div>
-
-    ${node.salary ? `
-    <div class="detail-section" style="--lc:${stream.color}">
-      <h2>Salary</h2>
-
-      <div style="
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-        gap:10px;
-      ">
-
-        <div style="
-          padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;
-          background:var(--card);
-        ">
-          <div style="
-            font-size:0.72rem;
-            color:var(--ink-soft);
-            text-transform:uppercase;
-            letter-spacing:0.08em;
-            margin-bottom:5px;
-          ">
-            Fresher
-          </div>
-
-          <strong>${node.salary.fresher || 'Not specified'}</strong>
-        </div>
-
-        <div style="
-          padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;
-          background:var(--card);
-        ">
-          <div style="
-            font-size:0.72rem;
-            color:var(--ink-soft);
-            text-transform:uppercase;
-            letter-spacing:0.08em;
-            margin-bottom:5px;
-          ">
-            Mid Level
-          </div>
-
-          <strong>${node.salary.midLevel || 'Not specified'}</strong>
-        </div>
-
-        <div style="
-          padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;
-          background:var(--card);
-        ">
-          <div style="
-            font-size:0.72rem;
-            color:var(--ink-soft);
-            text-transform:uppercase;
-            letter-spacing:0.08em;
-            margin-bottom:5px;
-          ">
-            Senior
-          </div>
-
-          <strong>${node.salary.senior || 'Not specified'}</strong>
-        </div>
-
-      </div>
-
-      ${node.salary.note ? `
-      <p style="
-        margin-top:10px;
-        font-size:0.76rem;
-        color:var(--ink-soft);
-      ">
-        ${node.salary.note}
-      </p>
-      ` : ''}
-    </div>
-    ` : ''}
-
     ${node.higherStudies ? `
-
-
-
     <div class="detail-section" style="--lc:${stream.color}">
       <h2>Higher studies</h2>
       <ul class="plain">${node.higherStudies.map(s=>`<li>${s}</li>`).join('')}</ul>
@@ -2870,27 +1224,20 @@ function renderAuthBox(){
     const isAdmin = ADMIN_EMAILS.includes((currentUser.email || '').toLowerCase());
 
     box.innerHTML = `
-  <a href="#/courses" class="top-action">📚 Compare Courses</a>
-  <a href="#/exams" class="top-action">📝 Entrance Exams</a>
+      <a href="#/courses" class="top-action">📚 Compare Courses</a>
+      <a href="#/exams" class="top-action">📝 Entrance Exams</a>
+      ${isAdmin ? `
+  <a href="#/students" id="studentsBtn" class="top-action">🎓 Student Interest</a>
+  <a href="#/analytics" id="analyticsBtn" class="top-action">📊 Analytics</a>
+  <a href="#/admin-saved" id="adminSavedBtn" class="top-action">⭐ Student Saved Paths</a>
+` : ''}
+      <a href="#/saved" id="savedPathsBtn" class="top-action">★ My Saved Paths</a>
+      <span class="top-user-email">${currentUser.email}</span>
+      <button id="logoutBtn" class="top-action top-action-logout">Log out</button>
+    `;
 
-  ${isAdmin ? `
-    <a href="#/students" id="studentsBtn" class="top-action">🎓 Student Interest</a>
-    <a href="#/analytics" id="analyticsBtn" class="top-action">📊 Analytics</a>
-    <a href="#/admin-saved" id="adminSavedBtn" class="top-action">⭐ Student Saved Paths</a>
-  ` : ''}
-
-  <a href="#/saved" id="savedPathsBtn" class="top-action">★ My Saved Paths</a>
-  <a href="#/profile" class="top-action">👤 Profile</a>
-
-  <span class="top-user-email">${currentUser.email}</span>
-
-  <button id="logoutBtn" class="top-action top-action-logout">
-    Log out
-  </button>
-`;
-
-document.getElementById('logoutBtn')
-  .addEventListener('click', () => fbAuth.signOut());  } else {
+    document.getElementById('logoutBtn').addEventListener('click', () => fbAuth.signOut());
+  } else {
     box.innerHTML = `
       <a href="#/login" class="top-action">Log in</a>
       <a href="#/signup" class="top-action">Sign up</a>

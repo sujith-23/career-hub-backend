@@ -1486,7 +1486,104 @@ const COURSE_LINKS = {
         ['service', 'Service / Hospitality']
       ]
     }
-};
+
+
+
+  };
+`;
+  });
+}
+
+
+
+  main.innerHTML = `
+    <a class="back-link" href="#/">‹ Back to home</a>
+
+    <div class="page-head">
+      <div class="code">STUDENT PROFILE</div>
+      <h1>Your Profile</h1>
+      <p>Manage your personal information.</p>
+    </div>
+
+    <div class="detail-section">
+
+      <div style="margin-bottom:20px;">
+        <strong>Name</strong>
+        <div id="profileName"
+          style="margin-top:6px;padding:12px;
+          border:1px solid var(--rail);
+          border-radius:8px;">
+          Loading...
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <strong>Phone Number</strong>
+        <div id="profilePhone"
+          style="margin-top:6px;padding:12px;
+          border:1px solid var(--rail);
+          border-radius:8px;">
+          Loading...
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <strong>Email</strong>
+        <div id="profileEmail"
+          style="margin-top:6px;padding:12px;
+          border:1px solid var(--rail);
+          border-radius:8px;">
+          ${escapeHtml(currentUser.email || '')}
+        </div>
+      </div>
+
+      <button id="editProfileBtn" class="btn">
+        ✏️ Edit Profile
+      </button>
+
+    </div>
+
+    <div id="profileMessage"
+      style="margin-top:16px;">
+    </div>
+  `;
+
+  try {
+    const token = await currentUser.getIdToken();
+
+    const res = await fetch(`${API_BASE}/api/profile`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    if(!res.ok){
+      throw new Error('Failed to load profile');
+    }
+
+    const profile = await res.json();
+
+    document.getElementById('profileName').textContent =
+      profile.name || 'Not set';
+
+    document.getElementById('profilePhone').textContent =
+      profile.phone || 'Not set';
+
+    document.getElementById('editProfileBtn')
+      .addEventListener('click', () => {
+        showEditProfile(profile);
+      });
+
+  } catch(error) {
+    document.getElementById('profileMessage').innerHTML = `
+      <div class="detail-section" style="--lc:#A2402F;">
+        Unable to load your profile.
+      </div>
+    `;
+
+    console.error(error);
+  }
+}
 
   main.innerHTML = `
 
@@ -2285,205 +2382,7 @@ score = Math.max(0, Math.min(score, 100));
 
   </div>
 `).join('')}
-`;
-});
-}
-
-
-async function renderProfile(){
-  const main = document.getElementById('main');
-  const crumb = document.getElementById('crumb');
-
-  if(!currentUser){
-    location.hash = '#/login';
-    return;
-  }
-
-  setCrumb(crumb, [
-    {label:'Student Profile', hash:'profile'}
-  ]);
-
-  main.innerHTML = `
-    <a class="back-link" href="#/">‹ Back to home</a>
-
-    <div class="page-head">
-      <div class="code">STUDENT PROFILE</div>
-      <h1>Your Profile</h1>
-      <p>Manage your personal information.</p>
-    </div>
-
-    <div class="detail-section">
-
-      <div style="margin-bottom:20px;">
-        <strong>Name</strong>
-        <div id="profileName"
-          style="margin-top:6px;padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;">
-          Loading...
-        </div>
-      </div>
-
-      <div style="margin-bottom:20px;">
-        <strong>Phone Number</strong>
-        <div id="profilePhone"
-          style="margin-top:6px;padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;">
-          Loading...
-        </div>
-      </div>
-
-      <div style="margin-bottom:20px;">
-        <strong>Email</strong>
-        <div id="profileEmail"
-          style="margin-top:6px;padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;">
-${currentUser.email || ''}
-        </div>
-      </div>
-
-      <button id="editProfileBtn" class="btn">
-        ✏️ Edit Profile
-      </button>
-
-    </div>
-
-    <div id="profileMessage" style="margin-top:16px;"></div>
-  `;
-
-  try {
-    const token = await currentUser.getIdToken();
-
-    const res = await fetch(`${API_BASE}/api/profile`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    });
-
-    if(!res.ok){
-      throw new Error('Failed to load profile');
-    }
-
-    const profile = await res.json();
-
-    document.getElementById('profileName').textContent =
-      profile.name || 'Not set';
-
-    document.getElementById('profilePhone').textContent =
-      profile.phone || 'Not set';
-
-    document.getElementById('editProfileBtn')
-      .addEventListener('click', () => {
-        showEditProfile(profile);
-      });
-
-  } catch(error) {
-    document.getElementById('profileMessage').innerHTML = `
-      <div class="detail-section" style="--lc:#A2402F;">
-        Unable to load your profile.
-      </div>
-    `;
-
-    console.error(error);
-  }
-}
-
-function showEditProfile(profile){
-  const message = document.getElementById('profileMessage');
-
-  message.innerHTML = `
-    <div class="detail-section" style="margin-top:16px;">
-      <h2>Edit Profile</h2>
-
-      <div style="margin-bottom:16px;">
-        <strong>Name</strong>
-        <input
-          id="editProfileName"
-          type="text"
-          value="${profile.name || ''}"
-          style="width:100%;padding:12px;margin-top:6px;
-          border:1px solid var(--rail);
-          border-radius:8px;
-          background:var(--card);
-          font:inherit;">
-      </div>
-
-      <div style="margin-bottom:16px;">
-        <strong>Phone Number</strong>
-        <input
-          id="editProfilePhone"
-          type="tel"
-          value="${profile.phone || ''}"
-          style="width:100%;padding:12px;margin-top:6px;
-          border:1px solid var(--rail);
-          border-radius:8px;
-          background:var(--card);
-          font:inherit;">
-      </div>
-
-      <button id="saveProfileBtn" class="btn">
-        Save Profile
-      </button>
-
-      <button id="cancelProfileBtn" class="btn" style="margin-left:8px;">
-        Cancel
-      </button>
-    </div>
-  `;
-
-  document.getElementById('cancelProfileBtn')
-    .addEventListener('click', () => {
-      renderProfile();
-    });
-
-  document.getElementById('saveProfileBtn')
-    .addEventListener('click', async () => {
-
-      const name =
-        document.getElementById('editProfileName').value.trim();
-
-      const phone =
-        document.getElementById('editProfilePhone').value.trim();
-
-      try {
-        const token = await currentUser.getIdToken();
-
-        const res = await fetch(`${API_BASE}/api/profile`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          },
-          body: JSON.stringify({
-            name,
-            phone
-          })
-        });
-
-        if(!res.ok){
-          throw new Error('Failed to save profile');
-        }
-
-        await res.json();
-
-        renderProfile();
-
-      } catch(error) {
-        message.innerHTML = `
-          <div class="detail-section" style="--lc:#A2402F;">
-            Unable to save your profile.
-          </div>
-        `;
-
-        console.error(error);
-      }
-    });
-}
-
-
-
+    
 function renderHome(main, crumb){
   crumb.innerHTML = '';
   const streamOrder = ['mpc','bipc','mec','cec','hec','polytechnic','iti','vocational','skilldev','defence','govtjobs'];

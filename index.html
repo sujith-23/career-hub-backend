@@ -473,80 +473,106 @@ function setCrumb(crumb, trail){
 
 /* ============ COURSE COMPARISON + ENTRANCE EXAMS ============ */
 
-const COURSE_COMPARISON_DATA = [
-  {
-    id: "cse",
-    name: "B.Tech CSE",
-    duration: "4 years",
-    stream: "MPC",
-    entrance: "JEE Main / State EAMCET or equivalent",
-    focus: "Programming, algorithms, software systems",
-    careers: "Software Engineer, Full Stack Developer, Backend Developer",
-    skills: "Programming, DSA, SQL, Git"
-  },
-  {
-    id: "aids",
-    name: "B.Tech AI & Data Science",
-    duration: "4 years",
-    stream: "MPC",
-    entrance: "JEE Main / State EAMCET or equivalent",
-    focus: "Python, statistics, machine learning, data",
-    careers: "AI Engineer, Data Scientist, Data Analyst",
-    skills: "Python, SQL, statistics, ML"
-  },
-  {
-    id: "aiml",
-    name: "B.Tech AI & Machine Learning",
-    duration: "4 years",
-    stream: "MPC",
-    entrance: "JEE Main / State EAMCET or equivalent",
-    focus: "Machine learning, deep learning, intelligent systems",
-    careers: "ML Engineer, AI Developer, Research Engineer",
-    skills: "Python, mathematics, TensorFlow/PyTorch"
-  },
-  {
-    id: "ece",
-    name: "B.Tech ECE",
-    duration: "4 years",
-    stream: "MPC",
-    entrance: "JEE Main / State EAMCET or equivalent",
-    focus: "Electronics, communication, embedded systems",
-    careers: "Embedded Engineer, VLSI Engineer, IoT Engineer",
-    skills: "Circuit design, Embedded C, microcontrollers"
-  },
-  {
-    id: "mechanical",
-    name: "B.Tech Mechanical",
-    duration: "4 years",
-    stream: "MPC",
-    entrance: "JEE Main / State EAMCET or equivalent",
-    focus: "Machines, manufacturing, thermal systems",
-    careers: "Mechanical Engineer, Design Engineer, Production Engineer",
-    skills: "CAD, manufacturing, problem-solving"
-  },
-  {
-    id: "bca",
-    name: "BCA",
-    duration: "3 years",
-    stream: "MPC / MEC / other eligible streams",
-    entrance: "College admission / CUET where applicable",
-    focus: "Computer applications and software fundamentals",
-    careers: "Software Developer, Web Developer, IT Support",
-    skills: "Programming, web development, databases"
-  },
-  {
-    id: "bba",
-    name: "BBA",
-    duration: "3 years",
-    stream: "MEC / other eligible streams",
-    entrance: "College admission / CUET where applicable",
-    focus: "Business, management, marketing and operations",
-    careers: "Business Analyst, Management Trainee, Marketing Executive",
-    skills: "Communication, business fundamentals, analytics"
+/*
+ * COURSE COMPARISON
+ *
+ * The comparison list is generated from DATA loaded from the backend.
+ * This means every stream and every final career/course path returned by
+ * /api/streams/full/all is available here automatically.
+ *
+ * We do NOT keep a small hard-coded list of courses anymore.
+ */
+
+function buildCourseComparisonData(){
+  const options = [];
+
+  for(const [streamId, stream] of Object.entries(DATA || {})){
+    if(!stream) continue;
+
+    // Add the stream itself as a comparison option.
+    options.push({
+      id: `stream:${streamId}`,
+      name: stream.name || streamId,
+      type: 'stream',
+      stream: stream.name || streamId,
+      duration: stream.duration || stream.courseDuration || 'Varies by course',
+      entrance: stream.entrance || 'See individual course/path',
+      focus: stream.desc || stream.full || 'Career stream after 10th',
+      careers: Array.isArray(stream.afterCompletion)
+        ? stream.afterCompletion.join(', ')
+        : 'See individual career paths',
+      skills: 'See individual course/path requirements',
+      color: stream.color || 'var(--ink)',
+      streamId
+    });
+
+    // Recursively collect every final/leaf course or career path.
+    function walk(node, pathIds, breadcrumb){
+      if(!node || typeof node !== 'object') return;
+
+      const currentName = node.name || pathIds[pathIds.length - 1] || 'Course';
+      const currentBreadcrumb = breadcrumb.concat(currentName);
+
+      if(node.children && typeof node.children === 'object' &&
+         Object.keys(node.children).length > 0){
+
+        for(const [childId, child] of Object.entries(node.children)){
+          walk(child, pathIds.concat(childId), currentBreadcrumb);
+        }
+        return;
+      }
+
+      const id = `course:${streamId}/${pathIds.join('/')}`;
+
+      options.push({
+        id,
+        name: currentName,
+        type: 'course',
+        stream: stream.name || streamId,
+        breadcrumb: currentBreadcrumb.join(' → '),
+        duration:
+          node.duration ||
+          node.courseDuration ||
+          node.durationYears ||
+          'Not specified',
+        entrance:
+          node.entrance ||
+          'See current admission notification',
+        focus:
+          node.focus ||
+          node.desc ||
+          (Array.isArray(node.coreSubjects)
+            ? node.coreSubjects.join(', ')
+            : 'Not specified'),
+        careers:
+          Array.isArray(node.jobRoles) && node.jobRoles.length
+            ? node.jobRoles.join(', ')
+            : 'Not specified',
+        skills:
+          Array.isArray(node.skills) && node.skills.length
+            ? node.skills.join(', ')
+            : 'Not specified',
+        higherStudies:
+          Array.isArray(node.higherStudies) && node.higherStudies.length
+            ? node.higherStudies.join(', ')
+            : '',
+        color: stream.color || 'var(--ink)',
+        streamId,
+        pathId: pathIds[0] || null,
+        nodeId: pathIds.slice(1).join('/') || null
+      });
+    }
+
+    for(const [pathId, path] of Object.entries(stream.paths || {})){
+      walk(path, [pathId], [stream.name || streamId]);
+    }
   }
-];
+
+  return options;
+}
 
 const ENTRANCE_EXAM_DATA = [
+
   {
     name: "JEE Main",
     route: "Engineering",
@@ -608,78 +634,545 @@ const ENTRANCE_EXAM_DATA = [
 function renderCourseComparison(){
   const main = document.getElementById('main');
   const crumb = document.getElementById('crumb');
+
   setCrumb(crumb, [{label:'Compare Courses', hash:'courses'}]);
+
+  /*
+   * Build course lists from the currently loaded backend DATA.
+   * Every stream gets its own list of final/leaf career paths.
+   */
+  const coursesByStream = {};
+
+  function collectLeafCourses(streamId, stream, node, pathIds, breadcrumb, result){
+    if(!node || typeof node !== 'object') return;
+
+    const currentName =
+      node.name ||
+      pathIds[pathIds.length - 1] ||
+      'Course';
+
+    const currentBreadcrumb =
+      breadcrumb.concat(currentName);
+
+    if(
+      node.children &&
+      typeof node.children === 'object' &&
+      Object.keys(node.children).length > 0
+    ){
+      for(const [childId, child] of Object.entries(node.children)){
+        collectLeafCourses(
+          streamId,
+          stream,
+          child,
+          pathIds.concat(childId),
+          currentBreadcrumb,
+          result
+        );
+      }
+      return;
+    }
+
+    result.push({
+      id: `${streamId}/${pathIds.join('/')}`,
+      name: currentName,
+      breadcrumb: currentBreadcrumb.slice(1).join(' → '),
+      stream: stream.name || streamId,
+      streamId: streamId,
+
+      duration:
+        node.duration ||
+        node.courseDuration ||
+        node.durationYears ||
+        'Not specified',
+
+      entrance:
+        node.entrance ||
+        'See current admission notification',
+
+      focus:
+        node.focus ||
+        node.desc ||
+        (
+          Array.isArray(node.coreSubjects)
+            ? node.coreSubjects.join(', ')
+            : 'Not specified'
+        ),
+
+      careers:
+        Array.isArray(node.jobRoles) && node.jobRoles.length
+          ? node.jobRoles.join(', ')
+          : 'Not specified',
+
+      skills:
+        Array.isArray(node.skills) && node.skills.length
+          ? node.skills.join(', ')
+          : 'Not specified',
+
+      higherStudies:
+        Array.isArray(node.higherStudies) && node.higherStudies.length
+          ? node.higherStudies.join(', ')
+          : 'Not specified',
+
+      pathId: pathIds[0] || null,
+      nodeId: pathIds.slice(1).join('/') || null
+    });
+  }
+
+  for(const [streamId, stream] of Object.entries(DATA || {})){
+    const courses = [];
+
+    for(const [pathId, path] of Object.entries(stream.paths || {})){
+      collectLeafCourses(
+        streamId,
+        stream,
+        path,
+        [pathId],
+        [stream.name || streamId],
+        courses
+      );
+    }
+
+    coursesByStream[streamId] = courses;
+  }
+
+  const streamIds = Object.keys(DATA || {});
+
+  if(!streamIds.length){
+    main.innerHTML = `
+      <a class="back-link" href="#/">‹ Back to home</a>
+      <div class="page-head">
+        <div class="code">CAREER TOOLS</div>
+        <h1>Compare Courses</h1>
+        <p>No stream data is available yet.</p>
+      </div>
+    `;
+    return;
+  }
+
+  const firstStreamId = streamIds[0];
+  const firstCourses = coursesByStream[firstStreamId] || [];
 
   main.innerHTML = `
     <a class="back-link" href="#/">‹ Back to home</a>
+
     <div class="page-head">
       <div class="code">CAREER TOOLS</div>
       <h1>Compare Courses</h1>
-      <p>Select two courses to compare duration, entrance route, focus, careers and skills.</p>
+      <p>
+        Select a stream first, then choose any two courses from that same
+        stream to compare them.
+      </p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:18px;">
-      <label style="font-size:0.82rem;font-weight:600;">
+    <div style="
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-bottom:18px;
+    ">
+
+      <label style="
+        font-size:0.82rem;
+        font-weight:600;
+      ">
+        Stream
+
+        <select id="compareStream" style="
+          display:block;
+          width:100%;
+          margin-top:6px;
+          padding:11px;
+          border:1px solid var(--rail);
+          border-radius:8px;
+          background:var(--card);
+          color:var(--ink);
+          font:inherit;
+        ">
+          ${streamIds.map((id,index) => `
+            <option value="${id}" ${index === 0 ? 'selected' : ''}>
+              ${DATA[id].name || id}
+            </option>
+          `).join('')}
+        </select>
+      </label>
+
+      <label style="
+        font-size:0.82rem;
+        font-weight:600;
+      ">
         Course 1
-        <select id="compareCourse1" style="display:block;width:100%;margin-top:6px;padding:11px;border:1px solid var(--rail);border-radius:8px;background:var(--card);font:inherit;">
-          ${COURSE_COMPARISON_DATA.map(c => `<option value="${c.id}">${c.name}</option>`).join('')}
-        </select>
+
+        <select id="compareCourse1" style="
+          display:block;
+          width:100%;
+          margin-top:6px;
+          padding:11px;
+          border:1px solid var(--rail);
+          border-radius:8px;
+          background:var(--card);
+          color:var(--ink);
+          font:inherit;
+        "></select>
       </label>
-      <label style="font-size:0.82rem;font-weight:600;">
+
+      <label style="
+        font-size:0.82rem;
+        font-weight:600;
+      ">
         Course 2
-        <select id="compareCourse2" style="display:block;width:100%;margin-top:6px;padding:11px;border:1px solid var(--rail);border-radius:8px;background:var(--card);font:inherit;">
-          ${COURSE_COMPARISON_DATA.map((c,i) => `<option value="${c.id}" ${i===1?'selected':''}>${c.name}</option>`).join('')}
-        </select>
+
+        <select id="compareCourse2" style="
+          display:block;
+          width:100%;
+          margin-top:6px;
+          padding:11px;
+          border:1px solid var(--rail);
+          border-radius:8px;
+          background:var(--card);
+          color:var(--ink);
+          font:inherit;
+        "></select>
       </label>
+
     </div>
+
+    <div id="streamInfo" style="
+      margin-bottom:18px;
+      padding:12px 14px;
+      background:var(--paper-deep);
+      border:1px solid var(--rail);
+      border-radius:8px;
+      font-size:0.8rem;
+      color:var(--ink-soft);
+    "></div>
+
+    <div id="courseMessage" style="
+      margin-bottom:18px;
+      padding:12px 14px;
+      background:var(--card);
+      border:1px solid var(--rail);
+      border-radius:8px;
+      font-size:0.82rem;
+      color:var(--ink-soft);
+    "></div>
 
     <div id="comparisonTable"></div>
   `;
 
-  const renderComparison = () => {
-    const c1 = COURSE_COMPARISON_DATA.find(c => c.id === document.getElementById('compareCourse1').value);
-    const c2 = COURSE_COMPARISON_DATA.find(c => c.id === document.getElementById('compareCourse2').value);
+  const streamSelect =
+    document.getElementById('compareStream');
+
+  const course1Select =
+    document.getElementById('compareCourse1');
+
+  const course2Select =
+    document.getElementById('compareCourse2');
+
+  const streamInfo =
+    document.getElementById('streamInfo');
+
+  const courseMessage =
+    document.getElementById('courseMessage');
+
+  const comparisonTable =
+    document.getElementById('comparisonTable');
+
+  function escapeHtml(value){
+    return String(value ?? '')
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;')
+      .replace(/'/g,'&#039;');
+  }
+
+  function getSelectedStream(){
+    const streamId = streamSelect.value;
+
+    return {
+      id: streamId,
+      name: DATA[streamId]?.name || streamId,
+      courses: coursesByStream[streamId] || []
+    };
+  }
+
+  /*
+   * Populate Course 1 and Course 2 using ONLY
+   * the courses belonging to the selected stream.
+   */
+  function populateCourseDropdowns(){
+    const selectedStream = getSelectedStream();
+    const courses = selectedStream.courses;
+
+    streamInfo.innerHTML = `
+      <strong>${escapeHtml(selectedStream.name)}</strong>
+      —
+      ${courses.length}
+      course/career path${courses.length === 1 ? '' : 's'} available.
+    `;
+
+    if(courses.length === 0){
+      course1Select.innerHTML =
+        '<option value="">No courses available</option>';
+
+      course2Select.innerHTML =
+        '<option value="">No courses available</option>';
+
+      course1Select.disabled = true;
+      course2Select.disabled = true;
+
+      courseMessage.innerHTML = `
+        <strong>${escapeHtml(selectedStream.name)}</strong>
+        <div style="margin-top:5px;">
+          No final course/career paths are available for this stream.
+        </div>
+      `;
+
+      comparisonTable.innerHTML = '';
+      return;
+    }
+
+    const options = courses.map((course,index) => `
+      <option value="${escapeHtml(course.id)}" ${index === 0 ? 'selected' : ''}>
+        ${escapeHtml(course.name)}
+        ${course.breadcrumb ? ` — ${escapeHtml(course.breadcrumb)}` : ''}
+      </option>
+    `).join('');
+
+    course1Select.innerHTML = options;
+
+    if(courses.length >= 2){
+      course2Select.innerHTML = courses.map((course,index) => `
+        <option value="${escapeHtml(course.id)}" ${index === 1 ? 'selected' : ''}>
+          ${escapeHtml(course.name)}
+          ${course.breadcrumb ? ` — ${escapeHtml(course.breadcrumb)}` : ''}
+        </option>
+      `).join('');
+
+      course1Select.disabled = false;
+      course2Select.disabled = false;
+
+      courseMessage.innerHTML = `
+        <strong>${escapeHtml(selectedStream.name)}</strong>
+
+        <div style="margin-top:5px;">
+          Choose any two courses from this stream.
+          Both course dropdowns are restricted to the selected stream.
+        </div>
+      `;
+
+      renderComparison();
+
+    } else {
+      course2Select.innerHTML =
+        '<option value="">No second course available</option>';
+
+      course1Select.disabled = false;
+      course2Select.disabled = true;
+
+      courseMessage.innerHTML = `
+        <strong>${escapeHtml(selectedStream.name)}</strong>
+
+        <div style="margin-top:5px;">
+          This stream currently has only one course/career path,
+          so a comparison cannot be made.
+        </div>
+      `;
+
+      comparisonTable.innerHTML = '';
+    }
+  }
+
+  function renderComparison(){
+    const selectedStream = getSelectedStream();
+
+    const courses = selectedStream.courses;
+
+    if(courses.length < 2){
+      comparisonTable.innerHTML = '';
+      return;
+    }
+
+    let c1 = courses.find(
+      course => course.id === course1Select.value
+    );
+
+    let c2 = courses.find(
+      course => course.id === course2Select.value
+    );
+
+    if(!c1) c1 = courses[0];
+    if(!c2) c2 = courses[1];
+
+    /*
+     * Never compare a course against itself.
+     */
+    if(c1.id === c2.id){
+      const replacement = courses.find(
+        course => course.id !== c1.id
+      );
+
+      if(replacement){
+        c2 = replacement;
+        course2Select.value = replacement.id;
+      }
+    }
 
     const rows = [
-      ["Course", c1.name, c2.name],
-      ["Duration", c1.duration, c2.duration],
-      ["Typical stream", c1.stream, c2.stream],
-      ["Entrance route", c1.entrance, c2.entrance],
-      ["Main focus", c1.focus, c2.focus],
-      ["Career options", c1.careers, c2.careers],
-      ["Important skills", c1.skills, c2.skills]
+      ['Stream', selectedStream.name, selectedStream.name],
+
+      ['Course', c1.name, c2.name],
+
+      ['Course path',
+        c1.breadcrumb || 'Not specified',
+        c2.breadcrumb || 'Not specified'
+      ],
+
+      ['Duration',
+        c1.duration,
+        c2.duration
+      ],
+
+      ['Entrance route',
+        c1.entrance,
+        c2.entrance
+      ],
+
+      ['Main focus',
+        c1.focus,
+        c2.focus
+      ],
+
+      ['Career options',
+        c1.careers,
+        c2.careers
+      ],
+
+      ['Important skills',
+        c1.skills,
+        c2.skills
+      ],
+
+      ['Higher studies',
+        c1.higherStudies || 'Not specified',
+        c2.higherStudies || 'Not specified'
+      ]
     ];
 
-    document.getElementById('comparisonTable').innerHTML = `
+    comparisonTable.innerHTML = `
       <div style="overflow-x:auto;">
-        <table style="width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--rail);border-radius:8px;overflow:hidden;">
+
+        <table style="
+          width:100%;
+          border-collapse:collapse;
+          background:var(--card);
+          border:1px solid var(--rail);
+          border-radius:8px;
+          overflow:hidden;
+        ">
+
           <thead>
             <tr>
-              <th style="text-align:left;padding:13px;border-bottom:1px solid var(--rail);width:20%;">Feature</th>
-              <th style="text-align:left;padding:13px;border-bottom:1px solid var(--rail);">${c1.name}</th>
-              <th style="text-align:left;padding:13px;border-bottom:1px solid var(--rail);">${c2.name}</th>
+
+              <th style="
+                text-align:left;
+                padding:13px;
+                border-bottom:1px solid var(--rail);
+                width:20%;
+              ">
+                Feature
+              </th>
+
+              <th style="
+                text-align:left;
+                padding:13px;
+                border-bottom:1px solid var(--rail);
+                border-left:1px solid var(--rail);
+              ">
+                ${escapeHtml(c1.name)}
+              </th>
+
+              <th style="
+                text-align:left;
+                padding:13px;
+                border-bottom:1px solid var(--rail);
+                border-left:1px solid var(--rail);
+              ">
+                ${escapeHtml(c2.name)}
+              </th>
+
             </tr>
           </thead>
+
           <tbody>
-            ${rows.slice(1).map(r => `
+
+            ${rows.map(row => `
               <tr>
-                <td style="padding:12px;border-bottom:1px solid var(--rail);font-weight:700;">${r[0]}</td>
-                <td style="padding:12px;border-bottom:1px solid var(--rail);">${r[1]}</td>
-                <td style="padding:12px;border-bottom:1px solid var(--rail);">${r[2]}</td>
+
+                <td style="
+                  padding:12px;
+                  border-bottom:1px solid var(--rail);
+                  font-weight:700;
+                  vertical-align:top;
+                ">
+                  ${escapeHtml(row[0])}
+                </td>
+
+                <td style="
+                  padding:12px;
+                  border-bottom:1px solid var(--rail);
+                  border-left:1px solid var(--rail);
+                  vertical-align:top;
+                ">
+                  ${escapeHtml(row[1] || 'Not specified')}
+                </td>
+
+                <td style="
+                  padding:12px;
+                  border-bottom:1px solid var(--rail);
+                  border-left:1px solid var(--rail);
+                  vertical-align:top;
+                ">
+                  ${escapeHtml(row[2] || 'Not specified')}
+                </td>
+
               </tr>
             `).join('')}
+
           </tbody>
+
         </table>
+
       </div>
-      <p style="font-size:0.76rem;color:var(--ink-soft);margin-top:10px;">
-        Entrance names shown here are guidance only. Verify the current admission notification before applying.
+
+      <p style="
+        font-size:0.76rem;
+        color:var(--ink-soft);
+        margin-top:10px;
+      ">
+        Both courses belong to the selected stream.
+        Admission requirements and entrance routes should be
+        verified using the current official notification.
       </p>
     `;
-  };
+  }
 
-  document.getElementById('compareCourse1').addEventListener('change', renderComparison);
-  document.getElementById('compareCourse2').addEventListener('change', renderComparison);
-  renderComparison();
+  streamSelect.addEventListener(
+    'change',
+    populateCourseDropdowns
+  );
+
+  course1Select.addEventListener(
+    'change',
+    renderComparison
+  );
+
+  course2Select.addEventListener(
+    'change',
+    renderComparison
+  );
+
+  populateCourseDropdowns();
 }
 
 function renderEntranceExams(){
