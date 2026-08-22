@@ -437,13 +437,21 @@ window.scrollTo(0, 0);
     return;
   }
 
-  if(parts[0] === 'students'){ renderStudentInterest(); return; }
-  if(parts[0] === 'admin-saved'){
+  if(parts[0] === 'students'){
+  renderStudentInterest();
+  return;
+}
+
+if(parts[0] === 'profile'){
+  renderProfile();
+  return;
+}
+
+if(parts[0] === 'admin-saved'){
   if(!currentUser){
     location.hash = '#/login';
     return;
   }
-
   if(!ADMIN_EMAILS.includes((currentUser.email || '').toLowerCase())){
     main.innerHTML = `
       <a class="back-link" href="#/">‹ Back to home</a>
@@ -1478,10 +1486,7 @@ const COURSE_LINKS = {
         ['service', 'Service / Hospitality']
       ]
     }
-
-
-
-  };
+};
 
   main.innerHTML = `
 
@@ -2280,9 +2285,111 @@ score = Math.max(0, Math.min(score, 100));
 
   </div>
 `).join('')}
-    `;
-  });
+`;
+});
 }
+
+
+async function renderProfile(){
+  const main = document.getElementById('main');
+  const crumb = document.getElementById('crumb');
+
+  if(!currentUser){
+    location.hash = '#/login';
+    return;
+  }
+
+  setCrumb(crumb, [
+    {label:'Student Profile', hash:'profile'}
+  ]);
+
+  main.innerHTML = `
+    <a class="back-link" href="#/">‹ Back to home</a>
+
+    <div class="page-head">
+      <div class="code">STUDENT PROFILE</div>
+      <h1>Your Profile</h1>
+      <p>Manage your personal information.</p>
+    </div>
+
+    <div class="detail-section">
+
+      <div style="margin-bottom:20px;">
+        <strong>Name</strong>
+        <div id="profileName"
+          style="margin-top:6px;padding:12px;
+          border:1px solid var(--rail);
+          border-radius:8px;">
+          Loading...
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <strong>Phone Number</strong>
+        <div id="profilePhone"
+          style="margin-top:6px;padding:12px;
+          border:1px solid var(--rail);
+          border-radius:8px;">
+          Loading...
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <strong>Email</strong>
+        <div id="profileEmail"
+          style="margin-top:6px;padding:12px;
+          border:1px solid var(--rail);
+          border-radius:8px;">
+${currentUser.email || ''}
+        </div>
+      </div>
+
+      <button id="editProfileBtn" class="btn">
+        ✏️ Edit Profile
+      </button>
+
+    </div>
+
+    <div id="profileMessage" style="margin-top:16px;"></div>
+  `;
+
+  try {
+    const token = await currentUser.getIdToken();
+
+    const res = await fetch(`${API_BASE}/api/profile`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    if(!res.ok){
+      throw new Error('Failed to load profile');
+    }
+
+    const profile = await res.json();
+
+    document.getElementById('profileName').textContent =
+      profile.name || 'Not set';
+
+    document.getElementById('profilePhone').textContent =
+      profile.phone || 'Not set';
+
+    document.getElementById('editProfileBtn')
+      .addEventListener('click', () => {
+        showEditProfile(profile);
+      });
+
+  } catch(error) {
+    document.getElementById('profileMessage').innerHTML = `
+      <div class="detail-section" style="--lc:#A2402F;">
+        Unable to load your profile.
+      </div>
+    `;
+
+    console.error(error);
+  }
+}
+
 
 
 function renderHome(main, crumb){
@@ -2671,20 +2778,27 @@ function renderAuthBox(){
     const isAdmin = ADMIN_EMAILS.includes((currentUser.email || '').toLowerCase());
 
     box.innerHTML = `
-      <a href="#/courses" class="top-action">📚 Compare Courses</a>
-      <a href="#/exams" class="top-action">📝 Entrance Exams</a>
-      ${isAdmin ? `
-  <a href="#/students" id="studentsBtn" class="top-action">🎓 Student Interest</a>
-  <a href="#/analytics" id="analyticsBtn" class="top-action">📊 Analytics</a>
-  <a href="#/admin-saved" id="adminSavedBtn" class="top-action">⭐ Student Saved Paths</a>
-` : ''}
-      <a href="#/saved" id="savedPathsBtn" class="top-action">★ My Saved Paths</a>
-      <span class="top-user-email">${currentUser.email}</span>
-      <button id="logoutBtn" class="top-action top-action-logout">Log out</button>
-    `;
+  <a href="#/courses" class="top-action">📚 Compare Courses</a>
+  <a href="#/exams" class="top-action">📝 Entrance Exams</a>
 
-    document.getElementById('logoutBtn').addEventListener('click', () => fbAuth.signOut());
-  } else {
+  ${isAdmin ? `
+    <a href="#/students" id="studentsBtn" class="top-action">🎓 Student Interest</a>
+    <a href="#/analytics" id="analyticsBtn" class="top-action">📊 Analytics</a>
+    <a href="#/admin-saved" id="adminSavedBtn" class="top-action">⭐ Student Saved Paths</a>
+  ` : ''}
+
+  <a href="#/saved" id="savedPathsBtn" class="top-action">★ My Saved Paths</a>
+  <a href="#/profile" class="top-action">👤 Profile</a>
+
+  <span class="top-user-email">${currentUser.email}</span>
+
+  <button id="logoutBtn" class="top-action top-action-logout">
+    Log out
+  </button>
+`;
+
+document.getElementById('logoutBtn')
+  .addEventListener('click', () => fbAuth.signOut());  } else {
     box.innerHTML = `
       <a href="#/login" class="top-action">Log in</a>
       <a href="#/signup" class="top-action">Sign up</a>

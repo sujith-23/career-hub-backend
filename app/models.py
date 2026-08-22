@@ -56,3 +56,13 @@ class SavedPath(Base):
     node_id = Column(String, nullable=True)
     label = Column(String, nullable=True)  # human-readable name for display
     created_at = Column(DateTime, nullable=False)
+class StudentProfile(Base):
+    """Profile information for a logged-in student."""
+    __tablename__ = "student_profiles"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(String, unique=True, index=True, nullable=False)
+    name = Column(String, nullable=True)
+    phone = Column(String, nullable=True)
+    email = Column(String, nullable=True)
+    created_at = Column(DateTime, nullable=False)

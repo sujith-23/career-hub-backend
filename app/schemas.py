@@ -67,3 +67,15 @@ class SavedPathOut(SavedPathIn):
 
     class Config:
         from_attributes = True
+class StudentProfileIn(BaseModel):
+    name: Optional[str] = None
+    phone: Optional[str] = None
+
+
+class StudentProfileOut(BaseModel):
+    name: Optional[str] = None
+    phone: Optional[str] = None
+    email: Optional[str] = None
+
+    class Config:
+        from_attributes = True

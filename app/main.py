@@ -295,3 +295,76 @@ def delete_saved_path(
     db.delete(row)
     db.commit()
     return {"deleted": saved_id}
+# ---------- Student Profile ----------
+
+@app.get("/api/profile", response_model=schemas.StudentProfileOut)
+def get_profile(
+    db: Session = Depends(get_db),
+    user_id: str = Depends(get_current_user),
+):
+    """Return the profile of the currently logged-in student."""
+
+    row = (
+        db.query(models.StudentProfile)
+        .filter(models.StudentProfile.user_id == user_id)
+        .first()
+    )
+
+    if not row:
+        # Create a profile automatically for a new logged-in student
+        try:
+            firebase_user = auth.get_user(user_id)
+            email = firebase_user.email
+        except Exception:
+            email = None
+
+        row = models.StudentProfile(
+            user_id=user_id,
+            email=email,
+            created_at=datetime.utcnow(),
+        )
+
+        db.add(row)
+        db.commit()
+        db.refresh(row)
+
+    return row
+
+
+@app.put("/api/profile", response_model=schemas.StudentProfileOut)
+def update_profile(
+    item: schemas.StudentProfileIn,
+    db: Session = Depends(get_db),
+    user_id: str = Depends(get_current_user),
+):
+    """Update the currently logged-in student's profile."""
+
+    row = (
+        db.query(models.StudentProfile)
+        .filter(models.StudentProfile.user_id == user_id)
+        .first()
+    )
+
+    if not row:
+        try:
+            firebase_user = auth.get_user(user_id)
+            email = firebase_user.email
+        except Exception:
+            email = None
+
+        row = models.StudentProfile(
+            user_id=user_id,
+            email=email,
+            created_at=datetime.utcnow(),
+        )
+
+        db.add(row)
+
+    else:
+        row.name = item.name
+        row.phone = item.phone
+
+    db.commit()
+    db.refresh(row)
+
+    return row
