@@ -381,6 +381,7 @@ def list_institutions(
     state: str | None = None,
     district: str | None = None,
     institution_type: str | None = None,
+    university: str | None = None,
     level: str | None = None,
     page: int = 1,
     limit: int = 20,
@@ -408,10 +409,17 @@ def list_institutions(
             models.Institution.district.ilike(f"%{district}%")
         )
 
-    if institution_type:
+        if institution_type:
+            query = query.filter(
+                models.Institution.institution_type.ilike(
+                    f"%{institution_type}%"
+                )
+            )
+
+    if university:
         query = query.filter(
-            models.Institution.institution_type.ilike(
-                f"%{institution_type}%"
+            models.Institution.university.ilike(
+                f"%{university}%"
             )
         )
 

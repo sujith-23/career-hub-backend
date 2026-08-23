@@ -2561,6 +2561,15 @@ async function renderEducationFinder(){
             style="width:100%;padding:11px;border:1px solid var(--rail);border-radius:8px;"
           >
         </div>
+<div>
+  <label>University</label>
+  <input
+    id="institutionUniversity"
+    type="text"
+    placeholder="e.g. JNTU Kakinada"
+    style="width:100%;padding:11px;border:1px solid var(--rail);border-radius:8px;"
+  >
+</div>
 
       </div>
 
@@ -2589,6 +2598,7 @@ async function renderEducationFinder(){
   const stateInput = document.getElementById('institutionState');
   const districtInput = document.getElementById('institutionDistrict');
   const typeInput = document.getElementById('institutionType');
+const universityInput = document.getElementById('institutionUniversity');
   const searchBtn = document.getElementById('institutionSearchBtn');
   const clearBtn = document.getElementById('institutionClearBtn');
   const resultsBox = document.getElementById('institutionResults');
@@ -2626,6 +2636,9 @@ async function renderEducationFinder(){
     if(typeInput.value.trim()){
       params.set('institution_type', typeInput.value.trim());
     }
+if(universityInput.value.trim()){
+  params.set('university', universityInput.value.trim());
+}
 
     params.set('page', page);
     params.set('limit', limit);
@@ -2790,6 +2803,7 @@ async function renderEducationFinder(){
     stateInput.value = '';
     districtInput.value = '';
     typeInput.value = '';
+universityInput.value = '';
 
     loadInstitutions(1);
   });
