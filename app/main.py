@@ -368,3 +368,84 @@ def update_profile(
     db.refresh(row)
 
     return row
+
+
+# ---------- Education Finder ----------
+
+@app.get("/api/institutions", response_model=list[schemas.InstitutionOut])
+def list_institutions(
+    search: str | None = None,
+    state: str | None = None,
+    district: str | None = None,
+    institution_type: str | None = None,
+    level: str | None = None,
+    skip: int = 0,
+    limit: int = 20,
+    db: Session = Depends(get_db),
+):
+    """Search and filter educational institutions across India."""
+
+    query = db.query(models.Institution)
+
+    if search:
+        query = query.filter(
+            models.Institution.name.ilike(f"%{search}%")
+        )
+
+    if state:
+        query = query.filter(
+            models.Institution.state.ilike(f"%{state}%")
+        )
+
+    if district:
+        query = query.filter(
+            models.Institution.district.ilike(f"%{district}%")
+        )
+
+    if institution_type:
+        query = query.filter(
+            models.Institution.institution_type.ilike(
+                f"%{institution_type}%"
+            )
+        )
+
+    if level:
+        query = query.filter(
+            models.Institution.level.ilike(f"%{level}%")
+        )
+
+    skip = max(skip, 0)
+    limit = min(max(limit, 1), 100)
+
+    return (
+        query
+        .order_by(models.Institution.name.asc())
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+
+@app.get(
+    "/api/institutions/{institution_id}",
+    response_model=schemas.InstitutionOut
+)
+def get_institution(
+    institution_id: int,
+    db: Session = Depends(get_db),
+):
+    """Return details for one educational institution."""
+
+    institution = (
+        db.query(models.Institution)
+        .filter(models.Institution.id == institution_id)
+        .first()
+    )
+
+    if not institution:
+        raise HTTPException(
+            status_code=404,
+            detail="Institution not found"
+        )
+
+    return institution

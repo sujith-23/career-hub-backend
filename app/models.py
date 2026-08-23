@@ -66,3 +66,43 @@ class StudentProfile(Base):
     phone = Column(String, nullable=True)
     email = Column(String, nullable=True)
     created_at = Column(DateTime, nullable=False)
+
+class Institution(Base):
+    """Institution information for the India-wide Education Finder."""
+    __tablename__ = "institutions"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+
+    # AISHE identification
+    aishe_code = Column(String, nullable=True, unique=True, index=True)
+
+    # Basic information
+    name = Column(String, nullable=False, index=True)
+
+    # Location
+    state = Column(String, nullable=False, index=True)
+    district = Column(String, nullable=True, index=True)
+    city = Column(String, nullable=True, index=True)
+    address = Column(String, nullable=True)
+    pincode = Column(String, nullable=True)
+    location = Column(String, nullable=True, index=True)  # Rural / Urban
+
+    # Institution information
+    institution_type = Column(String, nullable=True, index=True)
+    management = Column(String, nullable=True, index=True)
+
+    # University information
+    university_aishe_code = Column(String, nullable=True, index=True)
+    university = Column(String, nullable=True, index=True)
+    university_type = Column(String, nullable=True, index=True)
+
+    # Additional information
+    status = Column(String, nullable=True, index=True)
+    level = Column(String, nullable=True, index=True)
+    established_year = Column(Integer, nullable=True)
+    website = Column(String, nullable=True)
+
+    # Data source
+    source = Column(String, nullable=True, index=True)
+
+    created_at = Column(DateTime, nullable=False)

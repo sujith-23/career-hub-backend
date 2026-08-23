@@ -79,3 +79,21 @@ class StudentProfileOut(BaseModel):
 
     class Config:
         from_attributes = True
+class InstitutionOut(BaseModel):
+    id: int
+    name: str
+    state: str
+    district: Optional[str] = None
+    city: Optional[str] = None
+    address: Optional[str] = None
+    pincode: Optional[str] = None
+    institution_type: Optional[str] = None
+    university: Optional[str] = None
+    status: Optional[str] = None
+    level: Optional[str] = None
+    established_year: Optional[int] = None
+    website: Optional[str] = None
+    source: Optional[str] = None
+
+    class Config:
+        from_attributes = True
