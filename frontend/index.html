@@ -2344,15 +2344,30 @@ ${currentUser.email || ''}
         </div>
       </div>
 
-      <button id="editProfileBtn" class="btn">
-        ✏️ Edit Profile
-      </button>
+<div style="margin-top:24px;">
+<div>
+    <a href="#/saved" class="btn">
+      ⭐ My Saved Paths
+    </a>
+  </div>
 
+  <div style="margin-top:12px;">
+    <button id="profileLogoutBtn" class="btn">
+      🚪 Log out
+    </button>
+  </div>
+
+<button id="editProfileBtn" class="btn" style="margin-top:12px;">
+  ✏️ Edit Profile
+</button>
     </div>
 
     <div id="profileMessage" style="margin-top:16px;"></div>
   `;
-
+  document.getElementById('profileLogoutBtn')
+    .addEventListener('click', () => {
+      fbAuth.signOut();
+    });
   try {
     const token = await currentUser.getIdToken();
 
@@ -2879,18 +2894,9 @@ function renderAuthBox(){
     <a href="#/admin-saved" id="adminSavedBtn" class="top-action">⭐ Student Saved Paths</a>
   ` : ''}
 
-  <a href="#/saved" id="savedPathsBtn" class="top-action">★ My Saved Paths</a>
-  <a href="#/profile" class="top-action">👤 Profile</a>
-
-  <span class="top-user-email">${currentUser.email}</span>
-
-  <button id="logoutBtn" class="top-action top-action-logout">
-    Log out
-  </button>
+    <a href="#/profile" class="top-action">👤 Profile</a>
 `;
-
-document.getElementById('logoutBtn')
-  .addEventListener('click', () => fbAuth.signOut());  } else {
+  } else {
     box.innerHTML = `
       <a href="#/login" class="top-action">Log in</a>
       <a href="#/signup" class="top-action">Sign up</a>
