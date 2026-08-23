@@ -372,18 +372,24 @@ def update_profile(
 
 # ---------- Education Finder ----------
 
-@app.get("/api/institutions", response_model=list[schemas.InstitutionOut])
+@app.get(
+    "/api/institutions",
+    response_model=schemas.InstitutionListOut
+)
 def list_institutions(
     search: str | None = None,
     state: str | None = None,
     district: str | None = None,
     institution_type: str | None = None,
     level: str | None = None,
-    skip: int = 0,
+    page: int = 1,
     limit: int = 20,
     db: Session = Depends(get_db),
 ):
-    """Search and filter educational institutions across India."""
+    """Search and paginate educational institutions across India."""
+
+    page = max(page, 1)
+    limit = min(max(limit, 1), 100)
 
     query = db.query(models.Institution)
 
@@ -414,17 +420,24 @@ def list_institutions(
             models.Institution.level.ilike(f"%{level}%")
         )
 
-    skip = max(skip, 0)
-    limit = min(max(limit, 1), 100)
+    total = query.count()
 
-    return (
+    offset = (page - 1) * limit
+
+    items = (
         query
         .order_by(models.Institution.name.asc())
-        .offset(skip)
+        .offset(offset)
         .limit(limit)
         .all()
     )
 
+    return {
+        "total": total,
+        "page": page,
+        "limit": limit,
+        "items": items,
+    }
 
 @app.get(
     "/api/institutions/{institution_id}",

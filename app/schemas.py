@@ -97,3 +97,8 @@ class InstitutionOut(BaseModel):
 
     class Config:
         from_attributes = True
+class InstitutionListOut(BaseModel):
+    total: int
+    page: int
+    limit: int
+    items: list[InstitutionOut]
