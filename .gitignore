@@ -9,3 +9,4 @@ firebase-service-account.json
 *.sqlite3
 
 Project Structure Summary_files/
+data/institutions/
