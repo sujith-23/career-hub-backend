@@ -419,6 +419,10 @@ window.scrollTo(0, 0);
   if(parts[0] === 'saved'){ renderSavedPaths(); return; }
   if(parts[0] === 'courses'){ renderCourseComparison(); return; }
   if(parts[0] === 'exams'){ renderEntranceExams(); return; }
+if(parts[0] === 'institutions'){
+  renderEducationFinder();
+  return;
+}
   if(parts[0] === 'recommend'){ renderRecommendations(); return; }
 
   if(parts[0] === 'analytics'){
@@ -2497,7 +2501,301 @@ function showEditProfile(profile){
     });
 }
 
+async function renderEducationFinder(){
+  const main = document.getElementById('main');
+  const crumb = document.getElementById('crumb');
 
+  setCrumb(crumb, [
+    {label:'Education Finder', hash:'institutions'}
+  ]);
+
+  main.innerHTML = `
+    <a class="back-link" href="#/">‹ Back to home</a>
+
+    <div class="page-head">
+      <div class="code">EDUCATION FINDER</div>
+      <h1>Find an Institution</h1>
+      <p>Search colleges and educational institutions across India.</p>
+    </div>
+
+    <div class="detail-section">
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+
+        <div>
+          <label>Search</label>
+          <input
+            id="institutionSearch"
+            type="text"
+            placeholder="Search institution name..."
+            style="width:100%;padding:11px;border:1px solid var(--rail);border-radius:8px;"
+          >
+        </div>
+
+        <div>
+          <label>State</label>
+          <input
+            id="institutionState"
+            type="text"
+            placeholder="e.g. Andhra Pradesh"
+            style="width:100%;padding:11px;border:1px solid var(--rail);border-radius:8px;"
+          >
+        </div>
+
+        <div>
+          <label>District</label>
+          <input
+            id="institutionDistrict"
+            type="text"
+            placeholder="e.g. Guntur"
+            style="width:100%;padding:11px;border:1px solid var(--rail);border-radius:8px;"
+          >
+        </div>
+
+        <div>
+          <label>Institution Type</label>
+          <input
+            id="institutionType"
+            type="text"
+            placeholder="e.g. Affiliated College"
+            style="width:100%;padding:11px;border:1px solid var(--rail);border-radius:8px;"
+          >
+        </div>
+
+      </div>
+
+      <div style="margin-top:16px;">
+        <button id="institutionSearchBtn" class="btn">
+          🔍 Search
+        </button>
+
+        <button id="institutionClearBtn" class="btn" style="margin-left:8px;">
+          Clear
+        </button>
+      </div>
+
+    </div>
+
+    <div id="institutionResults" style="margin-top:24px;">
+      Loading institutions...
+    </div>
+
+    <div id="institutionPagination"
+      style="margin-top:20px;text-align:center;">
+    </div>
+  `;
+
+  const searchInput = document.getElementById('institutionSearch');
+  const stateInput = document.getElementById('institutionState');
+  const districtInput = document.getElementById('institutionDistrict');
+  const typeInput = document.getElementById('institutionType');
+  const searchBtn = document.getElementById('institutionSearchBtn');
+  const clearBtn = document.getElementById('institutionClearBtn');
+  const resultsBox = document.getElementById('institutionResults');
+  const paginationBox = document.getElementById('institutionPagination');
+
+  let currentPage = 1;
+  const limit = 20;
+
+  async function loadInstitutions(page = 1){
+
+    currentPage = page;
+
+    resultsBox.innerHTML = `
+      <div class="detail-section">
+        Loading institutions...
+      </div>
+    `;
+
+    paginationBox.innerHTML = '';
+
+    const params = new URLSearchParams();
+
+    if(searchInput.value.trim()){
+      params.set('search', searchInput.value.trim());
+    }
+
+    if(stateInput.value.trim()){
+      params.set('state', stateInput.value.trim());
+    }
+
+    if(districtInput.value.trim()){
+      params.set('district', districtInput.value.trim());
+    }
+
+    if(typeInput.value.trim()){
+      params.set('institution_type', typeInput.value.trim());
+    }
+
+    params.set('page', page);
+    params.set('limit', limit);
+
+    try {
+
+      const response = await fetch(
+        `${API_BASE}/api/institutions?${params.toString()}`
+      );
+
+      if(!response.ok){
+        throw new Error(`Server returned ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if(!data.items || data.items.length === 0){
+        resultsBox.innerHTML = `
+          <div class="detail-section">
+            No institutions found.
+          </div>
+        `;
+        return;
+      }
+
+      resultsBox.innerHTML = `
+        <div style="margin-bottom:12px;color:#666;">
+          Showing ${((data.page - 1) * data.limit) + 1}
+          -
+          ${Math.min(data.page * data.limit, data.total)}
+          of ${data.total.toLocaleString()} institutions
+        </div>
+
+        ${data.items.map(institution => `
+          <div class="detail-section" style="margin-bottom:12px;">
+
+            <h3 style="margin:0 0 8px;">
+              ${escapeHtml(institution.name || 'Unnamed Institution')}
+            </h3>
+
+            <div style="font-size:14px;line-height:1.7;">
+
+              <div>
+                <strong>State:</strong>
+                ${escapeHtml(institution.state || 'Not available')}
+              </div>
+
+              <div>
+                <strong>District:</strong>
+                ${escapeHtml(institution.district || 'Not available')}
+              </div>
+
+              <div>
+                <strong>Type:</strong>
+                ${escapeHtml(institution.institution_type || 'Not available')}
+              </div>
+
+              <div>
+                <strong>University:</strong>
+                ${escapeHtml(institution.university || 'Not available')}
+              </div>
+
+              ${
+                institution.website
+                  ? `
+                    <div style="margin-top:8px;">
+                      <a
+                        href="${institution.website.startsWith('http') ? institution.website : 'https://' + institution.website}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Visit Website
+                      </a>
+                    </div>
+                  `
+                  : ''
+              }
+
+            </div>
+
+          </div>
+        `).join('')}
+      `;
+
+      const totalPages = Math.ceil(data.total / data.limit);
+
+      if(totalPages > 1){
+
+        let buttons = '';
+
+        if(currentPage > 1){
+          buttons += `
+            <button
+              class="btn"
+              id="institutionPrevBtn"
+            >
+              ← Previous
+            </button>
+          `;
+        }
+
+        buttons += `
+          <span style="margin:0 12px;">
+            Page ${currentPage} of ${totalPages}
+          </span>
+        `;
+
+        if(currentPage < totalPages){
+          buttons += `
+            <button
+              class="btn"
+              id="institutionNextBtn"
+            >
+              Next →
+            </button>
+          `;
+        }
+
+        paginationBox.innerHTML = buttons;
+
+        const prevBtn =
+          document.getElementById('institutionPrevBtn');
+
+        const nextBtn =
+          document.getElementById('institutionNextBtn');
+
+        if(prevBtn){
+          prevBtn.addEventListener(
+            'click',
+            () => loadInstitutions(currentPage - 1)
+          );
+        }
+
+        if(nextBtn){
+          nextBtn.addEventListener(
+            'click',
+            () => loadInstitutions(currentPage + 1)
+          );
+        }
+      }
+
+    } catch(error){
+
+      console.error(error);
+
+      resultsBox.innerHTML = `
+        <div class="detail-section" style="--lc:#A2402F;">
+          Unable to load institutions.
+          Please try again.
+        </div>
+      `;
+    }
+  }
+
+  searchBtn.addEventListener(
+    'click',
+    () => loadInstitutions(1)
+  );
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    stateInput.value = '';
+    districtInput.value = '';
+    typeInput.value = '';
+
+    loadInstitutions(1);
+  });
+
+  await loadInstitutions(1);
+}
 
 function renderHome(main, crumb){
   crumb.innerHTML = '';
@@ -2887,6 +3185,7 @@ function renderAuthBox(){
     box.innerHTML = `
   <a href="#/courses" class="top-action">📚 Compare Courses</a>
   <a href="#/exams" class="top-action">📝 Entrance Exams</a>
+<a href="#/institutions" class="top-action">🎓 Education Finder</a>
 
   ${isAdmin ? `
     <a href="#/students" id="studentsBtn" class="top-action">🎓 Student Interest</a>
@@ -3449,7 +3748,15 @@ async function renderSavedPaths(){
 
 /* ============ LOAD DATA FROM BACKEND ============ */
 // Change this to your deployed API URL once you deploy (e.g. Azure Container Apps URL).
-const API_BASE = 'https://career-hub-backend-i960.onrender.com';
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+const API_BASE = 'http://127.0.0.1:8000';
 
 async function loadDataAndRender(){
   const main = document.getElementById('main');
