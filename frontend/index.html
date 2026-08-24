@@ -423,6 +423,10 @@ if(parts[0] === 'institutions'){
   renderEducationFinder();
   return;
 }
+if(parts[0] === 'scholarships'){
+  renderScholarshipFinder();
+  return;
+}
   if(parts[0] === 'recommend'){ renderRecommendations(); return; }
 
   if(parts[0] === 'analytics'){
@@ -2810,7 +2814,613 @@ universityInput.value = '';
 
   await loadInstitutions(1);
 }
+async function renderScholarshipFinder(){
+  const main = document.getElementById('main');
+  const crumb = document.getElementById('crumb');
 
+  if(!currentUser){
+    location.hash = '#/login';
+    return;
+  }
+
+  setCrumb(crumb, [
+    {label:'Scholarship Finder', hash:'scholarships'}
+  ]);
+
+  main.innerHTML = `
+    <a class="back-link" href="#/">‹ Back to home</a>
+
+    <div class="page-head">
+      <div class="code">SCHOLARSHIP FINDER</div>
+      <h1>Find Scholarships</h1>
+      <p>Find scholarships that may match your education and profile.</p>
+    </div>
+
+    <div class="detail-section">
+
+      <div style="margin-bottom:18px;">
+        <strong>Education Level</strong>
+        <select id="scholarshipLevel"
+          style="width:100%;padding:12px;margin-top:6px;
+          border:1px solid var(--rail);
+          border-radius:8px;background:var(--card);font:inherit;">
+          <option value="">Select education level</option>
+          <option value="after10">After 10th</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="degree">Degree</option>
+          <option value="postgraduate">Postgraduate</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <strong>State</strong>
+        <select id="scholarshipState"
+          style="width:100%;padding:12px;margin-top:6px;
+          border:1px solid var(--rail);
+          border-radius:8px;background:var(--card);font:inherit;">
+          <option value="">Select state</option>
+          <option value="andhra-pradesh">Andhra Pradesh</option>
+          <option value="telangana">Telangana</option>
+          <option value="karnataka">Karnataka</option>
+          <option value="tamil-nadu">Tamil Nadu</option>
+          <option value="all-india">All India</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <strong>Percentage</strong>
+        <input
+          id="scholarshipPercentage"
+          type="number"
+          min="0"
+          max="100"
+          placeholder="Example: 85"
+          style="width:100%;padding:12px;margin-top:6px;
+          border:1px solid var(--rail);
+          border-radius:8px;background:var(--card);font:inherit;">
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <strong>Annual Family Income</strong>
+        <input
+          id="scholarshipIncome"
+          type="number"
+          min="0"
+          placeholder="Example: 250000"
+          style="width:100%;padding:12px;margin-top:6px;
+          border:1px solid var(--rail);
+          border-radius:8px;background:var(--card);font:inherit;">
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <strong>Category</strong>
+        <select id="scholarshipCategory"
+          style="width:100%;padding:12px;margin-top:6px;
+          border:1px solid var(--rail);
+          border-radius:8px;background:var(--card);font:inherit;">
+          <option value="">Select category</option>
+          <option value="general">General</option>
+          <option value="sc">SC</option>
+          <option value="st">ST</option>
+          <option value="obc">OBC</option>
+          <option value="ebc">EBC</option>
+          <option value="minority">Minority</option>
+          <option value="pwd">Persons with Disabilities</option>
+        </select>
+      </div>
+
+      <button id="findScholarshipsBtn" class="btn">
+        🎓 Find Scholarships
+      </button>
+
+    </div>
+
+    <div id="scholarshipResults" style="margin-top:24px;"></div>
+  `;
+
+  document
+    .getElementById('findScholarshipsBtn')
+    .addEventListener('click', findScholarships);
+}
+
+
+async function findScholarships(){
+
+  const level =
+    document.getElementById('scholarshipLevel').value;
+
+  const state =
+    document.getElementById('scholarshipState').value;
+
+  const percentage =
+    Number(document.getElementById('scholarshipPercentage').value || 0);
+
+  const income =
+    Number(document.getElementById('scholarshipIncome').value || 0);
+
+  const category =
+    document.getElementById('scholarshipCategory').value;
+
+  const results =
+    document.getElementById('scholarshipResults');
+
+
+  if(!level || !state || !percentage || !income || !category){
+
+    results.innerHTML = `
+      <div class="detail-section" style="--lc:#A2402F;">
+        <strong>Please complete all fields.</strong>
+      </div>
+    `;
+
+    return;
+  }
+
+
+  results.innerHTML = `
+    <div class="detail-section">
+      Loading scholarships...
+    </div>
+  `;
+
+
+  try {
+
+    const response = await fetch(
+      `${API_BASE}/api/scholarships`
+    );
+
+    if(!response.ok){
+      throw new Error('Failed to load scholarships');
+    }
+
+    const data = await response.json();
+
+    const scholarships = data.scholarships || [];
+
+
+    const matches = scholarships.filter(scholarship => {
+
+      /*
+       * Education level matching
+       */
+      const educationLevels =
+        scholarship.education_levels || [];
+
+      let levelMatch = false;
+
+      if(level === 'after10'){
+        levelMatch =
+          educationLevels.some(
+            x => x.toLowerCase().includes('diploma')
+          );
+      }
+
+      else if(level === 'degree'){
+        levelMatch =
+          educationLevels.some(
+            x =>
+              x.toLowerCase().includes('degree') ||
+              x.toLowerCase().includes('undergraduate')
+          );
+      }
+
+      else if(level === 'intermediate'){
+        levelMatch = false;
+      }
+
+      else if(level === 'postgraduate'){
+        levelMatch = false;
+      }
+
+
+      /*
+       * State matching
+       *
+       * Most of the current dataset is AICTE/India-wide.
+       * PM-USP is specifically for J&K and Ladakh.
+       */
+      let stateMatch = true;
+
+      const eligibleRegions =
+        scholarship.eligible_regions || [];
+
+      if(eligibleRegions.length > 0){
+
+        if(state === 'all-india'){
+          stateMatch = false;
+        }
+
+        else if(state === 'andhra-pradesh'){
+          stateMatch =
+            eligibleRegions.some(
+              x => x.toLowerCase().includes('andhra')
+            );
+        }
+
+        else if(state === 'telangana'){
+          stateMatch =
+            eligibleRegions.some(
+              x => x.toLowerCase().includes('telangana')
+            );
+        }
+
+        else if(state === 'karnataka'){
+          stateMatch =
+            eligibleRegions.some(
+              x => x.toLowerCase().includes('karnataka')
+            );
+        }
+
+        else if(state === 'tamil-nadu'){
+          stateMatch =
+            eligibleRegions.some(
+              x => x.toLowerCase().includes('tamil')
+            );
+        }
+      }
+
+
+      /*
+       * Income matching
+       */
+      let incomeMatch = true;
+
+      if(
+        scholarship.family_income_limit !== undefined &&
+        scholarship.family_income_limit !== null
+      ){
+        incomeMatch =
+          income <= scholarship.family_income_limit;
+      }
+
+
+      /*
+       * Category matching
+       *
+       * Current source documents do not provide
+       * category-specific eligibility for most records.
+       * Therefore we do not reject a scholarship
+       * simply because the selected category is General/SC/ST/OBC/etc.
+       */
+      const categoryMatch = true;
+
+
+      return (
+        levelMatch &&
+        stateMatch &&
+        incomeMatch &&
+        categoryMatch
+      );
+
+    });
+
+
+    if(!matches.length){
+
+      results.innerHTML = `
+        <div class="detail-section">
+          <h2>No matching scholarships found</h2>
+          <p>
+            No scholarship in the current verified dataset
+            matches the selected education level, state and
+            income criteria.
+          </p>
+        </div>
+      `;
+
+      return;
+    }
+
+
+    results.innerHTML = `
+      <div style="margin-bottom:16px;">
+        <strong>
+          ${matches.length} scholarship${matches.length === 1 ? '' : 's'} found
+        </strong>
+      </div>
+
+      ${matches.map(scholarship => {
+
+        const amount =
+          scholarship.amount_per_year
+            ? `₹${Number(
+                scholarship.amount_per_year
+              ).toLocaleString('en-IN')} per year`
+            : scholarship.maintenance_allowance_per_year
+              ? `Maintenance allowance: ₹${Number(
+                  scholarship.maintenance_allowance_per_year
+                ).toLocaleString('en-IN')} per year`
+              : 'See official scheme details';
+
+
+        const incomeLimit =
+          scholarship.family_income_limit
+            ? `₹${Number(
+                scholarship.family_income_limit
+              ).toLocaleString('en-IN')} per year`
+            : 'Not specified';
+
+
+        const education =
+          (scholarship.education_levels || []).join(', ');
+
+
+        const provider =
+          scholarship.provider || 'Government / Institution';
+
+
+        const portal =
+          scholarship.application_portal ||
+          'Check official scholarship portal';
+
+
+        return `
+
+          <div class="detail-section" style="margin-bottom:16px;">
+
+            <h2 style="margin-bottom:8px;">
+              ${scholarship.name}
+            </h2>
+
+            <p>
+              <strong>Provider:</strong>
+              ${provider}
+            </p>
+
+            <p>
+              <strong>Education:</strong>
+              ${education}
+            </p>
+
+            <p>
+              <strong>Benefit:</strong>
+              ${amount}
+            </p>
+
+            <p>
+              <strong>Family income limit:</strong>
+              ${incomeLimit}
+            </p>
+
+            <p>
+              <strong>Application:</strong>
+              ${portal}
+            </p>
+
+            ${
+              scholarship.renewal_required
+                ? `<p><strong>Renewal:</strong> Required</p>`
+                : ''
+            }
+
+            <details style="margin-top:12px;">
+              <summary style="cursor:pointer;font-weight:600;">
+                View eligibility details
+              </summary>
+
+              <div style="margin-top:12px;">
+
+                ${
+                  scholarship.entry_requirement
+                    ? `
+                      <p>
+                        <strong>Entry requirement:</strong>
+                        ${scholarship.entry_requirement.join(', ')}
+                      </p>
+                    `
+                    : ''
+                }
+
+                ${
+                  scholarship.eligibility_categories
+                    ? `
+                      <p>
+                        <strong>Eligibility categories:</strong>
+                        ${scholarship.eligibility_categories.join(', ')}
+                      </p>
+                    `
+                    : ''
+                }
+
+                ${
+                  scholarship.disability_requirement_percent
+                    ? `
+                      <p>
+                        <strong>Disability requirement:</strong>
+                        ${scholarship.disability_requirement_percent}% or more
+                      </p>
+                    `
+                    : ''
+                }
+
+                ${
+                  scholarship.eligible_regions
+                    ? `
+                      <p>
+                        <strong>Eligible regions:</strong>
+                        ${scholarship.eligible_regions.join(', ')}
+                      </p>
+                    `
+                    : ''
+                }
+
+              </div>
+            </details>
+
+          </div>
+
+        `;
+
+      }).join('')}
+    `;
+
+
+  } catch(error) {
+
+    console.error(error);
+
+    results.innerHTML = `
+      <div class="detail-section" style="--lc:#A2402F;">
+        <strong>Unable to load scholarships.</strong>
+        <p>Please try again.</p>
+      </div>
+    `;
+
+  }
+
+}
+
+  /*
+   * Temporary sample scholarship data.
+   *
+   * IMPORTANT:
+   * These are placeholder records for testing the UI.
+   * We will replace them with verified official
+   * scholarship data before production.
+   */
+
+  const scholarships = [
+    {
+      name: 'National Scholarship Scheme',
+      provider: 'Government of India',
+      level: ['intermediate','degree'],
+      state: ['all-india'],
+      minPercentage: 60,
+      maxIncome: 250000,
+      categories: ['general','sc','st','obc','ebc','minority','pwd'],
+      benefit: 'Financial assistance for eligible students.',
+      deadline: 'Check official portal'
+    },
+    {
+      name: 'State Post-Matric Scholarship',
+      provider: 'Government of Andhra Pradesh',
+      level: ['intermediate','degree'],
+      state: ['andhra-pradesh'],
+      minPercentage: 50,
+      maxIncome: 250000,
+      categories: ['sc','st','obc','ebc','minority','pwd'],
+      benefit: 'Post-matric financial assistance.',
+      deadline: 'Check official portal'
+    }
+  ];
+
+
+  const matches = scholarships.filter(scholarship => {
+
+    const levelMatch =
+      scholarship.level.includes(level);
+
+    const stateMatch =
+      scholarship.state.includes(state) ||
+      scholarship.state.includes('all-india');
+
+    const percentageMatch =
+      percentage >= scholarship.minPercentage;
+
+    const incomeMatch =
+      income <= scholarship.maxIncome;
+
+    const categoryMatch =
+      scholarship.categories.includes(category);
+
+    return (
+      levelMatch &&
+      stateMatch &&
+      percentageMatch &&
+      incomeMatch &&
+      categoryMatch
+    );
+  });
+
+
+  if(!matches.length){
+
+    results.innerHTML = `
+      <div class="detail-section">
+        <h2>No matching scholarships found</h2>
+        <p>
+          Try different eligibility information or check
+          official scholarship portals.
+        </p>
+      </div>
+    `;
+
+    return;
+  }
+
+
+  results.innerHTML = `
+    <div class="page-head">
+      <div class="code">MATCHING SCHOLARSHIPS</div>
+      <h2>Scholarships You May Be Eligible For</h2>
+      <p>
+        These results are based on the information you provided.
+      </p>
+    </div>
+
+    ${matches.map(scholarship => `
+      <div class="detail-section"
+        style="--lc:var(--ink);margin-top:12px;">
+
+        <h2>${scholarship.name}</h2>
+
+        <p>
+          <strong>Provider:</strong>
+          ${scholarship.provider}
+        </p>
+
+        <p>
+          <strong>Minimum percentage:</strong>
+          ${scholarship.minPercentage}%
+        </p>
+
+        <p>
+          <strong>Maximum family income:</strong>
+          ₹${scholarship.maxIncome.toLocaleString('en-IN')}
+        </p>
+
+        <p>
+          <strong>Benefit:</strong>
+          ${scholarship.benefit}
+        </p>
+
+        <p>
+          <strong>Application deadline:</strong>
+          ${scholarship.deadline}
+        </p>
+
+        <div style="
+          margin-top:14px;
+          padding:12px;
+          border:1px solid var(--rail);
+          border-radius:8px;
+          background:var(--card);
+        ">
+          <strong>Eligibility match</strong>
+
+          <ul class="plain" style="margin-top:8px;">
+            <li>✓ Education level matches</li>
+            <li>✓ State eligibility matches</li>
+            <li>✓ Percentage requirement matches</li>
+            <li>✓ Income requirement matches</li>
+            <li>✓ Category requirement matches</li>
+          </ul>
+        </div>
+
+        <p style="
+          margin-top:14px;
+          font-size:0.85rem;
+          color:var(--ink-soft);
+        ">
+          Always verify the current eligibility rules and
+          deadline on the official scholarship portal.
+        </p>
+
+      </div>
+    `).join('')}
+  `;
+}
 function renderHome(main, crumb){
   crumb.innerHTML = '';
   const streamOrder = ['mpc','bipc','mec','cec','hec','polytechnic','iti','vocational','skilldev','defence','govtjobs'];
@@ -3199,7 +3809,8 @@ function renderAuthBox(){
     box.innerHTML = `
   <a href="#/courses" class="top-action">📚 Compare Courses</a>
   <a href="#/exams" class="top-action">📝 Entrance Exams</a>
-<a href="#/institutions" class="top-action">🎓 Education Finder</a>
+  <a href="#/institutions" class="top-action">🎓 Education Finder</a>
+  <a href="#/scholarships" class="top-action">🎓 Scholarship Finder</a>
 
   ${isAdmin ? `
     <a href="#/students" id="studentsBtn" class="top-action">🎓 Student Interest</a>
