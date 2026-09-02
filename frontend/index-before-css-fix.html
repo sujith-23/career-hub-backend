@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Career Vision Hub — Your Route After 10th Class</title>
+<title>Career Vision Hub â€” Your Route After 10th Class</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -334,47 +334,1264 @@
   }
 
   @media (min-width:520px){ .hero h1{font-size:2.2rem;} }
+
+
+ /* ================================
+   SIDEBAR DASHBOARD
+   ================================ */
+
+.dashboard-app{
+  min-height:100vh;
+  display:flex;
+  background:var(--paper);
+}
+
+.sidebar{
+  width:250px;
+  min-width:250px;
+  min-height:100vh;
+  background:#17212b;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  position:sticky;
+  top:0;
+  height:100vh;
+  box-sizing:border-box;
+  padding:24px 14px;
+}
+
+.sidebar-brand{
+  padding:4px 12px 28px;
+}
+
+.sidebar-logo{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background:#fff;
+  color:#17212b;
+  font-weight:800;
+  font-size:13px;
+  margin-bottom:12px;
+}
+
+.sidebar-title{
+  font-size:18px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.sidebar-subtitle{
+  font-size:12px;
+  opacity:.65;
+  margin-top:5px;
+}
+
+.sidebar-nav{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+
+.sidebar-link{
+  width:100%;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 13px;
+  border:0;
+  border-radius:10px;
+  background:transparent;
+  color:#fff;
+  text-decoration:none;
+  font:inherit;
+  font-size:14px;
+  cursor:pointer;
+  text-align:left;
+  transition:background .18s ease, transform .18s ease;
+}
+
+.sidebar-link:hover{
+  background:rgba(255,255,255,.10);
+  transform:translateX(2px);
+}
+
+.sidebar-icon{
+  width:22px;
+  text-align:center;
+  flex-shrink:0;
+}
+
+.sidebar-divider{
+  height:1px;
+  background:rgba(255,255,255,.12);
+  margin:18px 8px;
+}
+
+.sidebar-bottom{
+  margin-top:auto;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+
+.sidebar-logout{
+  color:#fff;
+}
+
+.dashboard-content{
+  flex:1;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+}
+
+.dashboard-topbar{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:12px 28px;
+  background:var(--card);
+  border-bottom:1px solid var(--rail);
+  box-sizing:border-box;
+}
+
+.dashboard-search{
+  position:relative;
+  flex:1;
+  max-width:650px;
+}
+
+.dashboard-search input{
+  width:100%;
+  height:42px;
+  box-sizing:border-box;
+  padding:10px 15px;
+  border:1px solid var(--rail);
+  border-radius:10px;
+  background:var(--paper);
+  color:var(--ink);
+  font:inherit;
+  outline:none;
+}
+
+.dashboard-search input:focus{
+  border-color:var(--ink);
+}
+
+.search-results{
+  display:none;
+  position:absolute;
+  left:0;
+  right:0;
+  top:46px;
+  z-index:100;
+  background:var(--card);
+  border:1px solid var(--rail);
+  border-radius:10px;
+  max-height:320px;
+  overflow-y:auto;
+  box-shadow:0 8px 25px rgba(0,0,0,.12);
+}
+
+.dashboard-recommend-btn{
+  height:42px;
+  padding:0 16px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  background:var(--ink);
+  color:var(--card);
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+.dashboard-auth{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:13px;
+}
+
+.dashboard-breadcrumb{
+  padding:10px 28px 0;
+}
+
+#main{
+  width:100%;
+  max-width:1200px;
+  box-sizing:border-box;
+  margin:0 auto;
+  padding:28px;
+  flex:1;
+}
+
+.dashboard-content footer{
+  margin:0;
+  padding:20px 28px;
+}
+
+.mobile-menu-btn{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+}
+.sidebar-section-title{
+  padding:18px 12px 7px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.45);
+}
+
+.sidebar-section-title:first-child{
+  padding-top:4px;
+}
+
+.sidebar-link.active{
+  background:rgba(255,255,255,.14);
+  font-weight:600;
+  box-shadow:inset 3px 0 0 #ffffff;
+}
+
+.sidebar-link.active .sidebar-icon{
+  transform:scale(1.05);
+}
+
+.dashboard-profile-button{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:7px 10px;
+  border-radius:10px;
+  text-decoration:none;
+  color:var(--ink);
+  background:var(--paper);
+  border:1px solid var(--rail);
+  transition:background .18s ease;
+}
+
+.dashboard-profile-button:hover{
+  background:var(--rail);
+}
+
+.profile-avatar{
+  width:32px;
+  height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:var(--ink);
+  color:var(--paper);
+  font-size:15px;
+}
+
+.profile-user{
+  display:flex;
+  flex-direction:column;
+  line-height:1.2;
+}
+
+.profile-user strong{
+  font-size:12px;
+}
+
+.profile-user small{
+  max-width:190px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:10px;
+  opacity:.65;
+  margin-top:2px;
+}
+
+.dashboard-login-button,
+.dashboard-signup-button{
+  text-decoration:none;
+  padding:9px 13px;
+  border-radius:9px;
+  font-size:13px;
+  font-weight:600;
+}
+
+.dashboard-login-button{
+  color:var(--ink);
+}
+
+.dashboard-signup-button{
+  background:var(--ink);
+  color:var(--paper);
+}
+
+@media (max-width: 800px){
+
+  .sidebar{
+    position:fixed;
+    left:-270px;
+    top:0;
+    bottom:0;
+    width:270px;
+    height:100vh;
+    max-height:100vh;
+    z-index:1000;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    -webkit-overflow-scrolling:touch;
+
+    transition:left .25s ease;
+    box-shadow:4px 0 20px rgba(0,0,0,.18);
+
+    box-sizing:border-box;
+  }
+
+  .sidebar.mobile-open{
+    left:0;
+  }
+
+
+  .dashboard-content{
+    width:100%;
+  }
+
+  .dashboard-topbar{
+    padding:10px 14px;
+    gap:10px;
+  }
+
+  .mobile-menu-btn{
+    display:flex;
+    width:40px;
+    height:40px;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    border-radius:9px;
+    background:var(--paper);
+    border:1px solid var(--rail);
+  }
+
+
+.dashboard-search{
+  flex:1;
+  min-width:0;
+  max-width:none;
+}
+
+.dashboard-search input{
+  width:100%;
+  height:40px;
+  min-width:0;
+  font-size:14px;
+}
+
+.dashboard-recommend-btn{
+  display:none;
+}
+
+.dashboard-auth{
+  flex-shrink:0;
+}
+
+.dashboard-profile-button{
+  width:40px;
+  height:40px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:0;
+}
+
+.dashboard-profile-button:first-letter{
+  font-size:18px;
+}
+
+
+  .dashboard-profile-button{
+    padding:6px;
+  }
+
+  .profile-user{
+    display:none;
+  }
+
+/* MOBILE TOPBAR FIX */
+@media (max-width: 800px){
+
+  .dashboard-topbar{
+    position:relative;
+    display:grid;
+    grid-template-columns:40px minmax(0,1fr) 40px;
+    align-items:center;
+    gap:8px;
+    padding:10px 10px;
+    width:100%;
+    min-height:62px;
+    box-sizing:border-box;
+  }
+
+  /* Hamburger */
+  .mobile-menu-btn{
+    width:40px;
+    height:40px;
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    z-index:10;
+  }
+
+  /* Search bar in center */
+  .dashboard-search{
+    width:100%;
+    min-width:0;
+    max-width:none;
+    flex:none;
+  }
+
+  .dashboard-search input{
+    display:block;
+    width:100%;
+    min-width:0;
+    height:40px;
+    padding:8px 10px;
+    font-size:13px;
+    box-sizing:border-box;
+  }
+
+  /* Profile button on right */
+  .dashboard-auth{
+    width:40px;
+    min-width:40px;
+    height:40px;
+    margin:0;
+    padding:0;
+    display:flex !important;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+    z-index:20;
+  }
+
+  .dashboard-profile-button{
+    width:40px;
+    min-width:40px;
+    height:40px;
+    padding:0;
+    margin:0;
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    box-sizing:border-box;
+  }
+
+  /* Hide email text on mobile, keep profile icon */
+  .dashboard-profile-button{
+    font-size:0 !important;
+  }
+
+  .dashboard-profile-button:first-letter{
+    font-size:18px !important;
+  }
+
+  /* Hide Find My Career on mobile */
+  .dashboard-recommend-btn{
+    display:none !important;
+  }
+
+  #main{
+    padding:18px 14px;
+  }
+
+  .dashboard-breadcrumb{
+    padding:8px 14px 0;
+  }
+
+  .dashboard-content footer{
+    padding:18px 14px;
+  }
+}
+
+
+/* MOBILE SIDEBAR OVERLAY */
+@media (max-width: 800px){
+
+  .sidebar-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:999;
+    background:rgba(0,0,0,.35);
+  }
+
+  .sidebar-overlay.active{
+    display:block;
+  }
+
+}
+
+/* ================================
+   MOBILE OVERFLOW FIX
+   ================================ */
+
+html,
+body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+#app{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+}
+
+.dashboard-content{
+  min-width:0;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+#main{
+  min-width:0;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+@media (max-width:800px){
+
+
+
+  .dashboard-topbar{
+  display:grid;
+  grid-template-columns:40px minmax(0,1fr) 40px;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  width:100%;
+  box-sizing:border-box;
+}
+
+
+  .dashboard-search{
+  width:100%;
+  min-width:0;
+  max-width:420px;
+  justify-self:center;
+}
+
+  .dashboard-search input{
+    min-width:0 !important;
+    max-width:100%;
+  }
+
+  .dashboard-auth{
+  width:40px;
+  min-width:40px;
+  margin:0;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+
+.dashboard-profile-button{
+  width:40px;
+  min-width:40px;
+  height:40px;
+  padding:0;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+}
+
+  .dashboard-content{
+    width:100%;
+    min-width:0;
+  }
+
+  .hero,
+  .hub-node,
+  .lines,
+  .stations,
+  .detail-section{
+    max-width:100%;
+    box-sizing:border-box;
+  }
+}
+
+/* FINAL MOBILE HEADER FIX */
+@media (max-width: 800px) {
+
+  .dashboard-topbar {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 62px !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box !important;
+    gap: 0 !important;
+  }
+
+  /* LEFT: hamburger */
+  .mobile-menu-btn {
+    display: flex !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    z-index: 20 !important;
+  }
+
+  /* CENTER: search */
+  .dashboard-search {
+    position: absolute !important;
+    left: 54px !important;
+    right: 54px !important;
+    top: 10px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    z-index: 5 !important;
+  }
+
+  .dashboard-search input {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 40px !important;
+    box-sizing: border-box !important;
+    padding: 8px 10px !important;
+    font-size: 13px !important;
+  }
+
+  /* RIGHT: profile */
+  .dashboard-auth {
+    position: absolute !important;
+    top: 10px !important;
+    right: 12px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 30 !important;
+  }
+
+  .dashboard-profile-button {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+    font-size: 18px !important;
+  }
+
+  /* Hide Find My Career on mobile */
+  .dashboard-recommend-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 800px){
+
+  .sidebar{
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+  }
+
+  .sidebar::-webkit-scrollbar{
+    width:6px;
+  }
+
+  .sidebar::-webkit-scrollbar-thumb{
+    background:rgba(255,255,255,.25);
+    border-radius:10px;
+  }
+
+}
+
+/* =====================================================
+   DESKTOP SIDEBAR
+   ===================================================== */
+
+@media (min-width: 801px) {
+
+  /* Sidebar stays fixed on the left */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 270px;
+    height: 100vh;
+
+    display: flex !important;
+    flex-direction: column;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    z-index: 1000;
+  }
+
+  /* Main dashboard moves beside sidebar */
+  .dashboard-content {
+    margin-left: 270px;
+    width: calc(100% - 270px);
+    min-width: 0;
+  }
+
+  /* Topbar stays inside the content area */
+  .dashboard-topbar {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Sidebar content */
+  .sidebar > * {
+    flex-shrink: 0;
+  }
+
+  /* Navigation area */
+  .sidebar-nav {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+  }
+
+  /* Logout stays at bottom */
+  .sidebar-bottom {
+    margin-top: auto;
+    flex-shrink: 0;
+  }
+
+  /* Prevent horizontal scrolling */
+  body {
+    overflow-x: hidden;
+  }
+
+  .dashboard-content {
+    overflow-x: hidden;
+  }
+}
+
+
+/* =====================================================
+   HOME DASHBOARD STRUCTURE
+   ===================================================== */
+
+.home-dashboard{
+  width:100%;
+}
+
+.home-welcome{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:24px;
+}
+
+.home-welcome-text{
+  min-width:0;
+}
+
+.home-kicker{
+  font-size:0.72rem;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin-bottom:7px;
+}
+
+.home-welcome h1{
+  margin:0 0 8px;
+  font-size:2rem;
+  line-height:1.15;
+}
+
+.home-welcome p{
+  margin:0;
+  color:var(--ink-soft);
+  font-size:.92rem;
+}
+
+.home-action-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-bottom:22px;
+}
+
+.home-action-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:145px;
+  padding:17px;
+  background:var(--card);
+  border:1px solid var(--rail);
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  transition:
+    transform .15s ease,
+    border-color .15s ease;
+}
+
+.home-action-card:hover{
+  transform:translateY(-2px);
+  border-color:var(--ink);
+}
+
+.home-action-icon{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--rail);
+  border-radius:9px;
+  background:var(--paper);
+  font-size:18px;
+  margin-bottom:12px;
+}
+
+.home-action-card h3{
+  margin:0 0 5px;
+  font-size:1rem;
+}
+
+.home-action-card p{
+  margin:0;
+  color:var(--ink-soft);
+  font-size:.78rem;
+  line-height:1.45;
+}
+
+.home-action-arrow{
+  align-self:flex-end;
+  margin-top:10px;
+  font-size:1.1rem;
+  color:var(--ink-soft);
+}
+
+.home-dashboard-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.8fr) minmax(260px,1fr);
+  gap:18px;
+}
+
+.home-panel{
+  background:var(--card);
+  border:1px solid var(--rail);
+  border-radius:10px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+
+.home-panel-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+.home-panel-header h2{
+  margin:0;
+  font-size:1rem;
+}
+
+.home-view-all{
+  font-size:.76rem;
+  font-weight:600;
+  color:var(--ink-soft);
+}
+
+.home-view-all:hover{
+  color:var(--ink);
+}
+
+.home-recommendation{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:13px 0;
+  border-top:1px solid var(--rail);
+}
+
+.home-recommendation:first-child{
+  border-top:0;
+}
+
+.home-recommendation-main{
+  min-width:0;
+}
+
+.home-recommendation-title{
+  font-weight:700;
+  font-size:.88rem;
+  margin-bottom:3px;
+}
+
+.home-recommendation-desc{
+  color:var(--ink-soft);
+  font-size:.74rem;
+}
+
+.home-recommendation-match{
+  flex-shrink:0;
+  text-align:right;
+}
+
+.home-match-number{
+  font-size:1.05rem;
+  font-weight:700;
+}
+
+.home-match-label{
+  display:block;
+  color:var(--ink-soft);
+  font-size:.68rem;
+}
+
+.home-match-bar{
+  width:90px;
+  height:4px;
+  margin-top:5px;
+  background:var(--paper-deep);
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.home-match-bar span{
+  display:block;
+  height:100%;
+  background:var(--ink);
+  border-radius:999px;
+}
+
+.home-tool-list{
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+}
+
+.home-tool{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:12px;
+  border:1px solid var(--rail);
+  border-radius:8px;
+  background:var(--paper);
+}
+
+.home-tool-main{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+
+.home-tool-icon{
+  width:30px;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  border:1px solid var(--rail);
+  border-radius:7px;
+  background:var(--card);
+}
+
+.home-tool strong{
+  display:block;
+  font-size:.82rem;
+}
+
+.home-tool small{
+  display:block;
+  color:var(--ink-soft);
+  font-size:.68rem;
+  margin-top:2px;
+}
+
+.home-tool-arrow{
+  color:var(--ink-soft);
+}
+
+.home-exam-list{
+  margin-top:18px;
+}
+
+.home-exam{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 0;
+  border-top:1px solid var(--rail);
+}
+
+.home-exam-name{
+  font-size:.82rem;
+  font-weight:600;
+}
+
+.home-exam-route{
+  color:var(--ink-soft);
+  font-size:.68rem;
+  margin-top:2px;
+}
+
+.home-exam-arrow{
+  color:var(--ink-soft);
+}
+
+/* Home dashboard responsive */
+
+@media(max-width:800px){
+  .home-action-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .home-dashboard-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+  .home-welcome{
+    margin-bottom:18px;
+  }
+
+  .home-welcome h1{
+    font-size:1.55rem;
+  }
+
+  .home-action-grid{
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+  }
+
+  .home-action-card{
+    min-height:125px;
+    padding:13px;
+  }
+
+  .home-action-card h3{
+    font-size:.88rem;
+  }
+
+  .home-action-card p{
+    font-size:.7rem;
+  }
+
+  .home-panel{
+    padding:14px;
+  }
+
+  .home-recommendation{
+    align-items:flex-start;
+  }
+
+  .home-recommendation-match{
+    min-width:75px;
+  }
+
+  .home-match-bar{
+    width:70px;
+  }
+}
+
+@media(max-width:400px){
+  .home-action-grid{
+    grid-template-columns:1fr;
+  }
+
+  .home-action-card{
+    min-height:110px;
+  }
+}
+
 </style>
 </head>
 <body>
-<div id="app">
-  <header class="topbar">
-    <div>
-      <a href="#/" class="brand" style="text-decoration:none;color:inherit;"><span>Career Vision Hub</span><span class="sub">route after 10th</span></a>
+<div id="app" class="dashboard-app">
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar">
+
+    <div class="sidebar-brand">
+      <a href="#/" style="text-decoration:none;color:inherit;">
+        <div class="sidebar-logo">CVH</div>
+        <div class="sidebar-title">Career Vision Hub</div>
+        <div class="sidebar-subtitle">Career after 10th</div>
+      </a>
+    </div>
+
+
+          <div class="sidebar-section-title">MAIN</div>
+
+      <a href="#/" class="sidebar-link">
+        <span class="sidebar-icon">ðŸ </span>
+        <span>Home</span>
+      </a>
+
+      <a href="#/recommend" class="sidebar-link">
+        <span class="sidebar-icon">ðŸŽ¯</span>
+        <span>Career Finder</span>
+      </a>
+
+      <a href="#/courses" class="sidebar-link">
+        <span class="sidebar-icon">ðŸ“š</span>
+        <span>Compare Courses</span>
+      </a>
+
+      <a href="#/exams" class="sidebar-link">
+        <span class="sidebar-icon">ðŸ“</span>
+        <span>Entrance Exams</span>
+      </a>
+
+
+      <div class="sidebar-section-title">MY JOURNEY</div>
+
+      <a href="#/saved" class="sidebar-link">
+        <span class="sidebar-icon">â­</span>
+        <span>My Saved Paths</span>
+      </a>
+
+      <a href="#/profile" class="sidebar-link">
+        <span class="sidebar-icon">ðŸ‘¤</span>
+        <span>Profile</span>
+      </a>
+
+
+      <!-- ADMIN LINKS -->
+      <div id="sidebarAdminLinks" style="display:none;">
+
+        <div class="sidebar-section-title">ADMIN</div>
+
+        <a href="#/students" class="sidebar-link">
+          <span class="sidebar-icon">ðŸŽ“</span>
+          <span>Student Interest</span>
+        </a>
+
+        <a href="#/analytics" class="sidebar-link">
+          <span class="sidebar-icon">ðŸ“Š</span>
+          <span>Analytics</span>
+        </a>
+
+        <a href="#/admin-saved" class="sidebar-link">
+          <span class="sidebar-icon">â­</span>
+          <span>Student Saved Paths</span>
+        </a>
+
+      </div>
+
+    <div class="sidebar-bottom">
+
+      <button id="sidebarLogoutBtn" class="sidebar-link sidebar-logout">
+        <span class="sidebar-icon">ðŸšª</span>
+        <span>Log out</span>
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN AREA -->
+  <div class="dashboard-content">
+
+    <header class="dashboard-topbar">
+
+      <div class="mobile-menu-btn" id="mobileMenuBtn">
+        â˜°
+      </div>
+
+      <div class="dashboard-search">
+        <input
+          id="careerSearch"
+          type="text"
+          placeholder="Search a career, e.g. data scientist..."
+        >
+
+        <div id="searchResults" class="search-results"></div>
+      </div>
+
+      <a
+        href="#/recommend"
+        class="dashboard-recommend-btn"
+      >
+        ðŸŽ¯ Find My Career
+      </a>
+
+      <div id="authBox" class="dashboard-auth"></div>
+
+    </header>
+
+
+    <div class="dashboard-breadcrumb">
       <div class="crumb" id="crumb"></div>
     </div>
-    <div id="authBox" style="display:flex;align-items:center;gap:10px;font-size:14px;"></div>
-  </header>
 
 
+    <main id="main"></main>
 
-
-  <div class="search-wrap" style="position:relative;max-width:1000px;margin:8px auto 0;padding:0 20px;">
-  <div style="display:flex;align-items:stretch;gap:10px;">
-    <div style="position:relative;flex:1;">
-      <input id="careerSearch" type="text"
-        placeholder="Search a career, e.g. 'data scientist'…"
-        style="width:100%;height:44px;padding:10px 14px;border-radius:8px;border:1px solid #ccc;box-sizing:border-box;font-size:15px;">
-      <div id="searchResults"
-        style="display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border:1px solid #ddd;border-radius:8px;margin-top:4px;max-height:320px;overflow-y:auto;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,.15);">
-      </div>
-    </div>
-
-    <a href="#/recommend"
-      class="btn"
-      style="height:44px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;">
-      🎯 Course Recommendation
-    </a>
+    <footer>
+      Built for Grama Vaani Â· Career routes for students after 10th class
+    </footer>
 
   </div>
+
 </div>
 
 
-  <main id="main"></main>
-  <footer>Built for Grama Vaani · Career routes for students after 10th class</footer>
-</div>
 
-<!-- Firebase SDK (compat build — simplest for vanilla JS) -->
+
+
+<!-- Firebase SDK (compat build â€” simplest for vanilla JS) -->
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 
@@ -389,124 +1606,382 @@ function parseHash(){
 }
 
 function render(){
-window.scrollTo(0, 0);
+  window.scrollTo(0, 0);
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
+
   const parts = parseHash();
+
   const main = document.getElementById('main');
   const crumb = document.getElementById('crumb');
-  const searchWrap = document.querySelector('.search-wrap');
-  const authBox = document.getElementById('authBox');
 
-  const isAuthPage = parts[0] === 'login' || parts[0] === 'signup';
-  const topbar = document.querySelector('header.topbar');
+  const isAuthPage =
+    parts[0] === 'login' ||
+    parts[0] === 'signup';
 
-  if(searchWrap) searchWrap.style.display = isAuthPage ? 'none' : 'block';
-  if(authBox) authBox.style.display = isAuthPage ? 'none' : 'flex';
+  const sidebar =
+    document.querySelector('.sidebar');
 
-  if(topbar) topbar.style.display = isAuthPage ? 'none' : 'flex';
+  const dashboardTopbar =
+    document.querySelector('.dashboard-topbar');
 
-  // Admin/user application header only — do not affect guest/login pages.
-  const brand = document.querySelector('header.topbar .brand');
+  const dashboardSearch =
+    document.querySelector('.dashboard-search');
+
+  const authBox =
+    document.getElementById('authBox');
+
+  const topbar =
+    document.querySelector('header.topbar');
+
+
+  /* =========================
+     AUTH PAGE UI
+     ========================= */
+
+  if(isAuthPage){
+    const careerSearch = document.getElementById('careerSearch');
+    const searchResults = document.getElementById('searchResults');
+
+    if(careerSearch){
+      careerSearch.value = '';
+    }
+
+    if(searchResults){
+      searchResults.innerHTML = '';
+      searchResults.style.display = 'none';
+    }
+
+    // Hide sidebar
+    if(sidebar){
+      sidebar.style.setProperty(
+        'display',
+        'none',
+        'important'
+      );
+    }
+
+    // Hide complete dashboard topbar
+    if(dashboardTopbar){
+      dashboardTopbar.style.setProperty(
+        'display',
+        'none',
+        'important'
+      );
+    }
+
+    // Hide search
+    if(dashboardSearch){
+      dashboardSearch.style.setProperty(
+        'display',
+        'none',
+        'important'
+      );
+    }
+
+    // Hide profile/login/signup area
+    if(authBox){
+      authBox.style.setProperty(
+        'display',
+        'none',
+        'important'
+      );
+    }
+
+    // Hide old topbar if it exists
+    if(topbar){
+      topbar.style.setProperty(
+        'display',
+        'none',
+        'important'
+      );
+    }
+
+  }
+  else{
+
+    // Show sidebar
+    if(sidebar){
+      sidebar.style.removeProperty('display');
+    }
+
+    // Show dashboard topbar
+    if(dashboardTopbar){
+      dashboardTopbar.style.setProperty(
+        'display',
+        'flex',
+        'important'
+      );
+    }
+
+    // Show search
+    if(dashboardSearch){
+      dashboardSearch.style.setProperty(
+        'display',
+        'block',
+        'important'
+      );
+    }
+
+    // Show profile/auth area
+    if(authBox){
+      authBox.style.setProperty(
+        'display',
+        'flex',
+        'important'
+      );
+    }
+
+  }
+
+
+  /* =========================
+     ADMIN / USER BRAND
+     ========================= */
+
+  const brand =
+    document.querySelector(
+      'header.topbar .brand'
+    );
+
   if(brand){
-    const isAdminUser = currentUser &&
-      ADMIN_EMAILS.includes((currentUser.email || '').toLowerCase());
-    brand.classList.toggle('admin-compact-brand', !!isAdminUser);
-}
 
-  if(parts[0] === 'login'){ renderAuthPage('login'); return; }
-  if(parts[0] === 'signup'){ renderAuthPage('signup'); return; }
-  if(parts[0] === 'saved'){ renderSavedPaths(); return; }
-  if(parts[0] === 'courses'){ renderCourseComparison(); return; }
-  if(parts[0] === 'exams'){ renderEntranceExams(); return; }
-if(parts[0] === 'institutions'){
-  renderEducationFinder();
-  return;
-}
-if(parts[0] === 'scholarships'){
-  renderScholarshipFinder();
-  return;
-}
-  if(parts[0] === 'recommend'){ renderRecommendations(); return; }
+    const isAdminUser =
+      currentUser &&
+      ADMIN_EMAILS.includes(
+        (currentUser.email || '').toLowerCase()
+      );
+
+    brand.classList.toggle(
+      'admin-compact-brand',
+      !!isAdminUser
+    );
+  }
+
+
+  /* =========================
+     ROUTES
+     ========================= */
+
+  if(parts[0] === 'login'){
+    renderAuthPage('login');
+    return;
+  }
+
+  if(parts[0] === 'signup'){
+    renderAuthPage('signup');
+    return;
+  }
+
+  if(parts[0] === 'saved'){
+    renderSavedPaths();
+    return;
+  }
+
+  if(parts[0] === 'courses'){
+    renderCourseComparison();
+    return;
+  }
+
+  if(parts[0] === 'exams'){
+    renderEntranceExams();
+    return;
+  }
+
+  if(parts[0] === 'institutions'){
+    renderEducationFinder();
+    return;
+  }
+
+  if(parts[0] === 'scholarships'){
+    renderScholarshipFinder();
+    return;
+  }
+
+  if(parts[0] === 'recommend'){
+    renderRecommendations();
+    return;
+  }
 
   if(parts[0] === 'analytics'){
+
     if(!currentUser){
       location.hash = '#/login';
       return;
     }
-    if(!ADMIN_EMAILS.includes((currentUser.email || '').toLowerCase())){
+
+    if(!ADMIN_EMAILS.includes(
+      (currentUser.email || '').toLowerCase()
+    )){
       main.innerHTML = `
-        <a class="back-link" href="#/">‹ Back to home</a>
-        <p style="padding:20px;color:#A2402F;">You're not authorized to view analytics.</p>
+        <a class="back-link" href="#/">â€¹ Back to home</a>
+        <p style="padding:20px;color:#A2402F;">
+          You're not authorized to view analytics.
+        </p>
       `;
       return;
     }
+
     renderAnalytics();
     return;
   }
 
   if(parts[0] === 'students'){
-  renderStudentInterest();
-  return;
-}
-
-if(parts[0] === 'profile'){
-  renderProfile();
-  return;
-}
-
-if(parts[0] === 'admin-saved'){
-  if(!currentUser){
-    location.hash = '#/login';
-    return;
-  }
-  if(!ADMIN_EMAILS.includes((currentUser.email || '').toLowerCase())){
-    main.innerHTML = `
-      <a class="back-link" href="#/">‹ Back to home</a>
-      <p style="padding:20px;color:#A2402F;">
-        You're not authorized to view student saved paths.
-      </p>
-    `;
+    renderStudentInterest();
     return;
   }
 
-  renderAdminSavedPaths();
-  return;
-}
+  if(parts[0] === 'profile'){
+    renderProfile();
+    return;
+  }
 
-  if(parts.length===0){ renderHome(main,crumb); return; }
+  if(parts[0] === 'admin-saved'){
+
+    if(!currentUser){
+      location.hash = '#/login';
+      return;
+    }
+
+    if(!ADMIN_EMAILS.includes(
+      (currentUser.email || '').toLowerCase()
+    )){
+      main.innerHTML = `
+        <a class="back-link" href="#/">â€¹ Back to home</a>
+        <p style="padding:20px;color:#A2402F;">
+          You're not authorized to view student saved paths.
+        </p>
+      `;
+      return;
+    }
+
+    renderAdminSavedPaths();
+    return;
+  }
+
+  if(parts.length === 0){
+    renderHome(main,crumb);
+    return;
+  }
 
   const streamId = parts[0];
   const stream = DATA[streamId];
-  if(!stream){ renderHome(main,crumb); return; }
 
-  if(parts.length===1){ renderStream(main,crumb,streamId,stream); return; }
+  if(!stream){
+    renderHome(main,crumb);
+    return;
+  }
+
+  if(parts.length === 1){
+    renderStream(
+      main,
+      crumb,
+      streamId,
+      stream
+    );
+    return;
+  }
 
   let node = stream.paths[parts[1]];
-  let trail = [{label:stream.name, hash:streamId}];
-  let idPath = streamId+'/'+parts[1];
-  if(!node){ renderHome(main,crumb); return; }
 
-  for(let i=2;i<parts.length;i++){
-    trail.push({label:node.name, hash:idPath});
-    if(node.children && node.children[parts[i]]){
-      idPath += '/'+parts[i];
-      node = node.children[parts[i]];
-    } else {
+  let trail = [
+    {
+      label: stream.name,
+      hash: streamId
+    }
+  ];
+
+  let idPath =
+    streamId + '/' + parts[1];
+
+  if(!node){
+    renderHome(main,crumb);
+    return;
+  }
+
+  for(let i = 2; i < parts.length; i++){
+
+    trail.push({
+      label: node.name,
+      hash: idPath
+    });
+
+    if(
+      node.children &&
+      node.children[parts[i]]
+    ){
+
+      idPath += '/' + parts[i];
+
+      node =
+        node.children[parts[i]];
+
+    }else{
       break;
     }
   }
 
   if(node.children){
-    renderGroup(main,crumb,stream,idPath,node,trail);
-  } else {
-    renderLeaf(main,crumb,stream,idPath,node,trail);
+
+    renderGroup(
+      main,
+      crumb,
+      stream,
+      idPath,
+      node,
+      trail
+    );
+
+  }else{
+
+    renderLeaf(
+      main,
+      crumb,
+      stream,
+      idPath,
+      node,
+      trail
+    );
+  }
+}
+
+
+
+function updateActiveSidebar(){
+  const current = parseHash()[0] || '';
+
+  document.querySelectorAll('.sidebar-link').forEach(link => {
+    link.classList.remove('active');
+  });
+
+  const routeMap = {
+    '': '#/',
+    'recommend': '#/recommend',
+    'courses': '#/courses',
+    'exams': '#/exams',
+    'saved': '#/saved',
+    'profile': '#/profile',
+    'students': '#/students',
+    'analytics': '#/analytics',
+    'admin-saved': '#/admin-saved'
+  };
+
+  const activeHash = routeMap[current];
+
+  if(activeHash){
+    const activeLink = document.querySelector(
+      `.sidebar-link[href="${activeHash}"]`
+    );
+
+    if(activeLink){
+      activeLink.classList.add('active');
+    }
   }
 }
 
 function setCrumb(crumb, trail){
   crumb.innerHTML = trail.map((t,i)=>{
-    return `<a href="#/${t.hash}">${t.label}</a>` + (i<trail.length-1?' <span>›</span>':'');
+    return `<a href="#/${t.hash}">${t.label}</a>` + (i<trail.length-1?' <span>â€º</span>':'');
   }).join(' ');
 }
 
@@ -569,7 +2044,7 @@ function buildCourseComparisonData(){
         name: currentName,
         type: 'course',
         stream: stream.name || streamId,
-        breadcrumb: currentBreadcrumb.join(' → '),
+        breadcrumb: currentBreadcrumb.join(' â†’ '),
         duration:
           node.duration ||
           node.courseDuration ||
@@ -724,7 +2199,7 @@ courses: [
     stage: "After 12th",
     note: "Check the latest UPSC notification for age, education, gender and physical requirements.",
 courses: [
-  "NDA — Defense",
+  "NDA â€” Defense",
   "NDA Preparation"
 ]
 
@@ -799,7 +2274,7 @@ function renderCourseComparison(){
       name: name,
       stream: stream.name || streamId,
       streamId: streamId,
-      breadcrumb: trail.slice(1).join(' → '),
+      breadcrumb: trail.slice(1).join(' â†’ '),
 
       duration:
         node.duration ||
@@ -860,7 +2335,7 @@ function renderCourseComparison(){
 
   if(!streamList.length){
     main.innerHTML = `
-      <a class="back-link" href="#/">‹ Back to home</a>
+      <a class="back-link" href="#/">â€¹ Back to home</a>
       <div class="page-head">
         <div class="code">CAREER TOOLS</div>
         <h1>Compare Courses</h1>
@@ -879,7 +2354,7 @@ function renderCourseComparison(){
       .replace(/'/g,'&#039;');
 
   main.innerHTML = `
-    <a class="back-link" href="#/">‹ Back to home</a>
+    <a class="back-link" href="#/">â€¹ Back to home</a>
 
     <div class="page-head">
       <div class="code">CAREER TOOLS</div>
@@ -995,7 +2470,7 @@ function renderCourseComparison(){
 
     compareInfo.innerHTML = `
       <strong>${escapeHtml(selectedStream.name)}</strong>
-      — ${courses.length} course/career path${courses.length === 1 ? '' : 's'} available.
+      â€” ${courses.length} course/career path${courses.length === 1 ? '' : 's'} available.
       ${courses.length >= 2
         ? ' Choose any two courses from this stream.'
         : ' At least two courses are required for comparison.'}
@@ -1176,7 +2651,7 @@ function renderEntranceExams(){
   setCrumb(crumb, [{label:'Entrance Exams', hash:'exams'}]);
 
   main.innerHTML = `
-    <a class="back-link" href="#/">‹ Back to home</a>
+    <a class="back-link" href="#/">â€¹ Back to home</a>
     <div class="page-head">
       <div class="code">CAREER TOOLS</div>
       <h1>Entrance Exams</h1>
@@ -1223,7 +2698,7 @@ const COURSE_LINKS = {
   "BA History": "#/hec/humanities/bahistory",
   "BA Psychology": "#/hec/humanities/bapsychology",
   "BSW": "#/hec/bsw",
-  "NDA — Defense": "#/mpc/nda",
+  "NDA â€” Defense": "#/mpc/nda",
 "NDA Preparation": "#/defence/ndaprep",
 "Architecture": "#/mpc/architecture"
 };
@@ -1498,7 +2973,7 @@ const COURSE_LINKS = {
 
   main.innerHTML = `
 
-    <a class="back-link" href="#/">‹ Back to home</a>
+    <a class="back-link" href="#/">â€¹ Back to home</a>
 
     <div class="page-head">
       <div class="code">CAREER TOOL</div>
@@ -2212,7 +3687,7 @@ score = Math.max(0, Math.min(score, 100));
         score,
 	reasons,
 	mismatches,
-        breadcrumb: trail.join(' → '),
+        breadcrumb: trail.join(' â†’ '),
         path: `${stream}/${pathIds.join('/')}`
       });
     }
@@ -2272,7 +3747,7 @@ score = Math.max(0, Math.min(score, 100));
 
     <ul class="plain" style="margin-top:8px;">
       ${course.mismatches.map(item => `
-        <li>⚠ ${item}</li>
+        <li>âš  ${item}</li>
       `).join('')}
     </ul>
   </div>
@@ -2282,7 +3757,7 @@ score = Math.max(0, Math.min(score, 100));
 
       <ul class="plain" style="margin-top:8px;">
         ${course.reasons.map(reason => `
-          <li>✓ ${reason}</li>
+          <li>âœ“ ${reason}</li>
         `).join('')}
       </ul>
     </div>
@@ -2312,7 +3787,7 @@ async function renderProfile(){
   ]);
 
   main.innerHTML = `
-    <a class="back-link" href="#/">‹ Back to home</a>
+    <a class="back-link" href="#/">â€¹ Back to home</a>
 
     <div class="page-head">
       <div class="code">STUDENT PROFILE</div>
@@ -2355,18 +3830,30 @@ ${currentUser.email || ''}
 <div style="margin-top:24px;">
 <div>
     <a href="#/saved" class="btn">
-      ⭐ My Saved Paths
+      â­ My Saved Paths
+    </a>
+  </div>
+
+    <div style="margin-top:12px;">
+    <a href="#/institutions" class="btn">
+      ?? Education Finder
     </a>
   </div>
 
   <div style="margin-top:12px;">
-    <button id="profileLogoutBtn" class="btn">
-      🚪 Log out
+    <div style="margin-top:12px;">
+<div style="margin-top:12px;">
+  <a href="#/scholarships" class="btn">
+    ?? Scholarship Finder
+  </a>
+</div>
+<button id="profileLogoutBtn" class="btn">
+      ðŸšª Log out
     </button>
   </div>
 
 <button id="editProfileBtn" class="btn" style="margin-top:12px;">
-  ✏️ Edit Profile
+  âœï¸ Edit Profile
 </button>
     </div>
 
@@ -2514,7 +4001,7 @@ async function renderEducationFinder(){
   ]);
 
   main.innerHTML = `
-    <a class="back-link" href="#/">‹ Back to home</a>
+    <a class="back-link" href="#/">â€¹ Back to home</a>
 
     <div class="page-head">
       <div class="code">EDUCATION FINDER</div>
@@ -2579,7 +4066,7 @@ async function renderEducationFinder(){
 
       <div style="margin-top:16px;">
         <button id="institutionSearchBtn" class="btn">
-          🔍 Search
+          ðŸ” Search
         </button>
 
         <button id="institutionClearBtn" class="btn" style="margin-left:8px;">
@@ -2739,7 +4226,7 @@ if(universityInput.value.trim()){
               class="btn"
               id="institutionPrevBtn"
             >
-              ← Previous
+              â† Previous
             </button>
           `;
         }
@@ -2756,7 +4243,7 @@ if(universityInput.value.trim()){
               class="btn"
               id="institutionNextBtn"
             >
-              Next →
+              Next â†’
             </button>
           `;
         }
@@ -2828,7 +4315,7 @@ async function renderScholarshipFinder(){
   ]);
 
   main.innerHTML = `
-    <a class="back-link" href="#/">‹ Back to home</a>
+    <a class="back-link" href="#/">â€¹ Back to home</a>
 
     <div class="page-head">
       <div class="code">SCHOLARSHIP FINDER</div>
@@ -2910,7 +4397,7 @@ async function renderScholarshipFinder(){
       </div>
 
       <button id="findScholarshipsBtn" class="btn">
-        🎓 Find Scholarships
+        ðŸŽ“ Find Scholarships
       </button>
 
     </div>
@@ -3124,11 +4611,11 @@ async function findScholarships(){
 
         const amount =
           scholarship.amount_per_year
-            ? `₹${Number(
+            ? `â‚¹${Number(
                 scholarship.amount_per_year
               ).toLocaleString('en-IN')} per year`
             : scholarship.maintenance_allowance_per_year
-              ? `Maintenance allowance: ₹${Number(
+              ? `Maintenance allowance: â‚¹${Number(
                   scholarship.maintenance_allowance_per_year
                 ).toLocaleString('en-IN')} per year`
               : 'See official scheme details';
@@ -3136,7 +4623,7 @@ async function findScholarships(){
 
         const incomeLimit =
           scholarship.family_income_limit
-            ? `₹${Number(
+            ? `â‚¹${Number(
                 scholarship.family_income_limit
               ).toLocaleString('en-IN')} per year`
             : 'Not specified';
@@ -3271,259 +4758,438 @@ async function findScholarships(){
 
 }
 
-  /*
-   * Temporary sample scholarship data.
-   *
-   * IMPORTANT:
-   * These are placeholder records for testing the UI.
-   * We will replace them with verified official
-   * scholarship data before production.
-   */
+function renderHome(main, crumb){
 
-  const scholarships = [
+  crumb.innerHTML = '';
+
+  const userName =
+    currentUser?.displayName ||
+    currentUser?.email?.split('@')[0] ||
+    'Student';
+
+  const recommendations = [
     {
-      name: 'National Scholarship Scheme',
-      provider: 'Government of India',
-      level: ['intermediate','degree'],
-      state: ['all-india'],
-      minPercentage: 60,
-      maxIncome: 250000,
-      categories: ['general','sc','st','obc','ebc','minority','pwd'],
-      benefit: 'Financial assistance for eligible students.',
-      deadline: 'Check official portal'
+      name: 'Artificial Intelligence & Data Science',
+      desc: 'AI, data, machine learning and analytics',
+      score: 92,
+      path: '#/mpc/engineering/aids'
     },
     {
-      name: 'State Post-Matric Scholarship',
-      provider: 'Government of Andhra Pradesh',
-      level: ['intermediate','degree'],
-      state: ['andhra-pradesh'],
-      minPercentage: 50,
-      maxIncome: 250000,
-      categories: ['sc','st','obc','ebc','minority','pwd'],
-      benefit: 'Post-matric financial assistance.',
-      deadline: 'Check official portal'
+      name: 'Computer Science Engineering',
+      desc: 'Software development, programming and technology',
+      score: 87,
+      path: '#/mpc/engineering/cse'
+    },
+    {
+      name: 'Cyber Security',
+      desc: 'Security, networks and digital protection',
+      score: 82,
+      path: '#/mpc/engineering/cybersecurity'
     }
   ];
 
+  const exams = ENTRANCE_EXAM_DATA
+    .slice(0,3);
 
-  const matches = scholarships.filter(scholarship => {
+  main.innerHTML = `
 
-    const levelMatch =
-      scholarship.level.includes(level);
+    <section class="home-dashboard">
 
-    const stateMatch =
-      scholarship.state.includes(state) ||
-      scholarship.state.includes('all-india');
+      <!-- =========================
+           WELCOME
+           ========================= -->
 
-    const percentageMatch =
-      percentage >= scholarship.minPercentage;
+      <div class="home-welcome">
 
-    const incomeMatch =
-      income <= scholarship.maxIncome;
+        <div class="home-welcome-text">
 
-    const categoryMatch =
-      scholarship.categories.includes(category);
+          <div class="home-kicker">
+            CAREER DASHBOARD
+          </div>
 
-    return (
-      levelMatch &&
-      stateMatch &&
-      percentageMatch &&
-      incomeMatch &&
-      categoryMatch
-    );
-  });
+          <h1>
+            Welcome back, ${userName}!
+          </h1>
 
+          <p>
+            Explore courses, entrance exams and career paths
+            to find the right direction after 10th class.
+          </p>
 
-  if(!matches.length){
-
-    results.innerHTML = `
-      <div class="detail-section">
-        <h2>No matching scholarships found</h2>
-        <p>
-          Try different eligibility information or check
-          official scholarship portals.
-        </p>
-      </div>
-    `;
-
-    return;
-  }
-
-
-  results.innerHTML = `
-    <div class="page-head">
-      <div class="code">MATCHING SCHOLARSHIPS</div>
-      <h2>Scholarships You May Be Eligible For</h2>
-      <p>
-        These results are based on the information you provided.
-      </p>
-    </div>
-
-    ${matches.map(scholarship => `
-      <div class="detail-section"
-        style="--lc:var(--ink);margin-top:12px;">
-
-        <h2>${scholarship.name}</h2>
-
-        <p>
-          <strong>Provider:</strong>
-          ${scholarship.provider}
-        </p>
-
-        <p>
-          <strong>Minimum percentage:</strong>
-          ${scholarship.minPercentage}%
-        </p>
-
-        <p>
-          <strong>Maximum family income:</strong>
-          ₹${scholarship.maxIncome.toLocaleString('en-IN')}
-        </p>
-
-        <p>
-          <strong>Benefit:</strong>
-          ${scholarship.benefit}
-        </p>
-
-        <p>
-          <strong>Application deadline:</strong>
-          ${scholarship.deadline}
-        </p>
-
-        <div style="
-          margin-top:14px;
-          padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;
-          background:var(--card);
-        ">
-          <strong>Eligibility match</strong>
-
-          <ul class="plain" style="margin-top:8px;">
-            <li>✓ Education level matches</li>
-            <li>✓ State eligibility matches</li>
-            <li>✓ Percentage requirement matches</li>
-            <li>✓ Income requirement matches</li>
-            <li>✓ Category requirement matches</li>
-          </ul>
         </div>
 
-        <p style="
-          margin-top:14px;
-          font-size:0.85rem;
-          color:var(--ink-soft);
-        ">
-          Always verify the current eligibility rules and
-          deadline on the official scholarship portal.
-        </p>
+      </div>
+
+
+      <!-- =========================
+           QUICK ACTIONS
+           ========================= -->
+
+      <div class="home-action-grid">
+
+        <a
+          href="#/recommend"
+          class="home-action-card"
+        >
+
+          <div>
+
+            <div class="home-action-icon">
+              ðŸŽ¯
+            </div>
+
+            <h3>
+              Career Finder
+            </h3>
+
+            <p>
+              Find careers based on your interests,
+              goals and skills.
+            </p>
+
+          </div>
+
+          <div class="home-action-arrow">
+            â†’
+          </div>
+
+        </a>
+
+
+        <a
+          href="#/courses"
+          class="home-action-card"
+        >
+
+          <div>
+
+            <div class="home-action-icon">
+              ðŸ“š
+            </div>
+
+            <h3>
+              Compare Courses
+            </h3>
+
+            <p>
+              Compare courses, duration, salary,
+              careers and higher studies.
+            </p>
+
+          </div>
+
+          <div class="home-action-arrow">
+            â†’
+          </div>
+
+        </a>
+
+
+        <a
+          href="#/exams"
+          class="home-action-card"
+        >
+
+          <div>
+
+            <div class="home-action-icon">
+              ðŸ“
+            </div>
+
+            <h3>
+              Entrance Exams
+            </h3>
+
+            <p>
+              Explore entrance exams and the courses
+              they can lead to.
+            </p>
+
+          </div>
+
+          <div class="home-action-arrow">
+            â†’
+          </div>
+
+        </a>
+
+
+        <a
+          href="#/saved"
+          class="home-action-card"
+        >
+
+          <div>
+
+            <div class="home-action-icon">
+              â­
+            </div>
+
+            <h3>
+              My Saved Paths
+            </h3>
+
+            <p>
+              View and manage the career paths
+              you have saved.
+            </p>
+
+          </div>
+
+          <div class="home-action-arrow">
+            â†’
+          </div>
+
+        </a>
 
       </div>
-    `).join('')}
-  `;
 
 
-function renderHome(main, crumb){
-  crumb.innerHTML = '';
-  const streamOrder = ['mpc','bipc','mec','cec','hec','polytechnic','iti','vocational','skilldev','defence','govtjobs'];
-  main.innerHTML = `
-    <section class="hero">
-      <div class="kicker">Life after 10th class</div>
-      <h1>Every route starts at the same station.</h1>
-      <p>Pick a line below. Each one shows every path it leads to — the branch, the entrance exam, the job roles, and the skills you'll actually need.</p>
+      <!-- =========================
+           LOWER DASHBOARD
+           ========================= -->
+
+      <div class="home-dashboard-grid">
+
+
+        <!-- RECOMMENDED -->
+
+        <section class="home-panel">
+
+          <div class="home-panel-header">
+
+            <h2>
+              Recommended for you
+            </h2>
+
+            <a
+              href="#/recommend"
+              class="home-view-all"
+            >
+              View All â†’
+            </a>
+
+          </div>
+
+
+          <div>
+
+            ${recommendations.map(course => `
+
+              <a
+                href="${course.path}"
+                class="home-recommendation"
+              >
+
+                <div class="home-recommendation-main">
+
+                  <div class="home-recommendation-title">
+                    ${course.name}
+                  </div>
+
+                  <div class="home-recommendation-desc">
+                    ${course.desc}
+                  </div>
+
+                </div>
+
+
+                <div class="home-recommendation-match">
+
+                  <div class="home-match-number">
+                    ${course.score}%
+                  </div>
+
+                  <span class="home-match-label">
+                    Match
+                  </span>
+
+                  <div class="home-match-bar">
+                    <span style="width:${course.score}%"></span>
+                  </div>
+
+                </div>
+
+              </a>
+
+            `).join('')}
+
+          </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+
+        <section class="home-panel">
+
+          <div class="home-panel-header">
+
+            <h2>
+              Your Career Tools
+            </h2>
+
+          </div>
+
+
+          <div class="home-tool-list">
+
+
+            <a
+              href="#/profile"
+              class="home-tool"
+            >
+
+              <div class="home-tool-main">
+
+                <div class="home-tool-icon">
+                  ðŸ‘¤
+                </div>
+
+                <div>
+
+                  <strong>
+                    My Profile
+                  </strong>
+
+                  <small>
+                    Manage your information
+                  </small>
+
+                </div>
+
+              </div>
+
+              <span class="home-tool-arrow">
+                â†’
+              </span>
+
+            </a>
+
+
+            <a
+              href="#/exams"
+              class="home-tool"
+            >
+
+              <div class="home-tool-main">
+
+                <div class="home-tool-icon">
+                  ðŸ“
+                </div>
+
+                <div>
+
+                  <strong>
+                    Entrance Exams
+                  </strong>
+
+                  <small>
+                    Explore exam routes
+                  </small>
+
+                </div>
+
+              </div>
+
+              <span class="home-tool-arrow">
+                â†’
+              </span>
+
+            </a>
+
+
+            <a
+              href="#/scholarships"
+              class="home-tool"
+            >
+
+              <div class="home-tool-main">
+
+                <div class="home-tool-icon">
+                  ðŸŽ“
+                </div>
+
+                <div>
+
+                  <strong>
+                    Scholarships
+                  </strong>
+
+                  <small>
+                    Find eligible scholarships
+                  </small>
+
+                </div>
+
+              </div>
+
+              <span class="home-tool-arrow">
+                â†’
+              </span>
+
+            </a>
+
+
+          </div>
+
+
+          <!-- UPCOMING EXAMS -->
+
+          <div class="home-exam-list">
+
+            <div class="home-panel-header">
+
+              <h2>
+                Popular Entrance Exams
+              </h2>
+
+              <a
+                href="#/exams"
+                class="home-view-all"
+              >
+                View All â†’
+              </a>
+
+            </div>
+
+
+            ${exams.map(exam => `
+
+              <a
+                href="#/exams"
+                class="home-exam"
+              >
+
+                <div>
+
+                  <div class="home-exam-name">
+                    ${exam.name}
+                  </div>
+
+                  <div class="home-exam-route">
+                    ${exam.route}
+                  </div>
+
+                </div>
+
+                <span class="home-exam-arrow">
+                  â†’
+                </span>
+
+              </a>
+
+            `).join('')}
+
+          </div>
+
+        </section>
+
+
+      </div>
+
     </section>
-    <div class="hub-node">
-      <div class="hub-dot"></div>
-      <div><div class="hub-label">10th Class — Complete</div><div class="hub-tag">Choose your line</div></div>
-    </div>
-    <div class="lines">
-      ${streamOrder.map(id=>{
-        const s = DATA[id];
-        return `<div class="line-item">
-          <div class="line-btn" style="--lc:${s.color}" onclick="location.hash='#/${id}'">
-            <div class="stop-dot"></div>
-            <div class="line-code">LINE</div>
-            <div class="line-name">${s.name}</div>
-            <div class="line-arrow">›</div>
-          </div>
-        </div>`;
-      }).join('')}
-    </div>
-  `;
-}
 
-async function trackClick(streamId, pathId, nodeId){
-  try {
-    const headers = {'Content-Type': 'application/json'};
-    if(currentUser){
-      const token = await currentUser.getIdToken();
-      headers['Authorization'] = `Bearer ${token}`;
-    }
-    fetch(`${API_BASE}/api/track`, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify({ stream_id: streamId, path_id: pathId || null, node_id: nodeId || null })
-    }).catch(err => console.error('Tracking failed:', err));
-  } catch(err){
-    console.error('Tracking failed:', err);
-  }
-}
-
-function renderStream(main, crumb, id, stream){
-  trackClick(id);
-  setCrumb(crumb, [{label:stream.name, hash:id}]);
-  const pathIds = Object.keys(stream.paths);
-  main.innerHTML = `
-    <a class="back-link" href="#/">‹ All streams</a>
-    <div class="page-head" style="--lc:${stream.color}">
-      <div class="code">${stream.name} LINE</div>
-      <h1>${stream.full}</h1>
-      <p>${stream.desc}</p>
-    </div>
-    <div class="stations" style="--lc:${stream.color}">
-      ${pathIds.map(pid=>{
-        const p = stream.paths[pid];
-        return `<div class="station">
-          <div class="station-btn" onclick="location.hash='#/${id}/${pid}'">
-            <div class="station-code">${p.entrance ? p.entrance.split('/')[0].trim() : (p.children?'MULTIPLE BRANCHES':'DIRECT ROUTE')}</div>
-            <div class="station-name">${p.name}</div>
-            <div class="station-desc">${p.desc}</div>
-            <div class="station-arrow">›</div>
-          </div>
-        </div>`;
-      }).join('')}
-    </div>
-    ${stream.afterCompletion ? `
-    <div class="detail-section" style="--lc:${stream.color}">
-      <h2>After completion, you can</h2>
-      <ul class="plain">${stream.afterCompletion.map(s=>`<li>${s}</li>`).join('')}</ul>
-    </div>` : ''}
-  `;
-}
-
-function renderGroup(main, crumb, stream, idPath, node, trail){
-  setCrumb(crumb, trail.concat([{label:node.name, hash:idPath}]));
-  const childIds = Object.keys(node.children);
-  main.innerHTML = `
-    <a class="back-link" href="#/${idPath.split('/').slice(0,-1).join('/')}">‹ Back</a>
-    <div class="page-head" style="--lc:${stream.color}">
-      <div class="code">${stream.name} LINE</div>
-      <h1>${node.name}</h1>
-      <p>${node.desc}</p>
-      ${node.entrance ? `<div class="info-strip"><span class="chip">Entrance: ${node.entrance}</span></div>` : ''}
-    </div>
-    <div class="stations" style="--lc:${stream.color}">
-      ${childIds.map(cid=>{
-        const c = node.children[cid];
-        return `<div class="station">
-          <div class="station-btn" onclick="location.hash='#/${idPath}/${cid}'">
-            <div class="station-code">BRANCH</div>
-            <div class="station-name">${c.name}</div>
-            <div class="station-desc">${c.desc}</div>
-            <div class="station-arrow">›</div>
-          </div>
-        </div>`;
-      }).join('')}
-    </div>
   `;
 }
 
@@ -3533,13 +5199,13 @@ function renderLeaf(main, crumb, stream, idPath, node, trail){
   setCrumb(crumb, trail.concat([{label:node.name, hash:idPath}]));
   const parentHash = idPath.split('/').slice(0,-1).join('/');
   main.innerHTML = `
-    <a class="back-link" href="#/${parentHash}">‹ Back</a>
+    <a class="back-link" href="#/${parentHash}">â€¹ Back</a>
     <div class="page-head" style="--lc:${stream.color}">
-      <div class="code">${stream.name} LINE · FINAL STOP</div>
+      <div class="code">${stream.name} LINE Â· FINAL STOP</div>
       <h1>${node.name}</h1>
       <p>${node.desc}</p>
       ${node.entrance ? `<div class="info-strip"><span class="chip">Entrance: ${node.entrance}</span></div>` : ''}
-      <button id="savePathBtn" class="btn" style="margin-top:12px;">☆ Save this path</button>
+      <button id="savePathBtn" class="btn" style="margin-top:12px;">â˜† Save this path</button>
       <div id="saveStatus" style="margin-top:6px;font-size:13px;"></div>
     </div>
     ${node.coreSubjects ? `
@@ -3675,7 +5341,7 @@ function renderLeaf(main, crumb, stream, idPath, node, trail){
       return;
     }
     saveBtn.disabled = true;
-    saveStatus.textContent = 'Saving…';
+    saveStatus.textContent = 'Savingâ€¦';
     try {
       const token = await currentUser.getIdToken();
       const parts = idPath.split('/');
@@ -3686,14 +5352,14 @@ function renderLeaf(main, crumb, stream, idPath, node, trail){
           stream_id: parts[0],
           path_id: parts[1] || null,
           node_id: parts.slice(2).join('/') || null,
-          label: `${stream.name} → ${node.name}`
+          label: `${stream.name} â†’ ${node.name}`
         })
       });
       if(!res.ok) throw new Error(`Server returned ${res.status}`);
-      saveStatus.textContent = '✓ Saved!';
-      saveBtn.textContent = '★ Saved';
+      saveStatus.textContent = 'âœ“ Saved!';
+      saveBtn.textContent = 'â˜… Saved';
     } catch(err){
-      saveStatus.textContent = 'Could not save — try again.';
+      saveStatus.textContent = 'Could not save â€” try again.';
       saveBtn.disabled = false;
       console.error(err);
     }
@@ -3709,7 +5375,7 @@ function searchCareers(query){
   function walk(node, idPath, breadcrumb){
     const hay = [node.name || '', ...(node.jobRoles || [])].join(' ').toLowerCase();
     if(hay.includes(q)){
-      results.push({ idPath, label: breadcrumb.join(' › '), matchedRole: (node.jobRoles||[]).find(r=>r.toLowerCase().includes(q)) });
+      results.push({ idPath, label: breadcrumb.join(' â€º '), matchedRole: (node.jobRoles||[]).find(r=>r.toLowerCase().includes(q)) });
     }
     if(node.children){
       for(const [cid, child] of Object.entries(node.children)){
@@ -3783,7 +5449,7 @@ document.getElementById('searchResults').addEventListener('click', (e) => {
 
 /* ============ FIREBASE AUTH ============ */
 // TODO: replace with your own Firebase project config
-// (Firebase console → Project settings → General → Your apps → SDK setup)
+// (Firebase console â†’ Project settings â†’ General â†’ Your apps â†’ SDK setup)
 const firebaseConfig = {
   apiKey: "AIzaSyCrSVtTTtl0qk0CYMT5y8T5pQVoqQeOuWU",
   authDomain: "ab-14csp-c7137.firebaseapp.com",
@@ -3803,29 +5469,73 @@ const ADMIN_EMAILS = ['chavasaisujith06@gmail.com'];
 
 function renderAuthBox(){
   const box = document.getElementById('authBox');
+  const adminLinks = document.getElementById('sidebarAdminLinks');
+  const logoutBtn = document.getElementById('sidebarLogoutBtn');
 
   if(currentUser){
-    const isAdmin = ADMIN_EMAILS.includes((currentUser.email || '').toLowerCase());
+
+    const isAdmin = ADMIN_EMAILS.includes(
+      (currentUser.email || '').toLowerCase()
+    );
 
     box.innerHTML = `
-  <a href="#/courses" class="top-action">📚 Compare Courses</a>
-  <a href="#/exams" class="top-action">📝 Entrance Exams</a>
-  <a href="#/institutions" class="top-action">🎓 Education Finder</a>
-  <a href="#/scholarships" class="top-action">🎓 Scholarship Finder</a>
-
-  ${isAdmin ? `
-    <a href="#/students" id="studentsBtn" class="top-action">🎓 Student Interest</a>
-    <a href="#/analytics" id="analyticsBtn" class="top-action">📊 Analytics</a>
-    <a href="#/admin-saved" id="adminSavedBtn" class="top-action">⭐ Student Saved Paths</a>
-  ` : ''}
-
-    <a href="#/profile" class="top-action">👤 Profile</a>
-`;
-  } else {
-    box.innerHTML = `
-      <a href="#/login" class="top-action">Log in</a>
-      <a href="#/signup" class="top-action">Sign up</a>
+      <a href="#/profile" class="dashboard-profile-button">
+        <span class="profile-avatar">ðŸ‘¤</span>
+        <span class="profile-user">
+          <strong>My Profile</strong>
+          <small>${currentUser.email || ''}</small>
+        </span>
+      </a>
     `;
+
+    if(adminLinks){
+      adminLinks.style.display = isAdmin ? 'block' : 'none';
+    }
+
+    if(logoutBtn){
+  logoutBtn.onclick = () => {
+
+    // Clear search input
+    const careerSearch =
+      document.getElementById('careerSearch');
+
+    // Clear search results
+    const searchResults =
+      document.getElementById('searchResults');
+
+    if(careerSearch){
+      careerSearch.value = '';
+    }
+
+    if(searchResults){
+      searchResults.innerHTML = '';
+      searchResults.style.display = 'none';
+    }
+
+    // Logout
+    fbAuth.signOut();
+  };
+
+    }
+  } else {
+
+    box.innerHTML = `
+      <a href="#/login" class="dashboard-login-button">
+        Log in
+      </a>
+
+      <a href="#/signup" class="dashboard-signup-button">
+        Sign up
+      </a>
+    `;
+
+    if(adminLinks){
+      adminLinks.style.display = 'none';
+    }
+
+    if(logoutBtn){
+      logoutBtn.style.display = 'none';
+    }
   }
 }
 
@@ -3833,18 +5543,78 @@ let authReadyResolve;
 const authReady = new Promise(resolve => { authReadyResolve = resolve; });
 let authReadyAlreadyFired = false;
 
+function clearCareerSearch(){
+  const careerSearch = document.getElementById('careerSearch');
+  const searchResults = document.getElementById('searchResults');
+
+  if(careerSearch){
+    careerSearch.value = '';
+  }
+
+  if(searchResults){
+    searchResults.innerHTML = '';
+    searchResults.style.display = 'none';
+  }
+}
+
+
+
+
 fbAuth.onAuthStateChanged((user) => {
-  const wasResolved = authReadyAlreadyFired;
+
+  const previousUser = currentUser;
+
+  // User changed: clear any previous search state.
+  if(previousUser !== user){
+    clearCareerSearch();
+  }
+
   currentUser = user;
+
   renderAuthBox();
+
   authReadyAlreadyFired = true;
   authReadyResolve();
 
-  // If the user logs out while browsing, send them back to the login gate.
-  if(!user && wasResolved){
+  // User logged out.
+  if(!user && previousUser){
+    clearCareerSearch();
     location.hash = '#/login';
   }
+
 });
+
+
+/* ============ MOBILE SIDEBAR ============ */
+
+function setupMobileSidebar(){
+
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+
+  if(!menuBtn || !sidebar || !overlay) return;
+
+  menuBtn.onclick = () => {
+    sidebar.classList.toggle('mobile-open');
+    overlay.classList.toggle('active');
+  };
+
+  overlay.onclick = () => {
+    sidebar.classList.remove('mobile-open');
+    overlay.classList.remove('active');
+  };
+
+  // Close sidebar after selecting a menu item
+  sidebar.querySelectorAll('a.sidebar-link').forEach(link => {
+    link.addEventListener('click', () => {
+      sidebar.classList.remove('mobile-open');
+      overlay.classList.remove('active');
+    });
+  });
+}
+
+setupMobileSidebar();
 
 /* ============ AUTH PAGES (separate full pages, not a modal) ============ */
 function renderAuthPage(mode){
@@ -3853,7 +5623,7 @@ function renderAuthPage(mode){
   crumb.innerHTML = '';
 
   if(currentUser){
-    // already logged in — nothing to do here
+    // already logged in â€” nothing to do here
     location.hash = '#/';
     return;
   }
@@ -3885,6 +5655,27 @@ function renderAuthPage(mode){
         </button>
       </div>
 
+      <div style="text-align:right;margin:0 0 8px;">
+  ${isLogin ? `
+    <button
+      type="button"
+      id="forgotPasswordBtn"
+      style="
+        background:none;
+        border:none;
+        padding:0;
+        color:var(--ink);
+        font-family:inherit;
+        font-size:0.78rem;
+        cursor:pointer;
+        text-decoration:underline;
+      "
+    >
+      Forgot Password?
+    </button>
+  ` : ''}
+</div>
+
       <div id="authError" style="color:#A2402F;font-size:0.82rem;margin-bottom:8px;min-height:1.2em;"></div>
 
       <button id="authSubmit" class="btn btn-solid" style="width:100%;justify-content:center;padding:12px;margin:8px 0 16px;border-radius:8px;">${isLogin ? 'Log In' : 'Sign Up'}</button>
@@ -3903,23 +5694,73 @@ function renderAuthPage(mode){
       : '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/>';
   });
 
-  document.getElementById('authSubmit').addEventListener('click', async () => {
+    document.getElementById('authSubmit').addEventListener('click', async () => {
     const email = document.getElementById('authEmail').value.trim();
     const password = document.getElementById('authPassword').value;
     const errBox = document.getElementById('authError');
+
     errBox.textContent = '';
+
     try {
       if(isLogin){
         await fbAuth.signInWithEmailAndPassword(email, password);
       } else {
         await fbAuth.createUserWithEmailAndPassword(email, password);
       }
+
       location.hash = '#/';
+
     } catch(err){
       errBox.textContent = err.message;
     }
   });
+
+
+  /* FORGOT PASSWORD */
+
+  if(isLogin){
+
+    document
+      .getElementById('forgotPasswordBtn')
+      .addEventListener('click', async () => {
+
+        const email =
+          document.getElementById('authEmail').value.trim();
+
+        const errBox =
+          document.getElementById('authError');
+
+        errBox.textContent = '';
+
+        if(!email){
+          errBox.textContent =
+            'Please enter your email address first.';
+          return;
+        }
+
+        try {
+
+          await fbAuth.sendPasswordResetEmail(email);
+
+          errBox.style.color = '#2E7D32';
+
+          errBox.textContent =
+            'Password reset email sent. Check your inbox.';
+
+        } catch(err){
+
+          errBox.style.color = '#A2402F';
+
+          errBox.textContent =
+            err.message;
+        }
+
+      });
+
+  }
+
 }
+
 
 async function renderAnalytics(){
   const main = document.getElementById('main');
@@ -3935,13 +5776,13 @@ async function renderAnalytics(){
   const isAdmin = ADMIN_EMAILS.includes((currentUser.email || '').toLowerCase());
   if(!isAdmin){
     main.innerHTML = `
-      <a class="back-link" href="#/">‹ Back to home</a>
+      <a class="back-link" href="#/">â€¹ Back to home</a>
       <p style="padding:20px;color:#A2402F;">You're not authorized to view analytics.</p>
     `;
     return;
   }
 
-  main.innerHTML = '<p style="padding:20px;">Loading analytics…</p>';
+  main.innerHTML = '<p style="padding:20px;">Loading analyticsâ€¦</p>';
 
   try {
     const token = await currentUser.getIdToken();
@@ -3955,9 +5796,9 @@ async function renderAnalytics(){
 
     if(popular.length === 0){
       main.innerHTML = `
-        <a class="back-link" href="#/">‹ Back to home</a>
+        <a class="back-link" href="#/">â€¹ Back to home</a>
         <h1>Analytics</h1>
-        <p style="padding:12px 0;color:var(--ink-soft);">No click data yet — analytics fill in as students explore career pages.</p>
+        <p style="padding:12px 0;color:var(--ink-soft);">No click data yet â€” analytics fill in as students explore career pages.</p>
       `;
       return;
     }
@@ -3973,7 +5814,7 @@ async function renderAnalytics(){
       return `
         <div style="margin-bottom:16px;">
           <div style="display:flex;justify-content:space-between;font-size:0.88rem;margin-bottom:4px;">
-            <span style="font-weight:600;">${name}${full ? ` <span style="font-weight:400;color:var(--ink-soft);">— ${full}</span>` : ''}</span>
+            <span style="font-weight:600;">${name}${full ? ` <span style="font-weight:400;color:var(--ink-soft);">â€” ${full}</span>` : ''}</span>
             <span style="color:var(--ink-soft);">${p.clicks} click${p.clicks === 1 ? '' : 's'}</span>
           </div>
           <div style="background:var(--paper-deep);border-radius:6px;height:14px;overflow:hidden;">
@@ -3984,14 +5825,14 @@ async function renderAnalytics(){
     }).join('');
 
     main.innerHTML = `
-      <a class="back-link" href="#/">‹ Back to home</a>
+      <a class="back-link" href="#/">â€¹ Back to home</a>
       <h1>Analytics</h1>
-      <p style="color:var(--ink-soft);font-size:0.9rem;margin-bottom:24px;">Most-explored career streams, based on student clicks (aggregated — no individual student data shown).</p>
+      <p style="color:var(--ink-soft);font-size:0.9rem;margin-bottom:24px;">Most-explored career streams, based on student clicks (aggregated â€” no individual student data shown).</p>
       <div style="max-width:600px;">${rows}</div>
     `;
   } catch(err){
     main.innerHTML = `
-      <a class="back-link" href="#/">‹ Back to home</a>
+      <a class="back-link" href="#/">â€¹ Back to home</a>
       <p style="padding:20px;color:#A2402F;">Could not load analytics: ${err.message}</p>
     `;
     console.error(err);
@@ -4009,13 +5850,13 @@ async function renderStudentInterest(){
   }
   if(!ADMIN_EMAILS.includes((currentUser.email || '').toLowerCase())){
     main.innerHTML = `
-      <a class="back-link" href="#/">‹ Back to home</a>
+      <a class="back-link" href="#/">â€¹ Back to home</a>
       <p style="padding:20px;color:#A2402F;">You're not authorized to view this page.</p>
     `;
     return;
   }
 
-  main.innerHTML = '<p style="padding:20px;">Loading student data…</p>';
+  main.innerHTML = '<p style="padding:20px;">Loading student dataâ€¦</p>';
 
   try {
     const token = await currentUser.getIdToken();
@@ -4028,7 +5869,7 @@ async function renderStudentInterest(){
 
     if(emails.length === 0){
       main.innerHTML = `
-        <a class="back-link" href="#/">‹ Back to home</a>
+        <a class="back-link" href="#/">â€¹ Back to home</a>
         <h1>Student Interest</h1>
         <p style="padding:12px 0;color:var(--ink-soft);">No logged-in student activity yet.</p>
       `;
@@ -4041,7 +5882,7 @@ async function renderStudentInterest(){
         const stream = DATA[it.stream_id];
         const streamName = stream ? stream.name : it.stream_id;
         const pathName = (stream && it.path_id && stream.paths[it.path_id]) ? stream.paths[it.path_id].name : it.path_id;
-        const label = pathName ? `${streamName} → ${pathName}` : streamName;
+        const label = pathName ? `${streamName} â†’ ${pathName}` : streamName;
         return `<li style="padding:4px 0;">${label} <span style="color:var(--ink-soft);">(${it.clicks} click${it.clicks===1?'':'s'})</span></li>`;
       }).join('');
       return `
@@ -4053,14 +5894,14 @@ async function renderStudentInterest(){
     }).join('');
 
     main.innerHTML = `
-      <a class="back-link" href="#/">‹ Back to home</a>
+      <a class="back-link" href="#/">â€¹ Back to home</a>
       <h1>Student Interest</h1>
       <p style="color:var(--ink-soft);font-size:0.9rem;margin-bottom:20px;">Which logged-in students explored which paths. Admin-only view.</p>
       <div style="max-width:600px;">${sections}</div>
     `;
   } catch(err){
     main.innerHTML = `
-      <a class="back-link" href="#/">‹ Back to home</a>
+      <a class="back-link" href="#/">â€¹ Back to home</a>
       <p style="padding:20px;color:#A2402F;">Could not load student data: ${err.message}</p>
     `;
     console.error(err);
@@ -4083,7 +5924,7 @@ async function renderAdminSavedPaths(){
 
   if(!isAdmin){
     main.innerHTML = `
-      <a class="back-link" href="#/">‹ Back to home</a>
+      <a class="back-link" href="#/">â€¹ Back to home</a>
       <p style="padding:20px;color:#A2402F;">
         You're not authorized to view student saved paths.
       </p>
@@ -4092,7 +5933,7 @@ async function renderAdminSavedPaths(){
   }
 
   main.innerHTML = `
-    <a class="back-link" href="#/">‹ Back to home</a>
+    <a class="back-link" href="#/">â€¹ Back to home</a>
     <h1>Student Saved Paths</h1>
     <p style="color:var(--ink-soft);font-size:0.9rem;margin-bottom:20px;">
       Career paths saved by each student.
@@ -4129,7 +5970,7 @@ async function renderAdminSavedPaths(){
 
     if(emails.length === 0){
       main.innerHTML = `
-        <a class="back-link" href="#/">‹ Back to home</a>
+        <a class="back-link" href="#/">â€¹ Back to home</a>
 
         <h1>Student Saved Paths</h1>
 
@@ -4142,7 +5983,7 @@ async function renderAdminSavedPaths(){
     }
 
     let html = `
-      <a class="back-link" href="#/">‹ Back to home</a>
+      <a class="back-link" href="#/">â€¹ Back to home</a>
 
       <h1>Student Saved Paths</h1>
 
@@ -4231,11 +6072,11 @@ async function renderAdminSavedPaths(){
                 ">
                   Stream: ${item.stream_id || '-'}
                   ${item.path_id
-                    ? ` · Path: ${item.path_id}`
+                    ? ` Â· Path: ${item.path_id}`
                     : ''
                   }
                   ${item.node_id
-                    ? ` · Node: ${item.node_id}`
+                    ? ` Â· Node: ${item.node_id}`
                     : ''
                   }
                 </div>
@@ -4280,7 +6121,7 @@ async function renderAdminSavedPaths(){
     );
 
     main.innerHTML = `
-      <a class="back-link" href="#/">‹ Back to home</a>
+      <a class="back-link" href="#/">â€¹ Back to home</a>
 
       <h1>Student Saved Paths</h1>
 
@@ -4311,7 +6152,7 @@ async function renderSavedPaths(){
     return;
   }
 
-  main.innerHTML = '<p style="padding:20px;">Loading your saved paths…</p>';
+  main.innerHTML = '<p style="padding:20px;">Loading your saved pathsâ€¦</p>';
   try {
     const token = await currentUser.getIdToken();
     const res = await fetch(`${API_BASE}/api/saved-paths`, {
@@ -4321,14 +6162,14 @@ async function renderSavedPaths(){
     const items = await res.json();
     if(items.length === 0){
       main.innerHTML = `
-        <a class="back-link" href="#/">‹ Back to home</a>
+        <a class="back-link" href="#/">â€¹ Back to home</a>
         <h1>My saved paths</h1>
         <p style="padding:12px 0;color:var(--ink-soft);">No saved paths yet. Explore a stream and tap "Save this path" on any final page.</p>
       `;
       return;
     }
     main.innerHTML = `
-      <a class="back-link" href="#/">‹ Back to home</a>
+      <a class="back-link" href="#/">â€¹ Back to home</a>
       <h1>My saved paths</h1>
       <ul class="saved-list" id="savedPathsList">
         ${items.map(it => {
@@ -4345,7 +6186,7 @@ async function renderSavedPaths(){
       btn.addEventListener('click', async () => {
         const id = btn.dataset.id;
         btn.disabled = true;
-        btn.textContent = 'Removing…';
+        btn.textContent = 'Removingâ€¦';
         try {
           const token = await currentUser.getIdToken();
           const res = await fetch(`${API_BASE}/api/saved-paths/${id}`, {
@@ -4357,12 +6198,12 @@ async function renderSavedPaths(){
           li.remove();
           const list = document.getElementById('savedPathsList');
           if(list.children.length === 0){
-            main.innerHTML = '<a class="back-link" href="#/">‹ Back to home</a><p style="padding:20px;">No saved paths yet. Explore a stream and tap "Save this path" on any final page.</p>';
+            main.innerHTML = '<a class="back-link" href="#/">â€¹ Back to home</a><p style="padding:20px;">No saved paths yet. Explore a stream and tap "Save this path" on any final page.</p>';
           }
         } catch(err){
           btn.disabled = false;
           btn.textContent = 'Remove';
-          alert('Could not remove — try again.');
+          alert('Could not remove â€” try again.');
           console.error(err);
         }
       });
@@ -4387,7 +6228,7 @@ const API_BASE = 'https://career-hub-backend-i960.onrender.com';
 
 async function loadDataAndRender(){
   const main = document.getElementById('main');
-  main.innerHTML = '<p style="padding:40px;text-align:center;">Checking login…</p>';
+  main.innerHTML = '<p style="padding:40px;text-align:center;">Checking loginâ€¦</p>';
 
   // Wait for Firebase to report whether the user is already logged in
   // (e.g. from a previous session) before deciding what to show.
@@ -4398,7 +6239,7 @@ async function loadDataAndRender(){
 
   if(!currentUser && !alreadyOnAuthPage){
     location.hash = '#/login';
-    return; // hashchange will trigger render() → renderAuthPage
+    return; // hashchange will trigger render() â†’ renderAuthPage
   }
 
   if(alreadyOnAuthPage){
@@ -4406,7 +6247,7 @@ async function loadDataAndRender(){
     return; // no career data needed just to show the login/signup page
   }
 
-  main.innerHTML = '<p style="padding:40px;text-align:center;">Loading career data…</p>';
+  main.innerHTML = '<p style="padding:40px;text-align:center;">Loading career dataâ€¦</p>';
   try {
     const res = await fetch(`${API_BASE}/api/streams/full/all`);
     if(!res.ok) throw new Error(`API returned ${res.status}`);
@@ -4439,3 +6280,6 @@ window.addEventListener('DOMContentLoaded', loadDataAndRender);
 </script>
 </body>
 </html>
+
+
+

@@ -1,5 +1,4 @@
-
-
+﻿
 
 <!DOCTYPE html>
 <html lang="en">
@@ -830,7 +829,6 @@
   }
 }
 
-}
 
 /* MOBILE SIDEBAR OVERLAY */
 @media (max-width: 800px){
@@ -1629,3150 +1627,6 @@ body{
   }
 
 }
-/* =========================================================
-   CAREER VISION HUB - 11 STREAM TIMELINE
-   ========================================================= */
-
-.streams-page {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 48px 30px 70px;
-}
-
-
-/* =========================
-   HEADER
-   ========================= */
-
-.streams-header {
-  max-width: 850px;
-  margin-bottom: 72px;
-}
-
-.streams-header .home-kicker {
-  margin-bottom: 18px;
-}
-
-.streams-header h1 {
-  margin: 0 0 14px;
-  font-size: 2.6rem;
-  line-height: 1.12;
-  letter-spacing: -0.025em;
-}
-
-.streams-header p {
-  margin: 0;
-  max-width: 850px;
-  color: var(--ink-soft);
-  font-size: 1rem;
-  line-height: 1.55;
-}
-
-
-/* =========================
-   STARTING STATION
-   ========================= */
-
-.streams-start {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 18px;
-  position: relative;
-}
-
-.streams-start-icon {
-  width: 28px;
-  height: 28px;
-  min-width: 28px;
-
-  border: 7px solid var(--ink);
-  border-radius: 50%;
-
-  background: var(--paper);
-
-  box-sizing: border-box;
-}
-
-.streams-start-text h2 {
-  margin: 0;
-
-  font-size: 1.05rem;
-  font-weight: 700;
-}
-
-.streams-start-text p {
-  margin: 4px 0 0;
-
-  color: var(--ink-soft);
-
-  font-size: 0.78rem;
-}
-
-
-/* =========================
-   STREAM LIST
-   ========================= */
-
-.streams-list {
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 12px;
-
-  padding-left: 48px;
-}
-
-
-/* Vertical timeline */
-
-.streams-list::before {
-  content: "";
-
-  position: absolute;
-
-  left: 12px;
-  top: 0;
-  bottom: 0;
-
-  width: 3px;
-
-  background: var(--ink);
-
-  opacity: 0.9;
-}
-
-
-/* =========================
-   STREAM CARD
-   ========================= */
-
-.stream-card {
-  position: relative;
-
-  min-height: 96px;
-
-  display: flex;
-  align-items: center;
-
-  padding: 16px 18px 16px 22px;
-
-  background: var(--card);
-
-  border: 1px solid var(--rail);
-
-  border-left: 6px solid var(--stream-color);
-
-  border-radius: 8px;
-
-  box-shadow: var(--shadow);
-
-  transition:
-    transform 0.15s ease,
-    border-color 0.15s ease,
-    box-shadow 0.15s ease;
-
-  box-sizing: border-box;
-}
-
-
-/* Timeline horizontal connector */
-
-.stream-card::before {
-  content: "";
-
-  position: absolute;
-
-  left: -48px;
-
-  top: 50%;
-
-  width: 48px;
-  height: 2px;
-
-  background: var(--ink);
-
-  transform: translateY(-50%);
-}
-
-
-/* Colored timeline dot */
-
-.stream-line-marker {
-  position: absolute;
-
-  left: -56px;
-
-  top: 50%;
-
-  width: 16px;
-  height: 16px;
-
-  transform: translateY(-50%);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.stream-line-marker span {
-  width: 13px;
-  height: 13px;
-
-  display: block;
-
-  background: var(--stream-color);
-
-  border: 2px solid var(--paper);
-
-  border-radius: 50%;
-
-  box-shadow: 0 0 0 1px var(--stream-color);
-}
-
-
-/* =========================
-   CARD CONTENT
-   ========================= */
-
-.stream-card-content {
-  min-width: 0;
-
-  flex: 1;
-}
-
-.stream-label {
-  margin-bottom: 5px;
-
-  color: var(--stream-color);
-
-  font-size: 0.68rem;
-  font-weight: 700;
-
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.stream-name {
-  color: var(--ink);
-
-  font-size: 1.15rem;
-  font-weight: 600;
-
-  line-height: 1.2;
-}
-
-
-/* =========================
-   ARROW
-   ========================= */
-
-.stream-arrow {
-  flex-shrink: 0;
-
-  margin-left: 20px;
-
-  color: var(--ink-soft);
-
-  font-size: 1.5rem;
-  line-height: 1;
-
-  transition:
-    transform 0.15s ease,
-    color 0.15s ease;
-}
-
-
-/* =========================
-   HOVER
-   ========================= */
-
-.stream-card:hover {
-  transform: translateX(3px);
-
-  border-color: var(--stream-color);
-
-  box-shadow: var(--shadow);
-}
-
-.stream-card:hover .stream-arrow {
-  transform: translateX(4px);
-
-  color: var(--stream-color);
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-  .streams-page {
-    padding: 30px 16px 50px;
-  }
-
-  .streams-header {
-    margin-bottom: 48px;
-  }
-
-  .streams-header h1 {
-    font-size: 2rem;
-  }
-
-  .streams-header p {
-    font-size: 0.9rem;
-  }
-
-  .streams-start {
-    margin-bottom: 16px;
-  }
-
-  .streams-list {
-    padding-left: 34px;
-    gap: 10px;
-  }
-
-  .streams-list::before {
-    left: 8px;
-  }
-
-  .stream-card {
-    min-height: 82px;
-
-    padding: 14px 14px 14px 17px;
-
-    border-left-width: 5px;
-  }
-
-  .stream-card::before {
-    left: -34px;
-    width: 34px;
-  }
-
-  .stream-line-marker {
-    left: -42px;
-  }
-
-  .stream-line-marker span {
-    width: 11px;
-    height: 11px;
-  }
-
-  .stream-name {
-    font-size: 1rem;
-  }
-
-  .stream-arrow {
-    font-size: 1.25rem;
-    margin-left: 10px;
-  }
-}
-/* =====================================================
-   HOME INNER BOXES
-   ===================================================== */
-
-.home-recommendation,
-.home-tool,
-.home-exam{
-  display:flex !important;
-  align-items:center;
-  justify-content:space-between;
-
-  width:100%;
-  box-sizing:border-box;
-
-  padding:14px 16px;
-  margin-bottom:10px;
-
-  background:var(--paper);
-
-  border:1px solid var(--rail);
-  border-radius:9px;
-
-  text-decoration:none;
-  color:var(--ink);
-
-  transition:
-    transform .15s ease,
-    border-color .15s ease,
-    box-shadow .15s ease;
-}
-
-.home-recommendation:hover,
-.home-tool:hover,
-.home-exam:hover{
-  transform:translateY(-2px);
-  border-color:var(--ink);
-  box-shadow:0 5px 14px rgba(42,35,24,.10);
-}
-
-
-/* Recommended career boxes */
-
-.home-recommendation-main{
-  min-width:0;
-  flex:1;
-}
-
-.home-recommendation-title{
-  font-weight:700;
-  font-size:.9rem;
-  margin-bottom:4px;
-}
-
-.home-recommendation-desc{
-  font-size:.75rem;
-  color:var(--ink-soft);
-  line-height:1.4;
-}
-
-
-/* Match section */
-
-.home-recommendation-match{
-  flex-shrink:0;
-  margin-left:15px;
-  text-align:right;
-}
-
-
-/* Career tool boxes */
-
-.home-tool{
-  min-height:62px;
-}
-
-.home-tool-main{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  min-width:0;
-}
-
-.home-tool-icon{
-  width:36px;
-  height:36px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  flex-shrink:0;
-
-  background:var(--card);
-
-  border:1px solid var(--rail);
-  border-radius:8px;
-
-  font-size:17px;
-}
-
-.home-tool-main strong{
-  display:block;
-  font-size:.85rem;
-  margin-bottom:3px;
-}
-
-.home-tool-main small{
-  display:block;
-  color:var(--ink-soft);
-  font-size:.7rem;
-}
-
-
-/* Popular exam boxes */
-
-.home-exam{
-  min-height:58px;
-}
-
-.home-exam-name{
-  font-size:.84rem;
-  font-weight:700;
-  margin-bottom:4px;
-}
-
-.home-exam-route{
-  font-size:.7rem;
-  color:var(--ink-soft);
-}
-
-.home-exam-arrow,
-.home-tool-arrow{
-  flex-shrink:0;
-  margin-left:12px;
-  font-size:1.1rem;
-  color:var(--ink-soft);
-}
-
-
-/* Mobile */
-
-@media(max-width:800px){
-
-  .home-recommendation,
-  .home-tool,
-  .home-exam{
-    padding:13px;
-  }
-
-  .home-recommendation-match{
-    margin-left:8px;
-  }
-
-  .home-recommendation-desc{
-    font-size:.7rem;
-  }
-
-}
-/* =========================================
-   HOME DASHBOARD BOXES
-   ========================================= */
-
-.home-panel {
-  background: #F8F3E7 !important;
-  border: 1px solid #D8CCB4 !important;
-  border-radius: 14px !important;
-  padding: 20px !important;
-  box-sizing: border-box !important;
-  box-shadow: 0 2px 7px rgba(42,35,24,0.06) !important;
-}
-
-
-/* Recommended career items */
-
-.home-recommendation {
-  background: #FBF7ED !important;
-  border: 1px solid #D8CCB4 !important;
-  border-radius: 10px !important;
-  transition: 0.2s ease !important;
-}
-
-.home-recommendation:hover {
-  background: #F3E9D4 !important;
-  transform: translateY(-1px);
-}
-
-
-/* Career tools */
-
-.home-tool {
-  background: #F7F1E5 !important;
-  border: 1px solid #D8CCB4 !important;
-  border-radius: 10px !important;
-  transition: 0.2s ease !important;
-}
-
-.home-tool:hover {
-  background: #EFE4CC !important;
-}
-
-
-/* Popular exams */
-
-.home-exam {
-  background: #F7F1E5 !important;
-  border: 1px solid #D8CCB4 !important;
-  border-radius: 10px !important;
-  transition: 0.2s ease !important;
-}
-
-.home-exam:hover {
-  background: #EFE4CC !important;
-}
-
-
-/* View All buttons */
-
-.home-view-all {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 7px 12px !important;
-  background: #E9DFC9 !important;
-  border: 1px solid #BEC5AC !important;
-  border-radius: 7px !important;
-  color: var(--ink) !important;
-  text-decoration: none !important;
-  font-size: 0.82rem !important;
-  font-weight: 700 !important;
-}
-
-.home-view-all:hover {
-  background: #C9D0B8 !important;
-}
-
-
-/* =========================================
-   TOP FOUR BOXES
-   ========================================= */
-
-.home-action-card {
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease !important;
-}
-
-.home-action-card:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 5px 14px rgba(42,35,24,0.10) !important;
-}
-
-
-/* Mobile */
-
-@media (max-width: 900px) {
-
-  .home-action-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
-  }
-
-}
-
-@media (max-width: 600px) {
-
-  .home-action-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .home-dashboard-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-}
-
-
-/* =====================================================
-   FINAL HOME DASHBOARD LIGHT ACTION BUTTONS
-   ===================================================== */
-
-.home-light-action-button,
-.home-action-arrow,
-.home-tool-arrow,
-.home-exam-arrow {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-shrink: 0 !important;
-  width: 38px !important;
-  height: 30px !important;
-  min-width: 38px !important;
-  min-height: 30px !important;
-  margin-left: 12px !important;
-  margin-top: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-  background: #DDE1D3 !important;
-  border: 1px solid #BEC5AC !important;
-  border-radius: 7px !important;
-  color: var(--ink) !important;
-  font-size: 17px !important;
-  font-weight: 700 !important;
-  line-height: 1 !important;
-  text-decoration: none !important;
-  transition: background .15s ease, transform .15s ease, border-color .15s ease !important;
-}
-
-.home-light-action-button:hover,
-.home-action-arrow:hover,
-.home-tool-arrow:hover,
-.home-exam-arrow:hover {
-  background: #C9D0B8 !important;
-  border-color: #AEB69C !important;
-  color: var(--ink) !important;
-  transform: translateX(2px);
-}
-
-/* Keep the four top action arrows consistent with the same light button. */
-.home-action-card .home-action-arrow {
-  align-self: flex-end !important;
-}
-
-/* Recommended cards: keep text/match/arrow aligned. */
-.home-recommendation {
-  display: flex !important;
-  align-items: center !important;
-}
-
-.home-recommendation-arrow {
-  margin-left: 12px !important;
-}
-
-/* Career tools and popular exam arrows use the exact same button. */
-.home-tool-arrow,
-.home-exam-arrow {
-  margin-left: 12px !important;
-}
-
-/* View All uses the same light-button family. */
-.home-view-all {
-  background: #DDE1D3 !important;
-  border: 1px solid #BEC5AC !important;
-  color: var(--ink) !important;
-  border-radius: 7px !important;
-}
-
-.home-view-all:hover {
-  background: #C9D0B8 !important;
-  border-color: #AEB69C !important;
-  color: var(--ink) !important;
-}
-
-@media (max-width: 800px) {
-  .home-light-action-button,
-  .home-action-arrow,
-  .home-tool-arrow,
-  .home-exam-arrow {
-    width: 36px !important;
-    min-width: 36px !important;
-    height: 29px !important;
-    min-height: 29px !important;
-    font-size: 16px !important;
-  }
-}
-
-
-/* =========================================================
-   FINAL BUTTON COLOR OVERRIDE
-   SAME AS THE COMPARE COURSES ARROW
-   ========================================================= */
-
-:root{
-  --common-button-bg:#DDE1D3;
-  --common-button-border:#BEC5AC;
-  --common-button-hover:#C9D0B8;
-}
-
-.home-action-arrow,
-.home-light-action-button,
-.home-tool-arrow,
-.home-exam-arrow,
-.home-recommendation-arrow,
-.home-view-all{
-  background:var(--common-button-bg) !important;
-  border:1px solid var(--common-button-border) !important;
-  color:var(--ink) !important;
-}
-
-.home-action-arrow:hover,
-.home-light-action-button:hover,
-.home-tool-arrow:hover,
-.home-exam-arrow:hover,
-.home-recommendation-arrow:hover,
-.home-view-all:hover{
-  background:var(--common-button-hover) !important;
-  border-color:var(--common-button-border) !important;
-  color:var(--ink) !important;
-}
-
-/* Top Find My Career and all normal application buttons */
-.dashboard-recommend-btn,
-.btn,
-.btn-solid,
-.dashboard-profile-button,
-.top-action,
-.top-action-logout,
-.dashboard-login-button,
-.dashboard-signup-button{
-  background:var(--common-button-bg) !important;
-  border:1px solid var(--common-button-border) !important;
-  color:var(--ink) !important;
-}
-
-.dashboard-recommend-btn:hover,
-.btn:hover,
-.btn-solid:hover,
-.dashboard-profile-button:hover,
-.top-action:hover,
-.top-action-logout:hover,
-.dashboard-login-button:hover,
-.dashboard-signup-button:hover{
-  background:var(--common-button-hover) !important;
-  border-color:var(--common-button-border) !important;
-  color:var(--ink) !important;
-}
-
-/* Password eye remains transparent */
-#togglePassword{
-  background:none !important;
-  border:none !important;
-}
-
-
-/* =========================================================
-   REFERENCE IMAGE BUTTON STYLE
-   Clean white cards + simple blue arrow actions
-   ========================================================= */
-
-:root{
-  --ref-blue:#2563EB;
-  --ref-blue-hover:#1D4ED8;
-  --ref-blue-soft:#EAF2FF;
-  --ref-card:#FFFFFF;
-  --ref-border:#E5E7EB;
-}
-
-/* Main four dashboard cards */
-.home-action-card{
-  background:var(--ref-card) !important;
-  border:1px solid var(--ref-border) !important;
-  border-radius:12px !important;
-  box-shadow:0 2px 8px rgba(15,23,42,.06) !important;
-}
-
-.home-action-card:hover{
-  border-color:#D6DCE5 !important;
-  box-shadow:0 6px 18px rgba(15,23,42,.09) !important;
-  transform:translateY(-2px) !important;
-}
-
-/* Remove the beige square around arrows.
-   Match the reference image: a simple blue arrow. */
-.home-action-arrow,
-.home-light-action-button,
-.home-tool-arrow,
-.home-exam-arrow,
-.home-recommendation-arrow{
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  width:auto !important;
-  min-width:0 !important;
-  height:auto !important;
-  min-height:0 !important;
-  margin-left:12px !important;
-  margin-top:0 !important;
-  padding:0 !important;
-  background:transparent !important;
-  border:none !important;
-  border-radius:0 !important;
-  color:var(--ref-blue) !important;
-  font-size:22px !important;
-  font-weight:500 !important;
-  line-height:1 !important;
-  box-shadow:none !important;
-  text-decoration:none !important;
-}
-
-/* Arrow hover */
-.home-action-arrow:hover,
-.home-light-action-button:hover,
-.home-tool-arrow:hover,
-.home-exam-arrow:hover,
-.home-recommendation-arrow:hover{
-  background:transparent !important;
-  border:none !important;
-  color:var(--ref-blue-hover) !important;
-  transform:translateX(4px) !important;
-}
-
-/* Top four arrows sit at bottom-right like the reference. */
-.home-action-card .home-action-arrow{
-  align-self:flex-end !important;
-  margin-top:auto !important;
-}
-
-/* View All is simple blue text, matching the reference. */
-.home-view-all{
-  display:inline-flex !important;
-  align-items:center !important;
-  background:transparent !important;
-  border:none !important;
-  border-radius:0 !important;
-  padding:0 !important;
-  color:var(--ref-blue) !important;
-  font-size:.82rem !important;
-  font-weight:600 !important;
-  box-shadow:none !important;
-}
-
-.home-view-all:hover{
-  background:transparent !important;
-  border:none !important;
-  color:var(--ref-blue-hover) !important;
-}
-
-/* Recommended / tool / exam inner boxes match the clean reference. */
-.home-recommendation,
-.home-tool,
-.home-exam{
-  background:var(--ref-card) !important;
-  border:1px solid var(--ref-border) !important;
-  border-radius:10px !important;
-  box-shadow:none !important;
-}
-
-.home-recommendation:hover,
-.home-tool:hover,
-.home-exam:hover{
-  background:#FAFCFF !important;
-  border-color:#D9DEE7 !important;
-}
-
-/* Find My Career: blue action button like the reference palette. */
-.dashboard-recommend-btn{
-  background:var(--ref-blue) !important;
-  color:#fff !important;
-  border:1px solid var(--ref-blue) !important;
-  border-radius:8px !important;
-}
-
-.dashboard-recommend-btn:hover{
-  background:var(--ref-blue-hover) !important;
-  color:#fff !important;
-  border-color:var(--ref-blue-hover) !important;
-}
-
-/* Normal application buttons use the same blue CTA style. */
-.btn-solid,
-.dashboard-signup-button{
-  background:var(--ref-blue) !important;
-  color:#fff !important;
-  border-color:var(--ref-blue) !important;
-}
-
-.btn-solid:hover,
-.dashboard-signup-button:hover{
-  background:var(--ref-blue-hover) !important;
-  color:#fff !important;
-  border-color:var(--ref-blue-hover) !important;
-}
-
-/* Secondary buttons remain clean white with blue text. */
-.btn,
-.dashboard-login-button,
-.top-action,
-.top-action-logout{
-  background:#fff !important;
-  color:var(--ref-blue) !important;
-  border:1px solid #D8DEE8 !important;
-}
-
-.btn:hover,
-.dashboard-login-button:hover,
-.top-action:hover,
-.top-action-logout:hover{
-  background:var(--ref-blue-soft) !important;
-  color:var(--ref-blue-hover) !important;
-  border-color:#BFD3F7 !important;
-}
-
-/* Profile card */
-.dashboard-profile-button{
-  background:#fff !important;
-  border:1px solid #D8DEE8 !important;
-  color:var(--ink) !important;
-}
-
-.dashboard-profile-button:hover{
-  background:#F8FAFC !important;
-}
-
-/* ========================================================= */
-
-
-/* =========================================================
-   FINAL REQUESTED HOME STYLE
-   BLACK ARROWS + WHITE INNER BOXES
-   ========================================================= */
-
-/* All home action arrows: simple BLACK arrow, no colored box */
-.home-action-arrow,
-.home-recommendation-arrow,
-.home-tool-arrow,
-.home-exam-arrow,
-.home-light-action-button{
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  width:auto !important;
-  min-width:0 !important;
-  height:auto !important;
-  min-height:0 !important;
-  padding:0 !important;
-  margin-left:12px !important;
-  background:transparent !important;
-  border:none !important;
-  border-radius:0 !important;
-  color:#111111 !important;
-  font-size:21px !important;
-  font-weight:500 !important;
-  line-height:1 !important;
-  box-shadow:none !important;
-  text-decoration:none !important;
-}
-
-/* Keep top-card arrows at bottom-right */
-.home-action-card .home-action-arrow{
-  align-self:flex-end !important;
-  margin-top:auto !important;
-}
-
-/* Recommended for you — WHITE boxes */
-.home-recommendation{
-  background:#FFFFFF !important;
-  border:1px solid #E5E7EB !important;
-  border-radius:10px !important;
-  box-shadow:0 2px 7px rgba(15,23,42,.05) !important;
-  color:var(--ink) !important;
-}
-
-.home-recommendation:hover{
-  background:#FFFFFF !important;
-  border-color:#D1D5DB !important;
-  box-shadow:0 4px 12px rgba(15,23,42,.08) !important;
-}
-
-/* Your Career Tools — WHITE boxes */
-.home-tool{
-  background:#FFFFFF !important;
-  border:1px solid #E5E7EB !important;
-  border-radius:10px !important;
-  box-shadow:0 2px 7px rgba(15,23,42,.05) !important;
-  color:var(--ink) !important;
-}
-
-.home-tool:hover{
-  background:#FFFFFF !important;
-  border-color:#D1D5DB !important;
-  box-shadow:0 4px 12px rgba(15,23,42,.08) !important;
-}
-
-/* Popular Entrance Exams — WHITE boxes */
-.home-exam{
-  background:#FFFFFF !important;
-  border:1px solid #E5E7EB !important;
-  border-radius:10px !important;
-  box-shadow:0 2px 7px rgba(15,23,42,.05) !important;
-  color:var(--ink) !important;
-}
-
-.home-exam:hover{
-  background:#FFFFFF !important;
-  border-color:#D1D5DB !important;
-  box-shadow:0 4px 12px rgba(15,23,42,.08) !important;
-}
-
-/* View All: black text/arrow */
-.home-view-all{
-  background:transparent !important;
-  border:none !important;
-  color:#111111 !important;
-  padding:0 !important;
-  box-shadow:none !important;
-}
-
-.home-view-all:hover{
-  background:transparent !important;
-  border:none !important;
-  color:#000000 !important;
-}
-
-/* Prevent old light-arrow button rules from restoring boxes */
-.home-action-arrow:hover,
-.home-recommendation-arrow:hover,
-.home-tool-arrow:hover,
-.home-exam-arrow:hover,
-.home-light-action-button:hover{
-  background:transparent !important;
-  border:none !important;
-  color:#000000 !important;
-  transform:translateX(3px) !important;
-}
-
-
-/* =========================================================
-   FINAL REFERENCE-DASHBOARD DESIGN
-   Matches the requested reference:
-   - Navy sidebar
-   - White dashboard cards
-   - Black arrows with NO arrow boxes
-   - White Recommended / Career Tools / Popular Exams boxes
-   - Clean blue/white dashboard feel
-   ========================================================= */
-
-:root{
-  --ref-bg:#F5F8FC;
-  --ref-white:#FFFFFF;
-  --ref-navy:#06254A;
-  --ref-navy-2:#0B315F;
-  --ref-blue:#2563EB;
-  --ref-blue-soft:#EAF2FF;
-  --ref-border:#E3E8EF;
-  --ref-text:#152238;
-  --ref-muted:#64748B;
-}
-
-/* Main page background */
-html,body{
-  background:var(--ref-bg) !important;
-  color:var(--ref-text) !important;
-}
-
-#app{
-  background:var(--ref-bg) !important;
-  max-width:none !important;
-}
-
-/* =========================
-   SIDEBAR
-   ========================= */
-
-.sidebar{
-  background:linear-gradient(180deg,#06254A 0%,#082E59 100%) !important;
-  color:#FFFFFF !important;
-  width:270px !important;
-  min-width:270px !important;
-  border:none !important;
-}
-
-.sidebar-brand{
-  padding:28px 20px 30px !important;
-}
-
-.sidebar-logo{
-  width:46px !important;
-  height:46px !important;
-  border-radius:12px !important;
-  background:#FFFFFF !important;
-  color:var(--ref-navy) !important;
-}
-
-.sidebar-title{
-  color:#FFFFFF !important;
-  font-size:19px !important;
-}
-
-.sidebar-subtitle{
-  color:rgba(255,255,255,.70) !important;
-}
-
-.sidebar-section-title{
-  color:rgba(255,255,255,.62) !important;
-}
-
-.sidebar-link{
-  color:#FFFFFF !important;
-  border-radius:10px !important;
-  padding:13px 15px !important;
-}
-
-.sidebar-link:hover{
-  background:rgba(255,255,255,.10) !important;
-  transform:none !important;
-}
-
-.sidebar-link.active{
-  background:rgba(37,99,235,.42) !important;
-  box-shadow:none !important;
-  font-weight:600 !important;
-}
-
-.sidebar-divider{
-  background:rgba(255,255,255,.15) !important;
-}
-
-.sidebar-bottom{
-  border-top:1px solid rgba(255,255,255,.15) !important;
-}
-
-/* =========================
-   TOPBAR
-   ========================= */
-
-.dashboard-topbar{
-  background:#FFFFFF !important;
-  border-bottom:1px solid var(--ref-border) !important;
-  min-height:76px !important;
-  padding:14px 34px !important;
-}
-
-.dashboard-search input{
-  background:#FFFFFF !important;
-  border:1px solid #D9E0EA !important;
-  color:var(--ref-text) !important;
-  border-radius:10px !important;
-}
-
-.dashboard-search input:focus{
-  border-color:#9CB8E8 !important;
-  box-shadow:0 0 0 3px rgba(37,99,235,.08) !important;
-}
-
-.dashboard-recommend-btn{
-  background:var(--ref-navy) !important;
-  color:#FFFFFF !important;
-  border:1px solid var(--ref-navy) !important;
-  border-radius:9px !important;
-}
-
-.dashboard-recommend-btn:hover{
-  background:#0B315F !important;
-  color:#FFFFFF !important;
-}
-
-.dashboard-profile-button{
-  background:#FFFFFF !important;
-  border:1px solid #D9E0EA !important;
-  color:var(--ref-text) !important;
-  border-radius:10px !important;
-}
-
-.dashboard-profile-button:hover{
-  background:#F8FAFC !important;
-}
-
-/* =========================
-   MAIN CONTENT
-   ========================= */
-
-#main{
-  background:var(--ref-bg) !important;
-  max-width:1400px !important;
-  padding:38px 34px 60px !important;
-}
-
-.dashboard-content{
-  background:var(--ref-bg) !important;
-}
-
-/* =========================
-   HOME WELCOME
-   ========================= */
-
-.home-dashboard{
-  width:100% !important;
-}
-
-.home-welcome{
-  margin-bottom:28px !important;
-}
-
-.home-kicker{
-  color:var(--ref-muted) !important;
-}
-
-.home-welcome h1{
-  color:var(--ref-navy) !important;
-  font-size:2.15rem !important;
-  font-weight:700 !important;
-}
-
-.home-welcome p{
-  color:#52647A !important;
-  font-size:.95rem !important;
-}
-
-/* =========================
-   TOP FOUR CARDS
-   ========================= */
-
-.home-action-grid{
-  gap:12px !important;
-  margin-bottom:24px !important;
-}
-
-.home-action-card{
-  background:#FFFFFF !important;
-  border:1px solid var(--ref-border) !important;
-  border-radius:12px !important;
-  box-shadow:0 2px 8px rgba(15,23,42,.05) !important;
-  min-height:160px !important;
-  padding:18px !important;
-}
-
-.home-action-card:hover{
-  background:#FFFFFF !important;
-  border-color:#D4DCE7 !important;
-  box-shadow:0 7px 20px rgba(15,23,42,.08) !important;
-  transform:translateY(-2px) !important;
-}
-
-.home-action-icon{
-  background:var(--ref-blue-soft) !important;
-  border:none !important;
-  border-radius:50% !important;
-  width:42px !important;
-  height:42px !important;
-}
-
-.home-action-card h3{
-  color:var(--ref-text) !important;
-}
-
-.home-action-card p{
-  color:var(--ref-muted) !important;
-}
-
-/* BLACK ARROWS — NO BOX */
-.home-action-card .home-action-arrow,
-.home-action-arrow,
-.home-recommendation-arrow,
-.home-tool-arrow,
-.home-exam-arrow{
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  width:auto !important;
-  min-width:0 !important;
-  height:auto !important;
-  min-height:0 !important;
-  margin:0 0 0 12px !important;
-  padding:0 !important;
-  background:transparent !important;
-  border:0 !important;
-  border-radius:0 !important;
-  color:#111111 !important;
-  font-size:22px !important;
-  font-weight:500 !important;
-  line-height:1 !important;
-  box-shadow:none !important;
-  text-decoration:none !important;
-}
-
-.home-action-card .home-action-arrow{
-  align-self:flex-end !important;
-  margin-top:auto !important;
-}
-
-.home-action-arrow:hover,
-.home-recommendation-arrow:hover,
-.home-tool-arrow:hover,
-.home-exam-arrow:hover{
-  background:transparent !important;
-  border:0 !important;
-  color:#000000 !important;
-  transform:translateX(4px) !important;
-}
-
-/* =========================
-   TWO-COLUMN LOWER AREA
-   ========================= */
-
-.home-dashboard-grid{
-  grid-template-columns:minmax(0,1.75fr) minmax(300px,1fr) !important;
-  gap:18px !important;
-}
-
-/* =========================
-   PANEL HEADERS
-   ========================= */
-
-.home-panel{
-  background:#FFFFFF !important;
-  border:1px solid var(--ref-border) !important;
-  border-radius:12px !important;
-  padding:18px !important;
-  box-shadow:0 2px 8px rgba(15,23,42,.04) !important;
-}
-
-.home-panel-header h2{
-  color:var(--ref-text) !important;
-  font-size:1.05rem !important;
-}
-
-.home-view-all{
-  background:transparent !important;
-  border:0 !important;
-  color:var(--ref-blue) !important;
-  padding:0 !important;
-  font-weight:600 !important;
-  box-shadow:none !important;
-}
-
-.home-view-all:hover{
-  background:transparent !important;
-  color:#1D4ED8 !important;
-}
-
-/* =========================
-   RECOMMENDED FOR YOU
-   WHITE BOXES
-   ========================= */
-
-.home-recommendation{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:space-between !important;
-  width:100% !important;
-  box-sizing:border-box !important;
-  background:#FFFFFF !important;
-  border:1px solid var(--ref-border) !important;
-  border-radius:10px !important;
-  padding:15px 16px !important;
-  margin-bottom:10px !important;
-  box-shadow:none !important;
-}
-
-.home-recommendation:hover{
-  background:#FFFFFF !important;
-  border-color:#D5DCE6 !important;
-  box-shadow:0 4px 12px rgba(15,23,42,.06) !important;
-  transform:none !important;
-}
-
-.home-recommendation-title{
-  color:var(--ref-text) !important;
-}
-
-.home-recommendation-desc{
-  color:var(--ref-muted) !important;
-}
-
-.home-match-number{
-  color:#187A42 !important;
-}
-
-.home-match-label{
-  color:var(--ref-muted) !important;
-}
-
-.home-match-bar{
-  background:#E7ECF2 !important;
-}
-
-.home-match-bar span{
-  background:#4DBA73 !important;
-}
-
-/* =========================
-   CAREER TOOLS
-   WHITE BOXES
-   ========================= */
-
-.home-tool-list{
-  gap:10px !important;
-}
-
-.home-tool{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:space-between !important;
-  width:100% !important;
-  min-height:64px !important;
-  box-sizing:border-box !important;
-  background:#FFFFFF !important;
-  border:1px solid var(--ref-border) !important;
-  border-radius:10px !important;
-  padding:13px 15px !important;
-  box-shadow:none !important;
-}
-
-.home-tool:hover{
-  background:#FFFFFF !important;
-  border-color:#D5DCE6 !important;
-  box-shadow:0 4px 12px rgba(15,23,42,.06) !important;
-  transform:none !important;
-}
-
-.home-tool-icon{
-  background:#F1F5FF !important;
-  border:0 !important;
-  border-radius:9px !important;
-}
-
-.home-tool strong{
-  color:var(--ref-text) !important;
-}
-
-.home-tool small{
-  color:var(--ref-muted) !important;
-}
-
-/* =========================
-   POPULAR ENTRANCE EXAMS
-   WHITE BOXES
-   ========================= */
-
-.home-exam-list{
-  margin-top:20px !important;
-}
-
-.home-exam{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:space-between !important;
-  width:100% !important;
-  min-height:58px !important;
-  box-sizing:border-box !important;
-  background:#FFFFFF !important;
-  border:1px solid var(--ref-border) !important;
-  border-radius:10px !important;
-  padding:13px 15px !important;
-  margin-bottom:10px !important;
-  box-shadow:none !important;
-}
-
-.home-exam:hover{
-  background:#FFFFFF !important;
-  border-color:#D5DCE6 !important;
-  box-shadow:0 4px 12px rgba(15,23,42,.06) !important;
-  transform:none !important;
-}
-
-.home-exam-name{
-  color:var(--ref-text) !important;
-}
-
-.home-exam-route{
-  color:var(--ref-muted) !important;
-}
-
-/* =========================
-   ALL GENERIC ACTION BUTTONS
-   ========================= */
-
-.btn-solid{
-  background:var(--ref-blue) !important;
-  border-color:var(--ref-blue) !important;
-  color:#FFFFFF !important;
-}
-
-.btn-solid:hover{
-  background:#1D4ED8 !important;
-  border-color:#1D4ED8 !important;
-  color:#FFFFFF !important;
-}
-
-.btn{
-  background:#FFFFFF !important;
-  border:1px solid #D9E0EA !important;
-  color:var(--ref-text) !important;
-}
-
-.btn:hover{
-  background:#F8FAFC !important;
-  border-color:#C8D2E0 !important;
-  color:var(--ref-text) !important;
-}
-
-/* =========================
-   MOBILE
-   ========================= */
-
-@media(max-width:800px){
-
-  #main{
-    padding:24px 14px 45px !important;
-  }
-
-  .home-welcome h1{
-    font-size:1.65rem !important;
-  }
-
-  .home-action-grid{
-    grid-template-columns:1fr 1fr !important;
-  }
-
-  .home-dashboard-grid{
-    grid-template-columns:1fr !important;
-  }
-
-  .home-action-card{
-    min-height:145px !important;
-    padding:14px !important;
-  }
-
-}
-
-@media(max-width:500px){
-
-  .home-action-grid{
-    grid-template-columns:1fr !important;
-  }
-
-  .home-action-card{
-    min-height:120px !important;
-  }
-
-}
-
-
-/* =========================================================
-   FINAL HOME DASHBOARD OVERRIDE
-   LIGHT-SKIN BOXES + BLACK ARROWS
-   ========================================================= */
-
-:root{
-  --final-skin:#F7F0E2;
-  --final-skin-border:#D8C9AE;
-  --final-skin-hover:#F1E5D1;
-  --final-black:#111111;
-}
-
-/* ---------------------------------------------------------
-   TOP FOUR ACTION CARDS
-   --------------------------------------------------------- */
-.home-action-card{
-  background:#FFFFFF !important;
-  border:1px solid #E5E7EB !important;
-  border-radius:12px !important;
-  box-shadow:0 2px 8px rgba(15,23,42,.06) !important;
-}
-
-.home-action-card:hover{
-  background:#FFFFFF !important;
-  border-color:#D1D5DB !important;
-  box-shadow:0 5px 14px rgba(15,23,42,.09) !important;
-}
-
-/* ---------------------------------------------------------
-   RECOMMENDED FOR YOU
-   LIGHT SKIN
-   --------------------------------------------------------- */
-.home-recommendation{
-  background:var(--final-skin) !important;
-  border:1px solid var(--final-skin-border) !important;
-  border-radius:10px !important;
-  box-shadow:none !important;
-  color:var(--ink) !important;
-}
-
-.home-recommendation:hover{
-  background:var(--final-skin-hover) !important;
-  border-color:#CDBB9E !important;
-  box-shadow:0 4px 12px rgba(42,35,24,.08) !important;
-}
-
-/* ---------------------------------------------------------
-   YOUR CAREER TOOLS
-   LIGHT SKIN
-   --------------------------------------------------------- */
-.home-tool{
-  background:var(--final-skin) !important;
-  border:1px solid var(--final-skin-border) !important;
-  border-radius:10px !important;
-  box-shadow:none !important;
-  color:var(--ink) !important;
-}
-
-.home-tool:hover{
-  background:var(--final-skin-hover) !important;
-  border-color:#CDBB9E !important;
-  box-shadow:0 4px 12px rgba(42,35,24,.08) !important;
-}
-
-/* Tool icon */
-.home-tool-icon{
-  background:#EFE5D3 !important;
-  border:1px solid var(--final-skin-border) !important;
-}
-
-/* ---------------------------------------------------------
-   POPULAR ENTRANCE EXAMS
-   LIGHT SKIN
-   --------------------------------------------------------- */
-.home-exam{
-  background:var(--final-skin) !important;
-  border:1px solid var(--final-skin-border) !important;
-  border-radius:10px !important;
-  box-shadow:none !important;
-  color:var(--ink) !important;
-}
-
-.home-exam:hover{
-  background:var(--final-skin-hover) !important;
-  border-color:#CDBB9E !important;
-  box-shadow:0 4px 12px rgba(42,35,24,.08) !important;
-}
-
-/* ---------------------------------------------------------
-   ALL HOME ARROWS
-   BLACK — NO BLUE, NO GREEN, NO SQUARE
-   --------------------------------------------------------- */
-.home-action-arrow,
-.home-recommendation-arrow,
-.home-tool-arrow,
-.home-exam-arrow,
-.home-light-action-button{
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-
-  width:auto !important;
-  min-width:0 !important;
-  height:auto !important;
-  min-height:0 !important;
-
-  padding:0 !important;
-  margin-left:12px !important;
-
-  background:transparent !important;
-  border:none !important;
-  border-radius:0 !important;
-  box-shadow:none !important;
-
-  color:#111111 !important;
-  font-size:22px !important;
-  font-weight:500 !important;
-  line-height:1 !important;
-
-  text-decoration:none !important;
-  transform:none !important;
-}
-
-.home-action-arrow:hover,
-.home-recommendation-arrow:hover,
-.home-tool-arrow:hover,
-.home-exam-arrow:hover,
-.home-light-action-button:hover{
-  background:transparent !important;
-  border:none !important;
-  color:#000000 !important;
-  box-shadow:none !important;
-  transform:translateX(3px) !important;
-}
-
-/* Top four arrows stay at bottom-right */
-.home-action-card .home-action-arrow{
-  align-self:flex-end !important;
-  margin-top:auto !important;
-}
-
-/* ---------------------------------------------------------
-   VIEW ALL
-   --------------------------------------------------------- */
-.home-view-all{
-  display:inline-flex !important;
-  align-items:center !important;
-  gap:4px !important;
-
-  background:transparent !important;
-  border:none !important;
-  border-radius:0 !important;
-  box-shadow:none !important;
-
-  padding:0 !important;
-
-  color:#111111 !important;
-  font-weight:600 !important;
-  text-decoration:none !important;
-}
-
-.home-view-all:hover{
-  background:transparent !important;
-  border:none !important;
-  color:#000000 !important;
-}
-
-/* ---------------------------------------------------------
-   FORCE GENERATED INLINE STYLES TO THE SAME DESIGN
-   --------------------------------------------------------- */
-.home-recommendation[style],
-.home-tool[style],
-.home-exam[style]{
-  background:var(--final-skin) !important;
-  border:1px solid var(--final-skin-border) !important;
-  color:var(--ink) !important;
-}
-
-/* ---------------------------------------------------------
-   MOBILE
-   --------------------------------------------------------- */
-@media(max-width:800px){
-  .home-recommendation,
-  .home-tool,
-  .home-exam{
-    background:var(--final-skin) !important;
-  }
-
-  .home-action-arrow,
-  .home-recommendation-arrow,
-  .home-tool-arrow,
-  .home-exam-arrow{
-    font-size:20px !important;
-  }
-}
-
-
-/* =========================================================
-   FINAL CAREER DASHBOARD LAYOUT
-   Three separate lower boxes + black arrows
-   ========================================================= */
-
-.home-dashboard-grid-final{
-  display:grid !important;
-  grid-template-columns:minmax(0,1.65fr) minmax(320px,1fr) !important;
-  gap:20px !important;
-  align-items:start !important;
-}
-
-.home-side-panels{
-  display:flex !important;
-  flex-direction:column !important;
-  gap:20px !important;
-  min-width:0 !important;
-}
-
-.home-panel-recommended,
-.home-panel-tools,
-.home-panel-exams{
-  background:#F7F0E2 !important;
-  border:1px solid #D8C9AE !important;
-  border-radius:12px !important;
-  box-shadow:0 2px 8px rgba(42,35,24,.06) !important;
-}
-
-.home-panel-recommended{
-  min-width:0 !important;
-}
-
-.home-panel-tools,
-.home-panel-exams{
-  min-width:0 !important;
-}
-
-.home-recommendation,
-.home-tool,
-.home-exam{
-  background:#FBF7ED !important;
-  border:1px solid #D8C9AE !important;
-  border-radius:10px !important;
-  box-shadow:none !important;
-  color:var(--ink) !important;
-}
-
-.home-recommendation:hover,
-.home-tool:hover,
-.home-exam:hover{
-  background:#FBF7ED !important;
-  border-color:#C9B995 !important;
-  box-shadow:0 3px 10px rgba(42,35,24,.07) !important;
-}
-
-.home-action-card{
-  background:#FFFFFF !important;
-  border:1px solid #E5E7EB !important;
-  border-radius:12px !important;
-}
-
-.home-action-arrow,
-.home-recommendation-arrow,
-.home-tool-arrow,
-.home-exam-arrow,
-.home-light-action-button{
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  width:auto !important;
-  min-width:0 !important;
-  height:auto !important;
-  min-height:0 !important;
-  padding:0 !important;
-  margin-left:12px !important;
-  background:transparent !important;
-  border:none !important;
-  border-radius:0 !important;
-  box-shadow:none !important;
-  color:#111111 !important;
-  font-size:22px !important;
-  font-weight:500 !important;
-  line-height:1 !important;
-  text-decoration:none !important;
-}
-
-.home-action-arrow:hover,
-.home-recommendation-arrow:hover,
-.home-tool-arrow:hover,
-.home-exam-arrow:hover,
-.home-light-action-button:hover{
-  background:transparent !important;
-  border:none !important;
-  color:#000000 !important;
-  box-shadow:none !important;
-  transform:translateX(3px) !important;
-}
-
-.home-action-card .home-action-arrow{
-  align-self:flex-end !important;
-  margin-top:auto !important;
-}
-
-.home-view-all{
-  display:inline-flex !important;
-  align-items:center !important;
-  gap:4px !important;
-  background:transparent !important;
-  border:none !important;
-  border-radius:0 !important;
-  box-shadow:none !important;
-  padding:0 !important;
-  color:#111111 !important;
-  font-weight:600 !important;
-}
-
-.home-view-all:hover{
-  background:transparent !important;
-  border:none !important;
-  color:#000000 !important;
-}
-
-@media(max-width:900px){
-  .home-dashboard-grid-final{
-    grid-template-columns:1fr !important;
-  }
-
-  .home-side-panels{
-    gap:14px !important;
-  }
-}
-
-@media(max-width:600px){
-  .home-action-grid{
-    grid-template-columns:1fr 1fr !important;
-  }
-}
-
-@media(max-width:420px){
-  .home-action-grid{
-    grid-template-columns:1fr !important;
-  }
-
-  .home-dashboard-grid-final{
-    grid-template-columns:1fr !important;
-  }
-}
-
-
-
-/* =========================================================
-   FINAL: THREE SEPARATE HOME DASHBOARD BOXES
-   ========================================================= */
-.home-dashboard-grid-three{
-  display:grid !important;
-  grid-template-columns:1.55fr 1fr 1fr !important;
-  gap:18px !important;
-  width:100% !important;
-  align-items:start !important;
-}
-
-.home-dashboard-grid-three > .home-panel{
-  min-width:0 !important;
-  width:100% !important;
-  background:#F7F0DD !important;
-  border:1px solid #D8C9A8 !important;
-  border-radius:12px !important;
-  padding:18px !important;
-  box-shadow:0 2px 7px rgba(42,35,24,.06) !important;
-}
-
-.home-dashboard-grid-three > .home-panel:hover{
-  border-color:#CDBB96 !important;
-}
-
-.home-dashboard-grid-three .home-panel-header{
-  margin-bottom:14px !important;
-}
-
-.home-dashboard-grid-three .home-panel-header h2{
-  color:#2A2318 !important;
-  font-size:1.05rem !important;
-  margin:0 !important;
-}
-
-.home-dashboard-grid-three .home-view-all{
-  color:#2A2318 !important;
-  background:transparent !important;
-  border:0 !important;
-  padding:0 !important;
-  font-weight:600 !important;
-}
-
-.home-dashboard-grid-three .home-recommendation,
-.home-dashboard-grid-three .home-tool,
-.home-dashboard-grid-three .home-exam{
-  background:#FFFFFF !important;
-  border:1px solid #E3D7C0 !important;
-  border-radius:9px !important;
-  box-shadow:none !important;
-  color:#2A2318 !important;
-}
-
-.home-dashboard-grid-three .home-recommendation{
-  padding:13px !important;
-  margin-bottom:9px !important;
-}
-
-.home-dashboard-grid-three .home-tool{
-  min-height:64px !important;
-  padding:13px !important;
-  margin-bottom:9px !important;
-}
-
-.home-dashboard-grid-three .home-exam{
-  min-height:62px !important;
-  padding:12px 13px !important;
-  margin-bottom:9px !important;
-}
-
-.home-dashboard-grid-three .home-recommendation:last-child,
-.home-dashboard-grid-three .home-tool:last-child,
-.home-dashboard-grid-three .home-exam:last-child{
-  margin-bottom:0 !important;
-}
-
-/* BLACK ARROWS, no blue or colored arrow boxes */
-.home-dashboard-grid-three .home-recommendation-arrow,
-.home-dashboard-grid-three .home-tool-arrow,
-.home-dashboard-grid-three .home-exam-arrow{
-  background:transparent !important;
-  border:0 !important;
-  color:#111111 !important;
-  width:auto !important;
-  min-width:0 !important;
-  height:auto !important;
-  padding:0 !important;
-  margin-left:10px !important;
-  font-size:20px !important;
-  box-shadow:none !important;
-}
-
-.home-dashboard-grid-three .home-recommendation:hover,
-.home-dashboard-grid-three .home-tool:hover,
-.home-dashboard-grid-three .home-exam:hover{
-  background:#FFFFFF !important;
-  border-color:#CFC4AD !important;
-  box-shadow:0 3px 9px rgba(42,35,24,.07) !important;
-  transform:translateY(-1px) !important;
-}
-
-@media(max-width:1000px){
-  .home-dashboard-grid-three{
-    grid-template-columns:1fr 1fr !important;
-  }
-  .home-panel-recommended{
-    grid-column:1 / -1 !important;
-  }
-}
-
-@media(max-width:800px){
-  .home-dashboard-grid-three{
-    grid-template-columns:1fr !important;
-  }
-  .home-panel-recommended{
-    grid-column:auto !important;
-  }
-}
-</style>
-
-<style id="final-home-dashboard-css">
-@media (max-width:1100px){
-  .home-dashboard-grid-three{
-    grid-template-columns:1fr 1fr !important;
-  }
-  .home-panel-recommended{
-    grid-column:1 / -1 !important;
-  }
-}
-
-@media (max-width:800px){
-  .home-action-grid{
-    grid-template-columns:1fr 1fr !important;
-  }
-  .home-dashboard-grid-three{
-    grid-template-columns:1fr !important;
-  }
-  .home-panel-recommended{
-    grid-column:auto !important;
-  }
-}
-
-@media (max-width:520px){
-  .home-action-grid{
-    grid-template-columns:1fr !important;
-  }
-}
-
-/* FINAL: make the four quick-action cards match the three lower outer panels */
-.home-action-grid > .home-action-card {
-  background:#F7F0E2 !important;
-  border:1px solid #D8C9AE !important;
-  border-radius:12px !important;
-  box-shadow:none !important;
-}
-.home-action-grid > .home-action-card:hover {
-  background:#F1E5D1 !important;
-  border-color:#CDBB9E !important;
-}
-.home-action-grid > .home-action-card .home-action-arrow {
-  color:#111111 !important;
-  background:transparent !important;
-  border:0 !important;
-  box-shadow:none !important;
-}
-/* ===== FULL DESKTOP WIDTH ===== */
-
-html,
-body {
-  width: 100%;
-  min-width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.main-content,
-main,
-.content,
-.dashboard,
-.app-content {
-  width: 100% !important;
-  max-width: none !important;
-}
-
-.page-container,
-.container {
-  width: 100% !important;
-  max-width: none !important;
-}
-/* ===== REMOVE OUTER DESKTOP SIDE SPACES ===== */
-
-html,
-body {
-    width: 100% !important;
-    min-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-body > div:first-child {
-    width: 100vw !important;
-    max-width: none !important;
-    min-width: 100vw !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* Common application wrappers */
-.app,
-.app-shell,
-.app-container,
-.layout,
-.page,
-.page-container,
-.main-wrapper,
-.dashboard-container {
-    width: 100% !important;
-    max-width: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-/* Main application area */
-main,
-.main,
-.main-content,
-.content,
-.content-area {
-    max-width: none !important;
-}
-
-/* Prevent horizontal page margins */
-#app,
-#root {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* =========================================
-   TOP HEADER - SEARCH + FIND CAREER
-   ========================================= */
-
-/* Make the search bar larger */
-header input[type="text"],
-header input[type="search"],
-.topbar input[type="text"],
-.topbar input[type="search"] {
-    width: 100% !important;
-    min-width: 0 !important;
-    height: 48px !important;
-    box-sizing: border-box !important;
-    padding: 0 18px !important;
-
-    background: #F3EBD9 !important;
-    border: 1px solid #D8C9AE !important;
-    border-radius: 10px !important;
-
-    font-size: 16px !important;
-    color: #152238 !important;
-}
-
-/* Header layout */
-header,
-.topbar {
-    display: flex !important;
-    align-items: center !important;
-    gap: 18px !important;
-}
-
-/* Search area takes more space */
-header input[type="text"],
-header input[type="search"],
-.topbar input[type="text"],
-.topbar input[type="search"] {
-    flex: 1 1 auto !important;
-}
-
-/* Find My Career button */
-header button,
-.topbar button {
-    flex-shrink: 0 !important;
-}
-
-/* Specifically style Find My Career */
-button[onclick*="recommend"],
-button[onclick*="Recommend"],
-button[onclick*="find"],
-button[onclick*="Find"] {
-    height: 48px !important;
-    padding: 0 28px !important;
-
-    background: #F3EBD9 !important;
-    color: #152238 !important;
-
-    border: 1px solid #D8C9AE !important;
-    border-radius: 10px !important;
-
-    font-size: 15px !important;
-    font-weight: 700 !important;
-
-    cursor: pointer !important;
-
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.15s ease !important;
-}
-
-/* Hover color */
-button[onclick*="recommend"]:hover,
-button[onclick*="Recommend"]:hover,
-button[onclick*="find"]:hover,
-button[onclick*="Find"]:hover {
-    background: #D8C9AE !important;
-    color: #152238 !important;
-    border-color: #BFAE91 !important;
-}
-
-/* Click effect */
-button[onclick*="recommend"]:active,
-button[onclick*="Recommend"]:active,
-button[onclick*="find"]:active,
-button[onclick*="Find"]:active {
-    transform: scale(0.98) !important;
-}
-/* =========================================
-   TOP BAR - FINAL DESIGN
-   ========================================= */
-
-.dashboard-topbar {
-    width: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 14px !important;
-    box-sizing: border-box !important;
-}
-
-
-/* SEARCH */
-
-.dashboard-search {
-    flex: 1 1 auto !important;
-    width: auto !important;
-    min-width: 0 !important;
-}
-
-.dashboard-search input {
-    width: 100% !important;
-    height: 50px !important;
-    box-sizing: border-box !important;
-
-    padding: 0 20px !important;
-
-    background: #F3EBD9 !important;
-    border: 1px solid #D8C9AE !important;
-    border-radius: 10px !important;
-
-    color: #152238 !important;
-    font-size: 16px !important;
-    outline: none !important;
-}
-
-
-/* SEARCH FOCUS */
-
-.dashboard-search input:focus {
-    background: #F3EBD9 !important;
-    border-color: #BFAE91 !important;
-    box-shadow: 0 0 0 2px rgba(191,174,145,0.18) !important;
-}
-
-
-/* FIND MY CAREER */
-
-.dashboard-recommend-btn {
-    flex: 0 0 auto !important;
-
-    height: 50px !important;
-    padding: 0 24px !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    box-sizing: border-box !important;
-
-    background: #F3EBD9 !important;
-    color: #152238 !important;
-
-    border: 1px solid #D8C9AE !important;
-    border-radius: 10px !important;
-
-    font-size: 15px !important;
-    font-weight: 700 !important;
-
-    text-decoration: none !important;
-    white-space: nowrap !important;
-
-    cursor: pointer !important;
-
-    transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        transform 0.15s ease !important;
-}
-
-
-/* FIND MY CAREER - HOVER */
-
-.dashboard-recommend-btn:hover {
-    background: #D8C9AE !important;
-    border-color: #BFAE91 !important;
-    color: #152238 !important;
-
-    box-shadow: 0 3px 8px rgba(0,0,0,0.08) !important;
-}
-
-
-/* FIND MY CAREER - CLICK */
-
-.dashboard-recommend-btn:active {
-    transform: scale(0.98) !important;
-}
-
-
-/* PROFILE */
-
-/* Move My Profile closer to Find My Career */
-.dashboard-auth {
-    margin-left: 0 !important;
-}
-
-/* Keep all topbar items together */
-.dashboard-topbar {
-    gap: 14px !important;
-}
-
-/* Let search bar use the remaining space */
-.dashboard-search {
-    flex: 1 1 auto !important;
-    margin-right: 0 !important;
-}
-/* =========================================
-   TOPBAR - FORCE SEARCH + RIGHT ALIGNMENT
-   ========================================= */
-
-.dashboard-topbar {
-    display: flex !important;
-    align-items: center !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    gap: 14px !important;
-    padding: 10px 15px 10px 30px !important;
-}
-/* SEARCH TAKES ALL AVAILABLE SPACE */
-
-.dashboard-search {
-    flex: 1 1 0% !important;
-    width: auto !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-}
-
-
-/* SEARCH INPUT */
-
-.dashboard-search {
-    flex: 1 1 auto !important;
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-}
-
-.dashboard-search input {
-    width: 100% !important;
-    height: 54px !important;
-    box-sizing: border-box !important;
-    padding: 0 22px !important;
-    font-size: 17px !important;
-}
-
-
-/* FIND MY CAREER - PUSH TO RIGHT */
-
-.dashboard-recommend-btn {
-    flex: 0 0 auto !important;
-
-    margin-left: auto !important;
-    margin-right: 0 !important;
-
-    height: 50px !important;
-    min-width: 200px !important;
-    padding: 0 25px !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    box-sizing: border-box !important;
-
-    background: #F3EBD9 !important;
-    color: #152238 !important;
-
-    border: 1px solid #D8C9AE !important;
-    border-radius: 10px !important;
-
-    text-decoration: none !important;
-    white-space: nowrap !important;
-
-    font-size: 15px !important;
-    font-weight: 700 !important;
-
-    cursor: pointer !important;
-}
-
-
-/* HOVER */
-
-.dashboard-recommend-btn:hover {
-    background: #D8C9AE !important;
-    border-color: #BFAE91 !important;
-    color: #152238 !important;
-}
-
-
-/* PROFILE - NO EXTRA SPACE */
-
-.dashboard-auth {
-    flex: 0 0 auto !important;
-
-    margin: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 30px !important;
-
-    width: auto !important;
-}
-
-/* =========================================================
-   FINAL BEIGE THEME
-   Match the first screenshot
-   ========================================================= */
-
-:root{
-  --paper:#EEE8D6 !important;
-  --paper-deep:#E3DBC3 !important;
-  --ink:#2A2318 !important;
-  --ink-soft:#5B5342 !important;
-  --card:#F7F3E7 !important;
-  --rail:#D3C9A9 !important;
-}
-
-/* =========================
-   ENTIRE PAGE
-   ========================= */
-
-html,
-body{
-  background:#EEE8D6 !important;
-  color:#2A2318 !important;
-}
-
-#app{
-  background:#EEE8D6 !important;
-}
-
-.dashboard-content{
-  background:#EEE8D6 !important;
-}
-
-
-/* =========================
-   SIDEBAR
-   ========================= */
-
-.sidebar{
-  background:#17212B !important;
-  color:#FFFFFF !important;
-}
-
-.sidebar-logo{
-  background:#FFFFFF !important;
-  color:#17212B !important;
-}
-
-.sidebar-title{
-  color:#FFFFFF !important;
-}
-
-.sidebar-subtitle{
-  color:rgba(255,255,255,.65) !important;
-}
-
-.sidebar-section-title{
-  color:rgba(255,255,255,.55) !important;
-}
-
-.sidebar-link{
-  color:#FFFFFF !important;
-}
-
-.sidebar-link:hover{
-  background:rgba(255,255,255,.10) !important;
-}
-
-.sidebar-link.active{
-  background:rgba(255,255,255,.12) !important;
-  color:#FFFFFF !important;
-  box-shadow:inset 3px 0 0 #FFFFFF !important;
-}
-
-.sidebar-divider{
-  background:rgba(255,255,255,.12) !important;
-}
-
-.sidebar-bottom{
-  border-top:1px solid rgba(255,255,255,.12) !important;
-}
-
-
-/* =========================
-   TOP BAR
-   ========================= */
-
-.dashboard-topbar{
-  background:#F7F3E7 !important;
-  border-bottom:1px solid #D3C9A9 !important;
-}
-
-.dashboard-search input{
-  background:#F3EBD9 !important;
-  border:1px solid #D8C9AE !important;
-  color:#2A2318 !important;
-}
-
-.dashboard-search input:focus{
-  border-color:#2A2318 !important;
-  box-shadow:none !important;
-}
-
-
-/* FIND MY CAREER */
-
-.dashboard-recommend-btn{
-  background:#F3EBD9 !important;
-  border:1px solid #D8C9AE !important;
-  color:#2A2318 !important;
-}
-
-.dashboard-recommend-btn:hover{
-  background:#D8C9AE !important;
-  border-color:#BFAE91 !important;
-  color:#2A2318 !important;
-}
-
-
-/* PROFILE BUTTON */
-
-.dashboard-profile-button{
-  background:#F3EBD9 !important;
-  border:1px solid #D8C9AE !important;
-  color:#2A2318 !important;
-}
-
-.dashboard-profile-button:hover{
-  background:#D8C9AE !important;
-}
-
-
-/* =========================
-   MAIN CONTENT
-   ========================= */
-
-#main{
-  background:#EEE8D6 !important;
-  color:#2A2318 !important;
-}
-
-.dashboard-breadcrumb{
-  background:#EEE8D6 !important;
-}
-
-.page-head h1,
-.home-welcome h1{
-  color:#2A2318 !important;
-}
-
-.page-head p,
-.home-welcome p{
-  color:#5B5342 !important;
-}
-
-
-/* =========================
-   HOME WELCOME AREA
-   ========================= */
-
-.home-welcome{
-  background:#EEE8D6 !important;
-}
-
-.home-kicker{
-  color:#5B5342 !important;
-}
-
-
-/* =========================
-   TOP FOUR CARDS
-   ========================= */
-
-.home-action-card{
-  background:#F7F3E7 !important;
-  border:1px solid #D3C9A9 !important;
-  box-shadow:0 1px 0 rgba(42,35,24,.08) !important;
-}
-
-.home-action-card:hover{
-  background:#F7F3E7 !important;
-  border-color:#BFAE91 !important;
-  box-shadow:0 4px 12px rgba(42,35,24,.10) !important;
-}
-
-.home-action-icon{
-  background:#E3DBC3 !important;
-  border:1px solid #D3C9A9 !important;
-}
-
-.home-action-card h3{
-  color:#2A2318 !important;
-}
-
-.home-action-card p{
-  color:#5B5342 !important;
-}
-
-
-/* =========================
-   RECOMMENDED / TOOLS / EXAMS
-   ========================= */
-
-.home-panel{
-  background:#F7F3E7 !important;
-  border:1px solid #D3C9A9 !important;
-  box-shadow:0 1px 0 rgba(42,35,24,.08) !important;
-}
-
-.home-recommendation,
-.home-tool,
-.home-exam{
-  background:#F7F3E7 !important;
-  border:1px solid #D3C9A9 !important;
-  color:#2A2318 !important;
-  box-shadow:none !important;
-}
-
-.home-recommendation:hover,
-.home-tool:hover,
-.home-exam:hover{
-  background:#F3EBD9 !important;
-  border-color:#BFAE91 !important;
-  box-shadow:none !important;
-}
-
-.home-recommendation-title,
-.home-tool strong,
-.home-exam-name{
-  color:#2A2318 !important;
-}
-
-.home-recommendation-desc,
-.home-tool small,
-.home-exam-route{
-  color:#5B5342 !important;
-}
-
-
-/* =========================
-   MATCH BAR
-   ========================= */
-
-.home-match-bar{
-  background:#E3DBC3 !important;
-}
-
-.home-match-bar span{
-  background:#4B6B3A !important;
-}
-
-.home-match-number{
-  color:#2A2318 !important;
-}
-
-.home-match-label{
-  color:#5B5342 !important;
-}
-
-
-/* =========================
-   ARROWS
-   ========================= */
-
-.home-action-arrow,
-.home-recommendation-arrow,
-.home-tool-arrow,
-.home-exam-arrow{
-  color:#2A2318 !important;
-  background:transparent !important;
-  border:none !important;
-}
-
-.home-action-arrow:hover,
-.home-recommendation-arrow:hover,
-.home-tool-arrow:hover,
-.home-exam-arrow:hover{
-  color:#5B5342 !important;
-  background:transparent !important;
-}
-
-
-/* =========================
-   VIEW ALL
-   ========================= */
-
-.home-view-all{
-  color:#2A2318 !important;
-  background:transparent !important;
-  border:none !important;
-}
-
-.home-view-all:hover{
-  color:#5B5342 !important;
-  background:transparent !important;
-}
-
-
-/* =========================
-   NORMAL BUTTONS
-   ========================= */
-
-.btn,
-.dashboard-login-button,
-.top-action,
-.top-action-logout{
-  background:#F3EBD9 !important;
-  border:1px solid #D8C9AE !important;
-  color:#2A2318 !important;
-}
-
-.btn:hover,
-.dashboard-login-button:hover,
-.top-action:hover,
-.top-action-logout:hover{
-  background:#D8C9AE !important;
-  border-color:#BFAE91 !important;
-  color:#2A2318 !important;
-}
-
-
-/* =========================
-   PROFILE PAGE
-   ========================= */
-
-.detail-section{
-  color:#2A2318 !important;
-}
-
-.detail-section > div{
-  color:#2A2318;
-}
-
-
-/* =========================
-   STREAM CARDS
-   ========================= */
-
-.stream-card,
-.line-btn,
-.station-btn{
-  background:#F7F3E7 !important;
-  border-color:#D3C9A9 !important;
-  color:#2A2318 !important;
-}
-
-.stream-card:hover,
-.line-btn:hover,
-.station-btn:hover{
-  background:#F3EBD9 !important;
-  border-color:#BFAE91 !important;
-}
-
-.stream-name,
-.line-name,
-.station-name{
-  color:#2A2318 !important;
-}
-
-.stream-label,
-.line-code,
-.station-code{
-  color:var(--stream-color,var(--ink)) !important;
-}
-
-
-/* =========================
-   SAVED PATHS
-   ========================= */
-
-.saved-item{
-  background:#F7F3E7 !important;
-  border:1px solid #D3C9A9 !important;
-  color:#2A2318 !important;
-}
-
-.saved-item:hover{
-  background:#F3EBD9 !important;
-}
-
-
-/* =========================
-   FOOTER
-   ========================= */
-
-.dashboard-content footer{
-  background:#EEE8D6 !important;
-  border-top:1px solid #D3C9A9 !important;
-  color:#5B5342 !important;
-}
-
-/* =====================================================
-   FINAL MOBILE HOME FIX
-   DESKTOP IS NOT CHANGED
-   ===================================================== */
-
-@media (max-width: 800px) {
-
-  /* ---------- PAGE ---------- */
-
-  html,
-  body {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    overflow-x: hidden !important;
-  }
-
-  #app {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-  }
-
-  .dashboard-content {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    overflow-x: hidden !important;
-  }
-
-  #main {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    padding: 18px 14px 40px !important;
-    overflow-x: hidden !important;
-  }
-
-
-  /* ---------- MOBILE HEADER ---------- */
-
-  .dashboard-topbar {
-    width: 100% !important;
-    min-height: 62px !important;
-    padding: 10px 12px !important;
-    box-sizing: border-box !important;
-  }
-
-  .mobile-menu-btn {
-    display: flex !important;
-    width: 40px !important;
-    min-width: 40px !important;
-    height: 40px !important;
-    flex-shrink: 0 !important;
-    z-index: 20 !important;
-  }
-
-  .dashboard-search {
-    position: absolute !important;
-    left: 54px !important;
-    right: 54px !important;
-    top: 10px !important;
-    width: auto !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-  }
-
-  .dashboard-search input {
-    width: 100% !important;
-    min-width: 0 !important;
-    height: 40px !important;
-    padding: 8px 10px !important;
-    font-size: 13px !important;
-    box-sizing: border-box !important;
-  }
-
-  .dashboard-recommend-btn {
-    display: none !important;
-  }
-
-  .dashboard-auth {
-    position: absolute !important;
-    top: 10px !important;
-    right: 12px !important;
-    width: 40px !important;
-    min-width: 40px !important;
-    height: 40px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    z-index: 30 !important;
-  }
-
-  .dashboard-profile-button {
-    width: 40px !important;
-    min-width: 40px !important;
-    height: 40px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-sizing: border-box !important;
-  }
-
-
-  /* ---------- WELCOME ---------- */
-
-  .home-welcome {
-    display: block !important;
-    width: 100% !important;
-    margin-bottom: 20px !important;
-  }
-
-  .home-welcome h1 {
-    font-size: 1.55rem !important;
-    line-height: 1.2 !important;
-  }
-
-  .home-welcome p {
-    font-size: .85rem !important;
-    line-height: 1.5 !important;
-  }
-
-
-  /* =================================================
-     FOUR QUICK ACTION CARDS
-     2 COLUMNS ON MOBILE
-     ================================================= */
-
-  .home-action-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    margin-bottom: 18px !important;
-  }
-
-  .home-action-grid > .home-action-card {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    min-height: 135px !important;
-    padding: 14px !important;
-    box-sizing: border-box !important;
-  }
-
-  .home-action-card h3 {
-    font-size: .88rem !important;
-    line-height: 1.25 !important;
-  }
-
-  .home-action-card p {
-    font-size: .69rem !important;
-    line-height: 1.4 !important;
-  }
-
-  .home-action-icon {
-    width: 36px !important;
-    height: 36px !important;
-    margin-bottom: 9px !important;
-  }
-
-  .home-action-card .home-action-arrow {
-    font-size: 20px !important;
-  }
-
-
-  /* =================================================
-     THREE LOWER PANELS
-     ONE COLUMN ON MOBILE
-     ================================================= */
-
-  .home-dashboard-grid-three {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-  }
-
-  .home-dashboard-grid-three > .home-panel {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  .home-panel-recommended {
-    grid-column: auto !important;
-  }
-
-
-  /* ---------- RECOMMENDATIONS ---------- */
-
-  .home-recommendation {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-    padding: 12px !important;
-  }
-
-  .home-recommendation-main {
-    min-width: 0 !important;
-    flex: 1 1 auto !important;
-  }
-
-  .home-recommendation-title {
-    font-size: .82rem !important;
-  }
-
-  .home-recommendation-desc {
-    font-size: .68rem !important;
-    line-height: 1.4 !important;
-  }
-
-  .home-recommendation-match {
-    flex-shrink: 0 !important;
-    margin-left: 8px !important;
-  }
-
-  .home-match-number {
-    font-size: .95rem !important;
-  }
-
-  .home-match-bar {
-    width: 65px !important;
-  }
-
-
-  /* ---------- CAREER TOOLS ---------- */
-
-  .home-tool {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  .home-tool-main {
-    min-width: 0 !important;
-  }
-
-
-  /* ---------- ENTRANCE EXAMS ---------- */
-
-  .home-exam {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-
-  /* ---------- SIDEBAR ---------- */
-
-  .sidebar {
-    width: 270px !important;
-    min-width: 270px !important;
-    max-width: 270px !important;
-  }
-
-}
-
-
-/* =====================================================
-   SMALL PHONES
-   ===================================================== */
-
-@media (max-width: 420px) {
-
-  #main {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-  }
-
-  .home-action-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 8px !important;
-  }
-
-  .home-action-grid > .home-action-card {
-    min-height: 125px !important;
-    padding: 11px !important;
-  }
-
-  .home-action-card h3 {
-    font-size: .82rem !important;
-  }
-
-  .home-action-card p {
-    font-size: .65rem !important;
-  }
-
-}
 
 </style>
 </head>
@@ -4916,7 +1770,6 @@ body{
 <!-- Firebase SDK (compat build — simplest for vanilla JS) -->
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
 
 <script>
 /* ============ DATA ============ */
@@ -5272,116 +2125,6 @@ if(parts[0] === 'streams'){
 }
 
 
-
-function renderStream(main, crumb, id, stream){
-  
-  setCrumb(crumb, [{label:stream.name, hash:id}]);
-  const pathIds = Object.keys(stream.paths);
-  main.innerHTML = `
-    <a class="back-link" href="#/">‹ All streams</a>
-    <div class="page-head" style="--lc:${stream.color}">
-      <div class="code">${stream.name} LINE</div>
-      <h1>${stream.full}</h1>
-      <p>${stream.desc}</p>
-    </div>
-    <div class="stations" style="--lc:${stream.color}">
-      ${pathIds.map(pid=>{
-        const p = stream.paths[pid];
-        return `<div class="station">
-          <div class="station-btn" onclick="location.hash='#/${id}/${pid}'">
-            <div class="station-code">${p.entrance ? p.entrance.split('/')[0].trim() : (p.children?'MULTIPLE BRANCHES':'DIRECT ROUTE')}</div>
-            <div class="station-name">${p.name}</div>
-            <div class="station-desc">${p.desc}</div>
-            <div class="station-arrow">›</div>
-          </div>
-        </div>`;
-      }).join('')}
-    </div>
-    ${stream.afterCompletion ? `
-    <div class="detail-section" style="--lc:${stream.color}">
-      <h2>After completion, you can</h2>
-      <ul class="plain">${stream.afterCompletion.map(s=>`<li>${s}</li>`).join('')}</ul>
-    </div>` : ''}
-  `;
-}
-
-
-function renderGroup(main, crumb, stream, idPath, node, trail){
-
-  setCrumb(
-    crumb,
-    trail.concat([
-      {
-        label: node.name,
-        hash: idPath
-      }
-    ])
-  );
-
-  const childIds = Object.keys(node.children);
-
-  main.innerHTML = `
-    <a class="back-link"
-       href="#/${idPath.split('/').slice(0,-1).join('/')}">
-       ‹ Back
-    </a>
-
-    <div class="page-head" style="--lc:${stream.color}">
-      <div class="code">${stream.name} LINE</div>
-      <h1>${node.name}</h1>
-      <p>${node.desc}</p>
-
-      ${
-        node.entrance
-          ? `
-            <div class="info-strip">
-              <span class="chip">
-                Entrance: ${node.entrance}
-              </span>
-            </div>
-          `
-          : ''
-      }
-    </div>
-
-    <div class="stations" style="--lc:${stream.color}">
-      ${childIds.map(cid => {
-
-        const c = node.children[cid];
-
-        return `
-          <div class="station">
-
-            <div
-              class="station-btn"
-              onclick="location.hash='#/${idPath}/${cid}'"
-            >
-
-              <div class="station-code">
-                BRANCH
-              </div>
-
-              <div class="station-name">
-                ${c.name}
-              </div>
-
-              <div class="station-desc">
-                ${c.desc}
-              </div>
-
-              <div class="station-arrow">
-                ›
-              </div>
-
-            </div>
-
-          </div>
-        `;
-
-      }).join('')}
-    </div>
-  `;
-}
 
 function updateActiveSidebar(){
   const current = parseHash()[0] || '';
@@ -7209,17 +3952,17 @@ score = Math.max(0, Math.min(score, 100));
 }
 
 
-async function renderProfile() {
+async function renderProfile(){
   const main = document.getElementById('main');
   const crumb = document.getElementById('crumb');
 
-  if (!currentUser) {
+  if(!currentUser){
     location.hash = '#/login';
     return;
   }
 
   setCrumb(crumb, [
-    { label: 'Student Profile', hash: 'profile' }
+    {label:'Student Profile', hash:'profile'}
   ]);
 
   main.innerHTML = `
@@ -7259,93 +4002,48 @@ async function renderProfile() {
           style="margin-top:6px;padding:12px;
           border:1px solid var(--rail);
           border-radius:8px;">
-          ${escapeHtml(currentUser.email || 'Not set')}
+${currentUser.email || ''}
         </div>
       </div>
 
-      <div style="margin-bottom:20px;">
-        <strong>School Name</strong>
-        <div id="profileSchool"
-          style="margin-top:6px;padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;">
-          Loading...
-        </div>
-      </div>
+<div style="margin-top:24px;">
+<div>
+    <a href="#/saved" class="btn">
+      ⭐ My Saved Paths
+    </a>
+  </div>
 
-      <div style="margin-bottom:20px;">
-        <strong>Location</strong>
-        <div id="profileLocation"
-          style="margin-top:6px;padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;">
-          Loading...
-        </div>
-      </div>
+    <div style="margin-top:12px;">
+    <a href="#/institutions" class="btn">
+      ?? Education Finder
+    </a>
+  </div>
 
-      <div style="margin-bottom:20px;">
-        <strong>Marks / Percentage</strong>
-        <div id="profileMarks"
-          style="margin-top:6px;padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;">
-          Loading...
-        </div>
-      </div>
+  <div style="margin-top:12px;">
+    <div style="margin-top:12px;">
+<div style="margin-top:12px;">
+  <a href="#/scholarships" class="btn">
+    ?? Scholarship Finder
+  </a>
+</div>
+<button id="profileLogoutBtn" class="btn">
+      🚪 Log out
+    </button>
+  </div>
 
-      <div style="margin-top:28px;">
-
-        <div style="margin-top:12px;">
-          <a href="#/saved" class="btn">
-            ⭐ My Saved Paths
-          </a>
-        </div>
-
-        <div style="margin-top:12px;">
-          <a href="#/institutions" class="btn">
-            🎓 Education Finder
-          </a>
-        </div>
-
-        <div style="margin-top:12px;">
-          <a href="#/scholarships" class="btn">
-            🎓 Scholarship Finder
-          </a>
-        </div>
-
-        <div style="margin-top:12px;">
-          <button
-            id="editProfileBtn"
-            class="btn"
-            type="button">
-            ✏️ Edit Profile
-          </button>
-        </div>
-
-        <div style="margin-top:12px;">
-          <button
-            id="profileLogoutBtn"
-            class="btn"
-            type="button">
-            🚪 Log out
-          </button>
-        </div>
-
-      </div>
-
-      <div id="profileMessage" style="margin-top:16px;"></div>
-
+<button id="editProfileBtn" class="btn" style="margin-top:12px;">
+  ✏️ Edit Profile
+</button>
     </div>
-  `;
 
-  document
-    .getElementById('profileLogoutBtn')
+    <div id="profileMessage" style="margin-top:16px;"></div>
+  `;
+  document.getElementById('profileLogoutBtn')
     .addEventListener('click', () => {
       fbAuth.signOut();
     });
-
   try {
-    const token = await currentUser.getIdToken(true);
+    const token = await currentUser.getIdToken();
 
     const res = await fetch(`${API_BASE}/api/profile`, {
       headers: {
@@ -7353,248 +4051,84 @@ async function renderProfile() {
       }
     });
 
-    if (!res.ok) {
+    if(!res.ok){
       throw new Error('Failed to load profile');
     }
 
     const profile = await res.json();
 
     document.getElementById('profileName').textContent =
-      profile.name || currentUser.displayName || 'Not set';
+      profile.name || 'Not set';
 
     document.getElementById('profilePhone').textContent =
       profile.phone || 'Not set';
 
-    document.getElementById('profileSchool').textContent =
-      profile.school_name || 'Not set';
-
-    document.getElementById('profileLocation').textContent =
-      profile.location || 'Not set';
-
-    document.getElementById('profileMarks').textContent =
-      profile.marks !== null &&
-      profile.marks !== undefined &&
-      profile.marks !== ''
-        ? `${profile.marks}%`
-        : 'Not set';
-
-    document
-      .getElementById('editProfileBtn')
+    document.getElementById('editProfileBtn')
       .addEventListener('click', () => {
         showEditProfile(profile);
       });
 
-  } catch (error) {
+  } catch(error) {
     document.getElementById('profileMessage').innerHTML = `
       <div class="detail-section" style="--lc:#A2402F;">
         Unable to load your profile.
       </div>
     `;
 
-    console.error('PROFILE ERROR:', error);
+    console.error(error);
   }
 }
 
+function showEditProfile(profile){
+  const message = document.getElementById('profileMessage');
 
-function showEditProfile(profile) {
-  const main = document.getElementById('main');
+  message.innerHTML = `
+    <div class="detail-section" style="margin-top:16px;">
+      <h2>Edit Profile</h2>
 
-  const safeName = escapeHtml(profile.name || '');
-  const safePhone = escapeHtml(profile.phone || '');
-  const safeSchool = escapeHtml(profile.school_name || '');
-  const safeLocation = escapeHtml(profile.location || '');
-  const marksValue =
-    profile.marks !== null &&
-    profile.marks !== undefined &&
-    profile.marks !== ''
-      ? profile.marks
-      : '';
-
-  main.innerHTML = `
-    <a class="back-link" href="#/profile">‹ Back to profile</a>
-
-    <div class="page-head">
-      <div class="code">EDIT PROFILE</div>
-      <h1>Edit Your Profile</h1>
-      <p>Update your personal information.</p>
-    </div>
-
-    <div class="detail-section">
-
-      <div style="margin-bottom:18px;">
-        <label>
-          <strong>Name</strong>
-        </label>
+      <div style="margin-bottom:16px;">
+        <strong>Name</strong>
         <input
           id="editProfileName"
           type="text"
-          value="${safeName}"
-          placeholder="Enter your name"
-          style="
-            width:100%;
-            box-sizing:border-box;
-            margin-top:6px;
-            padding:12px;
-            border:1px solid var(--rail);
-            border-radius:8px;
-            background:var(--card);
-            font:inherit;
-          "
-        >
+          value="${profile.name || ''}"
+          style="width:100%;padding:12px;margin-top:6px;
+          border:1px solid var(--rail);
+          border-radius:8px;
+          background:var(--card);
+          font:inherit;">
       </div>
 
-      <div style="margin-bottom:18px;">
-        <label>
-          <strong>Phone Number</strong>
-        </label>
+      <div style="margin-bottom:16px;">
+        <strong>Phone Number</strong>
         <input
           id="editProfilePhone"
           type="tel"
-          value="${safePhone}"
-          placeholder="Enter phone number"
-          style="
-            width:100%;
-            box-sizing:border-box;
-            margin-top:6px;
-            padding:12px;
-            border:1px solid var(--rail);
-            border-radius:8px;
-            background:var(--card);
-            font:inherit;
-          "
-        >
+          value="${profile.phone || ''}"
+          style="width:100%;padding:12px;margin-top:6px;
+          border:1px solid var(--rail);
+          border-radius:8px;
+          background:var(--card);
+          font:inherit;">
       </div>
 
-      <div style="margin-bottom:18px;">
-        <label>
-          <strong>Email</strong>
-        </label>
-        <input
-          type="email"
-          value="${escapeHtml(currentUser.email || profile.email || '')}"
-          disabled
-          style="
-            width:100%;
-            box-sizing:border-box;
-            margin-top:6px;
-            padding:12px;
-            border:1px solid var(--rail);
-            border-radius:8px;
-            background:#eef1f5;
-            font:inherit;
-          "
-        >
-        <small style="display:block;margin-top:5px;color:var(--ink-soft);">
-          Email is managed by your login account.
-        </small>
-      </div>
+      <button id="saveProfileBtn" class="btn">
+        Save Profile
+      </button>
 
-      <div style="margin-bottom:18px;">
-        <label>
-          <strong>School Name</strong>
-        </label>
-        <input
-          id="editProfileSchool"
-          type="text"
-          value="${safeSchool}"
-          placeholder="Enter your school name"
-          style="
-            width:100%;
-            box-sizing:border-box;
-            margin-top:6px;
-            padding:12px;
-            border:1px solid var(--rail);
-            border-radius:8px;
-            background:var(--card);
-            font:inherit;
-          "
-        >
-      </div>
-
-      <div style="margin-bottom:18px;">
-        <label>
-          <strong>Location</strong>
-        </label>
-        <input
-          id="editProfileLocation"
-          type="text"
-          value="${safeLocation}"
-          placeholder="Enter your city / location"
-          style="
-            width:100%;
-            box-sizing:border-box;
-            margin-top:6px;
-            padding:12px;
-            border:1px solid var(--rail);
-            border-radius:8px;
-            background:var(--card);
-            font:inherit;
-          "
-        >
-      </div>
-
-      <div style="margin-bottom:18px;">
-        <label>
-          <strong>Marks / Percentage</strong>
-        </label>
-        <input
-          id="editProfileMarks"
-          type="number"
-          min="0"
-          max="100"
-          step="0.01"
-          value="${marksValue}"
-          placeholder="Enter percentage (0-100)"
-          style="
-            width:100%;
-            box-sizing:border-box;
-            margin-top:6px;
-            padding:12px;
-            border:1px solid var(--rail);
-            border-radius:8px;
-            background:var(--card);
-            font:inherit;
-          "
-        >
-      </div>
-
-      <div style="margin-top:25px;">
-        <button
-          id="saveProfileBtn"
-          class="btn"
-          type="button">
-          💾 Save Profile
-        </button>
-
-        <button
-          id="cancelProfileBtn"
-          class="btn"
-          type="button"
-          style="margin-left:8px;">
-          Cancel
-        </button>
-      </div>
-
-      <div id="editProfileMessage" style="margin-top:16px;"></div>
-
+      <button id="cancelProfileBtn" class="btn" style="margin-left:8px;">
+        Cancel
+      </button>
     </div>
   `;
 
-  document
-    .getElementById('cancelProfileBtn')
+  document.getElementById('cancelProfileBtn')
     .addEventListener('click', () => {
-      location.hash = '#/profile';
+      renderProfile();
     });
 
-  document
-    .getElementById('saveProfileBtn')
+  document.getElementById('saveProfileBtn')
     .addEventListener('click', async () => {
-
-      const saveBtn =
-        document.getElementById('saveProfileBtn');
-
-      const message =
-        document.getElementById('editProfileMessage');
 
       const name =
         document.getElementById('editProfileName').value.trim();
@@ -7602,39 +4136,8 @@ function showEditProfile(profile) {
       const phone =
         document.getElementById('editProfilePhone').value.trim();
 
-      const school_name =
-        document.getElementById('editProfileSchool').value.trim();
-
-      const location =
-        document.getElementById('editProfileLocation').value.trim();
-
-      const marksValue =
-        document.getElementById('editProfileMarks').value.trim();
-
-      let marks = null;
-
-      if (marksValue !== '') {
-        marks = Number(marksValue);
-
-        if (
-          Number.isNaN(marks) ||
-          marks < 0 ||
-          marks > 100
-        ) {
-          message.innerHTML = `
-            <div style="color:#A2402F;font-weight:600;">
-              Marks must be between 0 and 100.
-            </div>
-          `;
-          return;
-        }
-      }
-
-      saveBtn.disabled = true;
-      saveBtn.textContent = 'Saving...';
-
       try {
-        const token = await currentUser.getIdToken(true);
+        const token = await currentUser.getIdToken();
 
         const res = await fetch(`${API_BASE}/api/profile`, {
           method: 'PUT',
@@ -7643,49 +4146,30 @@ function showEditProfile(profile) {
             'Authorization': `Bearer ${token}`
           },
           body: JSON.stringify({
-            name: name || null,
-            phone: phone || null,
-            school_name: school_name || null,
-            location: location || null,
-            marks: marks
+            name,
+            phone
           })
         });
 
-        if (!res.ok) {
-          const errorText = await res.text();
-          throw new Error(
-            errorText || 'Failed to save profile'
-          );
+        if(!res.ok){
+          throw new Error('Failed to save profile');
         }
 
         await res.json();
 
+        renderProfile();
+
+      } catch(error) {
         message.innerHTML = `
-          <div style="color:green;font-weight:600;">
-            ✅ Profile saved successfully!
+          <div class="detail-section" style="--lc:#A2402F;">
+            Unable to save your profile.
           </div>
         `;
 
-        setTimeout(() => {
-          location.hash = '#/profile';
-        }, 700);
-
-      } catch (error) {
-        console.error('PROFILE SAVE ERROR:', error);
-
-        message.innerHTML = `
-          <div style="color:#A2402F;font-weight:600;">
-            ❌ Unable to save profile.
-          </div>
-        `;
-
-      } finally {
-        saveBtn.disabled = false;
-        saveBtn.textContent = '💾 Save Profile';
+        console.error(error);
       }
     });
 }
-
 
 async function renderEducationFinder(){
   const main = document.getElementById('main');
@@ -8456,93 +4940,22 @@ function renderStreams(main, crumb){
 
   crumb.innerHTML = '';
 
-  const streamOrder = [
-    'mpc',
-    'bipc',
-    'mec',
-    'cec',
-    'hec',
-    'polytechnic',
-    'iti',
-    'skilldev',
-    'vocational',
-    'defence',
-    'govtjobs'
-  ];
-
-  const streamColors = {
-    mpc: '#C97F2E',
-    bipc: '#A2402F',
-    mec: '#6E4A80',
-    cec: '#33566B',
-    hec: '#4B6B3A',
-    polytechnic: '#2E7D6B',
-    iti: '#7A5230',
-    skilldev: '#9C3F63',
-    vocational: '#4E6F7A',
-    defence: '#374A5A',
-    govtjobs: '#6B6B34'
-  };
-
-  const streams = streamOrder
-    .filter(id => DATA[id])
-    .map(id => [id, DATA[id]]);
+  const streams = Object.entries(DATA);
 
   main.innerHTML = `
+    <section class="streams-page">
 
-    <section
-      style="
-        max-width:1100px;
-        margin:0 auto;
-        padding:48px 30px 70px;
-        box-sizing:border-box;
-      "
-    >
+      <div class="streams-header">
 
-      <!-- HEADER -->
-
-      <div
-        style="
-          max-width:850px;
-          margin-bottom:58px;
-        "
-      >
-
-        <div
-          style="
-            font-size:0.72rem;
-            font-weight:700;
-            letter-spacing:0.12em;
-            text-transform:uppercase;
-            color:var(--ink-soft);
-            margin-bottom:12px;
-          "
-        >
+        <div class="home-kicker">
           LIFE AFTER 10TH CLASS
         </div>
 
-        <h1
-          style="
-            margin:0 0 14px;
-            font-family:'Space Grotesk',sans-serif;
-            font-size:2.5rem;
-            line-height:1.15;
-            font-weight:700;
-            color:var(--ink);
-          "
-        >
+        <h1>
           Every route starts at the same station.
         </h1>
 
-        <p
-          style="
-            margin:0;
-            max-width:820px;
-            color:var(--ink-soft);
-            font-size:1rem;
-            line-height:1.6;
-          "
-        >
+        <p>
           Pick a line below. Each one shows every path it leads to —
           the branch, the entrance exam, the job roles, and the skills
           you'll actually need.
@@ -8550,752 +4963,47 @@ function renderStreams(main, crumb){
 
       </div>
 
+      <div class="streams-start">
 
-      <!-- STARTING POINT -->
-
-      <div
-        style="
-          display:flex;
-          align-items:center;
-          gap:14px;
-          margin-bottom:16px;
-        "
-      >
-
-        <div
-          style="
-            width:26px;
-            height:26px;
-            border:7px solid var(--ink);
-            border-radius:50%;
-            box-sizing:border-box;
-            flex-shrink:0;
-          "
-        ></div>
+        <div class="streams-start-icon">
+          ●
+        </div>
 
         <div>
-
-          <h2
-            style="
-              margin:0;
-              font-size:1.15rem;
-              font-weight:700;
-            "
-          >
-            10th Class — Complete
-          </h2>
-
-          <p
-            style="
-              margin:3px 0 0;
-              color:var(--ink-soft);
-              font-size:0.82rem;
-            "
-          >
-            Choose your line
-          </p>
-
+          <h2>10th Class — Complete</h2>
+          <p>Choose your line</p>
         </div>
 
       </div>
 
+      <div class="streams-list">
 
-      <!-- STREAM LIST -->
-
-      <div
-        style="
-          position:relative;
-          margin-left:14px;
-          padding-left:30px;
-        "
-      >
-
-        <!-- VERTICAL LINE -->
-
-        <div
-          style="
-            position:absolute;
-            left:0;
-            top:0;
-            bottom:0;
-            width:3px;
-            background:var(--ink);
-            opacity:0.9;
-          "
-        ></div>
-
-
-        ${streams.map(([id, stream]) => {
-
-          const color = streamColors[id] || '#555';
-
-          return `
-
-            <a
-              href="#/${id}"
-              style="
-                --stream-color:${color};
-
-                position:relative;
-                display:flex;
-                align-items:center;
-
-                min-height:96px;
-
-                margin-bottom:12px;
-
-                padding:18px 22px;
-
-                box-sizing:border-box;
-
-                background:var(--card);
-
-                border:1px solid var(--rail);
-
-                border-left:6px solid ${color};
-
-                border-radius:8px;
-
-                text-decoration:none;
-                color:var(--ink);
-
-                box-shadow:var(--shadow);
-
-                transition:
-                  transform 0.15s ease,
-                  border-color 0.15s ease,
-                  box-shadow 0.15s ease;
-              "
-
-              onmouseover="
-                this.style.transform='translateX(3px)';
-                this.style.boxShadow='0 6px 18px rgba(42,35,24,0.12)';
-              "
-
-              onmouseout="
-                this.style.transform='translateX(0)';
-                this.style.boxShadow='var(--shadow)';
-              "
-            >
-
-              <!-- CONNECTION DOT -->
-
-              <span
-                style="
-                  position:absolute;
-                  left:-38px;
-
-                  width:14px;
-                  height:14px;
-
-                  background:${color};
-
-                  border:3px solid var(--paper);
-
-                  border-radius:50%;
-
-                  box-sizing:border-box;
-                "
-              ></span>
-
-
-              <!-- SMALL CONNECTOR -->
-
-              <span
-                style="
-                  position:absolute;
-                  left:-30px;
-
-                  width:30px;
-                  height:3px;
-
-                  background:${color};
-                "
-              ></span>
-
-
-              <!-- CONTENT -->
-
-              <div
-                style="
-                  flex:1;
-                  min-width:0;
-                "
-              >
-
-                <div
-                  style="
-                    margin-bottom:7px;
-
-                    font-size:0.68rem;
-                    font-weight:700;
-
-                    letter-spacing:0.08em;
-
-                    color:${color};
-
-                    text-transform:uppercase;
-                  "
-                >
-                  LINE
-                </div>
-
-                <div
-                  style="
-                    font-family:'Space Grotesk',sans-serif;
-
-                    font-size:1.2rem;
-                    font-weight:600;
-
-                    line-height:1.25;
-                  "
-                >
-                  ${stream.name || id}
-                </div>
-
-                ${
-                  stream.full
-                  ?
-                  `
-                    <div
-                      style="
-                        margin-top:5px;
-
-                        font-size:0.78rem;
-
-                        color:var(--ink-soft);
-                      "
-                    >
-                      ${stream.full}
-                    </div>
-                  `
-                  :
-                  ''
-                }
-
-              </div>
-
-
-              <!-- ARROW -->
-
-              <div
-                style="
-                  margin-left:20px;
-
-                  font-size:1.5rem;
-
-                  color:var(--ink-soft);
-
-                  flex-shrink:0;
-                "
-              >
-                ›
-              </div>
-
-            </a>
-
-          `;
-
-        }).join('')}
-
-      </div>
-
-    </section>
-
-  `;
-}
-
-/*
- * Stream colors
- */
-function getStreamColor(id) {
-
-  const colors = {
-
-    mpc: 'var(--line-mpc)',
-
-    bipc: 'var(--line-bipc)',
-
-    mec: 'var(--line-mec)',
-
-    cec: 'var(--line-cec)',
-
-    hec: '#4B6B3A',
-
-    polytechnic: '#208B78',
-
-    iti: '#80582F',
-
-    skilldev: '#39758A',
-
-    vocational: '#2D8C9A',
-
-    defence: '#3B5666',
-
-    govtjobs: '#71833A'
-
-  };
-
-  return colors[id] || 'var(--ink-soft)';
-}
-async function loadPersonalizedRecommendations() {
-
-    const container =
-        document.getElementById('personalizedRecommendations');
-
-    if (!container) return;
-
-    if (!currentUser) {
-        container.innerHTML = `
-            <div class="home-empty-message">
-                Log in to get personalized career recommendations.
-            </div>
-        `;
-        return;
-    }
-
-    try {
-
-        const token = await currentUser.getIdToken();
-
-        const response = await fetch(
-            `${API_BASE}/api/recommendations`,
-            {
-                headers: {
-                    "Authorization": `Bearer ${token}`
-                }
-            }
-        );
-
-        if (!response.ok) {
-            throw new Error(
-                `Recommendation API failed: ${response.status}`
-            );
-        }
-
-        const recommendations = await response.json();
-
-        if (!recommendations.length) {
-
-            container.innerHTML = `
-                <div class="home-empty-message">
-                    Explore some career paths to get personalized recommendations.
-                </div>
-            `;
-
-            return;
-        }
-
-        container.innerHTML = recommendations.map(item => {
-
-            const stream =
-                DATA[item.stream_id];
-
-            if (!stream) return '';
-
-            let course = null;
-
-            /*
-             * Find the path inside the student's stream.
-             */
-            if (
-                stream.paths &&
-                item.path_id &&
-                stream.paths[item.path_id]
-            ) {
-                course = stream.paths[item.path_id];
-            }
-
-            /*
-             * If the exact path isn't found,
-             * use the stream name.
-             */
-            const title =
-                course?.name ||
-                stream.full ||
-                stream.name;
-
-            const description =
-                course?.desc ||
-                stream.desc ||
-                'Explore this career path and discover suitable courses.';
-
-            const link =
-                item.path_id
-                    ? `#/${item.stream_id}/${item.path_id}`
-                    : `#/${item.stream_id}`;
-
-            return `
-                <a
-                    class="personalized-recommendation-card"
-                    href="${link}"
-                >
-
-                    <div class="personalized-recommendation-info">
-
-                        <div class="personalized-recommendation-title">
-                            ${title}
-                        </div>
-
-                        <div class="personalized-recommendation-desc">
-                            ${description}
-                        </div>
-
-                    </div>
-
-                    <div class="personalized-recommendation-score">
-                        <strong>${item.match}%</strong>
-                        <span>Match</span>
-                    </div>
-
-                    <div class="personalized-recommendation-arrow">
-                        →
-                    </div>
-
-                </a>
-            `;
-
-        }).join('');
-
-    } catch (error) {
-
-        console.error(
-            'Personalized recommendation error:',
-            error
-        );
-
-        container.innerHTML = `
-            <div class="home-empty-message">
-                Explore more career paths to get personalized recommendations.
-            </div>
-        `;
-    }
-}
-
-async function renderHome(main, crumb) {
-
-  crumb.innerHTML = '';
-
-  const userName = currentUser?.displayName || 'Student';
-
-  // ============================================================
-  // PERSONALIZED RECOMMENDATIONS
-  // Based on student's previous click history
-  // ============================================================
-
-  let recommendations = [];
-
-  try {
-
-    if (currentUser) {
-
-      const token = await currentUser.getIdToken();
-
-      const response = await fetch(
-        `${API_BASE}/api/recommendations`,
-        {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
-
-      if (response.ok) {
-
-        const historyRecommendations = await response.json();
-
-        if (Array.isArray(historyRecommendations)) {
-
-          recommendations = historyRecommendations.map(item => {
-
-            const stream = DATA[item.stream_id];
-
-            let course = null;
-
-            if (
-              stream &&
-              stream.paths &&
-              item.path_id &&
-              stream.paths[item.path_id]
-            ) {
-              course = stream.paths[item.path_id];
-            }
-
-            return {
-              name:
-                item.name ||
-                course?.name ||
-                stream?.full ||
-                stream?.name ||
-                'Career Path',
-
-              desc:
-                item.desc ||
-                course?.desc ||
-                stream?.desc ||
-                'Explore this career path',
-
-              score:
-                Number(item.match ?? item.score ?? 0),
-
-              path:
-                item.path ||
-                (
-                  item.path_id
-                    ? `#/${item.stream_id}/${item.path_id}`
-                    : `#/${item.stream_id}`
-                )
-            };
-
-          });
-
-        }
-
-      } else {
-
-        console.warn(
-          'Recommendation API returned:',
-          response.status
-        );
-
-      }
-
-    }
-
-  } catch (error) {
-
-    console.error(
-      'Could not load personalized recommendations:',
-      error
-    );
-
-    recommendations = [];
-
-  }
-
-
-  // ============================================================
-  // FALLBACK FOR NEW STUDENTS
-  // ============================================================
-
-  if (recommendations.length === 0) {
-
-    recommendations = [
-      {
-        name: 'Explore Career Paths',
-        desc: 'Start exploring courses and careers to get personalized recommendations.',
-        score: 0,
-        path: '#/streams'
-      }
-    ];
-
-  }
-
-
-  // ============================================================
-  // LIMIT TO TOP 3
-  // ============================================================
-
-  recommendations = recommendations.slice(0, 3);
-
-
-  // ============================================================
-  // POPULAR ENTRANCE EXAMS
-  // ============================================================
-
-  const exams = ENTRANCE_EXAM_DATA.slice(0, 3);
-
-
-  // ============================================================
-  // HOME PAGE
-  // ============================================================
-
-  main.innerHTML = `
-
-    <section
-      class="home-dashboard"
-      style="
-        width:100%;
-        box-sizing:border-box;
-        background:#F3EBD9;
-        color:#152238;
-        padding:0;
-      "
-    >
-
-      <!-- =====================================================
-           WELCOME
-      ====================================================== -->
-
-      <div style="
-        margin-bottom:24px;
-      ">
-
-        <div style="
-          font-size:.78rem;
-          font-weight:600;
-          letter-spacing:.08em;
-          color:#64748B;
-          margin-bottom:8px;
-        ">
-          CAREER DASHBOARD
-        </div>
-
-        <h1 style="
-          margin:0 0 10px;
-          font-size:2rem;
-          line-height:1.2;
-          color:#152238;
-        ">
-          Welcome back, ${userName}!
-        </h1>
-
-        <p style="
-          margin:0;
-          font-size:.95rem;
-          color:#64748B;
-        ">
-          Explore courses, entrance exams and career paths to find the right direction after 10th class.
-        </p>
-
-      </div>
-
-
-      <!-- =====================================================
-           FOUR QUICK ACTION BOXES
-      ====================================================== -->
-
-      <div
-        class="home-action-grid"
-        style="
-          display:grid !important;
-          grid-template-columns:repeat(4,minmax(0,1fr));
-          gap:14px !important;
-          width:100% !important;
-          margin-bottom:22px !important;
-        "
-      >
-
-        ${[
-          [
-            '#/recommend',
-            '🎯',
-            'Career Finder',
-            'Find careers based on your interests, goals and skills.'
-          ],
-          [
-            '#/courses',
-            '📚',
-            'Compare Courses',
-            'Compare courses, duration, salary, careers and higher studies.'
-          ],
-          [
-            '#/exams',
-            '📝',
-            'Entrance Exams',
-            'Explore entrance exams and the courses they can lead to.'
-          ],
-          [
-            '#/saved',
-            '⭐',
-            'My Saved Paths',
-            'View and manage the career paths you have saved.'
-          ]
-        ].map(x => `
+        ${streams.map(([id, stream], index) => `
 
           <a
-            href="${x[0]}"
-            class="home-action-card"
-            style="
-              display:flex !important;
-              flex-direction:column !important;
-              justify-content:space-between !important;
-              min-height:155px !important;
-              padding:18px !important;
-              box-sizing:border-box !important;
-
-              background:#FFFFFF !important;
-
-              border:1px solid #E3E8EF !important;
-              border-radius:12px !important;
-
-              box-shadow:0 2px 8px rgba(15,23,42,.05) !important;
-
-              text-decoration:none !important;
-              color:#152238 !important;
-
-              transition:transform .15s ease, box-shadow .15s ease;
-            "
+            href="#/${id}"
+            class="stream-card"
           >
 
-            <div>
+            <div class="stream-line-marker">
+              <span></span>
+            </div>
 
-              <div style="
-                width:42px;
-                height:42px;
+            <div class="stream-card-content">
 
-                display:flex;
-                align-items:center;
-                justify-content:center;
-
-                border-radius:50%;
-
-                background:#EEF4FF;
-
-                font-size:22px;
-
-                margin-bottom:12px;
-              ">
-                ${x[1]}
+              <div class="stream-label">
+                LINE
               </div>
 
-
-              <h3 style="
-                margin:0 0 7px;
-                font-size:.98rem;
-                color:#152238;
-              ">
-                ${x[2]}
-              </h3>
-
-
-              <p style="
-                margin:0;
-                font-size:.76rem;
-                line-height:1.45;
-                color:#64748B;
-              ">
-                ${x[3]}
-              </p>
+              <div class="stream-name">
+                ${stream.name || id}
+              </div>
 
             </div>
 
-
-            <!-- BLACK ARROW -->
-
-            <span style="
-              display:block !important;
-
-              margin-top:12px !important;
-
-              padding:0 !important;
-
-              background:transparent !important;
-
-              border:0 !important;
-
-              color:#111111 !important;
-
-              font-size:22px !important;
-
-              line-height:1 !important;
-
-              text-align:right !important;
-            ">
-              →
-            </span>
+            <div class="stream-arrow">
+              ›
+            </div>
 
           </a>
 
@@ -9303,82 +5011,217 @@ async function renderHome(main, crumb) {
 
       </div>
 
+    </section>
+  `;
+}
 
-      <!-- =====================================================
-           THREE INDIVIDUAL BOXES
-      ====================================================== -->
+function renderHome(main, crumb){
 
-      <div
-        class="home-dashboard-grid-three"
-        style="
-          display:grid !important;
+  crumb.innerHTML = '';
 
-          grid-template-columns:
-            minmax(0,1.5fr)
-  minmax(0,1fr)
-  minmax(0,1fr);
-          gap:16px !important;
+  const userName =
+    currentUser?.displayName ||
+    currentUser?.email?.split('@')[0] ||
+    'Student';
 
-          width:100% !important;
+  const recommendations = [
+    {
+      name: 'Artificial Intelligence & Data Science',
+      desc: 'AI, data, machine learning and analytics',
+      score: 92,
+      path: '#/mpc/engineering/aids'
+    },
+    {
+      name: 'Computer Science Engineering',
+      desc: 'Software development, programming and technology',
+      score: 87,
+      path: '#/mpc/engineering/cse'
+    },
+    {
+      name: 'Cyber Security',
+      desc: 'Security, networks and digital protection',
+      score: 82,
+      path: '#/mpc/engineering/cybersecurity'
+    }
+  ];
 
-          align-items:start !important;
-        "
-      >
+  const exams = ENTRANCE_EXAM_DATA
+    .slice(0,3);
+
+  main.innerHTML = `
+
+    <section class="home-dashboard">
+
+      <!-- =========================
+           WELCOME
+           ========================= -->
+
+      <div class="home-welcome">
+
+        <div class="home-welcome-text">
+
+          <div class="home-kicker">
+            CAREER DASHBOARD
+          </div>
+
+          <h1>
+            Welcome back, ${userName}!
+          </h1>
+
+          <p>
+            Explore courses, entrance exams and career paths
+            to find the right direction after 10th class.
+          </p>
+
+        </div>
+
+      </div>
 
 
-        <!-- =================================================
-             BOX 1
-             RECOMMENDED FOR YOU
-        ================================================== -->
+      <!-- =========================
+           QUICK ACTIONS
+           ========================= -->
 
-        <section
-          class="home-panel home-panel-recommended"
-          style="
-            display:block !important;
+      <div class="home-action-grid">
 
-            width:100% !important;
-            min-width:0 !important;
-
-            box-sizing:border-box !important;
-
-            padding:18px !important;
-
-            background:#FFFFFF !important;
-
-            border:1px solid #E3E8EF !important;
-
-            border-radius:12px !important;
-
-            box-shadow:0 2px 8px rgba(15,23,42,.05) !important;
-          "
+        <a
+          href="#/recommend"
+          class="home-action-card"
         >
 
-          <div style="
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:8px;
-            margin-bottom:14px;
-          ">
+          <div>
 
-            <h2 style="
-              margin:0;
-              font-size:1rem;
-              color:#152238;
-            ">
+            <div class="home-action-icon">
+              🎯
+            </div>
+
+            <h3>
+              Career Finder
+            </h3>
+
+            <p>
+              Find careers based on your interests,
+              goals and skills.
+            </p>
+
+          </div>
+
+          <div class="home-action-arrow">
+            →
+          </div>
+
+        </a>
+
+
+        <a
+          href="#/courses"
+          class="home-action-card"
+        >
+
+          <div>
+
+            <div class="home-action-icon">
+              📚
+            </div>
+
+            <h3>
+              Compare Courses
+            </h3>
+
+            <p>
+              Compare courses, duration, salary,
+              careers and higher studies.
+            </p>
+
+          </div>
+
+          <div class="home-action-arrow">
+            →
+          </div>
+
+        </a>
+
+
+        <a
+          href="#/exams"
+          class="home-action-card"
+        >
+
+          <div>
+
+            <div class="home-action-icon">
+              📝
+            </div>
+
+            <h3>
+              Entrance Exams
+            </h3>
+
+            <p>
+              Explore entrance exams and the courses
+              they can lead to.
+            </p>
+
+          </div>
+
+          <div class="home-action-arrow">
+            →
+          </div>
+
+        </a>
+
+
+        <a
+          href="#/saved"
+          class="home-action-card"
+        >
+
+          <div>
+
+            <div class="home-action-icon">
+              ⭐
+            </div>
+
+            <h3>
+              My Saved Paths
+            </h3>
+
+            <p>
+              View and manage the career paths
+              you have saved.
+            </p>
+
+          </div>
+
+          <div class="home-action-arrow">
+            →
+          </div>
+
+        </a>
+
+      </div>
+
+
+      <!-- =========================
+           LOWER DASHBOARD
+           ========================= -->
+
+      <div class="home-dashboard-grid">
+
+
+        <!-- RECOMMENDED -->
+
+        <section class="home-panel">
+
+          <div class="home-panel-header">
+
+            <h2>
               Recommended for you
             </h2>
 
-
             <a
               href="#/recommend"
-              style="
-                color:#2563EB;
-                font-size:.75rem;
-                font-weight:600;
-                text-decoration:none;
-                white-space:nowrap;
-              "
+              class="home-view-all"
             >
               View All →
             </a>
@@ -9386,143 +5229,43 @@ async function renderHome(main, crumb) {
           </div>
 
 
-          <div style="
-            display:flex;
-            flex-direction:column;
-            gap:9px;
-          ">
+          <div>
 
             ${recommendations.map(course => `
 
               <a
                 href="${course.path}"
                 class="home-recommendation"
-                style="
-                  display:flex !important;
-
-                  align-items:center !important;
-
-                  gap:10px !important;
-
-                  width:100% !important;
-
-                  box-sizing:border-box !important;
-
-                  padding:12px !important;
-
-                  background:#FFFFFF !important;
-
-                  border:1px solid #E3E8EF !important;
-
-                  border-radius:9px !important;
-
-                  text-decoration:none !important;
-
-                  color:#152238 !important;
-
-                  box-shadow:none !important;
-                "
               >
 
-                <div style="
-                  flex:1;
-                  min-width:0;
-                ">
+                <div class="home-recommendation-main">
 
-                  <div style="
-                    font-size:.8rem;
-                    font-weight:700;
-                    color:#152238;
-                    margin-bottom:3px;
-                  ">
+                  <div class="home-recommendation-title">
                     ${course.name}
                   </div>
 
-
-                  <div style="
-                    font-size:.68rem;
-                    color:#64748B;
-                    line-height:1.35;
-                  ">
+                  <div class="home-recommendation-desc">
                     ${course.desc}
                   </div>
 
-
-                  <div style="
-                    width:100%;
-                    max-width:210px;
-                    height:4px;
-
-                    margin-top:7px;
-
-                    background:#E9EEF3;
-
-                    border-radius:999px;
-
-                    overflow:hidden;
-                  ">
-
-                    <span style="
-                      display:block;
-
-                      width:${Math.max(
-                        0,
-                        Math.min(100, course.score)
-                      )}%;
-
-                      height:100%;
-
-                      background:#69B97C;
-
-                      border-radius:999px;
-                    "></span>
-
-                  </div>
-
                 </div>
 
 
-                <div style="
-                  flex-shrink:0;
-                  min-width:48px;
-                  text-align:right;
-                ">
+                <div class="home-recommendation-match">
 
-                  <div style="
-                    font-size:.95rem;
-                    font-weight:700;
-                    color:#18753D;
-                  ">
+                  <div class="home-match-number">
                     ${course.score}%
                   </div>
 
-                  <div style="
-                    font-size:.64rem;
-                    color:#64748B;
-                  ">
+                  <span class="home-match-label">
                     Match
+                  </span>
+
+                  <div class="home-match-bar">
+                    <span style="width:${course.score}%"></span>
                   </div>
 
                 </div>
-
-
-                <!-- BLACK ARROW -->
-
-                <span style="
-                  flex-shrink:0;
-
-                  color:#111111 !important;
-
-                  font-size:20px !important;
-
-                  background:transparent !important;
-
-                  border:0 !important;
-
-                  padding:0 !important;
-                ">
-                  →
-                </span>
 
               </a>
 
@@ -9533,131 +5276,40 @@ async function renderHome(main, crumb) {
         </section>
 
 
-        <!-- =================================================
-             BOX 2
-             YOUR CAREER TOOLS
-        ================================================== -->
+        <!-- RIGHT SIDE -->
 
-        <section
-          class="home-panel home-panel-tools"
-          style="
-            display:block !important;
+        <section class="home-panel">
 
-            width:100% !important;
+          <div class="home-panel-header">
 
-            min-width:0 !important;
-
-            box-sizing:border-box !important;
-
-            padding:18px !important;
-
-            background:#FFFFFF !important;
-
-            border:1px solid #E3E8EF !important;
-
-            border-radius:12px !important;
-
-            box-shadow:0 2px 8px rgba(15,23,42,.05) !important;
-          "
-        >
-
-          <div style="
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            margin-bottom:14px;
-          ">
-
-            <h2 style="
-              margin:0;
-              font-size:1rem;
-              color:#152238;
-            ">
+            <h2>
               Your Career Tools
             </h2>
 
           </div>
 
 
-          <div style="
-            display:flex;
-            flex-direction:column;
-            gap:9px;
-          ">
+          <div class="home-tool-list">
 
-
-            <!-- MY PROFILE -->
 
             <a
               href="#/profile"
               class="home-tool"
-              style="
-                display:flex !important;
-
-                align-items:center !important;
-
-                justify-content:space-between !important;
-
-                width:100% !important;
-
-                min-height:66px !important;
-
-                padding:12px !important;
-
-                box-sizing:border-box !important;
-
-                background:#FFFFFF !important;
-
-                border:1px solid #E3E8EF !important;
-
-                border-radius:9px !important;
-
-                color:#152238 !important;
-
-                text-decoration:none !important;
-              "
             >
 
-              <div style="
-                display:flex;
-                align-items:center;
-                gap:10px;
-              ">
+              <div class="home-tool-main">
 
-                <div style="
-                  width:36px;
-                  height:36px;
-
-                  display:flex;
-                  align-items:center;
-                  justify-content:center;
-
-                  border-radius:9px;
-
-                  background:#EEF4FF;
-
-                  font-size:18px;
-                ">
+                <div class="home-tool-icon">
                   👤
                 </div>
 
-
                 <div>
 
-                  <strong style="
-                    display:block;
-                    font-size:.78rem;
-                    color:#152238;
-                  ">
+                  <strong>
                     My Profile
                   </strong>
 
-                  <small style="
-                    display:block;
-                    margin-top:2px;
-                    font-size:.65rem;
-                    color:#64748B;
-                  ">
+                  <small>
                     Manage your information
                   </small>
 
@@ -9665,96 +5317,31 @@ async function renderHome(main, crumb) {
 
               </div>
 
-
-              <!-- BLACK ARROW -->
-
-              <span style="
-                color:#111111 !important;
-
-                font-size:20px !important;
-
-                background:transparent !important;
-
-                border:0 !important;
-              ">
+              <span class="home-tool-arrow">
                 →
               </span>
 
             </a>
 
 
-            <!-- ENTRANCE EXAMS -->
-
             <a
               href="#/exams"
               class="home-tool"
-              style="
-                display:flex !important;
-
-                align-items:center !important;
-
-                justify-content:space-between !important;
-
-                width:100% !important;
-
-                min-height:66px !important;
-
-                padding:12px !important;
-
-                box-sizing:border-box !important;
-
-                background:#FFFFFF !important;
-
-                border:1px solid #E3E8EF !important;
-
-                border-radius:9px !important;
-
-                color:#152238 !important;
-
-                text-decoration:none !important;
-              "
             >
 
-              <div style="
-                display:flex;
-                align-items:center;
-                gap:10px;
-              ">
+              <div class="home-tool-main">
 
-                <div style="
-                  width:36px;
-                  height:36px;
-
-                  display:flex;
-                  align-items:center;
-                  justify-content:center;
-
-                  border-radius:9px;
-
-                  background:#FFF2EC;
-
-                  font-size:18px;
-                ">
+                <div class="home-tool-icon">
                   📝
                 </div>
 
-
                 <div>
 
-                  <strong style="
-                    display:block;
-                    font-size:.78rem;
-                    color:#152238;
-                  ">
+                  <strong>
                     Entrance Exams
                   </strong>
 
-                  <small style="
-                    display:block;
-                    margin-top:2px;
-                    font-size:.65rem;
-                    color:#64748B;
-                  ">
+                  <small>
                     Explore exam routes
                   </small>
 
@@ -9762,174 +5349,88 @@ async function renderHome(main, crumb) {
 
               </div>
 
-
-              <!-- BLACK ARROW -->
-
-              <span style="
-                color:#111111 !important;
-
-                font-size:20px !important;
-
-                background:transparent !important;
-
-                border:0 !important;
-              ">
+              <span class="home-tool-arrow">
                 →
               </span>
 
             </a>
 
-          </div>
-
-        </section>
-
-
-        <!-- =================================================
-             BOX 3
-             POPULAR ENTRANCE EXAMS
-        ================================================== -->
-
-        <section
-          class="home-panel home-panel-exams"
-          style="
-            display:block !important;
-
-            width:100% !important;
-
-            min-width:0 !important;
-
-            box-sizing:border-box !important;
-
-            padding:18px !important;
-
-            background:#FFFFFF !important;
-
-            border:1px solid #E3E8EF !important;
-
-            border-radius:12px !important;
-
-            box-shadow:0 2px 8px rgba(15,23,42,.05) !important;
-          "
-        >
-
-          <div style="
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:8px;
-            margin-bottom:14px;
-          ">
-
-            <h2 style="
-              margin:0;
-              font-size:1rem;
-              color:#152238;
-            ">
-              Popular Entrance Exams
-            </h2>
-
 
             <a
-              href="#/exams"
-              style="
-                color:#2563EB;
-
-                font-size:.75rem;
-
-                font-weight:600;
-
-                text-decoration:none;
-
-                white-space:nowrap;
-              "
+              href="#/scholarships"
+              class="home-tool"
             >
-              View All →
+
+              <div class="home-tool-main">
+
+                <div class="home-tool-icon">
+                  🎓
+                </div>
+
+                <div>
+
+                  <strong>
+                    Scholarships
+                  </strong>
+
+                  <small>
+                    Find eligible scholarships
+                  </small>
+
+                </div>
+
+              </div>
+
+              <span class="home-tool-arrow">
+                →
+              </span>
+
             </a>
+
 
           </div>
 
 
-          <div style="
-            display:flex;
-            flex-direction:column;
-            gap:9px;
-          ">
+          <!-- UPCOMING EXAMS -->
+
+          <div class="home-exam-list">
+
+            <div class="home-panel-header">
+
+              <h2>
+                Popular Entrance Exams
+              </h2>
+
+              <a
+                href="#/exams"
+                class="home-view-all"
+              >
+                View All →
+              </a>
+
+            </div>
+
 
             ${exams.map(exam => `
 
               <a
                 href="#/exams"
                 class="home-exam"
-                style="
-                  display:flex !important;
-
-                  align-items:center !important;
-
-                  justify-content:space-between !important;
-
-                  gap:10px !important;
-
-                  width:100% !important;
-
-                  min-height:62px !important;
-
-                  padding:12px !important;
-
-                  box-sizing:border-box !important;
-
-                  background:#FFFFFF !important;
-
-                  border:1px solid #E3E8EF !important;
-
-                  border-radius:9px !important;
-
-                  color:#152238 !important;
-
-                  text-decoration:none !important;
-                "
               >
 
                 <div>
 
-                  <div style="
-                    font-size:.78rem;
-
-                    font-weight:700;
-
-                    color:#152238;
-                  ">
+                  <div class="home-exam-name">
                     ${exam.name}
                   </div>
 
-
-                  <div style="
-                    font-size:.65rem;
-
-                    color:#64748B;
-
-                    margin-top:3px;
-                  ">
+                  <div class="home-exam-route">
                     ${exam.route}
                   </div>
 
                 </div>
 
-
-                <!-- BLACK ARROW -->
-
-                <span style="
-                  flex-shrink:0;
-
-                  color:#111111 !important;
-
-                  font-size:20px !important;
-
-                  background:transparent !important;
-
-                  border:0 !important;
-
-                  padding:0 !important;
-                ">
+                <span class="home-exam-arrow">
                   →
                 </span>
 
@@ -9941,57 +5442,17 @@ async function renderHome(main, crumb) {
 
         </section>
 
+
       </div>
 
     </section>
+
   `;
 }
 
-async function trackClick(streamId, pathId = null, nodeId = null) {
-  try {
-    if (!currentUser) {
-      console.error("TRACKING: No logged-in user");
-      return;
-    }
-
-    const token = await currentUser.getIdToken(true);
-
-    const response = await fetch(`${API_BASE}/api/track`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
-      },
-      body: JSON.stringify({
-        stream_id: streamId,
-        path_id: pathId,
-        node_id: nodeId
-      })
-    });
-
-    const data = await response.json();
-
-    console.log("TRACKING RESULT:", response.status, data);
-
-  } catch (error) {
-    console.error("TRACKING ERROR:", error);
-  }
-}
-
 function renderLeaf(main, crumb, stream, idPath, node, trail){
-    const parts = idPath.split('/');
-
-  try {
-    trackClick(
-      parts[0],
-      parts[1] || null,
-      parts.slice(2).join('/') || null
-    );
-  } catch (error) {
-    console.warn("Tracking failed:", error);
-  }
   const idParts = idPath.split('/');
-  
+  trackClick(idParts[0], idParts[1], idParts.slice(2).join('/') || null);
   setCrumb(crumb, trail.concat([{label:node.name, hash:idPath}]));
   const parentHash = idPath.split('/').slice(0,-1).join('/');
   main.innerHTML = `
@@ -10256,7 +5717,6 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const fbAuth = firebase.auth();
-const fbStorage = firebase.storage();
 
 let currentUser = null;
 
@@ -10438,51 +5898,9 @@ function renderAuthPage(mode){
           ${!isLogin ? 'background:var(--card);color:var(--ink);box-shadow:var(--shadow);' : 'color:var(--ink-soft);'}">Sign Up</a>
       </div>
 
-      ${!isLogin ? `
-  <label style="display:block;font-size:0.82rem;font-weight:600;margin-bottom:6px;">
-    Full Name
-  </label>
+      <label style="display:block;font-size:0.82rem;font-weight:600;margin-bottom:6px;">Email</label>
+      <input id="authEmail" type="email" placeholder="you@example.com" style="width:100%;padding:11px 12px;margin-bottom:16px;box-sizing:border-box;border:1px solid var(--rail);border-radius:6px;font-family:inherit;font-size:0.9rem;background:var(--paper-deep);color:var(--ink);">
 
-  <input
-    id="authName"
-    type="text"
-    placeholder="Enter your full name"
-    style="
-      width:100%;
-      padding:11px 12px;
-      margin-bottom:16px;
-      box-sizing:border-box;
-      border:1px solid var(--rail);
-      border-radius:6px;
-      font-family:inherit;
-      font-size:0.9rem;
-      background:var(--paper-deep);
-      color:var(--ink);
-    "
-  >
-` : ''}
-
-<label style="display:block;font-size:0.82rem;font-weight:600;margin-bottom:6px;">
-  Email
-</label>
-
-<input
-  id="authEmail"
-  type="email"
-  placeholder="you@example.com"
-  style="
-    width:100%;
-    padding:11px 12px;
-    margin-bottom:16px;
-    box-sizing:border-box;
-    border:1px solid var(--rail);
-    border-radius:6px;
-    font-family:inherit;
-    font-size:0.9rem;
-    background:var(--paper-deep);
-    color:var(--ink);
-  "
->
       <label style="display:block;font-size:0.82rem;font-weight:600;margin-bottom:6px;">Password</label>
       <div style="position:relative;margin-bottom:8px;">
         <input id="authPassword" type="password" placeholder="At least 6 characters" style="width:100%;padding:11px 40px 11px 12px;box-sizing:border-box;border:1px solid var(--rail);border-radius:6px;font-family:inherit;font-size:0.9rem;background:var(--paper-deep);color:var(--ink);">
@@ -10533,65 +5951,26 @@ function renderAuthPage(mode){
       : '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/>';
   });
 
-   document.getElementById('authSubmit').addEventListener('click', async () => {
+    document.getElementById('authSubmit').addEventListener('click', async () => {
+    const email = document.getElementById('authEmail').value.trim();
+    const password = document.getElementById('authPassword').value;
+    const errBox = document.getElementById('authError');
 
-  const email =
-    document.getElementById('authEmail').value.trim();
+    errBox.textContent = '';
 
-  const password =
-    document.getElementById('authPassword').value;
-
-  const errBox =
-    document.getElementById('authError');
-
-  errBox.textContent = '';
-
-  try {
-
-    if(isLogin){
-
-      await fbAuth.signInWithEmailAndPassword(
-        email,
-        password
-      );
-
-    } else {
-
-      const name =
-        document.getElementById('authName').value.trim();
-
-      if(!name){
-
-        errBox.textContent =
-          'Please enter your full name.';
-
-        return;
+    try {
+      if(isLogin){
+        await fbAuth.signInWithEmailAndPassword(email, password);
+      } else {
+        await fbAuth.createUserWithEmailAndPassword(email, password);
       }
 
-      const result =
-        await fbAuth.createUserWithEmailAndPassword(
-          email,
-          password
-        );
+      location.hash = '#/';
 
-      await result.user.updateProfile({
-        displayName: name
-      });
-
+    } catch(err){
+      errBox.textContent = err.message;
     }
-
-    location.hash = '#/';
-
-  } catch(err){
-
-    console.error(err);
-
-    errBox.textContent =
-      err.message;
-
-  }
-
-});
+  });
 
 
   /* FORGOT PASSWORD */
@@ -11101,8 +6480,8 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 }
-const API_BASE = 'https://career-hub-backend-i960.onrender.com';
 //const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = 'https://career-hub-backend-i960.onrender.com';
 
 async function loadDataAndRender(){
   const main = document.getElementById('main');
@@ -11156,601 +6535,6 @@ window.addEventListener('hashchange', async () => {
 });
 window.addEventListener('DOMContentLoaded', loadDataAndRender);
 </script>
-<script>
-/* =========================================================
-   FINAL REFERENCE-STYLE HOME BUTTONS
-   Simple blue arrows — no box, no background, no border
-   ========================================================= */
-
-function applyReferenceHomeStyle() {
-
-  /* Top 4 dashboard cards */
-  document.querySelectorAll('.home-action-card').forEach(card => {
-
-    card.style.setProperty('background', '#FFFFFF', 'important');
-    card.style.setProperty('border', '1px solid #E5E7EB', 'important');
-    card.style.setProperty('border-radius', '12px', 'important');
-    card.style.setProperty(
-      'box-shadow',
-      '0 2px 8px rgba(15,23,42,0.06)',
-      'important'
-    );
-
-  });
-
-
-  /* All dashboard arrows */
-  document.querySelectorAll(
-    '.home-action-arrow, .home-tool-arrow, .home-exam-arrow, .home-recommendation-arrow'
-  ).forEach(arrow => {
-
-    arrow.style.setProperty('display', 'inline-flex', 'important');
-    arrow.style.setProperty('align-items', 'center', 'important');
-    arrow.style.setProperty('justify-content', 'center', 'important');
-
-    /* REMOVE BOX */
-    arrow.style.setProperty('width', 'auto', 'important');
-    arrow.style.setProperty('min-width', '0', 'important');
-    arrow.style.setProperty('height', 'auto', 'important');
-    arrow.style.setProperty('min-height', '0', 'important');
-
-    arrow.style.setProperty('padding', '0', 'important');
-    arrow.style.setProperty('margin-left', '12px', 'important');
-    arrow.style.setProperty('margin-top', '0', 'important');
-
-    /* REMOVE BACKGROUND */
-    arrow.style.setProperty(
-      'background',
-      'transparent',
-      'important'
-    );
-
-    /* REMOVE BORDER */
-    arrow.style.setProperty(
-      'border',
-      'none',
-      'important'
-    );
-
-    arrow.style.setProperty(
-      'border-radius',
-      '0',
-      'important'
-    );
-
-    /* BLUE ARROW */
-    arrow.style.setProperty(
-      'color',
-      '#2563EB',
-      'important'
-    );
-
-    arrow.style.setProperty(
-      'font-size',
-      '22px',
-      'important'
-    );
-
-    arrow.style.setProperty(
-      'font-weight',
-      '500',
-      'important'
-    );
-
-    arrow.style.setProperty(
-      'line-height',
-      '1',
-      'important'
-    );
-
-    arrow.style.setProperty(
-      'box-shadow',
-      'none',
-      'important'
-    );
-
-    arrow.style.setProperty(
-      'text-decoration',
-      'none',
-      'important'
-    );
-
-    arrow.style.setProperty(
-      'transform',
-      'none',
-      'important'
-    );
-  });
-
-
-  /* View All */
-  document.querySelectorAll('.home-view-all').forEach(button => {
-
-    button.style.setProperty(
-      'background',
-      'transparent',
-      'important'
-    );
-
-    button.style.setProperty(
-      'border',
-      'none',
-      'important'
-    );
-
-    button.style.setProperty(
-      'color',
-      '#2563EB',
-      'important'
-    );
-
-    button.style.setProperty(
-      'box-shadow',
-      'none',
-      'important'
-    );
-
-    button.style.setProperty(
-      'padding',
-      '0',
-      'important'
-    );
-
-  });
-}
-
-
-/* Run when page loads */
-document.addEventListener(
-  'DOMContentLoaded',
-  applyReferenceHomeStyle
-);
-
-
-/* Run every time renderHome() changes the dashboard */
-const referenceButtonObserver =
-  new MutationObserver(() => {
-    applyReferenceHomeStyle();
-  });
-
-referenceButtonObserver.observe(
-  document.getElementById('main'),
-  {
-    childList: true,
-    subtree: true
-  }
-);
-</script>
-<script>
-/* =========================================================
-   FINAL HOME DASHBOARD STYLE
-   FORCE BLACK ARROWS + WHITE INNER BOXES
-   ========================================================= */
-
-function forceHomeDashboardStyle() {
-
-  /* ==============================
-     BLACK ARROWS - NO BOX
-     ============================== */
-
-  document.querySelectorAll(
-    '.home-action-arrow, .home-recommendation-arrow, .home-tool-arrow, .home-exam-arrow'
-  ).forEach(function(arrow) {
-
-    arrow.style.setProperty('display', 'inline-flex', 'important');
-    arrow.style.setProperty('align-items', 'center', 'important');
-    arrow.style.setProperty('justify-content', 'center', 'important');
-
-    arrow.style.setProperty('width', 'auto', 'important');
-    arrow.style.setProperty('min-width', '0', 'important');
-
-    arrow.style.setProperty('height', 'auto', 'important');
-    arrow.style.setProperty('min-height', '0', 'important');
-
-    arrow.style.setProperty('padding', '0', 'important');
-    arrow.style.setProperty('margin-left', '12px', 'important');
-
-    /* REMOVE BUTTON BOX */
-    arrow.style.setProperty('background', 'transparent', 'important');
-    arrow.style.setProperty('border', 'none', 'important');
-    arrow.style.setProperty('border-radius', '0', 'important');
-    arrow.style.setProperty('box-shadow', 'none', 'important');
-
-    /* BLACK ARROW */
-    arrow.style.setProperty('color', '#111111', 'important');
-    arrow.style.setProperty('font-size', '22px', 'important');
-    arrow.style.setProperty('font-weight', '500', 'important');
-    arrow.style.setProperty('line-height', '1', 'important');
-
-    arrow.style.setProperty('text-decoration', 'none', 'important');
-  });
-
-
-  /* ==============================
-     TOP FOUR CARDS
-     ============================== */
-
-  document.querySelectorAll('.home-action-card').forEach(function(card) {
-
-    card.style.setProperty(
-      'background',
-      '#FFFFFF',
-      'important'
-    );
-
-    card.style.setProperty(
-      'border',
-      '1px solid #E5E7EB',
-      'important'
-    );
-
-    card.style.setProperty(
-      'border-radius',
-      '12px',
-      'important'
-    );
-
-    card.style.setProperty(
-      'box-shadow',
-      '0 2px 8px rgba(15,23,42,.06)',
-      'important'
-    );
-  });
-
-
-  /* ==============================
-     RECOMMENDED FOR YOU
-     WHITE BOXES
-     ============================== */
-
-  document.querySelectorAll('.home-recommendation').forEach(function(box) {
-
-    box.style.setProperty(
-      'background',
-      '#FFFFFF',
-      'important'
-    );
-
-    box.style.setProperty(
-      'border',
-      '1px solid #E5E7EB',
-      'important'
-    );
-
-    box.style.setProperty(
-      'border-radius',
-      '10px',
-      'important'
-    );
-
-    box.style.setProperty(
-      'box-shadow',
-      '0 2px 7px rgba(15,23,42,.05)',
-      'important'
-    );
-
-    box.style.setProperty(
-      'color',
-      '#152238',
-      'important'
-    );
-  });
-
-
-  /* ==============================
-     YOUR CAREER TOOLS
-     WHITE BOXES
-     ============================== */
-
-  document.querySelectorAll('.home-tool').forEach(function(box) {
-
-    box.style.setProperty(
-      'background',
-      '#FFFFFF',
-      'important'
-    );
-
-    box.style.setProperty(
-      'border',
-      '1px solid #E5E7EB',
-      'important'
-    );
-
-    box.style.setProperty(
-      'border-radius',
-      '10px',
-      'important'
-    );
-
-    box.style.setProperty(
-      'box-shadow',
-      '0 2px 7px rgba(15,23,42,.05)',
-      'important'
-    );
-
-    box.style.setProperty(
-      'color',
-      '#152238',
-      'important'
-    );
-  });
-
-
-  /* ==============================
-     POPULAR ENTRANCE EXAMS
-     WHITE BOXES
-     ============================== */
-
-  document.querySelectorAll('.home-exam').forEach(function(box) {
-
-    box.style.setProperty(
-      'background',
-      '#FFFFFF',
-      'important'
-    );
-
-    box.style.setProperty(
-      'border',
-      '1px solid #E5E7EB',
-      'important'
-    );
-
-    box.style.setProperty(
-      'border-radius',
-      '10px',
-      'important'
-    );
-
-    box.style.setProperty(
-      'box-shadow',
-      '0 2px 7px rgba(15,23,42,.05)',
-      'important'
-    );
-
-    box.style.setProperty(
-      'color',
-      '#152238',
-      'important'
-    );
-  });
-
-
-  /* ==============================
-     VIEW ALL
-     BLACK TEXT + ARROW
-     ============================== */
-
-  document.querySelectorAll('.home-view-all').forEach(function(button) {
-
-    button.style.setProperty(
-      'background',
-      'transparent',
-      'important'
-    );
-
-    button.style.setProperty(
-      'border',
-      'none',
-      'important'
-    );
-
-    button.style.setProperty(
-      'color',
-      '#111111',
-      'important'
-    );
-
-    button.style.setProperty(
-      'padding',
-      '0',
-      'important'
-    );
-
-    button.style.setProperty(
-      'box-shadow',
-      'none',
-      'important'
-    );
-  });
-
-}
-
-
-/* =========================================================
-   RUN WHEN PAGE LOADS
-   ========================================================= */
-
-document.addEventListener(
-  'DOMContentLoaded',
-  function() {
-    forceHomeDashboardStyle();
-  }
-);
-
-
-/* =========================================================
-   RUN EVERY TIME renderHome() CHANGES THE PAGE
-   ========================================================= */
-
-const homeStyleObserver = new MutationObserver(function() {
-
-  forceHomeDashboardStyle();
-
-});
-
-
-const mainElement = document.getElementById('main');
-
-if (mainElement) {
-
-  homeStyleObserver.observe(
-    mainElement,
-    {
-      childList: true,
-      subtree: true
-    }
-  );
-
-}
-
-
-/* Also run immediately */
-forceHomeDashboardStyle();
-
-</script>
-
-<script>
-/* =========================================================
-   FINAL RUNTIME HOME STYLE
-   This runs after renderHome() and defeats old inline styles.
-   ========================================================= */
-(function(){
-
-  function applyFinalHomeStyle(){
-
-    /* Inner boxes */
-    document.querySelectorAll(
-      '.home-recommendation, .home-tool, .home-exam'
-    ).forEach(function(box){
-      box.style.setProperty('background','#F7F0E2','important');
-      box.style.setProperty('border','1px solid #D8C9AE','important');
-      box.style.setProperty('border-radius','10px','important');
-      box.style.setProperty('box-shadow','none','important');
-      box.style.setProperty('color','#2A2318','important');
-    });
-
-    /* Every dashboard arrow */
-    document.querySelectorAll(
-      '.home-action-arrow, .home-recommendation-arrow, ' +
-      '.home-tool-arrow, .home-exam-arrow, .home-light-action-button'
-    ).forEach(function(arrow){
-      arrow.style.setProperty('width','auto','important');
-      arrow.style.setProperty('min-width','0','important');
-      arrow.style.setProperty('height','auto','important');
-      arrow.style.setProperty('min-height','0','important');
-      arrow.style.setProperty('padding','0','important');
-      arrow.style.setProperty('margin-left','12px','important');
-      arrow.style.setProperty('background','transparent','important');
-      arrow.style.setProperty('border','none','important');
-      arrow.style.setProperty('border-radius','0','important');
-      arrow.style.setProperty('box-shadow','none','important');
-      arrow.style.setProperty('color','#111111','important');
-      arrow.style.setProperty('font-size','22px','important');
-      arrow.style.setProperty('font-weight','500','important');
-      arrow.style.setProperty('line-height','1','important');
-      arrow.style.setProperty('text-decoration','none','important');
-    });
-
-    /* Top four cards */
-    document.querySelectorAll('.home-action-card').forEach(function(card){
-      card.style.setProperty('background','#FFFFFF','important');
-      card.style.setProperty('border','1px solid #E5E7EB','important');
-      card.style.setProperty('border-radius','12px','important');
-      card.style.setProperty(
-        'box-shadow',
-        '0 2px 8px rgba(15,23,42,.06)',
-        'important'
-      );
-    });
-
-    /* View All */
-    document.querySelectorAll('.home-view-all').forEach(function(v){
-      v.style.setProperty('background','transparent','important');
-      v.style.setProperty('border','none','important');
-      v.style.setProperty('color','#111111','important');
-      v.style.setProperty('padding','0','important');
-      v.style.setProperty('box-shadow','none','important');
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', applyFinalHomeStyle);
-
-  /* renderHome() changes #main, so apply again after every DOM replacement */
-  var main = document.getElementById('main');
-
-  if(main){
-    var observer = new MutationObserver(function(){
-      applyFinalHomeStyle();
-    });
-
-    observer.observe(main,{
-      childList:true,
-      subtree:true
-    });
-  }
-
-  applyFinalHomeStyle();
-
-})();
-</script>
-
-
-<script>
-/* =========================================================
-   FINAL HOME DASHBOARD OVERRIDE
-   Keeps the 3 sections separate and arrows BLACK.
-   ========================================================= */
-(function () {
-
-  function applyHomeFinalStyle() {
-
-    document.querySelectorAll(
-      '.home-panel-recommended, .home-panel-tools, .home-panel-exams'
-    ).forEach(function (box) {
-      box.style.setProperty('background', '#F7F0E2', 'important');
-      box.style.setProperty('border', '1px solid #D8C9AE', 'important');
-      box.style.setProperty('border-radius', '12px', 'important');
-      box.style.setProperty('box-shadow', '0 2px 8px rgba(42,35,24,.06)', 'important');
-    });
-
-    document.querySelectorAll(
-      '.home-recommendation, .home-tool, .home-exam'
-    ).forEach(function (box) {
-      box.style.setProperty('background', '#FBF7ED', 'important');
-      box.style.setProperty('border', '1px solid #D8C9AE', 'important');
-      box.style.setProperty('border-radius', '10px', 'important');
-      box.style.setProperty('box-shadow', 'none', 'important');
-    });
-
-    document.querySelectorAll(
-      '.home-action-arrow, .home-recommendation-arrow, ' +
-      '.home-tool-arrow, .home-exam-arrow, .home-light-action-button'
-    ).forEach(function (arrow) {
-      arrow.style.setProperty('width', 'auto', 'important');
-      arrow.style.setProperty('min-width', '0', 'important');
-      arrow.style.setProperty('height', 'auto', 'important');
-      arrow.style.setProperty('min-height', '0', 'important');
-      arrow.style.setProperty('padding', '0', 'important');
-      arrow.style.setProperty('margin-left', '12px', 'important');
-      arrow.style.setProperty('background', 'transparent', 'important');
-      arrow.style.setProperty('border', 'none', 'important');
-      arrow.style.setProperty('border-radius', '0', 'important');
-      arrow.style.setProperty('box-shadow', 'none', 'important');
-      arrow.style.setProperty('color', '#111111', 'important');
-      arrow.style.setProperty('font-size', '22px', 'important');
-      arrow.style.setProperty('font-weight', '500', 'important');
-      arrow.style.setProperty('line-height', '1', 'important');
-      arrow.style.setProperty('text-decoration', 'none', 'important');
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', applyHomeFinalStyle);
-
-  var main = document.getElementById('main');
-
-  if (main) {
-    new MutationObserver(function () {
-      applyHomeFinalStyle();
-    }).observe(main, {
-      childList: true,
-      subtree: true
-    });
-  }
-
-  applyHomeFinalStyle();
-
-})();
-</script>
-
 </body>
 </html>
+

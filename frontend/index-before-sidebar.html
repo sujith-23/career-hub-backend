@@ -2359,8 +2359,20 @@ ${currentUser.email || ''}
     </a>
   </div>
 
+    <div style="margin-top:12px;">
+    <a href="#/institutions" class="btn">
+      ?? Education Finder
+    </a>
+  </div>
+
   <div style="margin-top:12px;">
-    <button id="profileLogoutBtn" class="btn">
+    <div style="margin-top:12px;">
+<div style="margin-top:12px;">
+  <a href="#/scholarships" class="btn">
+    ?? Scholarship Finder
+  </a>
+</div>
+<button id="profileLogoutBtn" class="btn">
       🚪 Log out
     </button>
   </div>
@@ -3271,157 +3283,6 @@ async function findScholarships(){
 
 }
 
-  /*
-   * Temporary sample scholarship data.
-   *
-   * IMPORTANT:
-   * These are placeholder records for testing the UI.
-   * We will replace them with verified official
-   * scholarship data before production.
-   */
-
-  const scholarships = [
-    {
-      name: 'National Scholarship Scheme',
-      provider: 'Government of India',
-      level: ['intermediate','degree'],
-      state: ['all-india'],
-      minPercentage: 60,
-      maxIncome: 250000,
-      categories: ['general','sc','st','obc','ebc','minority','pwd'],
-      benefit: 'Financial assistance for eligible students.',
-      deadline: 'Check official portal'
-    },
-    {
-      name: 'State Post-Matric Scholarship',
-      provider: 'Government of Andhra Pradesh',
-      level: ['intermediate','degree'],
-      state: ['andhra-pradesh'],
-      minPercentage: 50,
-      maxIncome: 250000,
-      categories: ['sc','st','obc','ebc','minority','pwd'],
-      benefit: 'Post-matric financial assistance.',
-      deadline: 'Check official portal'
-    }
-  ];
-
-
-  const matches = scholarships.filter(scholarship => {
-
-    const levelMatch =
-      scholarship.level.includes(level);
-
-    const stateMatch =
-      scholarship.state.includes(state) ||
-      scholarship.state.includes('all-india');
-
-    const percentageMatch =
-      percentage >= scholarship.minPercentage;
-
-    const incomeMatch =
-      income <= scholarship.maxIncome;
-
-    const categoryMatch =
-      scholarship.categories.includes(category);
-
-    return (
-      levelMatch &&
-      stateMatch &&
-      percentageMatch &&
-      incomeMatch &&
-      categoryMatch
-    );
-  });
-
-
-  if(!matches.length){
-
-    results.innerHTML = `
-      <div class="detail-section">
-        <h2>No matching scholarships found</h2>
-        <p>
-          Try different eligibility information or check
-          official scholarship portals.
-        </p>
-      </div>
-    `;
-
-    return;
-  }
-
-
-  results.innerHTML = `
-    <div class="page-head">
-      <div class="code">MATCHING SCHOLARSHIPS</div>
-      <h2>Scholarships You May Be Eligible For</h2>
-      <p>
-        These results are based on the information you provided.
-      </p>
-    </div>
-
-    ${matches.map(scholarship => `
-      <div class="detail-section"
-        style="--lc:var(--ink);margin-top:12px;">
-
-        <h2>${scholarship.name}</h2>
-
-        <p>
-          <strong>Provider:</strong>
-          ${scholarship.provider}
-        </p>
-
-        <p>
-          <strong>Minimum percentage:</strong>
-          ${scholarship.minPercentage}%
-        </p>
-
-        <p>
-          <strong>Maximum family income:</strong>
-          ₹${scholarship.maxIncome.toLocaleString('en-IN')}
-        </p>
-
-        <p>
-          <strong>Benefit:</strong>
-          ${scholarship.benefit}
-        </p>
-
-        <p>
-          <strong>Application deadline:</strong>
-          ${scholarship.deadline}
-        </p>
-
-        <div style="
-          margin-top:14px;
-          padding:12px;
-          border:1px solid var(--rail);
-          border-radius:8px;
-          background:var(--card);
-        ">
-          <strong>Eligibility match</strong>
-
-          <ul class="plain" style="margin-top:8px;">
-            <li>✓ Education level matches</li>
-            <li>✓ State eligibility matches</li>
-            <li>✓ Percentage requirement matches</li>
-            <li>✓ Income requirement matches</li>
-            <li>✓ Category requirement matches</li>
-          </ul>
-        </div>
-
-        <p style="
-          margin-top:14px;
-          font-size:0.85rem;
-          color:var(--ink-soft);
-        ">
-          Always verify the current eligibility rules and
-          deadline on the official scholarship portal.
-        </p>
-
-      </div>
-    `).join('')}
-  `;
-
-
 function renderHome(main, crumb){
   crumb.innerHTML = '';
   const streamOrder = ['mpc','bipc','mec','cec','hec','polytechnic','iti','vocational','skilldev','defence','govtjobs'];
@@ -3810,9 +3671,6 @@ function renderAuthBox(){
     box.innerHTML = `
   <a href="#/courses" class="top-action">📚 Compare Courses</a>
   <a href="#/exams" class="top-action">📝 Entrance Exams</a>
-  <a href="#/institutions" class="top-action">🎓 Education Finder</a>
-  <a href="#/scholarships" class="top-action">🎓 Scholarship Finder</a>
-
   ${isAdmin ? `
     <a href="#/students" id="studentsBtn" class="top-action">🎓 Student Interest</a>
     <a href="#/analytics" id="analyticsBtn" class="top-action">📊 Analytics</a>
@@ -4439,3 +4297,10 @@ window.addEventListener('DOMContentLoaded', loadDataAndRender);
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
