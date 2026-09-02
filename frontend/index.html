@@ -1,5 +1,6 @@
 ﻿
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2127,7 +2128,1581 @@ body{
   }
 
 }
+/* =========================================
+   HOME DASHBOARD BOXES
+   ========================================= */
 
+.home-panel {
+  background: #F8F3E7 !important;
+  border: 1px solid #D8CCB4 !important;
+  border-radius: 14px !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 2px 7px rgba(42,35,24,0.06) !important;
+}
+
+
+/* Recommended career items */
+
+.home-recommendation {
+  background: #FBF7ED !important;
+  border: 1px solid #D8CCB4 !important;
+  border-radius: 10px !important;
+  transition: 0.2s ease !important;
+}
+
+.home-recommendation:hover {
+  background: #F3E9D4 !important;
+  transform: translateY(-1px);
+}
+
+
+/* Career tools */
+
+.home-tool {
+  background: #F7F1E5 !important;
+  border: 1px solid #D8CCB4 !important;
+  border-radius: 10px !important;
+  transition: 0.2s ease !important;
+}
+
+.home-tool:hover {
+  background: #EFE4CC !important;
+}
+
+
+/* Popular exams */
+
+.home-exam {
+  background: #F7F1E5 !important;
+  border: 1px solid #D8CCB4 !important;
+  border-radius: 10px !important;
+  transition: 0.2s ease !important;
+}
+
+.home-exam:hover {
+  background: #EFE4CC !important;
+}
+
+
+/* View All buttons */
+
+.home-view-all {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 7px 12px !important;
+  background: #E9DFC9 !important;
+  border: 1px solid #BEC5AC !important;
+  border-radius: 7px !important;
+  color: var(--ink) !important;
+  text-decoration: none !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+}
+
+.home-view-all:hover {
+  background: #C9D0B8 !important;
+}
+
+
+/* =========================================
+   TOP FOUR BOXES
+   ========================================= */
+
+.home-action-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+.home-action-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 5px 14px rgba(42,35,24,0.10) !important;
+}
+
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+  .home-action-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .home-action-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .home-dashboard-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+}
+
+
+/* =====================================================
+   FINAL HOME DASHBOARD LIGHT ACTION BUTTONS
+   ===================================================== */
+
+.home-light-action-button,
+.home-action-arrow,
+.home-tool-arrow,
+.home-exam-arrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  width: 38px !important;
+  height: 30px !important;
+  min-width: 38px !important;
+  min-height: 30px !important;
+  margin-left: 12px !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  background: #DDE1D3 !important;
+  border: 1px solid #BEC5AC !important;
+  border-radius: 7px !important;
+  color: var(--ink) !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  transition: background .15s ease, transform .15s ease, border-color .15s ease !important;
+}
+
+.home-light-action-button:hover,
+.home-action-arrow:hover,
+.home-tool-arrow:hover,
+.home-exam-arrow:hover {
+  background: #C9D0B8 !important;
+  border-color: #AEB69C !important;
+  color: var(--ink) !important;
+  transform: translateX(2px);
+}
+
+/* Keep the four top action arrows consistent with the same light button. */
+.home-action-card .home-action-arrow {
+  align-self: flex-end !important;
+}
+
+/* Recommended cards: keep text/match/arrow aligned. */
+.home-recommendation {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.home-recommendation-arrow {
+  margin-left: 12px !important;
+}
+
+/* Career tools and popular exam arrows use the exact same button. */
+.home-tool-arrow,
+.home-exam-arrow {
+  margin-left: 12px !important;
+}
+
+/* View All uses the same light-button family. */
+.home-view-all {
+  background: #DDE1D3 !important;
+  border: 1px solid #BEC5AC !important;
+  color: var(--ink) !important;
+  border-radius: 7px !important;
+}
+
+.home-view-all:hover {
+  background: #C9D0B8 !important;
+  border-color: #AEB69C !important;
+  color: var(--ink) !important;
+}
+
+@media (max-width: 800px) {
+  .home-light-action-button,
+  .home-action-arrow,
+  .home-tool-arrow,
+  .home-exam-arrow {
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 29px !important;
+    min-height: 29px !important;
+    font-size: 16px !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL BUTTON COLOR OVERRIDE
+   SAME AS THE COMPARE COURSES ARROW
+   ========================================================= */
+
+:root{
+  --common-button-bg:#DDE1D3;
+  --common-button-border:#BEC5AC;
+  --common-button-hover:#C9D0B8;
+}
+
+.home-action-arrow,
+.home-light-action-button,
+.home-tool-arrow,
+.home-exam-arrow,
+.home-recommendation-arrow,
+.home-view-all{
+  background:var(--common-button-bg) !important;
+  border:1px solid var(--common-button-border) !important;
+  color:var(--ink) !important;
+}
+
+.home-action-arrow:hover,
+.home-light-action-button:hover,
+.home-tool-arrow:hover,
+.home-exam-arrow:hover,
+.home-recommendation-arrow:hover,
+.home-view-all:hover{
+  background:var(--common-button-hover) !important;
+  border-color:var(--common-button-border) !important;
+  color:var(--ink) !important;
+}
+
+/* Top Find My Career and all normal application buttons */
+.dashboard-recommend-btn,
+.btn,
+.btn-solid,
+.dashboard-profile-button,
+.top-action,
+.top-action-logout,
+.dashboard-login-button,
+.dashboard-signup-button{
+  background:var(--common-button-bg) !important;
+  border:1px solid var(--common-button-border) !important;
+  color:var(--ink) !important;
+}
+
+.dashboard-recommend-btn:hover,
+.btn:hover,
+.btn-solid:hover,
+.dashboard-profile-button:hover,
+.top-action:hover,
+.top-action-logout:hover,
+.dashboard-login-button:hover,
+.dashboard-signup-button:hover{
+  background:var(--common-button-hover) !important;
+  border-color:var(--common-button-border) !important;
+  color:var(--ink) !important;
+}
+
+/* Password eye remains transparent */
+#togglePassword{
+  background:none !important;
+  border:none !important;
+}
+
+
+/* =========================================================
+   REFERENCE IMAGE BUTTON STYLE
+   Clean white cards + simple blue arrow actions
+   ========================================================= */
+
+:root{
+  --ref-blue:#2563EB;
+  --ref-blue-hover:#1D4ED8;
+  --ref-blue-soft:#EAF2FF;
+  --ref-card:#FFFFFF;
+  --ref-border:#E5E7EB;
+}
+
+/* Main four dashboard cards */
+.home-action-card{
+  background:var(--ref-card) !important;
+  border:1px solid var(--ref-border) !important;
+  border-radius:12px !important;
+  box-shadow:0 2px 8px rgba(15,23,42,.06) !important;
+}
+
+.home-action-card:hover{
+  border-color:#D6DCE5 !important;
+  box-shadow:0 6px 18px rgba(15,23,42,.09) !important;
+  transform:translateY(-2px) !important;
+}
+
+/* Remove the beige square around arrows.
+   Match the reference image: a simple blue arrow. */
+.home-action-arrow,
+.home-light-action-button,
+.home-tool-arrow,
+.home-exam-arrow,
+.home-recommendation-arrow{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:auto !important;
+  min-width:0 !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin-left:12px !important;
+  margin-top:0 !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:none !important;
+  border-radius:0 !important;
+  color:var(--ref-blue) !important;
+  font-size:22px !important;
+  font-weight:500 !important;
+  line-height:1 !important;
+  box-shadow:none !important;
+  text-decoration:none !important;
+}
+
+/* Arrow hover */
+.home-action-arrow:hover,
+.home-light-action-button:hover,
+.home-tool-arrow:hover,
+.home-exam-arrow:hover,
+.home-recommendation-arrow:hover{
+  background:transparent !important;
+  border:none !important;
+  color:var(--ref-blue-hover) !important;
+  transform:translateX(4px) !important;
+}
+
+/* Top four arrows sit at bottom-right like the reference. */
+.home-action-card .home-action-arrow{
+  align-self:flex-end !important;
+  margin-top:auto !important;
+}
+
+/* View All is simple blue text, matching the reference. */
+.home-view-all{
+  display:inline-flex !important;
+  align-items:center !important;
+  background:transparent !important;
+  border:none !important;
+  border-radius:0 !important;
+  padding:0 !important;
+  color:var(--ref-blue) !important;
+  font-size:.82rem !important;
+  font-weight:600 !important;
+  box-shadow:none !important;
+}
+
+.home-view-all:hover{
+  background:transparent !important;
+  border:none !important;
+  color:var(--ref-blue-hover) !important;
+}
+
+/* Recommended / tool / exam inner boxes match the clean reference. */
+.home-recommendation,
+.home-tool,
+.home-exam{
+  background:var(--ref-card) !important;
+  border:1px solid var(--ref-border) !important;
+  border-radius:10px !important;
+  box-shadow:none !important;
+}
+
+.home-recommendation:hover,
+.home-tool:hover,
+.home-exam:hover{
+  background:#FAFCFF !important;
+  border-color:#D9DEE7 !important;
+}
+
+/* Find My Career: blue action button like the reference palette. */
+.dashboard-recommend-btn{
+  background:var(--ref-blue) !important;
+  color:#fff !important;
+  border:1px solid var(--ref-blue) !important;
+  border-radius:8px !important;
+}
+
+.dashboard-recommend-btn:hover{
+  background:var(--ref-blue-hover) !important;
+  color:#fff !important;
+  border-color:var(--ref-blue-hover) !important;
+}
+
+/* Normal application buttons use the same blue CTA style. */
+.btn-solid,
+.dashboard-signup-button{
+  background:var(--ref-blue) !important;
+  color:#fff !important;
+  border-color:var(--ref-blue) !important;
+}
+
+.btn-solid:hover,
+.dashboard-signup-button:hover{
+  background:var(--ref-blue-hover) !important;
+  color:#fff !important;
+  border-color:var(--ref-blue-hover) !important;
+}
+
+/* Secondary buttons remain clean white with blue text. */
+.btn,
+.dashboard-login-button,
+.top-action,
+.top-action-logout{
+  background:#fff !important;
+  color:var(--ref-blue) !important;
+  border:1px solid #D8DEE8 !important;
+}
+
+.btn:hover,
+.dashboard-login-button:hover,
+.top-action:hover,
+.top-action-logout:hover{
+  background:var(--ref-blue-soft) !important;
+  color:var(--ref-blue-hover) !important;
+  border-color:#BFD3F7 !important;
+}
+
+/* Profile card */
+.dashboard-profile-button{
+  background:#fff !important;
+  border:1px solid #D8DEE8 !important;
+  color:var(--ink) !important;
+}
+
+.dashboard-profile-button:hover{
+  background:#F8FAFC !important;
+}
+
+/* ========================================================= */
+
+
+/* =========================================================
+   FINAL REQUESTED HOME STYLE
+   BLACK ARROWS + WHITE INNER BOXES
+   ========================================================= */
+
+/* All home action arrows: simple BLACK arrow, no colored box */
+.home-action-arrow,
+.home-recommendation-arrow,
+.home-tool-arrow,
+.home-exam-arrow,
+.home-light-action-button{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:auto !important;
+  min-width:0 !important;
+  height:auto !important;
+  min-height:0 !important;
+  padding:0 !important;
+  margin-left:12px !important;
+  background:transparent !important;
+  border:none !important;
+  border-radius:0 !important;
+  color:#111111 !important;
+  font-size:21px !important;
+  font-weight:500 !important;
+  line-height:1 !important;
+  box-shadow:none !important;
+  text-decoration:none !important;
+}
+
+/* Keep top-card arrows at bottom-right */
+.home-action-card .home-action-arrow{
+  align-self:flex-end !important;
+  margin-top:auto !important;
+}
+
+/* Recommended for you — WHITE boxes */
+.home-recommendation{
+  background:#FFFFFF !important;
+  border:1px solid #E5E7EB !important;
+  border-radius:10px !important;
+  box-shadow:0 2px 7px rgba(15,23,42,.05) !important;
+  color:var(--ink) !important;
+}
+
+.home-recommendation:hover{
+  background:#FFFFFF !important;
+  border-color:#D1D5DB !important;
+  box-shadow:0 4px 12px rgba(15,23,42,.08) !important;
+}
+
+/* Your Career Tools — WHITE boxes */
+.home-tool{
+  background:#FFFFFF !important;
+  border:1px solid #E5E7EB !important;
+  border-radius:10px !important;
+  box-shadow:0 2px 7px rgba(15,23,42,.05) !important;
+  color:var(--ink) !important;
+}
+
+.home-tool:hover{
+  background:#FFFFFF !important;
+  border-color:#D1D5DB !important;
+  box-shadow:0 4px 12px rgba(15,23,42,.08) !important;
+}
+
+/* Popular Entrance Exams — WHITE boxes */
+.home-exam{
+  background:#FFFFFF !important;
+  border:1px solid #E5E7EB !important;
+  border-radius:10px !important;
+  box-shadow:0 2px 7px rgba(15,23,42,.05) !important;
+  color:var(--ink) !important;
+}
+
+.home-exam:hover{
+  background:#FFFFFF !important;
+  border-color:#D1D5DB !important;
+  box-shadow:0 4px 12px rgba(15,23,42,.08) !important;
+}
+
+/* View All: black text/arrow */
+.home-view-all{
+  background:transparent !important;
+  border:none !important;
+  color:#111111 !important;
+  padding:0 !important;
+  box-shadow:none !important;
+}
+
+.home-view-all:hover{
+  background:transparent !important;
+  border:none !important;
+  color:#000000 !important;
+}
+
+/* Prevent old light-arrow button rules from restoring boxes */
+.home-action-arrow:hover,
+.home-recommendation-arrow:hover,
+.home-tool-arrow:hover,
+.home-exam-arrow:hover,
+.home-light-action-button:hover{
+  background:transparent !important;
+  border:none !important;
+  color:#000000 !important;
+  transform:translateX(3px) !important;
+}
+
+
+/* =========================================================
+   FINAL REFERENCE-DASHBOARD DESIGN
+   Matches the requested reference:
+   - Navy sidebar
+   - White dashboard cards
+   - Black arrows with NO arrow boxes
+   - White Recommended / Career Tools / Popular Exams boxes
+   - Clean blue/white dashboard feel
+   ========================================================= */
+
+:root{
+  --ref-bg:#F5F8FC;
+  --ref-white:#FFFFFF;
+  --ref-navy:#06254A;
+  --ref-navy-2:#0B315F;
+  --ref-blue:#2563EB;
+  --ref-blue-soft:#EAF2FF;
+  --ref-border:#E3E8EF;
+  --ref-text:#152238;
+  --ref-muted:#64748B;
+}
+
+/* Main page background */
+html,body{
+  background:var(--ref-bg) !important;
+  color:var(--ref-text) !important;
+}
+
+#app{
+  background:var(--ref-bg) !important;
+  max-width:none !important;
+}
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.sidebar{
+  background:linear-gradient(180deg,#06254A 0%,#082E59 100%) !important;
+  color:#FFFFFF !important;
+  width:270px !important;
+  min-width:270px !important;
+  border:none !important;
+}
+
+.sidebar-brand{
+  padding:28px 20px 30px !important;
+}
+
+.sidebar-logo{
+  width:46px !important;
+  height:46px !important;
+  border-radius:12px !important;
+  background:#FFFFFF !important;
+  color:var(--ref-navy) !important;
+}
+
+.sidebar-title{
+  color:#FFFFFF !important;
+  font-size:19px !important;
+}
+
+.sidebar-subtitle{
+  color:rgba(255,255,255,.70) !important;
+}
+
+.sidebar-section-title{
+  color:rgba(255,255,255,.62) !important;
+}
+
+.sidebar-link{
+  color:#FFFFFF !important;
+  border-radius:10px !important;
+  padding:13px 15px !important;
+}
+
+.sidebar-link:hover{
+  background:rgba(255,255,255,.10) !important;
+  transform:none !important;
+}
+
+.sidebar-link.active{
+  background:rgba(37,99,235,.42) !important;
+  box-shadow:none !important;
+  font-weight:600 !important;
+}
+
+.sidebar-divider{
+  background:rgba(255,255,255,.15) !important;
+}
+
+.sidebar-bottom{
+  border-top:1px solid rgba(255,255,255,.15) !important;
+}
+
+/* =========================
+   TOPBAR
+   ========================= */
+
+.dashboard-topbar{
+  background:#FFFFFF !important;
+  border-bottom:1px solid var(--ref-border) !important;
+  min-height:76px !important;
+  padding:14px 34px !important;
+}
+
+.dashboard-search input{
+  background:#FFFFFF !important;
+  border:1px solid #D9E0EA !important;
+  color:var(--ref-text) !important;
+  border-radius:10px !important;
+}
+
+.dashboard-search input:focus{
+  border-color:#9CB8E8 !important;
+  box-shadow:0 0 0 3px rgba(37,99,235,.08) !important;
+}
+
+.dashboard-recommend-btn{
+  background:var(--ref-navy) !important;
+  color:#FFFFFF !important;
+  border:1px solid var(--ref-navy) !important;
+  border-radius:9px !important;
+}
+
+.dashboard-recommend-btn:hover{
+  background:#0B315F !important;
+  color:#FFFFFF !important;
+}
+
+.dashboard-profile-button{
+  background:#FFFFFF !important;
+  border:1px solid #D9E0EA !important;
+  color:var(--ref-text) !important;
+  border-radius:10px !important;
+}
+
+.dashboard-profile-button:hover{
+  background:#F8FAFC !important;
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+#main{
+  background:var(--ref-bg) !important;
+  max-width:1400px !important;
+  padding:38px 34px 60px !important;
+}
+
+.dashboard-content{
+  background:var(--ref-bg) !important;
+}
+
+/* =========================
+   HOME WELCOME
+   ========================= */
+
+.home-dashboard{
+  width:100% !important;
+}
+
+.home-welcome{
+  margin-bottom:28px !important;
+}
+
+.home-kicker{
+  color:var(--ref-muted) !important;
+}
+
+.home-welcome h1{
+  color:var(--ref-navy) !important;
+  font-size:2.15rem !important;
+  font-weight:700 !important;
+}
+
+.home-welcome p{
+  color:#52647A !important;
+  font-size:.95rem !important;
+}
+
+/* =========================
+   TOP FOUR CARDS
+   ========================= */
+
+.home-action-grid{
+  gap:12px !important;
+  margin-bottom:24px !important;
+}
+
+.home-action-card{
+  background:#FFFFFF !important;
+  border:1px solid var(--ref-border) !important;
+  border-radius:12px !important;
+  box-shadow:0 2px 8px rgba(15,23,42,.05) !important;
+  min-height:160px !important;
+  padding:18px !important;
+}
+
+.home-action-card:hover{
+  background:#FFFFFF !important;
+  border-color:#D4DCE7 !important;
+  box-shadow:0 7px 20px rgba(15,23,42,.08) !important;
+  transform:translateY(-2px) !important;
+}
+
+.home-action-icon{
+  background:var(--ref-blue-soft) !important;
+  border:none !important;
+  border-radius:50% !important;
+  width:42px !important;
+  height:42px !important;
+}
+
+.home-action-card h3{
+  color:var(--ref-text) !important;
+}
+
+.home-action-card p{
+  color:var(--ref-muted) !important;
+}
+
+/* BLACK ARROWS — NO BOX */
+.home-action-card .home-action-arrow,
+.home-action-arrow,
+.home-recommendation-arrow,
+.home-tool-arrow,
+.home-exam-arrow{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:auto !important;
+  min-width:0 !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin:0 0 0 12px !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+  color:#111111 !important;
+  font-size:22px !important;
+  font-weight:500 !important;
+  line-height:1 !important;
+  box-shadow:none !important;
+  text-decoration:none !important;
+}
+
+.home-action-card .home-action-arrow{
+  align-self:flex-end !important;
+  margin-top:auto !important;
+}
+
+.home-action-arrow:hover,
+.home-recommendation-arrow:hover,
+.home-tool-arrow:hover,
+.home-exam-arrow:hover{
+  background:transparent !important;
+  border:0 !important;
+  color:#000000 !important;
+  transform:translateX(4px) !important;
+}
+
+/* =========================
+   TWO-COLUMN LOWER AREA
+   ========================= */
+
+.home-dashboard-grid{
+  grid-template-columns:minmax(0,1.75fr) minmax(300px,1fr) !important;
+  gap:18px !important;
+}
+
+/* =========================
+   PANEL HEADERS
+   ========================= */
+
+.home-panel{
+  background:#FFFFFF !important;
+  border:1px solid var(--ref-border) !important;
+  border-radius:12px !important;
+  padding:18px !important;
+  box-shadow:0 2px 8px rgba(15,23,42,.04) !important;
+}
+
+.home-panel-header h2{
+  color:var(--ref-text) !important;
+  font-size:1.05rem !important;
+}
+
+.home-view-all{
+  background:transparent !important;
+  border:0 !important;
+  color:var(--ref-blue) !important;
+  padding:0 !important;
+  font-weight:600 !important;
+  box-shadow:none !important;
+}
+
+.home-view-all:hover{
+  background:transparent !important;
+  color:#1D4ED8 !important;
+}
+
+/* =========================
+   RECOMMENDED FOR YOU
+   WHITE BOXES
+   ========================= */
+
+.home-recommendation{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  width:100% !important;
+  box-sizing:border-box !important;
+  background:#FFFFFF !important;
+  border:1px solid var(--ref-border) !important;
+  border-radius:10px !important;
+  padding:15px 16px !important;
+  margin-bottom:10px !important;
+  box-shadow:none !important;
+}
+
+.home-recommendation:hover{
+  background:#FFFFFF !important;
+  border-color:#D5DCE6 !important;
+  box-shadow:0 4px 12px rgba(15,23,42,.06) !important;
+  transform:none !important;
+}
+
+.home-recommendation-title{
+  color:var(--ref-text) !important;
+}
+
+.home-recommendation-desc{
+  color:var(--ref-muted) !important;
+}
+
+.home-match-number{
+  color:#187A42 !important;
+}
+
+.home-match-label{
+  color:var(--ref-muted) !important;
+}
+
+.home-match-bar{
+  background:#E7ECF2 !important;
+}
+
+.home-match-bar span{
+  background:#4DBA73 !important;
+}
+
+/* =========================
+   CAREER TOOLS
+   WHITE BOXES
+   ========================= */
+
+.home-tool-list{
+  gap:10px !important;
+}
+
+.home-tool{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  width:100% !important;
+  min-height:64px !important;
+  box-sizing:border-box !important;
+  background:#FFFFFF !important;
+  border:1px solid var(--ref-border) !important;
+  border-radius:10px !important;
+  padding:13px 15px !important;
+  box-shadow:none !important;
+}
+
+.home-tool:hover{
+  background:#FFFFFF !important;
+  border-color:#D5DCE6 !important;
+  box-shadow:0 4px 12px rgba(15,23,42,.06) !important;
+  transform:none !important;
+}
+
+.home-tool-icon{
+  background:#F1F5FF !important;
+  border:0 !important;
+  border-radius:9px !important;
+}
+
+.home-tool strong{
+  color:var(--ref-text) !important;
+}
+
+.home-tool small{
+  color:var(--ref-muted) !important;
+}
+
+/* =========================
+   POPULAR ENTRANCE EXAMS
+   WHITE BOXES
+   ========================= */
+
+.home-exam-list{
+  margin-top:20px !important;
+}
+
+.home-exam{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  width:100% !important;
+  min-height:58px !important;
+  box-sizing:border-box !important;
+  background:#FFFFFF !important;
+  border:1px solid var(--ref-border) !important;
+  border-radius:10px !important;
+  padding:13px 15px !important;
+  margin-bottom:10px !important;
+  box-shadow:none !important;
+}
+
+.home-exam:hover{
+  background:#FFFFFF !important;
+  border-color:#D5DCE6 !important;
+  box-shadow:0 4px 12px rgba(15,23,42,.06) !important;
+  transform:none !important;
+}
+
+.home-exam-name{
+  color:var(--ref-text) !important;
+}
+
+.home-exam-route{
+  color:var(--ref-muted) !important;
+}
+
+/* =========================
+   ALL GENERIC ACTION BUTTONS
+   ========================= */
+
+.btn-solid{
+  background:var(--ref-blue) !important;
+  border-color:var(--ref-blue) !important;
+  color:#FFFFFF !important;
+}
+
+.btn-solid:hover{
+  background:#1D4ED8 !important;
+  border-color:#1D4ED8 !important;
+  color:#FFFFFF !important;
+}
+
+.btn{
+  background:#FFFFFF !important;
+  border:1px solid #D9E0EA !important;
+  color:var(--ref-text) !important;
+}
+
+.btn:hover{
+  background:#F8FAFC !important;
+  border-color:#C8D2E0 !important;
+  color:var(--ref-text) !important;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:800px){
+
+  #main{
+    padding:24px 14px 45px !important;
+  }
+
+  .home-welcome h1{
+    font-size:1.65rem !important;
+  }
+
+  .home-action-grid{
+    grid-template-columns:1fr 1fr !important;
+  }
+
+  .home-dashboard-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .home-action-card{
+    min-height:145px !important;
+    padding:14px !important;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .home-action-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .home-action-card{
+    min-height:120px !important;
+  }
+
+}
+
+
+/* =========================================================
+   FINAL HOME DASHBOARD OVERRIDE
+   LIGHT-SKIN BOXES + BLACK ARROWS
+   ========================================================= */
+
+:root{
+  --final-skin:#F7F0E2;
+  --final-skin-border:#D8C9AE;
+  --final-skin-hover:#F1E5D1;
+  --final-black:#111111;
+}
+
+/* ---------------------------------------------------------
+   TOP FOUR ACTION CARDS
+   --------------------------------------------------------- */
+.home-action-card{
+  background:#FFFFFF !important;
+  border:1px solid #E5E7EB !important;
+  border-radius:12px !important;
+  box-shadow:0 2px 8px rgba(15,23,42,.06) !important;
+}
+
+.home-action-card:hover{
+  background:#FFFFFF !important;
+  border-color:#D1D5DB !important;
+  box-shadow:0 5px 14px rgba(15,23,42,.09) !important;
+}
+
+/* ---------------------------------------------------------
+   RECOMMENDED FOR YOU
+   LIGHT SKIN
+   --------------------------------------------------------- */
+.home-recommendation{
+  background:var(--final-skin) !important;
+  border:1px solid var(--final-skin-border) !important;
+  border-radius:10px !important;
+  box-shadow:none !important;
+  color:var(--ink) !important;
+}
+
+.home-recommendation:hover{
+  background:var(--final-skin-hover) !important;
+  border-color:#CDBB9E !important;
+  box-shadow:0 4px 12px rgba(42,35,24,.08) !important;
+}
+
+/* ---------------------------------------------------------
+   YOUR CAREER TOOLS
+   LIGHT SKIN
+   --------------------------------------------------------- */
+.home-tool{
+  background:var(--final-skin) !important;
+  border:1px solid var(--final-skin-border) !important;
+  border-radius:10px !important;
+  box-shadow:none !important;
+  color:var(--ink) !important;
+}
+
+.home-tool:hover{
+  background:var(--final-skin-hover) !important;
+  border-color:#CDBB9E !important;
+  box-shadow:0 4px 12px rgba(42,35,24,.08) !important;
+}
+
+/* Tool icon */
+.home-tool-icon{
+  background:#EFE5D3 !important;
+  border:1px solid var(--final-skin-border) !important;
+}
+
+/* ---------------------------------------------------------
+   POPULAR ENTRANCE EXAMS
+   LIGHT SKIN
+   --------------------------------------------------------- */
+.home-exam{
+  background:var(--final-skin) !important;
+  border:1px solid var(--final-skin-border) !important;
+  border-radius:10px !important;
+  box-shadow:none !important;
+  color:var(--ink) !important;
+}
+
+.home-exam:hover{
+  background:var(--final-skin-hover) !important;
+  border-color:#CDBB9E !important;
+  box-shadow:0 4px 12px rgba(42,35,24,.08) !important;
+}
+
+/* ---------------------------------------------------------
+   ALL HOME ARROWS
+   BLACK — NO BLUE, NO GREEN, NO SQUARE
+   --------------------------------------------------------- */
+.home-action-arrow,
+.home-recommendation-arrow,
+.home-tool-arrow,
+.home-exam-arrow,
+.home-light-action-button{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  width:auto !important;
+  min-width:0 !important;
+  height:auto !important;
+  min-height:0 !important;
+
+  padding:0 !important;
+  margin-left:12px !important;
+
+  background:transparent !important;
+  border:none !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+
+  color:#111111 !important;
+  font-size:22px !important;
+  font-weight:500 !important;
+  line-height:1 !important;
+
+  text-decoration:none !important;
+  transform:none !important;
+}
+
+.home-action-arrow:hover,
+.home-recommendation-arrow:hover,
+.home-tool-arrow:hover,
+.home-exam-arrow:hover,
+.home-light-action-button:hover{
+  background:transparent !important;
+  border:none !important;
+  color:#000000 !important;
+  box-shadow:none !important;
+  transform:translateX(3px) !important;
+}
+
+/* Top four arrows stay at bottom-right */
+.home-action-card .home-action-arrow{
+  align-self:flex-end !important;
+  margin-top:auto !important;
+}
+
+/* ---------------------------------------------------------
+   VIEW ALL
+   --------------------------------------------------------- */
+.home-view-all{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:4px !important;
+
+  background:transparent !important;
+  border:none !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+
+  padding:0 !important;
+
+  color:#111111 !important;
+  font-weight:600 !important;
+  text-decoration:none !important;
+}
+
+.home-view-all:hover{
+  background:transparent !important;
+  border:none !important;
+  color:#000000 !important;
+}
+
+/* ---------------------------------------------------------
+   FORCE GENERATED INLINE STYLES TO THE SAME DESIGN
+   --------------------------------------------------------- */
+.home-recommendation[style],
+.home-tool[style],
+.home-exam[style]{
+  background:var(--final-skin) !important;
+  border:1px solid var(--final-skin-border) !important;
+  color:var(--ink) !important;
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+@media(max-width:800px){
+  .home-recommendation,
+  .home-tool,
+  .home-exam{
+    background:var(--final-skin) !important;
+  }
+
+  .home-action-arrow,
+  .home-recommendation-arrow,
+  .home-tool-arrow,
+  .home-exam-arrow{
+    font-size:20px !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL CAREER DASHBOARD LAYOUT
+   Three separate lower boxes + black arrows
+   ========================================================= */
+
+.home-dashboard-grid-final{
+  display:grid !important;
+  grid-template-columns:minmax(0,1.65fr) minmax(320px,1fr) !important;
+  gap:20px !important;
+  align-items:start !important;
+}
+
+.home-side-panels{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:20px !important;
+  min-width:0 !important;
+}
+
+.home-panel-recommended,
+.home-panel-tools,
+.home-panel-exams{
+  background:#F7F0E2 !important;
+  border:1px solid #D8C9AE !important;
+  border-radius:12px !important;
+  box-shadow:0 2px 8px rgba(42,35,24,.06) !important;
+}
+
+.home-panel-recommended{
+  min-width:0 !important;
+}
+
+.home-panel-tools,
+.home-panel-exams{
+  min-width:0 !important;
+}
+
+.home-recommendation,
+.home-tool,
+.home-exam{
+  background:#FBF7ED !important;
+  border:1px solid #D8C9AE !important;
+  border-radius:10px !important;
+  box-shadow:none !important;
+  color:var(--ink) !important;
+}
+
+.home-recommendation:hover,
+.home-tool:hover,
+.home-exam:hover{
+  background:#FBF7ED !important;
+  border-color:#C9B995 !important;
+  box-shadow:0 3px 10px rgba(42,35,24,.07) !important;
+}
+
+.home-action-card{
+  background:#FFFFFF !important;
+  border:1px solid #E5E7EB !important;
+  border-radius:12px !important;
+}
+
+.home-action-arrow,
+.home-recommendation-arrow,
+.home-tool-arrow,
+.home-exam-arrow,
+.home-light-action-button{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:auto !important;
+  min-width:0 !important;
+  height:auto !important;
+  min-height:0 !important;
+  padding:0 !important;
+  margin-left:12px !important;
+  background:transparent !important;
+  border:none !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  color:#111111 !important;
+  font-size:22px !important;
+  font-weight:500 !important;
+  line-height:1 !important;
+  text-decoration:none !important;
+}
+
+.home-action-arrow:hover,
+.home-recommendation-arrow:hover,
+.home-tool-arrow:hover,
+.home-exam-arrow:hover,
+.home-light-action-button:hover{
+  background:transparent !important;
+  border:none !important;
+  color:#000000 !important;
+  box-shadow:none !important;
+  transform:translateX(3px) !important;
+}
+
+.home-action-card .home-action-arrow{
+  align-self:flex-end !important;
+  margin-top:auto !important;
+}
+
+.home-view-all{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:4px !important;
+  background:transparent !important;
+  border:none !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  padding:0 !important;
+  color:#111111 !important;
+  font-weight:600 !important;
+}
+
+.home-view-all:hover{
+  background:transparent !important;
+  border:none !important;
+  color:#000000 !important;
+}
+
+@media(max-width:900px){
+  .home-dashboard-grid-final{
+    grid-template-columns:1fr !important;
+  }
+
+  .home-side-panels{
+    gap:14px !important;
+  }
+}
+
+@media(max-width:600px){
+  .home-action-grid{
+    grid-template-columns:1fr 1fr !important;
+  }
+}
+
+@media(max-width:420px){
+  .home-action-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .home-dashboard-grid-final{
+    grid-template-columns:1fr !important;
+  }
+}
+
+
+
+/* =========================================================
+   FINAL: THREE SEPARATE HOME DASHBOARD BOXES
+   ========================================================= */
+.home-dashboard-grid-three{
+  display:grid !important;
+  grid-template-columns:1.55fr 1fr 1fr !important;
+  gap:18px !important;
+  width:100% !important;
+  align-items:start !important;
+}
+
+.home-dashboard-grid-three > .home-panel{
+  min-width:0 !important;
+  width:100% !important;
+  background:#F7F0DD !important;
+  border:1px solid #D8C9A8 !important;
+  border-radius:12px !important;
+  padding:18px !important;
+  box-shadow:0 2px 7px rgba(42,35,24,.06) !important;
+}
+
+.home-dashboard-grid-three > .home-panel:hover{
+  border-color:#CDBB96 !important;
+}
+
+.home-dashboard-grid-three .home-panel-header{
+  margin-bottom:14px !important;
+}
+
+.home-dashboard-grid-three .home-panel-header h2{
+  color:#2A2318 !important;
+  font-size:1.05rem !important;
+  margin:0 !important;
+}
+
+.home-dashboard-grid-three .home-view-all{
+  color:#2A2318 !important;
+  background:transparent !important;
+  border:0 !important;
+  padding:0 !important;
+  font-weight:600 !important;
+}
+
+.home-dashboard-grid-three .home-recommendation,
+.home-dashboard-grid-three .home-tool,
+.home-dashboard-grid-three .home-exam{
+  background:#FFFFFF !important;
+  border:1px solid #E3D7C0 !important;
+  border-radius:9px !important;
+  box-shadow:none !important;
+  color:#2A2318 !important;
+}
+
+.home-dashboard-grid-three .home-recommendation{
+  padding:13px !important;
+  margin-bottom:9px !important;
+}
+
+.home-dashboard-grid-three .home-tool{
+  min-height:64px !important;
+  padding:13px !important;
+  margin-bottom:9px !important;
+}
+
+.home-dashboard-grid-three .home-exam{
+  min-height:62px !important;
+  padding:12px 13px !important;
+  margin-bottom:9px !important;
+}
+
+.home-dashboard-grid-three .home-recommendation:last-child,
+.home-dashboard-grid-three .home-tool:last-child,
+.home-dashboard-grid-three .home-exam:last-child{
+  margin-bottom:0 !important;
+}
+
+/* BLACK ARROWS, no blue or colored arrow boxes */
+.home-dashboard-grid-three .home-recommendation-arrow,
+.home-dashboard-grid-three .home-tool-arrow,
+.home-dashboard-grid-three .home-exam-arrow{
+  background:transparent !important;
+  border:0 !important;
+  color:#111111 !important;
+  width:auto !important;
+  min-width:0 !important;
+  height:auto !important;
+  padding:0 !important;
+  margin-left:10px !important;
+  font-size:20px !important;
+  box-shadow:none !important;
+}
+
+.home-dashboard-grid-three .home-recommendation:hover,
+.home-dashboard-grid-three .home-tool:hover,
+.home-dashboard-grid-three .home-exam:hover{
+  background:#FFFFFF !important;
+  border-color:#CFC4AD !important;
+  box-shadow:0 3px 9px rgba(42,35,24,.07) !important;
+  transform:translateY(-1px) !important;
+}
+
+@media(max-width:1000px){
+  .home-dashboard-grid-three{
+    grid-template-columns:1fr 1fr !important;
+  }
+  .home-panel-recommended{
+    grid-column:1 / -1 !important;
+  }
+}
+
+@media(max-width:800px){
+  .home-dashboard-grid-three{
+    grid-template-columns:1fr !important;
+  }
+  .home-panel-recommended{
+    grid-column:auto !important;
+  }
+}
+</style>
+
+<style id="final-home-dashboard-css">
+@media (max-width:1100px){
+  .home-dashboard-grid-three{
+    grid-template-columns:1fr 1fr !important;
+  }
+  .home-panel-recommended{
+    grid-column:1 / -1 !important;
+  }
+}
+
+@media (max-width:800px){
+  .home-action-grid{
+    grid-template-columns:1fr 1fr !important;
+  }
+  .home-dashboard-grid-three{
+    grid-template-columns:1fr !important;
+  }
+  .home-panel-recommended{
+    grid-column:auto !important;
+  }
+}
+
+@media (max-width:520px){
+  .home-action-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
+/* FINAL: make the four quick-action cards match the three lower outer panels */
+.home-action-grid > .home-action-card {
+  background:#F7F0E2 !important;
+  border:1px solid #D8C9AE !important;
+  border-radius:12px !important;
+  box-shadow:none !important;
+}
+.home-action-grid > .home-action-card:hover {
+  background:#F1E5D1 !important;
+  border-color:#CDBB9E !important;
+}
+.home-action-grid > .home-action-card .home-action-arrow {
+  color:#111111 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
 </style>
 </head>
 <body>
@@ -5887,284 +7462,314 @@ function renderHome(main, crumb){
 
   crumb.innerHTML = '';
 
-  const userName =
-    currentUser?.displayName ||
-    'Student';
+  const userName = currentUser?.displayName || 'Student';
 
   const recommendations = [
     {
-      name: 'Artificial Intelligence & Data Science',
-      desc: 'AI, data, machine learning and analytics',
-      score: 92,
-      path: '#/mpc/engineering/aids'
+      name:'Artificial Intelligence & Data Science',
+      desc:'AI, data, machine learning and analytics',
+      score:92,
+      path:'#/mpc/engineering/aids'
     },
     {
-      name: 'Computer Science Engineering',
-      desc: 'Software development, programming and technology',
-      score: 87,
-      path: '#/mpc/engineering/cse'
+      name:'Computer Science Engineering',
+      desc:'Software development, programming and technology',
+      score:87,
+      path:'#/mpc/engineering/cse'
     },
     {
-      name: 'Cyber Security',
-      desc: 'Security, networks and digital protection',
-      score: 82,
-      path: '#/mpc/engineering/cybersecurity'
+      name:'Cyber Security',
+      desc:'Security, networks and digital protection',
+      score:82,
+      path:'#/mpc/engineering/cybersecurity'
     }
   ];
 
   const exams = ENTRANCE_EXAM_DATA.slice(0,3);
 
   main.innerHTML = `
+    <section
+      class="home-dashboard"
+      style="
+        width:100%;
+        box-sizing:border-box;
+        background:#F3EBD9;
+        color:#152238;
+      "
+    >
 
-    <section class="home-dashboard">
+      <!-- WELCOME -->
+      <div style="margin-bottom:24px;">
+        <div style="
+          font-size:.78rem;
+          font-weight:600;
+          letter-spacing:.08em;
+          color:#64748B;
+          margin-bottom:8px;
+        ">CAREER DASHBOARD</div>
 
-      <div class="home-welcome">
+        <h1 style="
+          margin:0 0 10px;
+          font-size:2rem;
+          line-height:1.2;
+          color:#152238;
+        ">Welcome back, ${userName}!</h1>
 
-        <div class="home-welcome-text">
-
-          <div class="home-kicker">
-            CAREER DASHBOARD
-          </div>
-
-          <h1>
-            Welcome back, ${userName}!
-          </h1>
-
-          <p>
-            Explore courses, entrance exams and career paths
-            to find the right direction after 10th class.
-          </p>
-
-        </div>
-
+        <p style="
+          margin:0;
+          font-size:.95rem;
+          color:#64748B;
+        ">
+          Explore courses, entrance exams and career paths to find the right direction after 10th class.
+        </p>
       </div>
 
-
-      <!-- QUICK ACTIONS -->
-
+      <!-- FOUR QUICK ACTION BOXES -->
       <div
         class="home-action-grid"
         style="
           display:grid !important;
-          grid-template-columns:repeat(3,minmax(0,1fr)) !important;
-          gap:16px !important;
+          grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+          gap:14px !important;
           width:100% !important;
-          margin-bottom:24px !important;
+          margin-bottom:22px !important;
         "
       >
 
-        <a
-          href="#/recommend"
-          class="home-action-card"
-          style="
-            display:flex !important;
-            flex-direction:column !important;
-            min-height:145px !important;
-          "
-        >
-          <div>
-            <div class="home-action-icon">🎯</div>
+        ${[
+          ['#/recommend','🎯','Career Finder','Find careers based on your interests, goals and skills.'],
+          ['#/courses','📚','Compare Courses','Compare courses, duration, salary, careers and higher studies.'],
+          ['#/exams','📝','Entrance Exams','Explore entrance exams and the courses they can lead to.'],
+          ['#/saved','⭐','My Saved Paths','View and manage the career paths you have saved.']
+        ].map(x => `
+          <a
+            href="${x[0]}"
+            class="home-action-card"
+            style="
+              display:flex !important;
+              flex-direction:column !important;
+              justify-content:space-between !important;
+              min-height:155px !important;
+              padding:18px !important;
+              box-sizing:border-box !important;
+              background:#F7F0E2 !important;
+              border:1px solid #D8C9AE !important;
+              border-radius:12px !important;
+              box-shadow:none !important;
+              text-decoration:none !important;
+              color:#152238 !important;
+            "
+          >
+            <div>
+              <div style="
+                width:42px;
+                height:42px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                border-radius:50%;
+                background:#EEF4FF;
+                font-size:22px;
+                margin-bottom:12px;
+              ">${x[1]}</div>
 
-            <h3>Career Finder</h3>
+              <h3 style="
+                margin:0 0 7px;
+                font-size:.98rem;
+                color:#152238;
+              ">${x[2]}</h3>
 
-            <p>
-              Find careers based on your interests,
-              goals and skills.
-            </p>
-          </div>
+              <p style="
+                margin:0;
+                font-size:.76rem;
+                line-height:1.45;
+                color:#64748B;
+              ">${x[3]}</p>
+            </div>
 
-          <div class="home-action-arrow">→</div>
-        </a>
-
-
-        <a
-          href="#/courses"
-          class="home-action-card"
-          style="
-            display:flex !important;
-            flex-direction:column !important;
-            min-height:145px !important;
-          "
-        >
-          <div>
-            <div class="home-action-icon">📚</div>
-
-            <h3>Compare Courses</h3>
-
-            <p>
-              Compare courses, duration, salary,
-              careers and higher studies.
-            </p>
-          </div>
-
-          <div class="home-action-arrow">→</div>
-        </a>
-
-
-        <a
-          href="#/exams"
-          class="home-action-card"
-          style="
-            display:flex !important;
-            flex-direction:column !important;
-            min-height:145px !important;
-          "
-        >
-          <div>
-            <div class="home-action-icon">📝</div>
-
-            <h3>Entrance Exams</h3>
-
-            <p>
-              Explore entrance exams and the courses
-              they can lead to.
-            </p>
-          </div>
-
-          <div class="home-action-arrow">→</div>
-        </a>
-
-
-        <a
-          href="#/saved"
-          class="home-action-card"
-          style="
-            display:flex !important;
-            flex-direction:column !important;
-            min-height:145px !important;
-          "
-        >
-          <div>
-            <div class="home-action-icon">⭐</div>
-
-            <h3>My Saved Paths</h3>
-
-            <p>
-              View and manage the career paths
-              you have saved.
-            </p>
-          </div>
-
-          <div class="home-action-arrow">→</div>
-        </a>
-
+            <span style="
+              display:block !important;
+              margin-top:12px !important;
+              padding:0 !important;
+              background:transparent !important;
+              border:0 !important;
+              color:#111111 !important;
+              font-size:22px !important;
+              line-height:1 !important;
+              text-align:right !important;
+            ">→</span>
+          </a>
+        `).join('')}
       </div>
 
-
-      <!-- LOWER DASHBOARD -->
-
+      <!-- THREE INDIVIDUAL BOXES -->
       <div
-        class="home-dashboard-grid"
+        class="home-dashboard-grid-three"
         style="
           display:grid !important;
-          grid-template-columns:minmax(0,1.8fr) minmax(260px,1fr) !important;
-          gap:18px !important;
+          grid-template-columns:minmax(0,1.5fr) minmax(250px,1fr) minmax(250px,1fr) !important;
+          gap:16px !important;
           width:100% !important;
+          align-items:start !important;
         "
       >
 
+        <!-- BOX 1: RECOMMENDED -->
+        <section
+          class="home-panel home-panel-recommended"
+          style="
+            display:block !important;
+            width:100% !important;
+            min-width:0 !important;
+            box-sizing:border-box !important;
+            padding:18px !important;
+            background:#FFFFFF !important;
+            border:1px solid #E3E8EF !important;
+            border-radius:12px !important;
+            box-shadow:0 2px 8px rgba(15,23,42,.05) !important;
+          "
+        >
+          <div style="
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:8px;
+            margin-bottom:14px;
+          ">
+            <h2 style="
+              margin:0;
+              font-size:1rem;
+              color:#152238;
+            ">Recommended for you</h2>
 
-        <!-- RECOMMENDED -->
-
-        <section class="home-panel">
-
-          <div class="home-panel-header">
-            <h2>Recommended for you</h2>
-
-            <a
-              href="#/recommend"
-              class="home-view-all"
-            >
-              View All →
-            </a>
+            <a href="#/recommend" style="
+              color:#2563EB;
+              font-size:.75rem;
+              font-weight:600;
+              text-decoration:none;
+              white-space:nowrap;
+            ">View All →</a>
           </div>
 
-
-          <div>
-
+          <div style="
+            display:flex;
+            flex-direction:column;
+            gap:9px;
+          ">
             ${recommendations.map(course => `
-
               <a
                 href="${course.path}"
                 class="home-recommendation"
                 style="
                   display:flex !important;
                   align-items:center !important;
-                  justify-content:space-between !important;
+                  gap:10px !important;
                   width:100% !important;
                   box-sizing:border-box !important;
-                  padding:16px !important;
-                  margin-bottom:12px !important;
-                  background:var(--paper) !important;
-                  border:1px solid var(--rail) !important;
-                  border-radius:10px !important;
+                  padding:12px !important;
+                  background:#FFFFFF !important;
+                  border:1px solid #E3E8EF !important;
+                  border-radius:9px !important;
                   text-decoration:none !important;
-                  color:var(--ink) !important;
+                  color:#152238 !important;
+                  box-shadow:none !important;
                 "
               >
+                <div style="flex:1;min-width:0;">
+                  <div style="
+                    font-size:.8rem;
+                    font-weight:700;
+                    color:#152238;
+                    margin-bottom:3px;
+                  ">${course.name}</div>
 
-                <div
-                  class="home-recommendation-main"
-                  style="
-                    flex:1;
-                    min-width:0;
-                  "
-                >
+                  <div style="
+                    font-size:.68rem;
+                    color:#64748B;
+                    line-height:1.35;
+                  ">${course.desc}</div>
 
-                  <div class="home-recommendation-title">
-                    ${course.name}
+                  <div style="
+                    width:100%;
+                    max-width:210px;
+                    height:4px;
+                    margin-top:7px;
+                    background:#E9EEF3;
+                    border-radius:999px;
+                    overflow:hidden;
+                  ">
+                    <span style="
+                      display:block;
+                      width:${course.score}%;
+                      height:100%;
+                      background:#69B97C;
+                      border-radius:999px;
+                    "></span>
                   </div>
-
-                  <div class="home-recommendation-desc">
-                    ${course.desc}
-                  </div>
-
                 </div>
 
-
-                <div
-                  class="home-recommendation-match"
-                  style="
-                    flex-shrink:0;
-                    margin-left:15px;
-                    text-align:right;
-                  "
-                >
-
-                  <div class="home-match-number">
-                    ${course.score}%
-                  </div>
-
-                  <span class="home-match-label">
-                    Match
-                  </span>
-
-                  <div class="home-match-bar">
-                    <span style="width:${course.score}%"></span>
-                  </div>
-
+                <div style="
+                  flex-shrink:0;
+                  min-width:48px;
+                  text-align:right;
+                ">
+                  <div style="
+                    font-size:.95rem;
+                    font-weight:700;
+                    color:#18753D;
+                  ">${course.score}%</div>
+                  <div style="
+                    font-size:.64rem;
+                    color:#64748B;
+                  ">Match</div>
                 </div>
 
+                <span style="
+                  flex-shrink:0;
+                  color:#111111 !important;
+                  font-size:20px !important;
+                  background:transparent !important;
+                  border:0 !important;
+                  padding:0 !important;
+                ">→</span>
               </a>
-
             `).join('')}
-
           </div>
-
         </section>
 
-
-        <!-- CAREER TOOLS -->
-
-        <section class="home-panel">
-
-          <div class="home-panel-header">
-            <h2>Your Career Tools</h2>
+        <!-- BOX 2: CAREER TOOLS -->
+        <section
+          class="home-panel home-panel-tools"
+          style="
+            display:block !important;
+            width:100% !important;
+            min-width:0 !important;
+            box-sizing:border-box !important;
+            padding:18px !important;
+            background:#FFFFFF !important;
+            border:1px solid #E3E8EF !important;
+            border-radius:12px !important;
+            box-shadow:0 2px 8px rgba(15,23,42,.05) !important;
+          "
+        >
+          <div style="
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            margin-bottom:14px;
+          ">
+            <h2 style="
+              margin:0;
+              font-size:1rem;
+              color:#152238;
+            ">Your Career Tools</h2>
           </div>
 
-
-          <div class="home-tool-list">
-
+          <div style="
+            display:flex;
+            flex-direction:column;
+            gap:9px;
+          ">
 
             <a
               href="#/profile"
@@ -6174,34 +7779,48 @@ function renderHome(main, crumb){
                 align-items:center !important;
                 justify-content:space-between !important;
                 width:100% !important;
+                min-height:66px !important;
+                padding:12px !important;
                 box-sizing:border-box !important;
-                padding:15px !important;
-                margin-bottom:12px !important;
-                background:var(--paper) !important;
-                border:1px solid var(--rail) !important;
-                border-radius:10px !important;
+                background:#FFFFFF !important;
+                border:1px solid #E3E8EF !important;
+                border-radius:9px !important;
+                color:#152238 !important;
                 text-decoration:none !important;
-                color:var(--ink) !important;
               "
             >
-
-              <div class="home-tool-main">
-
-                <div class="home-tool-icon">
-                  👤
-                </div>
-
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="
+                  width:36px;
+                  height:36px;
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  border-radius:9px;
+                  background:#EEF4FF;
+                  font-size:18px;
+                ">👤</div>
                 <div>
-                  <strong>My Profile</strong>
-                  <small>Manage your information</small>
+                  <strong style="
+                    display:block;
+                    font-size:.78rem;
+                    color:#152238;
+                  ">My Profile</strong>
+                  <small style="
+                    display:block;
+                    margin-top:2px;
+                    font-size:.65rem;
+                    color:#64748B;
+                  ">Manage your information</small>
                 </div>
-
               </div>
-
-              <span class="home-tool-arrow">→</span>
-
+              <span style="
+                color:#111111 !important;
+                font-size:20px !important;
+                background:transparent !important;
+                border:0 !important;
+              ">→</span>
             </a>
-
 
             <a
               href="#/exams"
@@ -6211,55 +7830,95 @@ function renderHome(main, crumb){
                 align-items:center !important;
                 justify-content:space-between !important;
                 width:100% !important;
+                min-height:66px !important;
+                padding:12px !important;
                 box-sizing:border-box !important;
-                padding:15px !important;
-                margin-bottom:12px !important;
-                background:var(--paper) !important;
-                border:1px solid var(--rail) !important;
-                border-radius:10px !important;
+                background:#FFFFFF !important;
+                border:1px solid #E3E8EF !important;
+                border-radius:9px !important;
+                color:#152238 !important;
                 text-decoration:none !important;
-                color:var(--ink) !important;
               "
             >
-
-              <div class="home-tool-main">
-
-                <div class="home-tool-icon">
-                  📝
-                </div>
-
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="
+                  width:36px;
+                  height:36px;
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  border-radius:9px;
+                  background:#FFF2EC;
+                  font-size:18px;
+                ">📝</div>
                 <div>
-                  <strong>Entrance Exams</strong>
-                  <small>Explore exam routes</small>
+                  <strong style="
+                    display:block;
+                    font-size:.78rem;
+                    color:#152238;
+                  ">Entrance Exams</strong>
+                  <small style="
+                    display:block;
+                    margin-top:2px;
+                    font-size:.65rem;
+                    color:#64748B;
+                  ">Explore exam routes</small>
                 </div>
-
               </div>
-
-              <span class="home-tool-arrow">→</span>
-
+              <span style="
+                color:#111111 !important;
+                font-size:20px !important;
+                background:transparent !important;
+                border:0 !important;
+              ">→</span>
             </a>
 
           </div>
+        </section>
 
+        <!-- BOX 3: POPULAR EXAMS -->
+        <section
+          class="home-panel home-panel-exams"
+          style="
+            display:block !important;
+            width:100% !important;
+            min-width:0 !important;
+            box-sizing:border-box !important;
+            padding:18px !important;
+            background:#FFFFFF !important;
+            border:1px solid #E3E8EF !important;
+            border-radius:12px !important;
+            box-shadow:0 2px 8px rgba(15,23,42,.05) !important;
+          "
+        >
+          <div style="
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:8px;
+            margin-bottom:14px;
+          ">
+            <h2 style="
+              margin:0;
+              font-size:1rem;
+              color:#152238;
+            ">Popular Entrance Exams</h2>
 
-          <!-- POPULAR EXAMS -->
+            <a href="#/exams" style="
+              color:#2563EB;
+              font-size:.75rem;
+              font-weight:600;
+              text-decoration:none;
+              white-space:nowrap;
+            ">View All →</a>
+          </div>
 
-          <div class="home-exam-list">
-
-            <div class="home-panel-header">
-              <h2>Popular Entrance Exams</h2>
-
-              <a
-                href="#/exams"
-                class="home-view-all"
-              >
-                View All →
-              </a>
-            </div>
-
-
+          <div style="
+            display:flex;
+            flex-direction:column;
+            gap:9px;
+          ">
             ${exams.map(exam => `
-
               <a
                 href="#/exams"
                 class="home-exam"
@@ -6267,48 +7926,50 @@ function renderHome(main, crumb){
                   display:flex !important;
                   align-items:center !important;
                   justify-content:space-between !important;
+                  gap:10px !important;
                   width:100% !important;
+                  min-height:62px !important;
+                  padding:12px !important;
                   box-sizing:border-box !important;
-                  padding:15px !important;
-                  margin-bottom:12px !important;
-                  background:var(--paper) !important;
-                  border:1px solid var(--rail) !important;
-                  border-radius:10px !important;
+                  background:#FFFFFF !important;
+                  border:1px solid #E3E8EF !important;
+                  border-radius:9px !important;
+                  color:#152238 !important;
                   text-decoration:none !important;
-                  color:var(--ink) !important;
                 "
               >
-
                 <div>
-
-                  <div class="home-exam-name">
-                    ${exam.name}
-                  </div>
-
-                  <div class="home-exam-route">
-                    ${exam.route}
-                  </div>
-
+                  <div style="
+                    font-size:.78rem;
+                    font-weight:700;
+                    color:#152238;
+                  ">${exam.name}</div>
+                  <div style="
+                    font-size:.65rem;
+                    color:#64748B;
+                    margin-top:3px;
+                  ">${exam.route}</div>
                 </div>
 
-                <span class="home-exam-arrow">
-                  →
-                </span>
-
+                <span style="
+                  flex-shrink:0;
+                  color:#111111 !important;
+                  font-size:20px !important;
+                  background:transparent !important;
+                  border:0 !important;
+                  padding:0 !important;
+                ">→</span>
               </a>
-
             `).join('')}
-
           </div>
-
         </section>
 
       </div>
 
     </section>
-
   `;
 }
+
 function renderLeaf(main, crumb, stream, idPath, node, trail){
   const idParts = idPath.split('/');
   
@@ -7420,8 +9081,7 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 }
-//const API_BASE = 'http://127.0.0.1:8000';
-const API_BASE = 'https://career-hub-backend-i960.onrender.com';
+const API_BASE = 'http://127.0.0.1:8000';
 
 async function loadDataAndRender(){
   const main = document.getElementById('main');
@@ -7475,5 +9135,601 @@ window.addEventListener('hashchange', async () => {
 });
 window.addEventListener('DOMContentLoaded', loadDataAndRender);
 </script>
+<script>
+/* =========================================================
+   FINAL REFERENCE-STYLE HOME BUTTONS
+   Simple blue arrows — no box, no background, no border
+   ========================================================= */
+
+function applyReferenceHomeStyle() {
+
+  /* Top 4 dashboard cards */
+  document.querySelectorAll('.home-action-card').forEach(card => {
+
+    card.style.setProperty('background', '#FFFFFF', 'important');
+    card.style.setProperty('border', '1px solid #E5E7EB', 'important');
+    card.style.setProperty('border-radius', '12px', 'important');
+    card.style.setProperty(
+      'box-shadow',
+      '0 2px 8px rgba(15,23,42,0.06)',
+      'important'
+    );
+
+  });
+
+
+  /* All dashboard arrows */
+  document.querySelectorAll(
+    '.home-action-arrow, .home-tool-arrow, .home-exam-arrow, .home-recommendation-arrow'
+  ).forEach(arrow => {
+
+    arrow.style.setProperty('display', 'inline-flex', 'important');
+    arrow.style.setProperty('align-items', 'center', 'important');
+    arrow.style.setProperty('justify-content', 'center', 'important');
+
+    /* REMOVE BOX */
+    arrow.style.setProperty('width', 'auto', 'important');
+    arrow.style.setProperty('min-width', '0', 'important');
+    arrow.style.setProperty('height', 'auto', 'important');
+    arrow.style.setProperty('min-height', '0', 'important');
+
+    arrow.style.setProperty('padding', '0', 'important');
+    arrow.style.setProperty('margin-left', '12px', 'important');
+    arrow.style.setProperty('margin-top', '0', 'important');
+
+    /* REMOVE BACKGROUND */
+    arrow.style.setProperty(
+      'background',
+      'transparent',
+      'important'
+    );
+
+    /* REMOVE BORDER */
+    arrow.style.setProperty(
+      'border',
+      'none',
+      'important'
+    );
+
+    arrow.style.setProperty(
+      'border-radius',
+      '0',
+      'important'
+    );
+
+    /* BLUE ARROW */
+    arrow.style.setProperty(
+      'color',
+      '#2563EB',
+      'important'
+    );
+
+    arrow.style.setProperty(
+      'font-size',
+      '22px',
+      'important'
+    );
+
+    arrow.style.setProperty(
+      'font-weight',
+      '500',
+      'important'
+    );
+
+    arrow.style.setProperty(
+      'line-height',
+      '1',
+      'important'
+    );
+
+    arrow.style.setProperty(
+      'box-shadow',
+      'none',
+      'important'
+    );
+
+    arrow.style.setProperty(
+      'text-decoration',
+      'none',
+      'important'
+    );
+
+    arrow.style.setProperty(
+      'transform',
+      'none',
+      'important'
+    );
+  });
+
+
+  /* View All */
+  document.querySelectorAll('.home-view-all').forEach(button => {
+
+    button.style.setProperty(
+      'background',
+      'transparent',
+      'important'
+    );
+
+    button.style.setProperty(
+      'border',
+      'none',
+      'important'
+    );
+
+    button.style.setProperty(
+      'color',
+      '#2563EB',
+      'important'
+    );
+
+    button.style.setProperty(
+      'box-shadow',
+      'none',
+      'important'
+    );
+
+    button.style.setProperty(
+      'padding',
+      '0',
+      'important'
+    );
+
+  });
+}
+
+
+/* Run when page loads */
+document.addEventListener(
+  'DOMContentLoaded',
+  applyReferenceHomeStyle
+);
+
+
+/* Run every time renderHome() changes the dashboard */
+const referenceButtonObserver =
+  new MutationObserver(() => {
+    applyReferenceHomeStyle();
+  });
+
+referenceButtonObserver.observe(
+  document.getElementById('main'),
+  {
+    childList: true,
+    subtree: true
+  }
+);
+</script>
+<script>
+/* =========================================================
+   FINAL HOME DASHBOARD STYLE
+   FORCE BLACK ARROWS + WHITE INNER BOXES
+   ========================================================= */
+
+function forceHomeDashboardStyle() {
+
+  /* ==============================
+     BLACK ARROWS - NO BOX
+     ============================== */
+
+  document.querySelectorAll(
+    '.home-action-arrow, .home-recommendation-arrow, .home-tool-arrow, .home-exam-arrow'
+  ).forEach(function(arrow) {
+
+    arrow.style.setProperty('display', 'inline-flex', 'important');
+    arrow.style.setProperty('align-items', 'center', 'important');
+    arrow.style.setProperty('justify-content', 'center', 'important');
+
+    arrow.style.setProperty('width', 'auto', 'important');
+    arrow.style.setProperty('min-width', '0', 'important');
+
+    arrow.style.setProperty('height', 'auto', 'important');
+    arrow.style.setProperty('min-height', '0', 'important');
+
+    arrow.style.setProperty('padding', '0', 'important');
+    arrow.style.setProperty('margin-left', '12px', 'important');
+
+    /* REMOVE BUTTON BOX */
+    arrow.style.setProperty('background', 'transparent', 'important');
+    arrow.style.setProperty('border', 'none', 'important');
+    arrow.style.setProperty('border-radius', '0', 'important');
+    arrow.style.setProperty('box-shadow', 'none', 'important');
+
+    /* BLACK ARROW */
+    arrow.style.setProperty('color', '#111111', 'important');
+    arrow.style.setProperty('font-size', '22px', 'important');
+    arrow.style.setProperty('font-weight', '500', 'important');
+    arrow.style.setProperty('line-height', '1', 'important');
+
+    arrow.style.setProperty('text-decoration', 'none', 'important');
+  });
+
+
+  /* ==============================
+     TOP FOUR CARDS
+     ============================== */
+
+  document.querySelectorAll('.home-action-card').forEach(function(card) {
+
+    card.style.setProperty(
+      'background',
+      '#FFFFFF',
+      'important'
+    );
+
+    card.style.setProperty(
+      'border',
+      '1px solid #E5E7EB',
+      'important'
+    );
+
+    card.style.setProperty(
+      'border-radius',
+      '12px',
+      'important'
+    );
+
+    card.style.setProperty(
+      'box-shadow',
+      '0 2px 8px rgba(15,23,42,.06)',
+      'important'
+    );
+  });
+
+
+  /* ==============================
+     RECOMMENDED FOR YOU
+     WHITE BOXES
+     ============================== */
+
+  document.querySelectorAll('.home-recommendation').forEach(function(box) {
+
+    box.style.setProperty(
+      'background',
+      '#FFFFFF',
+      'important'
+    );
+
+    box.style.setProperty(
+      'border',
+      '1px solid #E5E7EB',
+      'important'
+    );
+
+    box.style.setProperty(
+      'border-radius',
+      '10px',
+      'important'
+    );
+
+    box.style.setProperty(
+      'box-shadow',
+      '0 2px 7px rgba(15,23,42,.05)',
+      'important'
+    );
+
+    box.style.setProperty(
+      'color',
+      '#152238',
+      'important'
+    );
+  });
+
+
+  /* ==============================
+     YOUR CAREER TOOLS
+     WHITE BOXES
+     ============================== */
+
+  document.querySelectorAll('.home-tool').forEach(function(box) {
+
+    box.style.setProperty(
+      'background',
+      '#FFFFFF',
+      'important'
+    );
+
+    box.style.setProperty(
+      'border',
+      '1px solid #E5E7EB',
+      'important'
+    );
+
+    box.style.setProperty(
+      'border-radius',
+      '10px',
+      'important'
+    );
+
+    box.style.setProperty(
+      'box-shadow',
+      '0 2px 7px rgba(15,23,42,.05)',
+      'important'
+    );
+
+    box.style.setProperty(
+      'color',
+      '#152238',
+      'important'
+    );
+  });
+
+
+  /* ==============================
+     POPULAR ENTRANCE EXAMS
+     WHITE BOXES
+     ============================== */
+
+  document.querySelectorAll('.home-exam').forEach(function(box) {
+
+    box.style.setProperty(
+      'background',
+      '#FFFFFF',
+      'important'
+    );
+
+    box.style.setProperty(
+      'border',
+      '1px solid #E5E7EB',
+      'important'
+    );
+
+    box.style.setProperty(
+      'border-radius',
+      '10px',
+      'important'
+    );
+
+    box.style.setProperty(
+      'box-shadow',
+      '0 2px 7px rgba(15,23,42,.05)',
+      'important'
+    );
+
+    box.style.setProperty(
+      'color',
+      '#152238',
+      'important'
+    );
+  });
+
+
+  /* ==============================
+     VIEW ALL
+     BLACK TEXT + ARROW
+     ============================== */
+
+  document.querySelectorAll('.home-view-all').forEach(function(button) {
+
+    button.style.setProperty(
+      'background',
+      'transparent',
+      'important'
+    );
+
+    button.style.setProperty(
+      'border',
+      'none',
+      'important'
+    );
+
+    button.style.setProperty(
+      'color',
+      '#111111',
+      'important'
+    );
+
+    button.style.setProperty(
+      'padding',
+      '0',
+      'important'
+    );
+
+    button.style.setProperty(
+      'box-shadow',
+      'none',
+      'important'
+    );
+  });
+
+}
+
+
+/* =========================================================
+   RUN WHEN PAGE LOADS
+   ========================================================= */
+
+document.addEventListener(
+  'DOMContentLoaded',
+  function() {
+    forceHomeDashboardStyle();
+  }
+);
+
+
+/* =========================================================
+   RUN EVERY TIME renderHome() CHANGES THE PAGE
+   ========================================================= */
+
+const homeStyleObserver = new MutationObserver(function() {
+
+  forceHomeDashboardStyle();
+
+});
+
+
+const mainElement = document.getElementById('main');
+
+if (mainElement) {
+
+  homeStyleObserver.observe(
+    mainElement,
+    {
+      childList: true,
+      subtree: true
+    }
+  );
+
+}
+
+
+/* Also run immediately */
+forceHomeDashboardStyle();
+
+</script>
+
+<script>
+/* =========================================================
+   FINAL RUNTIME HOME STYLE
+   This runs after renderHome() and defeats old inline styles.
+   ========================================================= */
+(function(){
+
+  function applyFinalHomeStyle(){
+
+    /* Inner boxes */
+    document.querySelectorAll(
+      '.home-recommendation, .home-tool, .home-exam'
+    ).forEach(function(box){
+      box.style.setProperty('background','#F7F0E2','important');
+      box.style.setProperty('border','1px solid #D8C9AE','important');
+      box.style.setProperty('border-radius','10px','important');
+      box.style.setProperty('box-shadow','none','important');
+      box.style.setProperty('color','#2A2318','important');
+    });
+
+    /* Every dashboard arrow */
+    document.querySelectorAll(
+      '.home-action-arrow, .home-recommendation-arrow, ' +
+      '.home-tool-arrow, .home-exam-arrow, .home-light-action-button'
+    ).forEach(function(arrow){
+      arrow.style.setProperty('width','auto','important');
+      arrow.style.setProperty('min-width','0','important');
+      arrow.style.setProperty('height','auto','important');
+      arrow.style.setProperty('min-height','0','important');
+      arrow.style.setProperty('padding','0','important');
+      arrow.style.setProperty('margin-left','12px','important');
+      arrow.style.setProperty('background','transparent','important');
+      arrow.style.setProperty('border','none','important');
+      arrow.style.setProperty('border-radius','0','important');
+      arrow.style.setProperty('box-shadow','none','important');
+      arrow.style.setProperty('color','#111111','important');
+      arrow.style.setProperty('font-size','22px','important');
+      arrow.style.setProperty('font-weight','500','important');
+      arrow.style.setProperty('line-height','1','important');
+      arrow.style.setProperty('text-decoration','none','important');
+    });
+
+    /* Top four cards */
+    document.querySelectorAll('.home-action-card').forEach(function(card){
+      card.style.setProperty('background','#FFFFFF','important');
+      card.style.setProperty('border','1px solid #E5E7EB','important');
+      card.style.setProperty('border-radius','12px','important');
+      card.style.setProperty(
+        'box-shadow',
+        '0 2px 8px rgba(15,23,42,.06)',
+        'important'
+      );
+    });
+
+    /* View All */
+    document.querySelectorAll('.home-view-all').forEach(function(v){
+      v.style.setProperty('background','transparent','important');
+      v.style.setProperty('border','none','important');
+      v.style.setProperty('color','#111111','important');
+      v.style.setProperty('padding','0','important');
+      v.style.setProperty('box-shadow','none','important');
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', applyFinalHomeStyle);
+
+  /* renderHome() changes #main, so apply again after every DOM replacement */
+  var main = document.getElementById('main');
+
+  if(main){
+    var observer = new MutationObserver(function(){
+      applyFinalHomeStyle();
+    });
+
+    observer.observe(main,{
+      childList:true,
+      subtree:true
+    });
+  }
+
+  applyFinalHomeStyle();
+
+})();
+</script>
+
+
+<script>
+/* =========================================================
+   FINAL HOME DASHBOARD OVERRIDE
+   Keeps the 3 sections separate and arrows BLACK.
+   ========================================================= */
+(function () {
+
+  function applyHomeFinalStyle() {
+
+    document.querySelectorAll(
+      '.home-panel-recommended, .home-panel-tools, .home-panel-exams'
+    ).forEach(function (box) {
+      box.style.setProperty('background', '#F7F0E2', 'important');
+      box.style.setProperty('border', '1px solid #D8C9AE', 'important');
+      box.style.setProperty('border-radius', '12px', 'important');
+      box.style.setProperty('box-shadow', '0 2px 8px rgba(42,35,24,.06)', 'important');
+    });
+
+    document.querySelectorAll(
+      '.home-recommendation, .home-tool, .home-exam'
+    ).forEach(function (box) {
+      box.style.setProperty('background', '#FBF7ED', 'important');
+      box.style.setProperty('border', '1px solid #D8C9AE', 'important');
+      box.style.setProperty('border-radius', '10px', 'important');
+      box.style.setProperty('box-shadow', 'none', 'important');
+    });
+
+    document.querySelectorAll(
+      '.home-action-arrow, .home-recommendation-arrow, ' +
+      '.home-tool-arrow, .home-exam-arrow, .home-light-action-button'
+    ).forEach(function (arrow) {
+      arrow.style.setProperty('width', 'auto', 'important');
+      arrow.style.setProperty('min-width', '0', 'important');
+      arrow.style.setProperty('height', 'auto', 'important');
+      arrow.style.setProperty('min-height', '0', 'important');
+      arrow.style.setProperty('padding', '0', 'important');
+      arrow.style.setProperty('margin-left', '12px', 'important');
+      arrow.style.setProperty('background', 'transparent', 'important');
+      arrow.style.setProperty('border', 'none', 'important');
+      arrow.style.setProperty('border-radius', '0', 'important');
+      arrow.style.setProperty('box-shadow', 'none', 'important');
+      arrow.style.setProperty('color', '#111111', 'important');
+      arrow.style.setProperty('font-size', '22px', 'important');
+      arrow.style.setProperty('font-weight', '500', 'important');
+      arrow.style.setProperty('line-height', '1', 'important');
+      arrow.style.setProperty('text-decoration', 'none', 'important');
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', applyHomeFinalStyle);
+
+  var main = document.getElementById('main');
+
+  if (main) {
+    new MutationObserver(function () {
+      applyHomeFinalStyle();
+    }).observe(main, {
+      childList: true,
+      subtree: true
+    });
+  }
+
+  applyHomeFinalStyle();
+
+})();
+</script>
+
 </body>
 </html>
