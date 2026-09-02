@@ -830,6 +830,7 @@
   }
 }
 
+}
 
 /* MOBILE SIDEBAR OVERLAY */
 @media (max-width: 800px){
@@ -4080,6 +4081,699 @@ button[onclick*="Find"]:active {
     width: auto !important;
 }
 
+/* =========================================================
+   FINAL BEIGE THEME
+   Match the first screenshot
+   ========================================================= */
+
+:root{
+  --paper:#EEE8D6 !important;
+  --paper-deep:#E3DBC3 !important;
+  --ink:#2A2318 !important;
+  --ink-soft:#5B5342 !important;
+  --card:#F7F3E7 !important;
+  --rail:#D3C9A9 !important;
+}
+
+/* =========================
+   ENTIRE PAGE
+   ========================= */
+
+html,
+body{
+  background:#EEE8D6 !important;
+  color:#2A2318 !important;
+}
+
+#app{
+  background:#EEE8D6 !important;
+}
+
+.dashboard-content{
+  background:#EEE8D6 !important;
+}
+
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.sidebar{
+  background:#17212B !important;
+  color:#FFFFFF !important;
+}
+
+.sidebar-logo{
+  background:#FFFFFF !important;
+  color:#17212B !important;
+}
+
+.sidebar-title{
+  color:#FFFFFF !important;
+}
+
+.sidebar-subtitle{
+  color:rgba(255,255,255,.65) !important;
+}
+
+.sidebar-section-title{
+  color:rgba(255,255,255,.55) !important;
+}
+
+.sidebar-link{
+  color:#FFFFFF !important;
+}
+
+.sidebar-link:hover{
+  background:rgba(255,255,255,.10) !important;
+}
+
+.sidebar-link.active{
+  background:rgba(255,255,255,.12) !important;
+  color:#FFFFFF !important;
+  box-shadow:inset 3px 0 0 #FFFFFF !important;
+}
+
+.sidebar-divider{
+  background:rgba(255,255,255,.12) !important;
+}
+
+.sidebar-bottom{
+  border-top:1px solid rgba(255,255,255,.12) !important;
+}
+
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+.dashboard-topbar{
+  background:#F7F3E7 !important;
+  border-bottom:1px solid #D3C9A9 !important;
+}
+
+.dashboard-search input{
+  background:#F3EBD9 !important;
+  border:1px solid #D8C9AE !important;
+  color:#2A2318 !important;
+}
+
+.dashboard-search input:focus{
+  border-color:#2A2318 !important;
+  box-shadow:none !important;
+}
+
+
+/* FIND MY CAREER */
+
+.dashboard-recommend-btn{
+  background:#F3EBD9 !important;
+  border:1px solid #D8C9AE !important;
+  color:#2A2318 !important;
+}
+
+.dashboard-recommend-btn:hover{
+  background:#D8C9AE !important;
+  border-color:#BFAE91 !important;
+  color:#2A2318 !important;
+}
+
+
+/* PROFILE BUTTON */
+
+.dashboard-profile-button{
+  background:#F3EBD9 !important;
+  border:1px solid #D8C9AE !important;
+  color:#2A2318 !important;
+}
+
+.dashboard-profile-button:hover{
+  background:#D8C9AE !important;
+}
+
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+#main{
+  background:#EEE8D6 !important;
+  color:#2A2318 !important;
+}
+
+.dashboard-breadcrumb{
+  background:#EEE8D6 !important;
+}
+
+.page-head h1,
+.home-welcome h1{
+  color:#2A2318 !important;
+}
+
+.page-head p,
+.home-welcome p{
+  color:#5B5342 !important;
+}
+
+
+/* =========================
+   HOME WELCOME AREA
+   ========================= */
+
+.home-welcome{
+  background:#EEE8D6 !important;
+}
+
+.home-kicker{
+  color:#5B5342 !important;
+}
+
+
+/* =========================
+   TOP FOUR CARDS
+   ========================= */
+
+.home-action-card{
+  background:#F7F3E7 !important;
+  border:1px solid #D3C9A9 !important;
+  box-shadow:0 1px 0 rgba(42,35,24,.08) !important;
+}
+
+.home-action-card:hover{
+  background:#F7F3E7 !important;
+  border-color:#BFAE91 !important;
+  box-shadow:0 4px 12px rgba(42,35,24,.10) !important;
+}
+
+.home-action-icon{
+  background:#E3DBC3 !important;
+  border:1px solid #D3C9A9 !important;
+}
+
+.home-action-card h3{
+  color:#2A2318 !important;
+}
+
+.home-action-card p{
+  color:#5B5342 !important;
+}
+
+
+/* =========================
+   RECOMMENDED / TOOLS / EXAMS
+   ========================= */
+
+.home-panel{
+  background:#F7F3E7 !important;
+  border:1px solid #D3C9A9 !important;
+  box-shadow:0 1px 0 rgba(42,35,24,.08) !important;
+}
+
+.home-recommendation,
+.home-tool,
+.home-exam{
+  background:#F7F3E7 !important;
+  border:1px solid #D3C9A9 !important;
+  color:#2A2318 !important;
+  box-shadow:none !important;
+}
+
+.home-recommendation:hover,
+.home-tool:hover,
+.home-exam:hover{
+  background:#F3EBD9 !important;
+  border-color:#BFAE91 !important;
+  box-shadow:none !important;
+}
+
+.home-recommendation-title,
+.home-tool strong,
+.home-exam-name{
+  color:#2A2318 !important;
+}
+
+.home-recommendation-desc,
+.home-tool small,
+.home-exam-route{
+  color:#5B5342 !important;
+}
+
+
+/* =========================
+   MATCH BAR
+   ========================= */
+
+.home-match-bar{
+  background:#E3DBC3 !important;
+}
+
+.home-match-bar span{
+  background:#4B6B3A !important;
+}
+
+.home-match-number{
+  color:#2A2318 !important;
+}
+
+.home-match-label{
+  color:#5B5342 !important;
+}
+
+
+/* =========================
+   ARROWS
+   ========================= */
+
+.home-action-arrow,
+.home-recommendation-arrow,
+.home-tool-arrow,
+.home-exam-arrow{
+  color:#2A2318 !important;
+  background:transparent !important;
+  border:none !important;
+}
+
+.home-action-arrow:hover,
+.home-recommendation-arrow:hover,
+.home-tool-arrow:hover,
+.home-exam-arrow:hover{
+  color:#5B5342 !important;
+  background:transparent !important;
+}
+
+
+/* =========================
+   VIEW ALL
+   ========================= */
+
+.home-view-all{
+  color:#2A2318 !important;
+  background:transparent !important;
+  border:none !important;
+}
+
+.home-view-all:hover{
+  color:#5B5342 !important;
+  background:transparent !important;
+}
+
+
+/* =========================
+   NORMAL BUTTONS
+   ========================= */
+
+.btn,
+.dashboard-login-button,
+.top-action,
+.top-action-logout{
+  background:#F3EBD9 !important;
+  border:1px solid #D8C9AE !important;
+  color:#2A2318 !important;
+}
+
+.btn:hover,
+.dashboard-login-button:hover,
+.top-action:hover,
+.top-action-logout:hover{
+  background:#D8C9AE !important;
+  border-color:#BFAE91 !important;
+  color:#2A2318 !important;
+}
+
+
+/* =========================
+   PROFILE PAGE
+   ========================= */
+
+.detail-section{
+  color:#2A2318 !important;
+}
+
+.detail-section > div{
+  color:#2A2318;
+}
+
+
+/* =========================
+   STREAM CARDS
+   ========================= */
+
+.stream-card,
+.line-btn,
+.station-btn{
+  background:#F7F3E7 !important;
+  border-color:#D3C9A9 !important;
+  color:#2A2318 !important;
+}
+
+.stream-card:hover,
+.line-btn:hover,
+.station-btn:hover{
+  background:#F3EBD9 !important;
+  border-color:#BFAE91 !important;
+}
+
+.stream-name,
+.line-name,
+.station-name{
+  color:#2A2318 !important;
+}
+
+.stream-label,
+.line-code,
+.station-code{
+  color:var(--stream-color,var(--ink)) !important;
+}
+
+
+/* =========================
+   SAVED PATHS
+   ========================= */
+
+.saved-item{
+  background:#F7F3E7 !important;
+  border:1px solid #D3C9A9 !important;
+  color:#2A2318 !important;
+}
+
+.saved-item:hover{
+  background:#F3EBD9 !important;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.dashboard-content footer{
+  background:#EEE8D6 !important;
+  border-top:1px solid #D3C9A9 !important;
+  color:#5B5342 !important;
+}
+
+/* =====================================================
+   FINAL MOBILE HOME FIX
+   DESKTOP IS NOT CHANGED
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+  /* ---------- PAGE ---------- */
+
+  html,
+  body {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  #app {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .dashboard-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  #main {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 18px 14px 40px !important;
+    overflow-x: hidden !important;
+  }
+
+
+  /* ---------- MOBILE HEADER ---------- */
+
+  .dashboard-topbar {
+    width: 100% !important;
+    min-height: 62px !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    flex-shrink: 0 !important;
+    z-index: 20 !important;
+  }
+
+  .dashboard-search {
+    position: absolute !important;
+    left: 54px !important;
+    right: 54px !important;
+    top: 10px !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  .dashboard-search input {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 40px !important;
+    padding: 8px 10px !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+  }
+
+  .dashboard-recommend-btn {
+    display: none !important;
+  }
+
+  .dashboard-auth {
+    position: absolute !important;
+    top: 10px !important;
+    right: 12px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 30 !important;
+  }
+
+  .dashboard-profile-button {
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+
+  /* ---------- WELCOME ---------- */
+
+  .home-welcome {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  .home-welcome h1 {
+    font-size: 1.55rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .home-welcome p {
+    font-size: .85rem !important;
+    line-height: 1.5 !important;
+  }
+
+
+  /* =================================================
+     FOUR QUICK ACTION CARDS
+     2 COLUMNS ON MOBILE
+     ================================================= */
+
+  .home-action-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-bottom: 18px !important;
+  }
+
+  .home-action-grid > .home-action-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 135px !important;
+    padding: 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  .home-action-card h3 {
+    font-size: .88rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .home-action-card p {
+    font-size: .69rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .home-action-icon {
+    width: 36px !important;
+    height: 36px !important;
+    margin-bottom: 9px !important;
+  }
+
+  .home-action-card .home-action-arrow {
+    font-size: 20px !important;
+  }
+
+
+  /* =================================================
+     THREE LOWER PANELS
+     ONE COLUMN ON MOBILE
+     ================================================= */
+
+  .home-dashboard-grid-three {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .home-dashboard-grid-three > .home-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .home-panel-recommended {
+    grid-column: auto !important;
+  }
+
+
+  /* ---------- RECOMMENDATIONS ---------- */
+
+  .home-recommendation {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding: 12px !important;
+  }
+
+  .home-recommendation-main {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  .home-recommendation-title {
+    font-size: .82rem !important;
+  }
+
+  .home-recommendation-desc {
+    font-size: .68rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .home-recommendation-match {
+    flex-shrink: 0 !important;
+    margin-left: 8px !important;
+  }
+
+  .home-match-number {
+    font-size: .95rem !important;
+  }
+
+  .home-match-bar {
+    width: 65px !important;
+  }
+
+
+  /* ---------- CAREER TOOLS ---------- */
+
+  .home-tool {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .home-tool-main {
+    min-width: 0 !important;
+  }
+
+
+  /* ---------- ENTRANCE EXAMS ---------- */
+
+  .home-exam {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+
+  /* ---------- SIDEBAR ---------- */
+
+  .sidebar {
+    width: 270px !important;
+    min-width: 270px !important;
+    max-width: 270px !important;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 420px) {
+
+  #main {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .home-action-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .home-action-grid > .home-action-card {
+    min-height: 125px !important;
+    padding: 11px !important;
+  }
+
+  .home-action-card h3 {
+    font-size: .82rem !important;
+  }
+
+  .home-action-card p {
+    font-size: .65rem !important;
+  }
+
+}
+
 </style>
 </head>
 <body>
@@ -4222,6 +4916,7 @@ button[onclick*="Find"]:active {
 <!-- Firebase SDK (compat build — simplest for vanilla JS) -->
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
 
 <script>
 /* ============ DATA ============ */
@@ -6514,17 +7209,17 @@ score = Math.max(0, Math.min(score, 100));
 }
 
 
-async function renderProfile(){
+async function renderProfile() {
   const main = document.getElementById('main');
   const crumb = document.getElementById('crumb');
 
-  if(!currentUser){
+  if (!currentUser) {
     location.hash = '#/login';
     return;
   }
 
   setCrumb(crumb, [
-    {label:'Student Profile', hash:'profile'}
+    { label: 'Student Profile', hash: 'profile' }
   ]);
 
   main.innerHTML = `
@@ -6564,48 +7259,93 @@ async function renderProfile(){
           style="margin-top:6px;padding:12px;
           border:1px solid var(--rail);
           border-radius:8px;">
-${currentUser.email || ''}
+          ${escapeHtml(currentUser.email || 'Not set')}
         </div>
       </div>
 
-<div style="margin-top:24px;">
-<div>
-    <a href="#/saved" class="btn">
-      ⭐ My Saved Paths
-    </a>
-  </div>
+      <div style="margin-bottom:20px;">
+        <strong>School Name</strong>
+        <div id="profileSchool"
+          style="margin-top:6px;padding:12px;
+          border:1px solid var(--rail);
+          border-radius:8px;">
+          Loading...
+        </div>
+      </div>
 
-    <div style="margin-top:12px;">
-    <a href="#/institutions" class="btn">
-      ?? Education Finder
-    </a>
-  </div>
+      <div style="margin-bottom:20px;">
+        <strong>Location</strong>
+        <div id="profileLocation"
+          style="margin-top:6px;padding:12px;
+          border:1px solid var(--rail);
+          border-radius:8px;">
+          Loading...
+        </div>
+      </div>
 
-  <div style="margin-top:12px;">
-    <div style="margin-top:12px;">
-<div style="margin-top:12px;">
-  <a href="#/scholarships" class="btn">
-    ?? Scholarship Finder
-  </a>
-</div>
-<button id="profileLogoutBtn" class="btn">
-      🚪 Log out
-    </button>
-  </div>
+      <div style="margin-bottom:20px;">
+        <strong>Marks / Percentage</strong>
+        <div id="profileMarks"
+          style="margin-top:6px;padding:12px;
+          border:1px solid var(--rail);
+          border-radius:8px;">
+          Loading...
+        </div>
+      </div>
 
-<button id="editProfileBtn" class="btn" style="margin-top:12px;">
-  ✏️ Edit Profile
-</button>
+      <div style="margin-top:28px;">
+
+        <div style="margin-top:12px;">
+          <a href="#/saved" class="btn">
+            ⭐ My Saved Paths
+          </a>
+        </div>
+
+        <div style="margin-top:12px;">
+          <a href="#/institutions" class="btn">
+            🎓 Education Finder
+          </a>
+        </div>
+
+        <div style="margin-top:12px;">
+          <a href="#/scholarships" class="btn">
+            🎓 Scholarship Finder
+          </a>
+        </div>
+
+        <div style="margin-top:12px;">
+          <button
+            id="editProfileBtn"
+            class="btn"
+            type="button">
+            ✏️ Edit Profile
+          </button>
+        </div>
+
+        <div style="margin-top:12px;">
+          <button
+            id="profileLogoutBtn"
+            class="btn"
+            type="button">
+            🚪 Log out
+          </button>
+        </div>
+
+      </div>
+
+      <div id="profileMessage" style="margin-top:16px;"></div>
+
     </div>
-
-    <div id="profileMessage" style="margin-top:16px;"></div>
   `;
-  document.getElementById('profileLogoutBtn')
+
+  document
+    .getElementById('profileLogoutBtn')
     .addEventListener('click', () => {
       fbAuth.signOut();
     });
+
   try {
-    const token = await currentUser.getIdToken();
+    const token = await currentUser.getIdToken(true);
 
     const res = await fetch(`${API_BASE}/api/profile`, {
       headers: {
@@ -6613,84 +7353,248 @@ ${currentUser.email || ''}
       }
     });
 
-    if(!res.ok){
+    if (!res.ok) {
       throw new Error('Failed to load profile');
     }
 
     const profile = await res.json();
 
     document.getElementById('profileName').textContent =
-      profile.name || 'Not set';
+      profile.name || currentUser.displayName || 'Not set';
 
     document.getElementById('profilePhone').textContent =
       profile.phone || 'Not set';
 
-    document.getElementById('editProfileBtn')
+    document.getElementById('profileSchool').textContent =
+      profile.school_name || 'Not set';
+
+    document.getElementById('profileLocation').textContent =
+      profile.location || 'Not set';
+
+    document.getElementById('profileMarks').textContent =
+      profile.marks !== null &&
+      profile.marks !== undefined &&
+      profile.marks !== ''
+        ? `${profile.marks}%`
+        : 'Not set';
+
+    document
+      .getElementById('editProfileBtn')
       .addEventListener('click', () => {
         showEditProfile(profile);
       });
 
-  } catch(error) {
+  } catch (error) {
     document.getElementById('profileMessage').innerHTML = `
       <div class="detail-section" style="--lc:#A2402F;">
         Unable to load your profile.
       </div>
     `;
 
-    console.error(error);
+    console.error('PROFILE ERROR:', error);
   }
 }
 
-function showEditProfile(profile){
-  const message = document.getElementById('profileMessage');
 
-  message.innerHTML = `
-    <div class="detail-section" style="margin-top:16px;">
-      <h2>Edit Profile</h2>
+function showEditProfile(profile) {
+  const main = document.getElementById('main');
 
-      <div style="margin-bottom:16px;">
-        <strong>Name</strong>
+  const safeName = escapeHtml(profile.name || '');
+  const safePhone = escapeHtml(profile.phone || '');
+  const safeSchool = escapeHtml(profile.school_name || '');
+  const safeLocation = escapeHtml(profile.location || '');
+  const marksValue =
+    profile.marks !== null &&
+    profile.marks !== undefined &&
+    profile.marks !== ''
+      ? profile.marks
+      : '';
+
+  main.innerHTML = `
+    <a class="back-link" href="#/profile">‹ Back to profile</a>
+
+    <div class="page-head">
+      <div class="code">EDIT PROFILE</div>
+      <h1>Edit Your Profile</h1>
+      <p>Update your personal information.</p>
+    </div>
+
+    <div class="detail-section">
+
+      <div style="margin-bottom:18px;">
+        <label>
+          <strong>Name</strong>
+        </label>
         <input
           id="editProfileName"
           type="text"
-          value="${profile.name || ''}"
-          style="width:100%;padding:12px;margin-top:6px;
-          border:1px solid var(--rail);
-          border-radius:8px;
-          background:var(--card);
-          font:inherit;">
+          value="${safeName}"
+          placeholder="Enter your name"
+          style="
+            width:100%;
+            box-sizing:border-box;
+            margin-top:6px;
+            padding:12px;
+            border:1px solid var(--rail);
+            border-radius:8px;
+            background:var(--card);
+            font:inherit;
+          "
+        >
       </div>
 
-      <div style="margin-bottom:16px;">
-        <strong>Phone Number</strong>
+      <div style="margin-bottom:18px;">
+        <label>
+          <strong>Phone Number</strong>
+        </label>
         <input
           id="editProfilePhone"
           type="tel"
-          value="${profile.phone || ''}"
-          style="width:100%;padding:12px;margin-top:6px;
-          border:1px solid var(--rail);
-          border-radius:8px;
-          background:var(--card);
-          font:inherit;">
+          value="${safePhone}"
+          placeholder="Enter phone number"
+          style="
+            width:100%;
+            box-sizing:border-box;
+            margin-top:6px;
+            padding:12px;
+            border:1px solid var(--rail);
+            border-radius:8px;
+            background:var(--card);
+            font:inherit;
+          "
+        >
       </div>
 
-      <button id="saveProfileBtn" class="btn">
-        Save Profile
-      </button>
+      <div style="margin-bottom:18px;">
+        <label>
+          <strong>Email</strong>
+        </label>
+        <input
+          type="email"
+          value="${escapeHtml(currentUser.email || profile.email || '')}"
+          disabled
+          style="
+            width:100%;
+            box-sizing:border-box;
+            margin-top:6px;
+            padding:12px;
+            border:1px solid var(--rail);
+            border-radius:8px;
+            background:#eef1f5;
+            font:inherit;
+          "
+        >
+        <small style="display:block;margin-top:5px;color:var(--ink-soft);">
+          Email is managed by your login account.
+        </small>
+      </div>
 
-      <button id="cancelProfileBtn" class="btn" style="margin-left:8px;">
-        Cancel
-      </button>
+      <div style="margin-bottom:18px;">
+        <label>
+          <strong>School Name</strong>
+        </label>
+        <input
+          id="editProfileSchool"
+          type="text"
+          value="${safeSchool}"
+          placeholder="Enter your school name"
+          style="
+            width:100%;
+            box-sizing:border-box;
+            margin-top:6px;
+            padding:12px;
+            border:1px solid var(--rail);
+            border-radius:8px;
+            background:var(--card);
+            font:inherit;
+          "
+        >
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <label>
+          <strong>Location</strong>
+        </label>
+        <input
+          id="editProfileLocation"
+          type="text"
+          value="${safeLocation}"
+          placeholder="Enter your city / location"
+          style="
+            width:100%;
+            box-sizing:border-box;
+            margin-top:6px;
+            padding:12px;
+            border:1px solid var(--rail);
+            border-radius:8px;
+            background:var(--card);
+            font:inherit;
+          "
+        >
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <label>
+          <strong>Marks / Percentage</strong>
+        </label>
+        <input
+          id="editProfileMarks"
+          type="number"
+          min="0"
+          max="100"
+          step="0.01"
+          value="${marksValue}"
+          placeholder="Enter percentage (0-100)"
+          style="
+            width:100%;
+            box-sizing:border-box;
+            margin-top:6px;
+            padding:12px;
+            border:1px solid var(--rail);
+            border-radius:8px;
+            background:var(--card);
+            font:inherit;
+          "
+        >
+      </div>
+
+      <div style="margin-top:25px;">
+        <button
+          id="saveProfileBtn"
+          class="btn"
+          type="button">
+          💾 Save Profile
+        </button>
+
+        <button
+          id="cancelProfileBtn"
+          class="btn"
+          type="button"
+          style="margin-left:8px;">
+          Cancel
+        </button>
+      </div>
+
+      <div id="editProfileMessage" style="margin-top:16px;"></div>
+
     </div>
   `;
 
-  document.getElementById('cancelProfileBtn')
+  document
+    .getElementById('cancelProfileBtn')
     .addEventListener('click', () => {
-      renderProfile();
+      location.hash = '#/profile';
     });
 
-  document.getElementById('saveProfileBtn')
+  document
+    .getElementById('saveProfileBtn')
     .addEventListener('click', async () => {
+
+      const saveBtn =
+        document.getElementById('saveProfileBtn');
+
+      const message =
+        document.getElementById('editProfileMessage');
 
       const name =
         document.getElementById('editProfileName').value.trim();
@@ -6698,8 +7602,39 @@ function showEditProfile(profile){
       const phone =
         document.getElementById('editProfilePhone').value.trim();
 
+      const school_name =
+        document.getElementById('editProfileSchool').value.trim();
+
+      const location =
+        document.getElementById('editProfileLocation').value.trim();
+
+      const marksValue =
+        document.getElementById('editProfileMarks').value.trim();
+
+      let marks = null;
+
+      if (marksValue !== '') {
+        marks = Number(marksValue);
+
+        if (
+          Number.isNaN(marks) ||
+          marks < 0 ||
+          marks > 100
+        ) {
+          message.innerHTML = `
+            <div style="color:#A2402F;font-weight:600;">
+              Marks must be between 0 and 100.
+            </div>
+          `;
+          return;
+        }
+      }
+
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Saving...';
+
       try {
-        const token = await currentUser.getIdToken();
+        const token = await currentUser.getIdToken(true);
 
         const res = await fetch(`${API_BASE}/api/profile`, {
           method: 'PUT',
@@ -6708,30 +7643,49 @@ function showEditProfile(profile){
             'Authorization': `Bearer ${token}`
           },
           body: JSON.stringify({
-            name,
-            phone
+            name: name || null,
+            phone: phone || null,
+            school_name: school_name || null,
+            location: location || null,
+            marks: marks
           })
         });
 
-        if(!res.ok){
-          throw new Error('Failed to save profile');
+        if (!res.ok) {
+          const errorText = await res.text();
+          throw new Error(
+            errorText || 'Failed to save profile'
+          );
         }
 
         await res.json();
 
-        renderProfile();
-
-      } catch(error) {
         message.innerHTML = `
-          <div class="detail-section" style="--lc:#A2402F;">
-            Unable to save your profile.
+          <div style="color:green;font-weight:600;">
+            ✅ Profile saved successfully!
           </div>
         `;
 
-        console.error(error);
+        setTimeout(() => {
+          location.hash = '#/profile';
+        }, 700);
+
+      } catch (error) {
+        console.error('PROFILE SAVE ERROR:', error);
+
+        message.innerHTML = `
+          <div style="color:#A2402F;font-weight:600;">
+            ❌ Unable to save profile.
+          </div>
+        `;
+
+      } finally {
+        saveBtn.disabled = false;
+        saveBtn.textContent = '💾 Save Profile';
       }
     });
 }
+
 
 async function renderEducationFinder(){
   const main = document.getElementById('main');
@@ -8217,7 +9171,7 @@ async function renderHome(main, crumb) {
         class="home-action-grid"
         style="
           display:grid !important;
-          grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+          grid-template-columns:repeat(4,minmax(0,1fr));
           gap:14px !important;
           width:100% !important;
           margin-bottom:22px !important;
@@ -8361,9 +9315,8 @@ async function renderHome(main, crumb) {
 
           grid-template-columns:
             minmax(0,1.5fr)
-            minmax(250px,1fr)
-            minmax(250px,1fr) !important;
-
+  minmax(0,1fr)
+  minmax(0,1fr);
           gap:16px !important;
 
           width:100% !important;
@@ -9303,6 +10256,7 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const fbAuth = firebase.auth();
+const fbStorage = firebase.storage();
 
 let currentUser = null;
 

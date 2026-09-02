@@ -756,15 +756,18 @@ def update_profile(
 
         db.add(row)
 
-    else:
-        row.name = item.name
-        row.phone = item.phone
+    # Update profile fields
+    row.name = item.name
+    row.phone = item.phone
+    row.school_name = item.school_name
+    row.location = item.location
+    row.marks = item.marks
+    row.photo_url = item.photo_url
 
     db.commit()
     db.refresh(row)
 
     return row
-
 
 # ---------- Education Finder ----------
 

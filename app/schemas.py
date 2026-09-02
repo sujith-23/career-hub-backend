@@ -70,12 +70,20 @@ class SavedPathOut(SavedPathIn):
 class StudentProfileIn(BaseModel):
     name: Optional[str] = None
     phone: Optional[str] = None
+    school_name: Optional[str] = None
+    location: Optional[str] = None
+    marks: Optional[float] = None
+    photo_url: Optional[str] = None
 
 
 class StudentProfileOut(BaseModel):
     name: Optional[str] = None
     phone: Optional[str] = None
     email: Optional[str] = None
+    school_name: Optional[str] = None
+    location: Optional[str] = None
+    marks: Optional[float] = None
+    photo_url: Optional[str] = None
 
     class Config:
         from_attributes = True

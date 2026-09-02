@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, DateTime, JSON
+from sqlalchemy import Column, Integer, String, Float, DateTime, JSON
 from .database import Base
 
 
@@ -65,6 +65,11 @@ class StudentProfile(Base):
     name = Column(String, nullable=True)
     phone = Column(String, nullable=True)
     email = Column(String, nullable=True)
+    school_name = Column(String, nullable=True)
+    location = Column(String, nullable=True)
+    marks = Column(Float, nullable=True)
+    photo_url = Column(String, nullable=True)
+
     created_at = Column(DateTime, nullable=False)
 
 class Institution(Base):
