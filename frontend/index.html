@@ -3703,6 +3703,383 @@ html,body{
   border:0 !important;
   box-shadow:none !important;
 }
+/* ===== FULL DESKTOP WIDTH ===== */
+
+html,
+body {
+  width: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.main-content,
+main,
+.content,
+.dashboard,
+.app-content {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.page-container,
+.container {
+  width: 100% !important;
+  max-width: none !important;
+}
+/* ===== REMOVE OUTER DESKTOP SIDE SPACES ===== */
+
+html,
+body {
+    width: 100% !important;
+    min-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body > div:first-child {
+    width: 100vw !important;
+    max-width: none !important;
+    min-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Common application wrappers */
+.app,
+.app-shell,
+.app-container,
+.layout,
+.page,
+.page-container,
+.main-wrapper,
+.dashboard-container {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Main application area */
+main,
+.main,
+.main-content,
+.content,
+.content-area {
+    max-width: none !important;
+}
+
+/* Prevent horizontal page margins */
+#app,
+#root {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* =========================================
+   TOP HEADER - SEARCH + FIND CAREER
+   ========================================= */
+
+/* Make the search bar larger */
+header input[type="text"],
+header input[type="search"],
+.topbar input[type="text"],
+.topbar input[type="search"] {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 48px !important;
+    box-sizing: border-box !important;
+    padding: 0 18px !important;
+
+    background: #F3EBD9 !important;
+    border: 1px solid #D8C9AE !important;
+    border-radius: 10px !important;
+
+    font-size: 16px !important;
+    color: #152238 !important;
+}
+
+/* Header layout */
+header,
+.topbar {
+    display: flex !important;
+    align-items: center !important;
+    gap: 18px !important;
+}
+
+/* Search area takes more space */
+header input[type="text"],
+header input[type="search"],
+.topbar input[type="text"],
+.topbar input[type="search"] {
+    flex: 1 1 auto !important;
+}
+
+/* Find My Career button */
+header button,
+.topbar button {
+    flex-shrink: 0 !important;
+}
+
+/* Specifically style Find My Career */
+button[onclick*="recommend"],
+button[onclick*="Recommend"],
+button[onclick*="find"],
+button[onclick*="Find"] {
+    height: 48px !important;
+    padding: 0 28px !important;
+
+    background: #F3EBD9 !important;
+    color: #152238 !important;
+
+    border: 1px solid #D8C9AE !important;
+    border-radius: 10px !important;
+
+    font-size: 15px !important;
+    font-weight: 700 !important;
+
+    cursor: pointer !important;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease !important;
+}
+
+/* Hover color */
+button[onclick*="recommend"]:hover,
+button[onclick*="Recommend"]:hover,
+button[onclick*="find"]:hover,
+button[onclick*="Find"]:hover {
+    background: #D8C9AE !important;
+    color: #152238 !important;
+    border-color: #BFAE91 !important;
+}
+
+/* Click effect */
+button[onclick*="recommend"]:active,
+button[onclick*="Recommend"]:active,
+button[onclick*="find"]:active,
+button[onclick*="Find"]:active {
+    transform: scale(0.98) !important;
+}
+/* =========================================
+   TOP BAR - FINAL DESIGN
+   ========================================= */
+
+.dashboard-topbar {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    box-sizing: border-box !important;
+}
+
+
+/* SEARCH */
+
+.dashboard-search {
+    flex: 1 1 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+}
+
+.dashboard-search input {
+    width: 100% !important;
+    height: 50px !important;
+    box-sizing: border-box !important;
+
+    padding: 0 20px !important;
+
+    background: #F3EBD9 !important;
+    border: 1px solid #D8C9AE !important;
+    border-radius: 10px !important;
+
+    color: #152238 !important;
+    font-size: 16px !important;
+    outline: none !important;
+}
+
+
+/* SEARCH FOCUS */
+
+.dashboard-search input:focus {
+    background: #F3EBD9 !important;
+    border-color: #BFAE91 !important;
+    box-shadow: 0 0 0 2px rgba(191,174,145,0.18) !important;
+}
+
+
+/* FIND MY CAREER */
+
+.dashboard-recommend-btn {
+    flex: 0 0 auto !important;
+
+    height: 50px !important;
+    padding: 0 24px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    box-sizing: border-box !important;
+
+    background: #F3EBD9 !important;
+    color: #152238 !important;
+
+    border: 1px solid #D8C9AE !important;
+    border-radius: 10px !important;
+
+    font-size: 15px !important;
+    font-weight: 700 !important;
+
+    text-decoration: none !important;
+    white-space: nowrap !important;
+
+    cursor: pointer !important;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.15s ease !important;
+}
+
+
+/* FIND MY CAREER - HOVER */
+
+.dashboard-recommend-btn:hover {
+    background: #D8C9AE !important;
+    border-color: #BFAE91 !important;
+    color: #152238 !important;
+
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08) !important;
+}
+
+
+/* FIND MY CAREER - CLICK */
+
+.dashboard-recommend-btn:active {
+    transform: scale(0.98) !important;
+}
+
+
+/* PROFILE */
+
+/* Move My Profile closer to Find My Career */
+.dashboard-auth {
+    margin-left: 0 !important;
+}
+
+/* Keep all topbar items together */
+.dashboard-topbar {
+    gap: 14px !important;
+}
+
+/* Let search bar use the remaining space */
+.dashboard-search {
+    flex: 1 1 auto !important;
+    margin-right: 0 !important;
+}
+/* =========================================
+   TOPBAR - FORCE SEARCH + RIGHT ALIGNMENT
+   ========================================= */
+
+.dashboard-topbar {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 14px !important;
+    padding: 10px 15px 10px 30px !important;
+}
+/* SEARCH TAKES ALL AVAILABLE SPACE */
+
+.dashboard-search {
+    flex: 1 1 0% !important;
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+}
+
+
+/* SEARCH INPUT */
+
+.dashboard-search {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+}
+
+.dashboard-search input {
+    width: 100% !important;
+    height: 54px !important;
+    box-sizing: border-box !important;
+    padding: 0 22px !important;
+    font-size: 17px !important;
+}
+
+
+/* FIND MY CAREER - PUSH TO RIGHT */
+
+.dashboard-recommend-btn {
+    flex: 0 0 auto !important;
+
+    margin-left: auto !important;
+    margin-right: 0 !important;
+
+    height: 50px !important;
+    min-width: 200px !important;
+    padding: 0 25px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    box-sizing: border-box !important;
+
+    background: #F3EBD9 !important;
+    color: #152238 !important;
+
+    border: 1px solid #D8C9AE !important;
+    border-radius: 10px !important;
+
+    text-decoration: none !important;
+    white-space: nowrap !important;
+
+    font-size: 15px !important;
+    font-weight: 700 !important;
+
+    cursor: pointer !important;
+}
+
+
+/* HOVER */
+
+.dashboard-recommend-btn:hover {
+    background: #D8C9AE !important;
+    border-color: #BFAE91 !important;
+    color: #152238 !important;
+}
+
+
+/* PROFILE - NO EXTRA SPACE */
+
+.dashboard-auth {
+    flex: 0 0 auto !important;
+
+    margin: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 30px !important;
+
+    width: auto !important;
+}
+
 </style>
 </head>
 <body>
@@ -4235,32 +4612,81 @@ function renderStream(main, crumb, id, stream){
 
 
 function renderGroup(main, crumb, stream, idPath, node, trail){
-  setCrumb(crumb, trail.concat([{label:node.name, hash:idPath}]));
+
+  setCrumb(
+    crumb,
+    trail.concat([
+      {
+        label: node.name,
+        hash: idPath
+      }
+    ])
+  );
+
   const childIds = Object.keys(node.children);
+
   main.innerHTML = `
-    <a class="back-link" href="#/${idPath.split('/').slice(0,-1).join('/')}">‹ Back</a>
+    <a class="back-link"
+       href="#/${idPath.split('/').slice(0,-1).join('/')}">
+       ‹ Back
+    </a>
+
     <div class="page-head" style="--lc:${stream.color}">
       <div class="code">${stream.name} LINE</div>
       <h1>${node.name}</h1>
       <p>${node.desc}</p>
-      ${node.entrance ? `<div class="info-strip"><span class="chip">Entrance: ${node.entrance}</span></div>` : ''}
+
+      ${
+        node.entrance
+          ? `
+            <div class="info-strip">
+              <span class="chip">
+                Entrance: ${node.entrance}
+              </span>
+            </div>
+          `
+          : ''
+      }
     </div>
+
     <div class="stations" style="--lc:${stream.color}">
-      ${childIds.map(cid=>{
+      ${childIds.map(cid => {
+
         const c = node.children[cid];
-        return `<div class="station">
-          <div class="station-btn" onclick="location.hash='#/${idPath}/${cid}'">
-            <div class="station-code">BRANCH</div>
-            <div class="station-name">${c.name}</div>
-            <div class="station-desc">${c.desc}</div>
-            <div class="station-arrow">›</div>
+
+        return `
+          <div class="station">
+
+            <div
+              class="station-btn"
+              onclick="location.hash='#/${idPath}/${cid}'"
+            >
+
+              <div class="station-code">
+                BRANCH
+              </div>
+
+              <div class="station-name">
+                ${c.name}
+              </div>
+
+              <div class="station-desc">
+                ${c.desc}
+              </div>
+
+              <div class="station-arrow">
+                ›
+              </div>
+
+            </div>
+
           </div>
-        </div>`;
+        `;
+
       }).join('')}
     </div>
   `;
 }
-
 
 function updateActiveSidebar(){
   const current = parseHash()[0] || '';
@@ -7458,36 +7884,282 @@ function getStreamColor(id) {
 
   return colors[id] || 'var(--ink-soft)';
 }
-function renderHome(main, crumb){
+async function loadPersonalizedRecommendations() {
+
+    const container =
+        document.getElementById('personalizedRecommendations');
+
+    if (!container) return;
+
+    if (!currentUser) {
+        container.innerHTML = `
+            <div class="home-empty-message">
+                Log in to get personalized career recommendations.
+            </div>
+        `;
+        return;
+    }
+
+    try {
+
+        const token = await currentUser.getIdToken();
+
+        const response = await fetch(
+            `${API_BASE}/api/recommendations`,
+            {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error(
+                `Recommendation API failed: ${response.status}`
+            );
+        }
+
+        const recommendations = await response.json();
+
+        if (!recommendations.length) {
+
+            container.innerHTML = `
+                <div class="home-empty-message">
+                    Explore some career paths to get personalized recommendations.
+                </div>
+            `;
+
+            return;
+        }
+
+        container.innerHTML = recommendations.map(item => {
+
+            const stream =
+                DATA[item.stream_id];
+
+            if (!stream) return '';
+
+            let course = null;
+
+            /*
+             * Find the path inside the student's stream.
+             */
+            if (
+                stream.paths &&
+                item.path_id &&
+                stream.paths[item.path_id]
+            ) {
+                course = stream.paths[item.path_id];
+            }
+
+            /*
+             * If the exact path isn't found,
+             * use the stream name.
+             */
+            const title =
+                course?.name ||
+                stream.full ||
+                stream.name;
+
+            const description =
+                course?.desc ||
+                stream.desc ||
+                'Explore this career path and discover suitable courses.';
+
+            const link =
+                item.path_id
+                    ? `#/${item.stream_id}/${item.path_id}`
+                    : `#/${item.stream_id}`;
+
+            return `
+                <a
+                    class="personalized-recommendation-card"
+                    href="${link}"
+                >
+
+                    <div class="personalized-recommendation-info">
+
+                        <div class="personalized-recommendation-title">
+                            ${title}
+                        </div>
+
+                        <div class="personalized-recommendation-desc">
+                            ${description}
+                        </div>
+
+                    </div>
+
+                    <div class="personalized-recommendation-score">
+                        <strong>${item.match}%</strong>
+                        <span>Match</span>
+                    </div>
+
+                    <div class="personalized-recommendation-arrow">
+                        →
+                    </div>
+
+                </a>
+            `;
+
+        }).join('');
+
+    } catch (error) {
+
+        console.error(
+            'Personalized recommendation error:',
+            error
+        );
+
+        container.innerHTML = `
+            <div class="home-empty-message">
+                Explore more career paths to get personalized recommendations.
+            </div>
+        `;
+    }
+}
+
+async function renderHome(main, crumb) {
 
   crumb.innerHTML = '';
 
   const userName = currentUser?.displayName || 'Student';
 
-  const recommendations = [
-    {
-      name:'Artificial Intelligence & Data Science',
-      desc:'AI, data, machine learning and analytics',
-      score:92,
-      path:'#/mpc/engineering/aids'
-    },
-    {
-      name:'Computer Science Engineering',
-      desc:'Software development, programming and technology',
-      score:87,
-      path:'#/mpc/engineering/cse'
-    },
-    {
-      name:'Cyber Security',
-      desc:'Security, networks and digital protection',
-      score:82,
-      path:'#/mpc/engineering/cybersecurity'
-    }
-  ];
+  // ============================================================
+  // PERSONALIZED RECOMMENDATIONS
+  // Based on student's previous click history
+  // ============================================================
 
-  const exams = ENTRANCE_EXAM_DATA.slice(0,3);
+  let recommendations = [];
+
+  try {
+
+    if (currentUser) {
+
+      const token = await currentUser.getIdToken();
+
+      const response = await fetch(
+        `${API_BASE}/api/recommendations`,
+        {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+
+      if (response.ok) {
+
+        const historyRecommendations = await response.json();
+
+        if (Array.isArray(historyRecommendations)) {
+
+          recommendations = historyRecommendations.map(item => {
+
+            const stream = DATA[item.stream_id];
+
+            let course = null;
+
+            if (
+              stream &&
+              stream.paths &&
+              item.path_id &&
+              stream.paths[item.path_id]
+            ) {
+              course = stream.paths[item.path_id];
+            }
+
+            return {
+              name:
+                item.name ||
+                course?.name ||
+                stream?.full ||
+                stream?.name ||
+                'Career Path',
+
+              desc:
+                item.desc ||
+                course?.desc ||
+                stream?.desc ||
+                'Explore this career path',
+
+              score:
+                Number(item.match ?? item.score ?? 0),
+
+              path:
+                item.path ||
+                (
+                  item.path_id
+                    ? `#/${item.stream_id}/${item.path_id}`
+                    : `#/${item.stream_id}`
+                )
+            };
+
+          });
+
+        }
+
+      } else {
+
+        console.warn(
+          'Recommendation API returned:',
+          response.status
+        );
+
+      }
+
+    }
+
+  } catch (error) {
+
+    console.error(
+      'Could not load personalized recommendations:',
+      error
+    );
+
+    recommendations = [];
+
+  }
+
+
+  // ============================================================
+  // FALLBACK FOR NEW STUDENTS
+  // ============================================================
+
+  if (recommendations.length === 0) {
+
+    recommendations = [
+      {
+        name: 'Explore Career Paths',
+        desc: 'Start exploring courses and careers to get personalized recommendations.',
+        score: 0,
+        path: '#/streams'
+      }
+    ];
+
+  }
+
+
+  // ============================================================
+  // LIMIT TO TOP 3
+  // ============================================================
+
+  recommendations = recommendations.slice(0, 3);
+
+
+  // ============================================================
+  // POPULAR ENTRANCE EXAMS
+  // ============================================================
+
+  const exams = ENTRANCE_EXAM_DATA.slice(0, 3);
+
+
+  // ============================================================
+  // HOME PAGE
+  // ============================================================
 
   main.innerHTML = `
+
     <section
       class="home-dashboard"
       style="
@@ -7495,25 +8167,36 @@ function renderHome(main, crumb){
         box-sizing:border-box;
         background:#F3EBD9;
         color:#152238;
+        padding:0;
       "
     >
 
-      <!-- WELCOME -->
-      <div style="margin-bottom:24px;">
+      <!-- =====================================================
+           WELCOME
+      ====================================================== -->
+
+      <div style="
+        margin-bottom:24px;
+      ">
+
         <div style="
           font-size:.78rem;
           font-weight:600;
           letter-spacing:.08em;
           color:#64748B;
           margin-bottom:8px;
-        ">CAREER DASHBOARD</div>
+        ">
+          CAREER DASHBOARD
+        </div>
 
         <h1 style="
           margin:0 0 10px;
           font-size:2rem;
           line-height:1.2;
           color:#152238;
-        ">Welcome back, ${userName}!</h1>
+        ">
+          Welcome back, ${userName}!
+        </h1>
 
         <p style="
           margin:0;
@@ -7522,9 +8205,14 @@ function renderHome(main, crumb){
         ">
           Explore courses, entrance exams and career paths to find the right direction after 10th class.
         </p>
+
       </div>
 
-      <!-- FOUR QUICK ACTION BOXES -->
+
+      <!-- =====================================================
+           FOUR QUICK ACTION BOXES
+      ====================================================== -->
+
       <div
         class="home-action-grid"
         style="
@@ -7537,11 +8225,32 @@ function renderHome(main, crumb){
       >
 
         ${[
-          ['#/recommend','🎯','Career Finder','Find careers based on your interests, goals and skills.'],
-          ['#/courses','📚','Compare Courses','Compare courses, duration, salary, careers and higher studies.'],
-          ['#/exams','📝','Entrance Exams','Explore entrance exams and the courses they can lead to.'],
-          ['#/saved','⭐','My Saved Paths','View and manage the career paths you have saved.']
+          [
+            '#/recommend',
+            '🎯',
+            'Career Finder',
+            'Find careers based on your interests, goals and skills.'
+          ],
+          [
+            '#/courses',
+            '📚',
+            'Compare Courses',
+            'Compare courses, duration, salary, careers and higher studies.'
+          ],
+          [
+            '#/exams',
+            '📝',
+            'Entrance Exams',
+            'Explore entrance exams and the courses they can lead to.'
+          ],
+          [
+            '#/saved',
+            '⭐',
+            'My Saved Paths',
+            'View and manage the career paths you have saved.'
+          ]
         ].map(x => `
+
           <a
             href="${x[0]}"
             class="home-action-card"
@@ -7552,83 +8261,145 @@ function renderHome(main, crumb){
               min-height:155px !important;
               padding:18px !important;
               box-sizing:border-box !important;
-              background:#F7F0E2 !important;
-              border:1px solid #D8C9AE !important;
+
+              background:#FFFFFF !important;
+
+              border:1px solid #E3E8EF !important;
               border-radius:12px !important;
-              box-shadow:none !important;
+
+              box-shadow:0 2px 8px rgba(15,23,42,.05) !important;
+
               text-decoration:none !important;
               color:#152238 !important;
+
+              transition:transform .15s ease, box-shadow .15s ease;
             "
           >
+
             <div>
+
               <div style="
                 width:42px;
                 height:42px;
+
                 display:flex;
                 align-items:center;
                 justify-content:center;
+
                 border-radius:50%;
+
                 background:#EEF4FF;
+
                 font-size:22px;
+
                 margin-bottom:12px;
-              ">${x[1]}</div>
+              ">
+                ${x[1]}
+              </div>
+
 
               <h3 style="
                 margin:0 0 7px;
                 font-size:.98rem;
                 color:#152238;
-              ">${x[2]}</h3>
+              ">
+                ${x[2]}
+              </h3>
+
 
               <p style="
                 margin:0;
                 font-size:.76rem;
                 line-height:1.45;
                 color:#64748B;
-              ">${x[3]}</p>
+              ">
+                ${x[3]}
+              </p>
+
             </div>
+
+
+            <!-- BLACK ARROW -->
 
             <span style="
               display:block !important;
+
               margin-top:12px !important;
+
               padding:0 !important;
+
               background:transparent !important;
+
               border:0 !important;
+
               color:#111111 !important;
+
               font-size:22px !important;
+
               line-height:1 !important;
+
               text-align:right !important;
-            ">→</span>
+            ">
+              →
+            </span>
+
           </a>
+
         `).join('')}
+
       </div>
 
-      <!-- THREE INDIVIDUAL BOXES -->
+
+      <!-- =====================================================
+           THREE INDIVIDUAL BOXES
+      ====================================================== -->
+
       <div
         class="home-dashboard-grid-three"
         style="
           display:grid !important;
-          grid-template-columns:minmax(0,1.5fr) minmax(250px,1fr) minmax(250px,1fr) !important;
+
+          grid-template-columns:
+            minmax(0,1.5fr)
+            minmax(250px,1fr)
+            minmax(250px,1fr) !important;
+
           gap:16px !important;
+
           width:100% !important;
+
           align-items:start !important;
         "
       >
 
-        <!-- BOX 1: RECOMMENDED -->
+
+        <!-- =================================================
+             BOX 1
+             RECOMMENDED FOR YOU
+        ================================================== -->
+
         <section
           class="home-panel home-panel-recommended"
           style="
             display:block !important;
+
             width:100% !important;
             min-width:0 !important;
+
             box-sizing:border-box !important;
+
             padding:18px !important;
+
             background:#FFFFFF !important;
+
             border:1px solid #E3E8EF !important;
+
             border-radius:12px !important;
+
             box-shadow:0 2px 8px rgba(15,23,42,.05) !important;
           "
         >
+
           <div style="
             display:flex;
             align-items:center;
@@ -7636,134 +8407,224 @@ function renderHome(main, crumb){
             gap:8px;
             margin-bottom:14px;
           ">
+
             <h2 style="
               margin:0;
               font-size:1rem;
               color:#152238;
-            ">Recommended for you</h2>
+            ">
+              Recommended for you
+            </h2>
 
-            <a href="#/recommend" style="
-              color:#2563EB;
-              font-size:.75rem;
-              font-weight:600;
-              text-decoration:none;
-              white-space:nowrap;
-            ">View All →</a>
+
+            <a
+              href="#/recommend"
+              style="
+                color:#2563EB;
+                font-size:.75rem;
+                font-weight:600;
+                text-decoration:none;
+                white-space:nowrap;
+              "
+            >
+              View All →
+            </a>
+
           </div>
+
 
           <div style="
             display:flex;
             flex-direction:column;
             gap:9px;
           ">
+
             ${recommendations.map(course => `
+
               <a
                 href="${course.path}"
                 class="home-recommendation"
                 style="
                   display:flex !important;
+
                   align-items:center !important;
+
                   gap:10px !important;
+
                   width:100% !important;
+
                   box-sizing:border-box !important;
+
                   padding:12px !important;
+
                   background:#FFFFFF !important;
+
                   border:1px solid #E3E8EF !important;
+
                   border-radius:9px !important;
+
                   text-decoration:none !important;
+
                   color:#152238 !important;
+
                   box-shadow:none !important;
                 "
               >
-                <div style="flex:1;min-width:0;">
+
+                <div style="
+                  flex:1;
+                  min-width:0;
+                ">
+
                   <div style="
                     font-size:.8rem;
                     font-weight:700;
                     color:#152238;
                     margin-bottom:3px;
-                  ">${course.name}</div>
+                  ">
+                    ${course.name}
+                  </div>
+
 
                   <div style="
                     font-size:.68rem;
                     color:#64748B;
                     line-height:1.35;
-                  ">${course.desc}</div>
+                  ">
+                    ${course.desc}
+                  </div>
+
 
                   <div style="
                     width:100%;
                     max-width:210px;
                     height:4px;
+
                     margin-top:7px;
+
                     background:#E9EEF3;
+
                     border-radius:999px;
+
                     overflow:hidden;
                   ">
+
                     <span style="
                       display:block;
-                      width:${course.score}%;
+
+                      width:${Math.max(
+                        0,
+                        Math.min(100, course.score)
+                      )}%;
+
                       height:100%;
+
                       background:#69B97C;
+
                       border-radius:999px;
                     "></span>
+
                   </div>
+
                 </div>
+
 
                 <div style="
                   flex-shrink:0;
                   min-width:48px;
                   text-align:right;
                 ">
+
                   <div style="
                     font-size:.95rem;
                     font-weight:700;
                     color:#18753D;
-                  ">${course.score}%</div>
+                  ">
+                    ${course.score}%
+                  </div>
+
                   <div style="
                     font-size:.64rem;
                     color:#64748B;
-                  ">Match</div>
+                  ">
+                    Match
+                  </div>
+
                 </div>
+
+
+                <!-- BLACK ARROW -->
 
                 <span style="
                   flex-shrink:0;
+
                   color:#111111 !important;
+
                   font-size:20px !important;
+
                   background:transparent !important;
+
                   border:0 !important;
+
                   padding:0 !important;
-                ">→</span>
+                ">
+                  →
+                </span>
+
               </a>
+
             `).join('')}
+
           </div>
+
         </section>
 
-        <!-- BOX 2: CAREER TOOLS -->
+
+        <!-- =================================================
+             BOX 2
+             YOUR CAREER TOOLS
+        ================================================== -->
+
         <section
           class="home-panel home-panel-tools"
           style="
             display:block !important;
+
             width:100% !important;
+
             min-width:0 !important;
+
             box-sizing:border-box !important;
+
             padding:18px !important;
+
             background:#FFFFFF !important;
+
             border:1px solid #E3E8EF !important;
+
             border-radius:12px !important;
+
             box-shadow:0 2px 8px rgba(15,23,42,.05) !important;
           "
         >
+
           <div style="
             display:flex;
             align-items:center;
             justify-content:space-between;
             margin-bottom:14px;
           ">
+
             <h2 style="
               margin:0;
               font-size:1rem;
               color:#152238;
-            ">Your Career Tools</h2>
+            ">
+              Your Career Tools
+            </h2>
+
           </div>
+
 
           <div style="
             display:flex;
@@ -7771,126 +8632,233 @@ function renderHome(main, crumb){
             gap:9px;
           ">
 
+
+            <!-- MY PROFILE -->
+
             <a
               href="#/profile"
               class="home-tool"
               style="
                 display:flex !important;
+
                 align-items:center !important;
+
                 justify-content:space-between !important;
+
                 width:100% !important;
+
                 min-height:66px !important;
+
                 padding:12px !important;
+
                 box-sizing:border-box !important;
+
                 background:#FFFFFF !important;
+
                 border:1px solid #E3E8EF !important;
+
                 border-radius:9px !important;
+
                 color:#152238 !important;
+
                 text-decoration:none !important;
               "
             >
-              <div style="display:flex;align-items:center;gap:10px;">
+
+              <div style="
+                display:flex;
+                align-items:center;
+                gap:10px;
+              ">
+
                 <div style="
                   width:36px;
                   height:36px;
+
                   display:flex;
                   align-items:center;
                   justify-content:center;
+
                   border-radius:9px;
+
                   background:#EEF4FF;
+
                   font-size:18px;
-                ">👤</div>
+                ">
+                  👤
+                </div>
+
+
                 <div>
+
                   <strong style="
                     display:block;
                     font-size:.78rem;
                     color:#152238;
-                  ">My Profile</strong>
+                  ">
+                    My Profile
+                  </strong>
+
                   <small style="
                     display:block;
                     margin-top:2px;
                     font-size:.65rem;
                     color:#64748B;
-                  ">Manage your information</small>
+                  ">
+                    Manage your information
+                  </small>
+
                 </div>
+
               </div>
+
+
+              <!-- BLACK ARROW -->
+
               <span style="
                 color:#111111 !important;
+
                 font-size:20px !important;
+
                 background:transparent !important;
+
                 border:0 !important;
-              ">→</span>
+              ">
+                →
+              </span>
+
             </a>
+
+
+            <!-- ENTRANCE EXAMS -->
 
             <a
               href="#/exams"
               class="home-tool"
               style="
                 display:flex !important;
+
                 align-items:center !important;
+
                 justify-content:space-between !important;
+
                 width:100% !important;
+
                 min-height:66px !important;
+
                 padding:12px !important;
+
                 box-sizing:border-box !important;
+
                 background:#FFFFFF !important;
+
                 border:1px solid #E3E8EF !important;
+
                 border-radius:9px !important;
+
                 color:#152238 !important;
+
                 text-decoration:none !important;
               "
             >
-              <div style="display:flex;align-items:center;gap:10px;">
+
+              <div style="
+                display:flex;
+                align-items:center;
+                gap:10px;
+              ">
+
                 <div style="
                   width:36px;
                   height:36px;
+
                   display:flex;
                   align-items:center;
                   justify-content:center;
+
                   border-radius:9px;
+
                   background:#FFF2EC;
+
                   font-size:18px;
-                ">📝</div>
+                ">
+                  📝
+                </div>
+
+
                 <div>
+
                   <strong style="
                     display:block;
                     font-size:.78rem;
                     color:#152238;
-                  ">Entrance Exams</strong>
+                  ">
+                    Entrance Exams
+                  </strong>
+
                   <small style="
                     display:block;
                     margin-top:2px;
                     font-size:.65rem;
                     color:#64748B;
-                  ">Explore exam routes</small>
+                  ">
+                    Explore exam routes
+                  </small>
+
                 </div>
+
               </div>
+
+
+              <!-- BLACK ARROW -->
+
               <span style="
                 color:#111111 !important;
+
                 font-size:20px !important;
+
                 background:transparent !important;
+
                 border:0 !important;
-              ">→</span>
+              ">
+                →
+              </span>
+
             </a>
 
           </div>
+
         </section>
 
-        <!-- BOX 3: POPULAR EXAMS -->
+
+        <!-- =================================================
+             BOX 3
+             POPULAR ENTRANCE EXAMS
+        ================================================== -->
+
         <section
           class="home-panel home-panel-exams"
           style="
             display:block !important;
+
             width:100% !important;
+
             min-width:0 !important;
+
             box-sizing:border-box !important;
+
             padding:18px !important;
+
             background:#FFFFFF !important;
+
             border:1px solid #E3E8EF !important;
+
             border-radius:12px !important;
+
             box-shadow:0 2px 8px rgba(15,23,42,.05) !important;
           "
         >
+
           <div style="
             display:flex;
             align-items:center;
@@ -7898,70 +8866,126 @@ function renderHome(main, crumb){
             gap:8px;
             margin-bottom:14px;
           ">
+
             <h2 style="
               margin:0;
               font-size:1rem;
               color:#152238;
-            ">Popular Entrance Exams</h2>
+            ">
+              Popular Entrance Exams
+            </h2>
 
-            <a href="#/exams" style="
-              color:#2563EB;
-              font-size:.75rem;
-              font-weight:600;
-              text-decoration:none;
-              white-space:nowrap;
-            ">View All →</a>
+
+            <a
+              href="#/exams"
+              style="
+                color:#2563EB;
+
+                font-size:.75rem;
+
+                font-weight:600;
+
+                text-decoration:none;
+
+                white-space:nowrap;
+              "
+            >
+              View All →
+            </a>
+
           </div>
+
 
           <div style="
             display:flex;
             flex-direction:column;
             gap:9px;
           ">
+
             ${exams.map(exam => `
+
               <a
                 href="#/exams"
                 class="home-exam"
                 style="
                   display:flex !important;
+
                   align-items:center !important;
+
                   justify-content:space-between !important;
+
                   gap:10px !important;
+
                   width:100% !important;
+
                   min-height:62px !important;
+
                   padding:12px !important;
+
                   box-sizing:border-box !important;
+
                   background:#FFFFFF !important;
+
                   border:1px solid #E3E8EF !important;
+
                   border-radius:9px !important;
+
                   color:#152238 !important;
+
                   text-decoration:none !important;
                 "
               >
+
                 <div>
+
                   <div style="
                     font-size:.78rem;
+
                     font-weight:700;
+
                     color:#152238;
-                  ">${exam.name}</div>
+                  ">
+                    ${exam.name}
+                  </div>
+
+
                   <div style="
                     font-size:.65rem;
+
                     color:#64748B;
+
                     margin-top:3px;
-                  ">${exam.route}</div>
+                  ">
+                    ${exam.route}
+                  </div>
+
                 </div>
+
+
+                <!-- BLACK ARROW -->
 
                 <span style="
                   flex-shrink:0;
+
                   color:#111111 !important;
+
                   font-size:20px !important;
+
                   background:transparent !important;
+
                   border:0 !important;
+
                   padding:0 !important;
-                ">→</span>
+                ">
+                  →
+                </span>
+
               </a>
+
             `).join('')}
+
           </div>
+
         </section>
 
       </div>
@@ -7970,7 +8994,49 @@ function renderHome(main, crumb){
   `;
 }
 
+async function trackClick(streamId, pathId = null, nodeId = null) {
+  try {
+    if (!currentUser) {
+      console.error("TRACKING: No logged-in user");
+      return;
+    }
+
+    const token = await currentUser.getIdToken(true);
+
+    const response = await fetch(`${API_BASE}/api/track`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        stream_id: streamId,
+        path_id: pathId,
+        node_id: nodeId
+      })
+    });
+
+    const data = await response.json();
+
+    console.log("TRACKING RESULT:", response.status, data);
+
+  } catch (error) {
+    console.error("TRACKING ERROR:", error);
+  }
+}
+
 function renderLeaf(main, crumb, stream, idPath, node, trail){
+    const parts = idPath.split('/');
+
+  try {
+    trackClick(
+      parts[0],
+      parts[1] || null,
+      parts.slice(2).join('/') || null
+    );
+  } catch (error) {
+    console.warn("Tracking failed:", error);
+  }
   const idParts = idPath.split('/');
   
   setCrumb(crumb, trail.concat([{label:node.name, hash:idPath}]));
