@@ -88,7 +88,115 @@ def get_all_streams_full(db: Session = Depends(get_db)):
         for s in streams
     }
 
+# ---------- Scholarship endpoints ----------
 
+import json
+from pathlib import Path
+
+SCHOLARSHIPS_FILE = (
+    Path(__file__).resolve().parent.parent
+    / "data"
+    / "scholarships"
+    / "scholarships_master.json"
+)
+
+
+@app.get("/api/scholarships")
+def list_scholarships(
+    search: str | None = None,
+    education_level: str | None = None,
+):
+    """
+    Return scholarships from the master scholarship dataset.
+
+    Optional filters:
+      search            - searches scholarship name/provider
+      education_level  - filters by education level
+    """
+
+    if not SCHOLARSHIPS_FILE.exists():
+        raise HTTPException(
+            status_code=500,
+            detail="Scholarship dataset not found",
+        )
+
+    try:
+        with open(SCHOLARSHIPS_FILE, "r", encoding="utf-8") as f:
+            scholarships = json.load(f)
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Unable to read scholarship dataset: {str(e)}",
+        )
+
+    if not isinstance(scholarships, list):
+        raise HTTPException(
+            status_code=500,
+            detail="Scholarship dataset must contain a list",
+        )
+
+    results = scholarships
+
+    if search:
+        search_lower = search.strip().lower()
+
+        results = [
+            scholarship
+            for scholarship in results
+            if search_lower in scholarship.get("name", "").lower()
+            or search_lower in scholarship.get("provider", "").lower()
+        ]
+
+    if education_level:
+        level_lower = education_level.strip().lower()
+
+        results = [
+            scholarship
+            for scholarship in results
+            if any(
+                level_lower in str(level).lower()
+                for level in scholarship.get("education_levels", [])
+            )
+        ]
+
+    return {
+        "total": len(results),
+        "scholarships": results,
+    }
+
+
+@app.get("/api/scholarships/{scholarship_index}")
+def get_scholarship(scholarship_index: int):
+    """Return one scholarship by its zero-based index."""
+
+    if not SCHOLARSHIPS_FILE.exists():
+        raise HTTPException(
+            status_code=500,
+            detail="Scholarship dataset not found",
+        )
+
+    try:
+        with open(SCHOLARSHIPS_FILE, "r", encoding="utf-8") as f:
+            scholarships = json.load(f)
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Unable to read scholarship dataset: {str(e)}",
+        )
+
+    if not isinstance(scholarships, list):
+        raise HTTPException(
+            status_code=500,
+            detail="Scholarship dataset must contain a list",
+        )
+
+    if scholarship_index < 0 or scholarship_index >= len(scholarships):
+        raise HTTPException(
+            status_code=404,
+            detail="Scholarship not found",
+        )
+
+    return scholarships[scholarship_index]
 # ---------- Click / usage tracking ----------
 
 @app.post("/api/track", response_model=schemas.TrackEventOut)

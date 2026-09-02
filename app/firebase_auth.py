@@ -1,5 +1,11 @@
+
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 import firebase_admin
+
 from firebase_admin import credentials, auth
 from fastapi import Depends, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials

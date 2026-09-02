@@ -1,0 +1,58 @@
+  {
+    "name": "PM-USP Special Scholarship Scheme for Students of J&K and Ladakh (SSS J&K and Ladakh)",
+    "provider": "Ministry of Education, Government of India",
+    "academic_year": "2025-26",
+    "scheme": "Pradhan Mantri Uchchatar Shiksha Protsahan (PM-USP) Yojana",
+    "education_levels": [
+      "Undergraduate Degree",
+      "Professional/Engineering",
+      "Medical"
+    ],
+    "eligible_regions": [
+      "Jammu & Kashmir",
+      "Ladakh"
+    ],
+    "total_fresh_scholarships": 5000,
+    "scholarship_distribution": {
+      "General Degree": 2070,
+      "Professional/Engineering": 2830,
+      "Medical": 100
+    },
+    "academic_fee_upper_limit": {
+      "General Degree": 30000,
+      "Professional/Engineering": 125000,
+      "Medical": 300000
+    },
+    "maintenance_allowance_per_year": 100000,
+    "family_income_limit": 800000,
+    "domicile_requirement": "Domicile of Union Territories of J&K and Ladakh",
+    "qualification_requirement": "Passed Class 12 from JKBOSE or CBSE affiliated schools located in J&K and Ladakh",
+    "lateral_entry_requirement": "Diploma in Engineering from Polytechnic Institutes recognized by DTE of J&K and Ladakh",
+    "application_portal": "AICTE web portal",
+    "payment_mode": "Direct Benefit Transfer (DBT) through PFMS",
+    "renewal_required": true,
+    "excluded_categories": [
+      "Open University courses",
+      "Students receiving another Central/State/UT Government scholarship",
+      "Management quota admissions",
+      "Diploma courses",
+      "Post-Graduate studies",
+      "Family income above Rs. 8 lakh",
+      "Applicants who did not register online on AICTE Portal",
+      "Admission to colleges outside the prescribed AICTE Portal list",
+      "Admission through Agents or NGOs"
+    ],
+    "eligible_institution_criteria": [
+      "Institutions having NAAC Grade 3.0 accreditation",
+      "Top 100 institutions according to NIRF",
+      "AICTE-approved institutions with 30% or more courses accredited by NBA",
+      "Institutions having more than 80% admission consecutively for the last 5 academic years",
+      "Eligible Government institutions for specified courses"
+    ],
+    "special_admission_requirements": {
+      "medical": "NEET qualification required where applicable",
+      "architecture": "NATA qualification required",
+      "integrated_law": "CLAT qualification required; National Law Universities only"
+    },
+    "official_source_file": "PM_USPY(SSSJKL)SchemeSpecifications.pdf"
+  }

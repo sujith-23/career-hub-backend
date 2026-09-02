@@ -1,0 +1,188 @@
+[
+  {
+    "name": "AICTE – Swanath Scholarship Scheme for Students",
+    "provider": "All India Council for Technical Education (AICTE)",
+    "academic_year": "May 2025 guideline",
+    "education_levels": ["Degree", "Diploma"],
+    "institution_requirement": "AICTE Approved institutions and courses",
+    "study_mode": "Regular",
+    "family_income_limit": 800000,
+    "amount_per_year": 50000,
+    "maximum_scholarships_per_year": 2000,
+    "degree_scholarships": 1000,
+    "diploma_scholarships": 1000,
+    "eligibility_categories": [
+      "Orphan",
+      "Either or both parents died due to COVID-19",
+      "Ward of Armed Forces and Central Paramilary Forces martyred in action",
+      "Parent suffering from critical life threatening disease",
+      "Parent died or severely disabled above 80% in accident"
+    ],
+    "other_scholarship_restriction": true,
+    "application_portal": "National Scholarship Portal",
+    "payment_mode": "Direct Benefit Transfer (DBT)",
+    "renewal_required": true,
+    "selection": {
+      "degree": "Percentage of marks obtained in 10+2/equivalent examination",
+      "diploma": "Percentage of marks obtained in 10th/equivalent examination"
+    },
+    "reservation": "As per Government of India norms",
+    "official_source_file": "AICTE_3039_G.pdf"
+  },
+  {
+    "name": "AICTE – Pragati Scholarship Scheme for Girl Students (Degree)",
+    "provider": "All India Council for Technical Education (AICTE)",
+    "academic_year": "2020-21",
+    "education_levels": ["Degree"],
+    "eligible_gender": ["Female"],
+    "institution_requirement": "AICTE approved institution",
+    "entry_requirement": [
+      "First year Degree course",
+      "Second year Degree course through lateral entry"
+    ],
+    "maximum_girl_children_per_family": 2,
+    "family_income_limit": 800000,
+    "number_of_scholarships": 5000,
+    "amount_per_year": 50000,
+    "maximum_duration_years": 4,
+    "lateral_entry_maximum_duration_years": 3,
+    "application_portal": "National Scholarship Portal",
+    "payment_mode": "Direct Benefit Transfer (DBT)",
+    "selection": "Merit based on percentage of marks obtained in 10+2/equivalent examination",
+    "renewal_required": true,
+    "reservation": "As per Government of India norms",
+    "other_scholarship_restriction": true,
+    "maximum_gap_after_qualifying_exam_years": 2,
+    "official_source_file": "AICTE_2010_G.pdf"
+  },
+  {
+    "name": "AICTE – Pragati Scholarship Scheme for Girl Students (Diploma)",
+    "provider": "All India Council for Technical Education (AICTE)",
+    "academic_year": "2020-21",
+    "education_levels": ["Diploma"],
+    "eligible_gender": ["Female"],
+    "institution_requirement": "AICTE approved institution",
+    "entry_requirement": [
+      "First year Diploma course",
+      "Second year Diploma course through lateral entry"
+    ],
+    "maximum_girl_children_per_family": 2,
+    "family_income_limit": 800000,
+    "number_of_scholarships": 5000,
+    "amount_per_year": 50000,
+    "maximum_duration_years": 3,
+    "lateral_entry_maximum_duration_years": 2,
+    "application_portal": "National Scholarship Portal",
+    "payment_mode": "Direct Benefit Transfer (DBT)",
+    "selection": "Merit based on percentage of marks obtained in 10th/equivalent examination",
+    "renewal_required": true,
+    "reservation": "As per Government of India norms",
+    "other_scholarship_restriction": true,
+    "maximum_gap_after_qualifying_exam_years": 2,
+    "official_source_file": "AICTE_2011_G.pdf"
+  },
+  {
+    "name": "AICTE – Saksham Scholarship Scheme for Specially-Abled Student (Degree)",
+    "provider": "All India Council for Technical Education (AICTE)",
+    "academic_year": "2020-21",
+    "education_levels": ["Degree"],
+    "institution_requirement": "AICTE approved institution",
+    "entry_requirement": [
+      "First year Degree course",
+      "Second year Degree course through lateral entry"
+    ],
+    "disability_requirement_percent": 40,
+    "family_income_limit": 800000,
+    "number_of_scholarships": "All eligible specially-abled students",
+    "amount_per_year": 50000,
+    "maximum_duration_years": 4,
+    "lateral_entry_maximum_duration_years": 3,
+    "application_portal": "National Scholarship Portal",
+    "payment_mode": "Direct Benefit Transfer (DBT)",
+    "renewal_required": true,
+    "maximum_gap_after_qualifying_exam_years": 2,
+    "other_scholarship_restriction": true,
+    "official_source_file": "AICTE_2012_G.pdf"
+  },
+  {
+    "name": "AICTE – Saksham Scholarship Scheme for Specially-Abled Student (Diploma)",
+    "provider": "All India Council for Technical Education (AICTE)",
+    "academic_year": "2020-21",
+    "education_levels": ["Diploma"],
+    "institution_requirement": "AICTE approved institution",
+    "entry_requirement": [
+      "First year Diploma course",
+      "Second year Diploma course through lateral entry"
+    ],
+    "disability_requirement_percent": 40,
+    "family_income_limit": 800000,
+    "number_of_scholarships": "All eligible specially-abled students",
+    "amount_per_year": 50000,
+    "maximum_duration_years": 3,
+    "lateral_entry_maximum_duration_years": 2,
+    "application_portal": "National Scholarship Portal",
+    "payment_mode": "Direct Benefit Transfer (DBT)",
+    "renewal_required": true,
+    "maximum_gap_after_qualifying_exam_years": 2,
+    "other_scholarship_restriction": true,
+    "official_source_file": "AICTE_2013_G.pdf"
+  },
+  {
+    "name": "PM-USP Special Scholarship Scheme for Students of J&K and Ladakh (SSS J&K and Ladakh)",
+    "provider": "Ministry of Education, Government of India",
+    "academic_year": "2025-26",
+    "scheme": "Pradhan Mantri Uchchatar Shiksha Protsahan (PM-USP) Yojana",
+    "education_levels": [
+      "Undergraduate Degree",
+      "Professional/Engineering",
+      "Medical"
+    ],
+    "eligible_regions": [
+      "Jammu & Kashmir",
+      "Ladakh"
+    ],
+    "total_fresh_scholarships": 5000,
+    "scholarship_distribution": {
+      "General Degree": 2070,
+      "Professional/Engineering": 2830,
+      "Medical": 100
+    },
+    "academic_fee_upper_limit": {
+      "General Degree": 30000,
+      "Professional/Engineering": 125000,
+      "Medical": 300000
+    },
+    "maintenance_allowance_per_year": 100000,
+    "family_income_limit": 800000,
+    "domicile_requirement": "Domicile of Union Territories of J&K and Ladakh",
+    "qualification_requirement": "Passed Class 12 from JKBOSE or CBSE affiliated schools located in J&K and Ladakh",
+    "lateral_entry_requirement": "Diploma in Engineering from Polytechnic Institutes recognized by DTE of J&K and Ladakh",
+    "application_portal": "AICTE web portal",
+    "payment_mode": "Direct Benefit Transfer (DBT) through PFMS",
+    "renewal_required": true,
+    "excluded_categories": [
+      "Open University courses",
+      "Students receiving another Central/State/UT Government scholarship",
+      "Management quota admissions",
+      "Diploma courses",
+      "Post-Graduate studies",
+      "Family income above Rs. 8 lakh",
+      "Applicants who did not register online on AICTE Portal",
+      "Admission to colleges outside the prescribed AICTE Portal list",
+      "Admission through Agents or NGOs"
+    ],
+    "eligible_institution_criteria": [
+      "Institutions having NAAC Grade 3.0 accreditation",
+      "Top 100 institutions according to NIRF",
+      "AICTE-approved institutions with 30% or more courses accredited by NBA",
+      "Institutions having more than 80% admission consecutively for the last 5 academic years",
+      "Eligible Government institutions for specified courses"
+    ],
+    "special_admission_requirements": {
+      "medical": "NEET qualification required where applicable",
+      "architecture": "NATA qualification required",
+      "integrated_law": "CLAT qualification required; National Law Universities only"
+    },
+    "official_source_file": "PM_USPY(SSSJKL)SchemeSpecifications.pdf"
+  }
+]

@@ -10,3 +10,4 @@ firebase-service-account.json
 
 Project Structure Summary_files/
 data/institutions/
+.env
