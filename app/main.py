@@ -285,6 +285,10 @@ def student_interest(db: Session = Depends(get_db), _admin=Depends(require_admin
 
 # ---------- Personalized recommendations ----------
 
+# ---------- Personalized recommendations ----------
+
+# ---------- Personalized recommendations ----------
+
 @app.get("/api/recommendations")
 def personalized_recommendations(
     db: Session = Depends(get_db),
@@ -301,7 +305,7 @@ def personalized_recommendations(
     from sqlalchemy import func
 
     # =========================================================
-    # 1. GET CLICK HISTORY
+    # 1. GET ONLY THIS USER'S CLICK HISTORY
     # =========================================================
 
     history = (
@@ -320,6 +324,9 @@ def personalized_recommendations(
             models.ClickEvent.path_id,
             models.ClickEvent.node_id,
         )
+        .order_by(
+            func.count(models.ClickEvent.id).desc()
+        )
         .all()
     )
 
@@ -327,104 +334,22 @@ def personalized_recommendations(
         return []
 
     # =========================================================
-    # 2. FIND HIGHEST-CLICKED STREAM
+    # 2. LOAD STREAM DATA
     # =========================================================
 
-    stream_clicks = {}
-
-    for row in history:
-
-        stream_id = row.stream_id
-        clicks = int(row.clicks or 0)
-
-        if not stream_id:
-            continue
-
-        stream_clicks[stream_id] = (
-            stream_clicks.get(stream_id, 0)
-            + clicks
-        )
-
-    if not stream_clicks:
-        return []
-
-    # Highest clicked stream
-    preferred_stream = max(
-        stream_clicks,
-        key=stream_clicks.get
-    )
-
-    highest_clicks = stream_clicks[preferred_stream]
+    streams = db.query(models.Stream).all()
 
     # =========================================================
-    # 3. FIND HIGHEST-CLICKED PATH IN THAT STREAM
+    # 3. BUILD LOOKUP FOR COURSE / CAREER NAMES
     # =========================================================
 
-    path_clicks = {}
+    node_lookup = {}
 
-    for row in history:
-
-        if row.stream_id != preferred_stream:
-            continue
-
-        if not row.path_id:
-            continue
-
-        key = (
-            row.stream_id,
-            row.path_id,
-        )
-
-        path_clicks[key] = (
-            path_clicks.get(key, 0)
-            + int(row.clicks or 0)
-        )
-
-    preferred_path = None
-
-    if path_clicks:
-
-        preferred_path = max(
-            path_clicks,
-            key=path_clicks.get
-        )[1]
-
-    # =========================================================
-    # 4. REMEMBER VISITED COURSES
-    # =========================================================
-
-    visited = set()
-
-    for row in history:
-
-        visited.add(
-            (
-                row.stream_id,
-                row.path_id,
-                row.node_id,
-            )
-        )
-
-    # =========================================================
-    # 5. GET ALL STREAM DATA
-    # =========================================================
-
-    streams = db.query(
-        models.Stream
-    ).all()
-
-    candidates = []
-
-    # =========================================================
-    # 6. FIND ALL FINAL COURSES
-    # =========================================================
-
-    def collect_courses(
+    def collect_nodes(
         stream_id,
         paths,
         parent_path=None,
     ):
-
         if not isinstance(paths, dict):
             return
 
@@ -433,142 +358,144 @@ def personalized_recommendations(
             if not isinstance(item, dict):
                 continue
 
+            current_path = parent_path or item_id
+
+            node_lookup[
+                (
+                    stream_id,
+                    current_path,
+                    item_id,
+                )
+            ] = {
+                "name": item.get(
+                    "name",
+                    item_id,
+                ),
+                "desc": item.get(
+                    "desc",
+                    "Explore this career path.",
+                ),
+            }
+
             children = item.get("children")
 
-            # FINAL COURSE
-            if not children:
-
-                candidates.append({
-                    "stream_id": stream_id,
-                    "path_id": parent_path or item_id,
-                    "node_id": item_id,
-                    "name": item.get(
-                        "name",
-                        item_id
-                    ),
-                    "desc": item.get(
-                        "desc",
-                        "Explore this career path."
-                    ),
-                })
-
-            else:
-
-                collect_courses(
+            if children:
+                collect_nodes(
                     stream_id,
                     children,
-                    parent_path or item_id,
+                    current_path,
                 )
 
     for stream in streams:
-
-        collect_courses(
+        collect_nodes(
             stream.id,
             stream.paths,
         )
 
     # =========================================================
-    # 7. ONLY UNVISITED COURSES
+    # 4. BUILD RECOMMENDATIONS FROM MOST-CLICKED ITEMS
     # =========================================================
 
-    unvisited = []
+    recommendations = []
 
-    for course in candidates:
+    for row in history:
 
-        key = (
-            course["stream_id"],
-            course["path_id"],
-            course["node_id"],
-        )
-
-        if key in visited:
+        if not row.stream_id:
             continue
 
-        unvisited.append(course)
+        clicks = int(row.clicks or 0)
 
-    # =========================================================
-    # 8. SCORE BASED ON HIGHEST CLICKED STREAM
-    # =========================================================
+        if clicks <= 0:
+            continue
 
-    scored = []
+        key = (
+            row.stream_id,
+            row.path_id,
+            row.node_id,
+        )
 
-    for course in unvisited:
+        info = node_lookup.get(key)
 
-        score = 0
+        # If exact lookup isn't available, use node_id
+        # as the display name.
+        if info:
+            name = info["name"]
+            desc = info["desc"]
+        else:
+            name = row.node_id or row.path_id or row.stream_id
+            desc = "Explore this career path."
 
-        # Same stream as highest-clicked interest
-        if course["stream_id"] == preferred_stream:
-            score += highest_clicks * 20
-
-        # Same parent path as highest-clicked interest
-        if (
-            preferred_path
-            and course["stream_id"] == preferred_stream
-            and course["path_id"] == preferred_path
-        ):
-            score += 50
-
-        # Other streams get much lower score
-        if course["stream_id"] != preferred_stream:
-            score += 1
-
-        scored.append({
-            **course,
-            "_score": score,
+        recommendations.append({
+            "stream_id": row.stream_id,
+            "path_id": row.path_id,
+            "node_id": row.node_id,
+            "name": name,
+            "desc": desc,
+            "clicks": clicks,
+            "score": clicks,
         })
 
     # =========================================================
-    # 9. HIGHEST SCORE FIRST
+    # 5. SORT BY HIGHEST CLICKS
     # =========================================================
 
-    scored.sort(
-        key=lambda x: x["_score"],
-        reverse=True
+    recommendations.sort(
+        key=lambda item: (
+            item["clicks"],
+            item["name"],
+        ),
+        reverse=True,
     )
 
     # =========================================================
-    # 10. TOP 2
+    # 6. SHOW TOP 3
     # =========================================================
 
-    recommendations = scored[:3]
+    recommendations = recommendations[:3]
 
     if not recommendations:
         return []
 
     # =========================================================
-    # 11. MATCH %
+    # 7. CALCULATE MATCH %
     # =========================================================
 
-    max_score = max(
-        item["_score"]
+    max_clicks = max(
+        item["clicks"]
+        for item in recommendations
+    )
+
+    min_clicks = min(
+        item["clicks"]
         for item in recommendations
     )
 
     for item in recommendations:
 
-        if max_score > 0:
-            match = round(
-                (
-                    item["_score"]
-                    / max_score
-                ) * 99
-            )
-        else:
-            match = 50
+        clicks = item["clicks"]
 
-        item["score"] = item["_score"]
-        item["match"] = max(
-            50,
-            min(99, match)
-        )
+        if max_clicks == min_clicks:
+
+            match = 90
+
+        else:
+
+            ratio = (
+                (clicks - min_clicks)
+                / (max_clicks - min_clicks)
+            )
+
+            match = round(
+                80 + (ratio * 19)
+            )
+
+        item["match"] = match
 
         item["path"] = (
             f"#/{item['stream_id']}/"
             f"{item['path_id']}/"
             f"{item['node_id']}"
         )
-
-        del item["_score"]
 
     return recommendations
 
