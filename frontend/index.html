@@ -7352,11 +7352,7 @@ async function renderProfile() {
     </div>
   `;
 
-  document
-    .getElementById('profileLogoutBtn')
-    .addEventListener('click', () => {
-      fbAuth.signOut();
-    });
+  
 
   try {
     const token = await currentUser.getIdToken(true);
@@ -7407,6 +7403,11 @@ async function renderProfile() {
 
     console.error('PROFILE ERROR:', error);
   }
+  document
+    .getElementById('profileLogoutBtn')
+    .addEventListener('click', () => {
+      fbAuth.signOut();
+    });
 }
 
 
