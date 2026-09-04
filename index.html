@@ -4774,6 +4774,20 @@ body{
 
 }
 
+
+/* =========================================================
+   LOGIN PAGE — CENTER ON DESKTOP ONLY
+   ========================================================= */
+
+@media (min-width: 801px) {
+
+  #main > div[style*="max-width:400px"] {
+    position: relative !important;
+    left: -135px !important;
+  }
+
+}
+
 </style>
 </head>
 <body>
@@ -7378,11 +7392,7 @@ async function renderProfile() {
         ? `${profile.marks}%`
         : 'Not set';
 
-    document
-      .getElementById('editProfileBtn')
-      .addEventListener('click', () => {
-        showEditProfile(profile);
-      });
+    
 
   } catch (error) {
     document.getElementById('profileMessage').innerHTML = `
@@ -7393,6 +7403,11 @@ async function renderProfile() {
 
     console.error('PROFILE ERROR:', error);
   }
+  document
+      .getElementById('editProfileBtn')
+      .addEventListener('click', () => {
+        showEditProfile(profile);
+      });
 }
 
 
