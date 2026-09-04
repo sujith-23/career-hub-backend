@@ -703,6 +703,35 @@ def update_profile(
 
 # ---------- Education Finder ----------
 
+# ---------- Admin - Student Data ----------
+
+@app.get("/api/admin/students")
+def get_all_students(
+    db: Session = Depends(get_db),
+    user_id: str = Depends(get_current_user),
+):
+    """Return all student profiles for the admin dashboard."""
+
+    # TODO: Replace this with your actual admin Firebase UID
+    ADMIN_UID = "mdOmkSdMU3MMYoQ8W4qpZflrJoO2"
+
+    if user_id != ADMIN_UID:
+        raise HTTPException(
+            status_code=403,
+            detail="Admin access required",
+        )
+
+    students = (
+        db.query(models.StudentProfile)
+        .order_by(models.StudentProfile.created_at.desc())
+        .all()
+    )
+
+    return {
+        "total": len(students),
+        "students": students,
+    }
+
 @app.get(
     "/api/institutions",
     response_model=schemas.InstitutionListOut
