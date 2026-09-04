@@ -7426,7 +7426,9 @@ function showEditProfile(profile) {
       : '';
 
   main.innerHTML = `
-    <a class="back-link" href="#/profile">‹ Back to profile</a>
+      <a href="#/profile" onclick="renderProfile(); return false;">
+  ‹ Back to profile
+</a>
 
     <div class="page-head">
       <div class="code">EDIT PROFILE</div>
