@@ -4853,6 +4853,11 @@ body{
           <span>Student Interest</span>
         </a>
 
+        <a href="#/admin-students" class="sidebar-link">
+  <span class="sidebar-icon">👥</span>
+  <span>Student Data</span>
+</a>
+
         <a href="#/analytics" class="sidebar-link">
           <span class="sidebar-icon">📊</span>
           <span>Analytics</span>
@@ -4942,7 +4947,641 @@ function parseHash(){
   return h ? h.split('/').filter(Boolean) : [];
 }
 
-function render(){
+
+async function renderAdminStudents() {
+  const main = document.getElementById('main');
+  const crumb = document.getElementById('crumb');
+
+  if (!currentUser) {
+    location.hash = '#/login';
+    return;
+  }
+
+  if (!ADMIN_EMAILS.includes(
+    (currentUser.email || '').toLowerCase()
+  )) {
+    main.innerHTML = `
+      <div class="detail-section">
+        <p style="color:#A2402F;font-weight:600;">
+          You're not authorized to view student data.
+        </p>
+      </div>
+    `;
+    return;
+  }
+
+  setCrumb(crumb, [
+    { label: 'Admin Students', hash: 'admin-students' }
+  ]);
+
+  main.innerHTML = `
+    <div class="page-head">
+      <div class="code">ADMIN DASHBOARD</div>
+      <h1>Student Data</h1>
+      <p>View registered student profiles.</p>
+    </div>
+
+    <div class="detail-section">
+
+      <div
+        id="adminStudentSummary"
+        style="
+          margin-bottom:20px;
+          padding:16px;
+          border:1px solid var(--rail);
+          border-radius:10px;
+          background:var(--card);
+        "
+      >
+        Loading student data...
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <input
+          id="adminStudentSearch"
+          type="text"
+          placeholder="Search by name, email, school or location..."
+          style="
+            width:100%;
+            box-sizing:border-box;
+            padding:12px;
+            border:1px solid var(--rail);
+            border-radius:8px;
+            background:var(--card);
+            font:inherit;
+          "
+        >
+      </div>
+
+      <div
+        id="adminStudentsTable"
+        style="
+          width:100%;
+          overflow-x:auto;
+        "
+      >
+        Loading...
+      </div>
+
+    </div>
+  `;
+
+  try {
+    const token = await currentUser.getIdToken(true);
+
+    const res = await fetch(
+      `${API_BASE}/api/admin/students`,
+      {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      }
+    );
+
+    if (!res.ok) {
+      const errorText = await res.text();
+
+      throw new Error(
+        errorText || 'Failed to load student data'
+      );
+    }
+
+    const data = await res.json();
+
+    const students = data.students || [];
+
+    document.getElementById(
+      'adminStudentSummary'
+    ).innerHTML = `
+      <strong style="font-size:18px;">
+        👥 Total Students: ${students.length}
+      </strong>
+    `;
+
+    const tableContainer =
+      document.getElementById('adminStudentsTable');
+
+
+    /* =========================
+       DISPLAY STUDENTS
+       ========================= */
+
+    function displayStudents(list) {
+
+      if (!list.length) {
+
+        tableContainer.innerHTML = `
+          <div
+            style="
+              padding:20px;
+              text-align:center;
+              border:1px solid var(--rail);
+              border-radius:10px;
+            "
+          >
+            No students found.
+          </div>
+        `;
+
+        return;
+      }
+
+
+      tableContainer.innerHTML = `
+        <table
+          style="
+            width:100%;
+            border-collapse:collapse;
+            min-width:950px;
+            background:var(--card);
+          "
+        >
+
+          <thead>
+            <tr>
+
+              <th style="
+                padding:12px;
+                text-align:left;
+                border-bottom:2px solid var(--rail);
+              ">
+                Name
+              </th>
+
+              <th style="
+                padding:12px;
+                text-align:left;
+                border-bottom:2px solid var(--rail);
+              ">
+                Phone
+              </th>
+
+              <th style="
+                padding:12px;
+                text-align:left;
+                border-bottom:2px solid var(--rail);
+              ">
+                Email
+              </th>
+
+              <th style="
+                padding:12px;
+                text-align:left;
+                border-bottom:2px solid var(--rail);
+              ">
+                School
+              </th>
+
+              <th style="
+                padding:12px;
+                text-align:left;
+                border-bottom:2px solid var(--rail);
+              ">
+                Location
+              </th>
+
+              <th style="
+                padding:12px;
+                text-align:left;
+                border-bottom:2px solid var(--rail);
+              ">
+                Marks
+              </th>
+
+              <th style="
+                padding:12px;
+                text-align:center;
+                border-bottom:2px solid var(--rail);
+              ">
+                Action
+              </th>
+
+            </tr>
+          </thead>
+
+
+          <tbody>
+
+            ${list.map((student, index) => `
+
+              <tr>
+
+                <td style="
+                  padding:12px;
+                  border-bottom:1px solid var(--rail);
+                ">
+                  ${escapeHtml(
+                    student.name || 'Not set'
+                  )}
+                </td>
+
+
+                <td style="
+                  padding:12px;
+                  border-bottom:1px solid var(--rail);
+                ">
+                  ${escapeHtml(
+                    student.phone || 'Not set'
+                  )}
+                </td>
+
+
+                <td style="
+                  padding:12px;
+                  border-bottom:1px solid var(--rail);
+                ">
+                  ${escapeHtml(
+                    student.email || 'Not set'
+                  )}
+                </td>
+
+
+                <td style="
+                  padding:12px;
+                  border-bottom:1px solid var(--rail);
+                ">
+                  ${escapeHtml(
+                    student.school_name || 'Not set'
+                  )}
+                </td>
+
+
+                <td style="
+                  padding:12px;
+                  border-bottom:1px solid var(--rail);
+                ">
+                  ${escapeHtml(
+                    student.location || 'Not set'
+                  )}
+                </td>
+
+
+                <td style="
+                  padding:12px;
+                  border-bottom:1px solid var(--rail);
+                ">
+                  ${
+                    student.marks !== null &&
+                    student.marks !== undefined &&
+                    student.marks !== ''
+                      ? `${student.marks}%`
+                      : 'Not set'
+                  }
+                </td>
+
+
+                <td style="
+                  padding:12px;
+                  text-align:center;
+                  border-bottom:1px solid var(--rail);
+                ">
+
+                  <button
+                    type="button"
+                    class="btn admin-view-student"
+                    data-student-index="${index}"
+                    style="
+                      padding:8px 14px;
+                      white-space:nowrap;
+                    "
+                  >
+                    👁️ View
+                  </button>
+
+                </td>
+
+              </tr>
+
+            `).join('')}
+
+          </tbody>
+
+        </table>
+      `;
+
+
+      /* =========================
+         VIEW BUTTONS
+         ========================= */
+
+      document
+        .querySelectorAll('.admin-view-student')
+        .forEach(button => {
+
+          button.addEventListener(
+            'click',
+            () => {
+
+              const index =
+                Number(
+                  button.dataset.studentIndex
+                );
+
+              const student =
+                list[index];
+
+              showAdminStudentDetails(
+                student
+              );
+            }
+          );
+
+        });
+    }
+
+
+    displayStudents(students);
+
+
+    /* =========================
+       SEARCH
+       ========================= */
+
+    const searchInput =
+      document.getElementById(
+        'adminStudentSearch'
+      );
+
+
+    searchInput.addEventListener(
+      'input',
+      () => {
+
+        const search =
+          searchInput.value
+            .trim()
+            .toLowerCase();
+
+
+        const filtered =
+          students.filter(student => {
+
+            return (
+              (student.name || '')
+                .toLowerCase()
+                .includes(search) ||
+
+              (student.email || '')
+                .toLowerCase()
+                .includes(search) ||
+
+              (student.phone || '')
+                .toLowerCase()
+                .includes(search) ||
+
+              (student.school_name || '')
+                .toLowerCase()
+                .includes(search) ||
+
+              (student.location || '')
+                .toLowerCase()
+                .includes(search)
+            );
+
+          });
+
+
+        displayStudents(filtered);
+      }
+    );
+
+  } catch (error) {
+
+    console.error(
+      'ADMIN STUDENTS ERROR:',
+      error
+    );
+
+
+    document.getElementById(
+      'adminStudentsTable'
+    ).innerHTML = `
+
+      <div
+        style="
+          padding:20px;
+          color:#A2402F;
+          font-weight:600;
+          border:1px solid var(--rail);
+          border-radius:10px;
+        "
+      >
+
+        ❌ Unable to load student data.
+
+        <br><br>
+
+        ${escapeHtml(
+          error.message || 'Unknown error'
+        )}
+
+      </div>
+
+    `;
+  }
+}
+
+function showAdminStudentDetails(student) {
+
+  const main = document.getElementById('main');
+  const crumb = document.getElementById('crumb');
+
+  setCrumb(crumb, [
+    {
+      label: 'Admin Students',
+      hash: 'admin-students'
+    },
+    {
+      label: 'Student Details',
+      hash: 'admin-students'
+    }
+  ]);
+
+  const marks =
+    student.marks !== null &&
+    student.marks !== undefined &&
+    student.marks !== ''
+      ? `${student.marks}%`
+      : 'Not set';
+
+  const createdAt =
+    student.created_at
+      ? new Date(student.created_at).toLocaleString()
+      : 'Not available';
+
+  main.innerHTML = `
+
+    <a
+  href="#/admin-students"
+  class="back-link"
+  onclick="renderAdminStudents(); return false;"
+>
+  ‹ Back to Student Data
+</a>
+
+    <div class="page-head">
+
+      <div class="code">
+        ADMIN DASHBOARD
+      </div>
+
+      <h1>
+        Student Details
+      </h1>
+
+      <p>
+        Complete student profile information.
+      </p>
+
+    </div>
+
+
+    <div class="detail-section">
+
+      <div style="
+        margin-bottom:18px;
+        padding:18px;
+        border:1px solid var(--rail);
+        border-radius:10px;
+        background:var(--card);
+      ">
+
+        <strong>Name</strong>
+
+        <div style="
+          margin-top:6px;
+          font-size:18px;
+        ">
+          ${escapeHtml(student.name || 'Not set')}
+        </div>
+
+      </div>
+
+
+      <div style="
+        margin-bottom:18px;
+        padding:18px;
+        border:1px solid var(--rail);
+        border-radius:10px;
+        background:var(--card);
+      ">
+
+        <strong>Phone Number</strong>
+
+        <div style="margin-top:6px;">
+          ${escapeHtml(student.phone || 'Not set')}
+        </div>
+
+      </div>
+
+
+      <div style="
+        margin-bottom:18px;
+        padding:18px;
+        border:1px solid var(--rail);
+        border-radius:10px;
+        background:var(--card);
+      ">
+
+        <strong>Email</strong>
+
+        <div style="margin-top:6px;">
+          ${escapeHtml(student.email || 'Not set')}
+        </div>
+
+      </div>
+
+
+      <div style="
+        margin-bottom:18px;
+        padding:18px;
+        border:1px solid var(--rail);
+        border-radius:10px;
+        background:var(--card);
+      ">
+
+        <strong>School Name</strong>
+
+        <div style="margin-top:6px;">
+          ${escapeHtml(student.school_name || 'Not set')}
+        </div>
+
+      </div>
+
+
+      <div style="
+        margin-bottom:18px;
+        padding:18px;
+        border:1px solid var(--rail);
+        border-radius:10px;
+        background:var(--card);
+      ">
+
+        <strong>Location</strong>
+
+        <div style="margin-top:6px;">
+          ${escapeHtml(student.location || 'Not set')}
+        </div>
+
+      </div>
+
+
+      <div style="
+        margin-bottom:18px;
+        padding:18px;
+        border:1px solid var(--rail);
+        border-radius:10px;
+        background:var(--card);
+      ">
+
+        <strong>Marks / Percentage</strong>
+
+        <div style="
+          margin-top:6px;
+          font-size:18px;
+          font-weight:600;
+        ">
+          ${marks}
+        </div>
+
+      </div>
+
+
+      <div style="
+        margin-bottom:18px;
+        padding:18px;
+        border:1px solid var(--rail);
+        border-radius:10px;
+        background:var(--card);
+      ">
+
+        <strong>Registered On</strong>
+
+        <div style="margin-top:6px;">
+          ${escapeHtml(createdAt)}
+        </div>
+
+      </div>
+
+
+      <div style="margin-top:25px;">
+
+        <a
+  href="#/admin-students"
+  class="back-link"
+  onclick="renderAdminStudents(); return false;"
+>
+  ‹ Back to Student Data
+</a>
+
+      </div>
+
+    </div>
+  `;
+}
+
+
+function render() {
   window.scrollTo(0, 0);
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
@@ -4976,21 +5615,25 @@ function render(){
      AUTH PAGE UI
      ========================= */
 
-  if(isAuthPage){
-    const careerSearch = document.getElementById('careerSearch');
-    const searchResults = document.getElementById('searchResults');
+  if (isAuthPage) {
 
-    if(careerSearch){
+    const careerSearch =
+      document.getElementById('careerSearch');
+
+    const searchResults =
+      document.getElementById('searchResults');
+
+    if (careerSearch) {
       careerSearch.value = '';
     }
 
-    if(searchResults){
+    if (searchResults) {
       searchResults.innerHTML = '';
       searchResults.style.display = 'none';
     }
 
     // Hide sidebar
-    if(sidebar){
+    if (sidebar) {
       sidebar.style.setProperty(
         'display',
         'none',
@@ -4998,8 +5641,8 @@ function render(){
       );
     }
 
-    // Hide complete dashboard topbar
-    if(dashboardTopbar){
+    // Hide dashboard topbar
+    if (dashboardTopbar) {
       dashboardTopbar.style.setProperty(
         'display',
         'none',
@@ -5008,7 +5651,7 @@ function render(){
     }
 
     // Hide search
-    if(dashboardSearch){
+    if (dashboardSearch) {
       dashboardSearch.style.setProperty(
         'display',
         'none',
@@ -5017,7 +5660,7 @@ function render(){
     }
 
     // Hide profile/login/signup area
-    if(authBox){
+    if (authBox) {
       authBox.style.setProperty(
         'display',
         'none',
@@ -5025,8 +5668,8 @@ function render(){
       );
     }
 
-    // Hide old topbar if it exists
-    if(topbar){
+    // Hide old topbar
+    if (topbar) {
       topbar.style.setProperty(
         'display',
         'none',
@@ -5034,16 +5677,15 @@ function render(){
       );
     }
 
-  }
-  else{
+  } else {
 
     // Show sidebar
-    if(sidebar){
+    if (sidebar) {
       sidebar.style.removeProperty('display');
     }
 
     // Show dashboard topbar
-    if(dashboardTopbar){
+    if (dashboardTopbar) {
       dashboardTopbar.style.setProperty(
         'display',
         'flex',
@@ -5052,7 +5694,7 @@ function render(){
     }
 
     // Show search
-    if(dashboardSearch){
+    if (dashboardSearch) {
       dashboardSearch.style.setProperty(
         'display',
         'block',
@@ -5061,14 +5703,13 @@ function render(){
     }
 
     // Show profile/auth area
-    if(authBox){
+    if (authBox) {
       authBox.style.setProperty(
         'display',
         'flex',
         'important'
       );
     }
-
   }
 
 
@@ -5081,7 +5722,7 @@ function render(){
       'header.topbar .brand'
     );
 
-  if(brand){
+  if (brand) {
 
     const isAdminUser =
       currentUser &&
@@ -5100,65 +5741,91 @@ function render(){
      ROUTES
      ========================= */
 
-  if(parts[0] === 'login'){
+  // LOGIN
+  if (parts[0] === 'login') {
     renderAuthPage('login');
     return;
   }
 
-  if(parts[0] === 'signup'){
+
+  // SIGNUP
+  if (parts[0] === 'signup') {
     renderAuthPage('signup');
     return;
   }
-if(parts[0] === 'streams'){
-  renderStreams(main, crumb);
-  return;
-}
-  if(parts[0] === 'saved'){
+
+
+  // STREAMS
+  if (parts[0] === 'streams') {
+    renderStreams(main, crumb);
+    return;
+  }
+
+
+  // SAVED PATHS
+  if (parts[0] === 'saved') {
     renderSavedPaths();
     return;
   }
 
-  if(parts[0] === 'courses'){
+
+  // COURSES
+  if (parts[0] === 'courses') {
     renderCourseComparison();
     return;
   }
 
-  if(parts[0] === 'exams'){
+
+  // EXAMS
+  if (parts[0] === 'exams') {
     renderEntranceExams();
     return;
   }
 
-  if(parts[0] === 'institutions'){
+
+  // INSTITUTIONS
+  if (parts[0] === 'institutions') {
     renderEducationFinder();
     return;
   }
 
-  if(parts[0] === 'scholarships'){
+
+  // SCHOLARSHIPS
+  if (parts[0] === 'scholarships') {
     renderScholarshipFinder();
     return;
   }
 
-  if(parts[0] === 'recommend'){
+
+  // RECOMMENDATIONS
+  if (parts[0] === 'recommend') {
     renderRecommendations();
     return;
   }
 
-  if(parts[0] === 'analytics'){
 
-    if(!currentUser){
+  // ANALYTICS
+  if (parts[0] === 'analytics') {
+
+    if (!currentUser) {
       location.hash = '#/login';
       return;
     }
 
-    if(!ADMIN_EMAILS.includes(
-      (currentUser.email || '').toLowerCase()
-    )){
+    if (
+      !ADMIN_EMAILS.includes(
+        (currentUser.email || '').toLowerCase()
+      )
+    ) {
+
       main.innerHTML = `
         <a class="back-link" href="#/">‹ Back to home</a>
+
         <p style="padding:20px;color:#A2402F;">
           You're not authorized to view analytics.
         </p>
       `;
+
       return;
     }
 
@@ -5166,32 +5833,73 @@ if(parts[0] === 'streams'){
     return;
   }
 
-  if(parts[0] === 'students'){
+
+  // STUDENT INTEREST
+  if (parts[0] === 'students') {
     renderStudentInterest();
     return;
   }
 
-  if(parts[0] === 'profile'){
-    renderProfile();
-    return;
-  }
 
-  if(parts[0] === 'admin-saved'){
+  // ADMIN STUDENTS
+  if (parts[0] === 'admin-students') {
 
-    if(!currentUser){
+    if (!currentUser) {
       location.hash = '#/login';
       return;
     }
 
-    if(!ADMIN_EMAILS.includes(
-      (currentUser.email || '').toLowerCase()
-    )){
+    if (
+      !ADMIN_EMAILS.includes(
+        (currentUser.email || '').toLowerCase()
+      )
+    ) {
+
       main.innerHTML = `
         <a class="back-link" href="#/">‹ Back to home</a>
+
+        <p style="padding:20px;color:#A2402F;">
+          You're not authorized to view student data.
+        </p>
+      `;
+
+      return;
+    }
+
+    renderAdminStudents();
+    return;
+  }
+
+
+  // PROFILE
+  if (parts[0] === 'profile') {
+    renderProfile();
+    return;
+  }
+
+
+  // ADMIN SAVED PATHS
+  if (parts[0] === 'admin-saved') {
+
+    if (!currentUser) {
+      location.hash = '#/login';
+      return;
+    }
+
+    if (
+      !ADMIN_EMAILS.includes(
+        (currentUser.email || '').toLowerCase()
+      )
+    ) {
+
+      main.innerHTML = `
+        <a class="back-link" href="#/">‹ Back to home</a>
+
         <p style="padding:20px;color:#A2402F;">
           You're not authorized to view student saved paths.
         </p>
       `;
+
       return;
     }
 
@@ -5199,30 +5907,51 @@ if(parts[0] === 'streams'){
     return;
   }
 
-  if(parts.length === 0){
-    renderHome(main,crumb);
+
+  /* =========================
+     HOME
+     ========================= */
+
+  if (parts.length === 0) {
+    renderHome(main, crumb);
     return;
   }
+
+
+  /* =========================
+     STREAM ROUTES
+     ========================= */
 
   const streamId = parts[0];
+
   const stream = DATA[streamId];
 
-  if(!stream){
-    renderHome(main,crumb);
+  if (!stream) {
+    renderHome(main, crumb);
     return;
   }
 
-  if(parts.length === 1){
+
+  // STREAM HOME
+  if (parts.length === 1) {
+
     renderStream(
       main,
       crumb,
       streamId,
       stream
     );
+
     return;
   }
 
-  let node = stream.paths[parts[1]];
+
+  /* =========================
+     STREAM NODE
+     ========================= */
+
+  let node =
+    stream.paths[parts[1]];
 
   let trail = [
     {
@@ -5234,34 +5963,50 @@ if(parts[0] === 'streams'){
   let idPath =
     streamId + '/' + parts[1];
 
-  if(!node){
-    renderHome(main,crumb);
+
+  if (!node) {
+    renderHome(main, crumb);
     return;
   }
 
-  for(let i = 2; i < parts.length; i++){
+
+  /* =========================
+     CHILD NODES
+     ========================= */
+
+  for (
+    let i = 2;
+    i < parts.length;
+    i++
+  ) {
 
     trail.push({
       label: node.name,
       hash: idPath
     });
 
-    if(
+
+    if (
       node.children &&
       node.children[parts[i]]
-    ){
+    ) {
 
       idPath += '/' + parts[i];
 
       node =
         node.children[parts[i]];
 
-    }else{
+    } else {
       break;
     }
   }
 
-  if(node.children){
+
+  /* =========================
+     GROUP / LEAF
+     ========================= */
+
+  if (node.children) {
 
     renderGroup(
       main,
@@ -5272,7 +6017,7 @@ if(parts[0] === 'streams'){
       trail
     );
 
-  }else{
+  } else {
 
     renderLeaf(
       main,
@@ -5284,8 +6029,6 @@ if(parts[0] === 'streams'){
     );
   }
 }
-
-
 
 function renderStream(main, crumb, id, stream){
   
@@ -7426,7 +8169,7 @@ function showEditProfile(profile) {
       : '';
 
   main.innerHTML = `
-      <a href="#/profile" onclick="renderProfile(); return false;">
+    <a href="#/profile" onclick="location.hash='#/profile'; return false;">
   ‹ Back to profile
 </a>
 
