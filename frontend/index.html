@@ -3763,6 +3763,52 @@ html,body{
  .cvh-photo-editor .btn-plain{display:block;margin:9px 0 0}
 }
 
+
+
+/* CUSTOM TOPBAR COLORS: Search, Find My Career, and My Profile */
+.dashboard-topbar .dashboard-search input,
+.dashboard-topbar input[type="text"],
+.dashboard-topbar input[type="search"] {
+  background: #FFFFFF !important;
+  color: #172554 !important;
+  border: 1px solid #CBD5E1 !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+}
+.dashboard-topbar .dashboard-search input::placeholder,
+.dashboard-topbar input[type="text"]::placeholder,
+.dashboard-topbar input[type="search"]::placeholder {
+  color: #64748B !important;
+  opacity: 1 !important;
+}
+.dashboard-topbar .dashboard-search input:focus,
+.dashboard-topbar input[type="text"]:focus,
+.dashboard-topbar input[type="search"]:focus {
+  border-color: #2563EB !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.13) !important;
+}
+.dashboard-topbar .dashboard-recommend-btn {
+  background: #2563EB !important;
+  color: #FFFFFF !important;
+  border: 1px solid #2563EB !important;
+  box-shadow: 0 3px 9px rgba(37, 99, 235, 0.18) !important;
+}
+.dashboard-topbar .dashboard-recommend-btn:hover {
+  background: #1D4ED8 !important;
+  color: #FFFFFF !important;
+  border-color: #1D4ED8 !important;
+}
+.dashboard-topbar .dashboard-profile-button {
+  background: #E8F0FF !important;
+  color: #1E3A8A !important;
+  border: 1px solid #BBD0FF !important;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.06) !important;
+}
+.dashboard-topbar .dashboard-profile-button:hover {
+  background: #D8E5FF !important;
+  color: #1E3A8A !important;
+  border-color: #93B4FF !important;
+}
+
 </style>
 
 <style id="final-home-dashboard-css">
@@ -4881,6 +4927,120 @@ body{
 }
 
 </style>
+
+<style id="cvh-student-chatbot-styles">
+#cvh-chat-launcher{position:static;flex:0 0 auto;z-index:40;border:0;border-radius:999px;background:#17212b;color:#fff;padding:14px 18px;display:flex;align-items:center;gap:10px;font:600 14px Inter,Arial,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.22);cursor:pointer;transition:transform .18s,box-shadow .18s}
+#cvh-chat-launcher:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.25)}
+#cvh-chat-launcher .cvh-chat-bubble-icon{width:30px;height:30px;border-radius:50%;background:#eee8d6;color:#17212b;display:grid;place-items:center;font-size:17px}
+#cvh-chat-panel{position:fixed;right:24px;top:82px;bottom:auto;width:min(390px,calc(100vw - 28px));height:min(570px,calc(100vh - 125px));z-index:9999;display:none;flex-direction:column;background:#f7f3e7;color:#2a2318;border:1px solid #d3c9a9;border-radius:18px;box-shadow:0 18px 55px rgba(0,0,0,.25);overflow:hidden;font-family:Inter,Arial,sans-serif}
+#cvh-chat-panel.cvh-chat-open{display:flex}
+.cvh-chat-header{padding:17px 18px;background:#17212b;color:#fff;display:flex;align-items:center;gap:11px}
+.cvh-chat-avatar{width:40px;height:40px;border-radius:13px;background:#eee8d6;color:#17212b;display:grid;place-items:center;font-size:20px}
+.cvh-chat-header-copy{flex:1;min-width:0}.cvh-chat-header-copy strong{display:block;font-size:15px}.cvh-chat-header-copy small{display:block;margin-top:3px;color:#d7dddf;font-size:11px}
+.cvh-chat-close{border:0;background:transparent;color:white;font-size:24px;padding:4px 7px;cursor:pointer}
+#cvh-chat-messages{flex:1;overflow:auto;padding:16px 13px;display:flex;flex-direction:column;gap:11px;scroll-behavior:smooth}
+.cvh-chat-message{max-width:88%;padding:11px 13px;border-radius:14px;font-size:13px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
+.cvh-chat-message.bot{align-self:flex-start;background:#fffdf7;border:1px solid #e2d8c0;border-bottom-left-radius:4px}
+.cvh-chat-message.user{align-self:flex-end;background:#17212b;color:white;border-bottom-right-radius:4px}
+.cvh-chat-quick{display:flex;flex-wrap:wrap;gap:6px;padding:0 13px 10px}
+.cvh-chat-quick button{border:1px solid #cfc3a5;background:#fffdf7;color:#2a2318;border-radius:999px;padding:7px 9px;font-size:11px;cursor:pointer}
+.cvh-chat-quick button:hover{background:#e3dbc3}
+.cvh-chat-compose{display:flex;align-items:flex-end;gap:8px;padding:12px;border-top:1px solid #d3c9a9;background:#fffdf7}
+#cvh-chat-input{flex:1;min-width:0;max-height:100px;resize:none;border:1px solid #d3c9a9;border-radius:12px;padding:11px 12px;font:13px Inter,Arial,sans-serif;background:#fff;color:#2a2318;outline:none}
+#cvh-chat-input:focus{border-color:#17212b}
+#cvh-chat-send{width:42px;height:42px;flex-shrink:0;border:0;border-radius:12px;background:#17212b;color:white;font-size:17px;cursor:pointer}
+#cvh-chat-send:disabled{opacity:.5;cursor:wait}
+.cvh-chat-note{text-align:center;padding:0 12px 9px;font-size:10px;color:#756b58;background:#fffdf7}
+.cvh-chat-typing{font-size:12px;color:#756b58;padding:2px 4px}
+@media(max-width:800px){
+  #cvh-chat-launcher{
+    position:absolute;right:60px;top:10px;
+    min-height:40px;padding:7px 10px;gap:6px;
+    font-size:12px;white-space:nowrap;
+  }
+  #cvh-chat-launcher .cvh-chat-bubble-icon{width:25px;height:25px;font-size:14px}
+  #cvh-chat-panel{right:8px;top:68px;bottom:auto;width:calc(100vw - 16px);height:min(72vh,600px);border-radius:16px}
+}
+@media(max-width:420px){
+  #cvh-chat-launcher{right:58px;padding:6px 8px;font-size:11px}
+}
+</style>
+
+
+<style id="cvh-interactive-topbar-colors-purple">
+/* Interactive purple + pink top bar controls */
+.dashboard-search input {
+  background: #ffffff !important;
+  color: #3b0764 !important;
+  border: 1.5px solid #e9d5ff !important;
+  box-shadow: 0 2px 8px rgba(147, 51, 234, .07);
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.dashboard-search input::placeholder { color: #78716c; opacity: 1; }
+.dashboard-search input:hover {
+  border-color: #c084fc !important;
+  background: #fdfaff !important;
+}
+.dashboard-search input:focus {
+  border-color: #9333ea !important;
+  box-shadow: 0 0 0 4px rgba(147, 51, 234, .17) !important;
+  background: #ffffff !important;
+}
+.dashboard-recommend-btn {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #9333ea 0%, #db2777 100%) !important;
+  border: 1px solid #9333ea !important;
+  box-shadow: 0 4px 12px rgba(147, 51, 234, .22);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+.dashboard-recommend-btn:hover {
+  color: #ffffff !important;
+  filter: saturate(1.15) brightness(.96);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(219, 39, 119, .27);
+}
+.dashboard-recommend-btn:focus-visible, .dashboard-profile-button:focus-visible {
+  outline: 3px solid rgba(192, 132, 252, .55) !important;
+  outline-offset: 3px;
+}
+.dashboard-profile-button {
+  color: #581c87 !important;
+  background: linear-gradient(135deg, #faf5ff 0%, #fdf2f8 100%) !important;
+  border: 1px solid #e9d5ff !important;
+  box-shadow: 0 2px 8px rgba(147, 51, 234, .08);
+  transition: background .2s ease, border-color .2s ease, transform .18s ease, box-shadow .18s ease;
+}
+.dashboard-profile-button:hover {
+  color: #581c87 !important;
+  background: linear-gradient(135deg, #f3e8ff 0%, #fce7f3 100%) !important;
+  border-color: #c084fc !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(147, 51, 234, .16);
+}
+.dashboard-profile-button .profile-avatar {
+  background: linear-gradient(135deg, #9333ea, #db2777) !important;
+  color: #ffffff !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-search input, .dashboard-recommend-btn, .dashboard-profile-button { transition: none !important; }
+}
+/* FINAL OVERRIDE: white-and-blue Find My Career button */
+.dashboard-topbar .dashboard-recommend-btn {
+  color: #1d4ed8 !important;
+  background: #ffffff !important;
+  border: 1px solid #2563eb !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, .14) !important;
+  transition: color .18s ease, background .18s ease, transform .18s ease, box-shadow .18s ease !important;
+}
+.dashboard-topbar .dashboard-recommend-btn:hover {
+  color: #ffffff !important;
+  background: #2563eb !important;
+  border-color: #1d4ed8 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(37, 99, 235, .28) !important;
+}
+</style>
+
 </head>
 <body>
 <div id="app" class="dashboard-app">
@@ -4999,6 +5159,10 @@ body{
       >
         🎯 Find My Career
       </a>
+
+      <button id="cvh-chat-launcher" type="button" aria-label="Open student career chat" aria-expanded="false">
+        <span class="cvh-chat-bubble-icon">✦</span><span>AI Assistant</span>
+      </button>
 
       <div id="authBox" class="dashboard-auth"></div>
 
@@ -8180,19 +8344,6 @@ async function renderProfile() {
     if (!getLocalProfilePhoto()) document.getElementById('profileAvatar').textContent = first;
     document.getElementById('editProfileBtn').addEventListener('click', () => showEditProfile(profile));
     document.getElementById('editProfileBtn2').addEventListener('click', () => showEditProfile(profile));
-
-    // First-time onboarding: automatically open the edit form when the profile
-    // has not yet been completed. This flag is stored separately for each user.
-    const onboardingKey = 'cvh_profile_onboarding_complete_' + currentUser.uid;
-    const profileIsIncomplete = !profile.phone || !profile.school_name || !profile.location ||
-      profile.marks === null || profile.marks === undefined || profile.marks === '';
-    if (!localStorage.getItem(onboardingKey) && profileIsIncomplete) {
-      setTimeout(() => {
-        if (currentUser && document.getElementById('main')?.querySelector('.cvh-profile-page')) {
-          showEditProfile(profile, true);
-        }
-      }, 150);
-    }
   } catch (error) {
     document.getElementById('profileMessage').innerHTML = '<div class="cvh-error-note">Unable to load your profile details. Check that the backend is running and try refreshing.</div>';
     console.error('PROFILE ERROR:', error);
@@ -8204,7 +8355,7 @@ async function renderProfile() {
   });
 }
 
-function showEditProfile(profile, isOnboarding = false) {
+function showEditProfile(profile) {
   const main = document.getElementById('main');
   const photo = getLocalProfilePhoto();
   const safeName = escapeHtml(profile.name || currentUser.displayName || '');
@@ -8288,7 +8439,6 @@ function showEditProfile(profile, isOnboarding = false) {
         throw new Error(errorText || 'Failed to save profile');
       }
       await res.json();
-      localStorage.setItem('cvh_profile_onboarding_complete_' + currentUser.uid, '1');
       if (pendingPhoto !== null) {
         if (pendingPhoto) localStorage.setItem('cvh_profile_photo_' + currentUser.uid, pendingPhoto);
         else localStorage.removeItem('cvh_profile_photo_' + currentUser.uid);
@@ -8728,352 +8878,184 @@ async function renderScholarshipFinder(){
 }
 
 
+const LOCAL_SCHOLARSHIP_DATA = [
+  {
+    id:'ap-post-matric',
+    name:'Andhra Pradesh Post-Matric Scholarships (RTF / MTF)',
+    provider:'Government of Andhra Pradesh',
+    education_levels:['Intermediate','Diploma','Degree','Undergraduate','Postgraduate'],
+    level_keys:['intermediate','after10','degree','postgraduate'],
+    eligible_regions:['andhra-pradesh'],
+    eligibility_categories:['sc','st','obc','ebc','minority','pwd'],
+    family_income_limit:null,
+    amount_per_year:null,
+    benefit_text:'Eligible tuition-fee reimbursement (RTF) and/or maintenance support (MTF); amount depends on course and approved eligibility.',
+    summary:'For eligible Andhra Pradesh students from notified categories studying post-matric courses. Eligibility and income rules depend on the current state guidelines.',
+    application_portal:'https://jnanabhumi.ap.gov.in/',
+    renewal_required:true,
+    entry_requirement:['Post-matric course','AP residency and category/document requirements apply'],
+    source_note:'Check the current AP government guidelines and portal for exact eligibility, income limits and application dates.'
+  },
+  {
+    id:'csss',
+    name:'PM-USP Central Sector Scholarship (CSSS)',
+    provider:'Department of Higher Education, Government of India',
+    education_levels:['Undergraduate','Degree','Postgraduate'],
+    level_keys:['degree','postgraduate'],
+    eligible_regions:['all-india'],
+    eligibility_categories:['general','sc','st','obc','ebc','minority','pwd'],
+    family_income_limit:450000,
+    amount_per_year:null,
+    benefit_text:'Annual scholarship amount varies by course stage; check current official guidelines.',
+    summary:'For eligible meritorious students entering college/university after Class XII, subject to board-rank/marks, income, institution and other scheme conditions.',
+    application_portal:'https://scholarships.gov.in/All-Scholarships',
+    renewal_required:true,
+    entry_requirement:['Passed Class XII in the relevant year','Meet the scheme merit and income criteria','Study in an eligible institution'],
+    source_note:'Confirm the current year fresh/renewal status and exact criteria on NSP.'
+  },
+  {
+    id:'yasasvi-college',
+    name:'PM YASASVI — Top Class Education in College for OBC, EBC and DNT Students',
+    provider:'Department of Social Justice and Empowerment, Government of India',
+    education_levels:['Undergraduate','Degree','Postgraduate'],
+    level_keys:['degree','postgraduate'],
+    eligible_regions:['all-india'],
+    eligibility_categories:['obc','ebc'],
+    family_income_limit:250000,
+    amount_per_year:null,
+    benefit_text:'Financial assistance as defined in the current scheme guidelines at notified institutions.',
+    summary:'For eligible OBC, EBC and DNT students admitted to notified institutions, subject to scheme-specific income and course conditions.',
+    application_portal:'https://scholarships.gov.in/All-Scholarships',
+    renewal_required:true,
+    entry_requirement:['Belong to an eligible OBC, EBC or DNT group','Meet income and institution/course requirements'],
+    source_note:'Check the current NSP scheme guidelines and list of notified institutions.'
+  },
+  {
+    id:'disability-postmatric',
+    name:'Post-Matric Scholarship for Students with Disabilities',
+    provider:'Department of Empowerment of Persons with Disabilities, Government of India',
+    education_levels:['Intermediate','Diploma','Degree','Undergraduate','Postgraduate'],
+    level_keys:['after10','intermediate','degree','postgraduate'],
+    eligible_regions:['all-india'],
+    eligibility_categories:['pwd'],
+    family_income_limit:null,
+    amount_per_year:null,
+    benefit_text:'Scholarship and eligible allowances as set out in the current official guidelines.',
+    summary:'For eligible students with benchmark disabilities pursuing post-matric studies, subject to disability, income, course and other scheme rules.',
+    application_portal:'https://scholarships.gov.in/All-Scholarships',
+    renewal_required:true,
+    entry_requirement:['Disability certificate and other required documents','Meet current scheme income and course criteria'],
+    source_note:'Check the official NSP guidelines for the current academic year and exact requirements.'
+  },
+  {
+    id:'beedi-workers',
+    name:'Financial Assistance for Education to Wards of Beedi / Cine / IOMC / LSDM Workers',
+    provider:'Ministry of Labour and Employment, Government of India',
+    education_levels:['Intermediate','Diploma','Degree','Undergraduate','Postgraduate'],
+    level_keys:['after10','intermediate','degree','postgraduate'],
+    eligible_regions:['all-india'],
+    eligibility_categories:['general','sc','st','obc','ebc','minority','pwd'],
+    family_income_limit:null,
+    amount_per_year:null,
+    benefit_text:'Education assistance varies by class/course and current scheme rules.',
+    summary:'For students whose parent/guardian works in one of the specified worker categories and who meet scheme requirements.',
+    application_portal:'https://scholarships.gov.in/All-Scholarships',
+    renewal_required:false,
+    entry_requirement:['Parent/guardian employment in an eligible worker category','Required employment and education documents'],
+    source_note:'Verify the application window and detailed eligibility on NSP.'
+  },
+  {
+    id:'nmms-renewal',
+    name:'National Means-cum-Merit Scholarship (NMMS)',
+    provider:'Department of School Education and Literacy, Government of India',
+    education_levels:['Intermediate'],
+    level_keys:['intermediate'],
+    eligible_regions:['all-india'],
+    eligibility_categories:['general','sc','st','obc','ebc','minority','pwd'],
+    family_income_limit:350000,
+    amount_per_year:12000,
+    benefit_text:'₹12,000 per year under the scheme, subject to eligibility and renewal rules.',
+    summary:'Primarily for eligible students selected through the NMMS process at the prescribed school stage; Class 11–12 students generally need to be eligible renewals, not new applicants.',
+    application_portal:'https://scholarships.gov.in/All-Scholarships',
+    renewal_required:true,
+    entry_requirement:['Selection through the prescribed NMMS examination at the eligible stage','Meet school, marks and family-income criteria'],
+    source_note:'Check the state/UT implementation and renewal rules before relying on eligibility.'
+  }
+];
+
+function scholarshipLevelMatches(s, level){
+  return (s.level_keys || []).includes(level);
+}
+
 async function findScholarships(){
+  const level = document.getElementById('scholarshipLevel').value;
+  const state = document.getElementById('scholarshipState').value;
+  const percentageRaw = document.getElementById('scholarshipPercentage').value;
+  const incomeRaw = document.getElementById('scholarshipIncome').value;
+  const percentage = Number(percentageRaw || 0);
+  const income = Number(incomeRaw || 0);
+  const category = document.getElementById('scholarshipCategory').value;
+  const results = document.getElementById('scholarshipResults');
 
-  const level =
-    document.getElementById('scholarshipLevel').value;
-
-  const state =
-    document.getElementById('scholarshipState').value;
-
-  const percentage =
-    Number(document.getElementById('scholarshipPercentage').value || 0);
-
-  const income =
-    Number(document.getElementById('scholarshipIncome').value || 0);
-
-  const category =
-    document.getElementById('scholarshipCategory').value;
-
-  const results =
-    document.getElementById('scholarshipResults');
-
-
-  if(!level || !state || !percentage || !income || !category){
-
-    results.innerHTML = `
-      <div class="detail-section" style="--lc:#A2402F;">
-        <strong>Please complete all fields.</strong>
-      </div>
-    `;
-
+  if(!level || !state || percentageRaw === '' || incomeRaw === '' || !category){
+    results.innerHTML = `<div class="detail-section" style="--lc:#A2402F;"><strong>Please complete all fields.</strong><p>Enter 0 if your marks or income are not available.</p></div>`;
+    return;
+  }
+  if(percentage < 0 || percentage > 100 || income < 0){
+    results.innerHTML = `<div class="detail-section" style="--lc:#A2402F;"><strong>Please enter valid marks and income.</strong></div>`;
     return;
   }
 
-
-  results.innerHTML = `
-    <div class="detail-section">
-      Loading scholarships...
-    </div>
-  `;
-
-
-  try {
-
-    const response = await fetch(
-      `${API_BASE}/api/scholarships`
-    );
-
-    if(!response.ok){
-      throw new Error('Failed to load scholarships');
-    }
-
-    const data = await response.json();
-
-    const scholarships = data.scholarships || [];
-
-
-    const matches = scholarships.filter(scholarship => {
-
-      /*
-       * Education level matching
-       */
-      const educationLevels =
-        scholarship.education_levels || [];
-
-      let levelMatch = false;
-
-      if(level === 'after10'){
-        levelMatch =
-          educationLevels.some(
-            x => x.toLowerCase().includes('diploma')
-          );
-      }
-
-      else if(level === 'degree'){
-        levelMatch =
-          educationLevels.some(
-            x =>
-              x.toLowerCase().includes('degree') ||
-              x.toLowerCase().includes('undergraduate')
-          );
-      }
-
-      else if(level === 'intermediate'){
-        levelMatch = false;
-      }
-
-      else if(level === 'postgraduate'){
-        levelMatch = false;
-      }
-
-
-      /*
-       * State matching
-       *
-       * Most of the current dataset is AICTE/India-wide.
-       * PM-USP is specifically for J&K and Ladakh.
-       */
-      let stateMatch = true;
-
-      const eligibleRegions =
-        scholarship.eligible_regions || [];
-
-      if(eligibleRegions.length > 0){
-
-        if(state === 'all-india'){
-          stateMatch = false;
-        }
-
-        else if(state === 'andhra-pradesh'){
-          stateMatch =
-            eligibleRegions.some(
-              x => x.toLowerCase().includes('andhra')
-            );
-        }
-
-        else if(state === 'telangana'){
-          stateMatch =
-            eligibleRegions.some(
-              x => x.toLowerCase().includes('telangana')
-            );
-        }
-
-        else if(state === 'karnataka'){
-          stateMatch =
-            eligibleRegions.some(
-              x => x.toLowerCase().includes('karnataka')
-            );
-        }
-
-        else if(state === 'tamil-nadu'){
-          stateMatch =
-            eligibleRegions.some(
-              x => x.toLowerCase().includes('tamil')
-            );
-        }
-      }
-
-
-      /*
-       * Income matching
-       */
-      let incomeMatch = true;
-
-      if(
-        scholarship.family_income_limit !== undefined &&
-        scholarship.family_income_limit !== null
-      ){
-        incomeMatch =
-          income <= scholarship.family_income_limit;
-      }
-
-
-      /*
-       * Category matching
-       *
-       * Current source documents do not provide
-       * category-specific eligibility for most records.
-       * Therefore we do not reject a scholarship
-       * simply because the selected category is General/SC/ST/OBC/etc.
-       */
-      const categoryMatch = true;
-
-
-      return (
-        levelMatch &&
-        stateMatch &&
-        incomeMatch &&
-        categoryMatch
-      );
-
-    });
-
-
-    if(!matches.length){
-
-      results.innerHTML = `
-        <div class="detail-section">
-          <h2>No matching scholarships found</h2>
-          <p>
-            No scholarship in the current verified dataset
-            matches the selected education level, state and
-            income criteria.
-          </p>
-        </div>
-      `;
-
-      return;
-    }
-
-
-    results.innerHTML = `
-      <div style="margin-bottom:16px;">
-        <strong>
-          ${matches.length} scholarship${matches.length === 1 ? '' : 's'} found
-        </strong>
-      </div>
-
-      ${matches.map(scholarship => {
-
-        const amount =
-          scholarship.amount_per_year
-            ? `₹${Number(
-                scholarship.amount_per_year
-              ).toLocaleString('en-IN')} per year`
-            : scholarship.maintenance_allowance_per_year
-              ? `Maintenance allowance: ₹${Number(
-                  scholarship.maintenance_allowance_per_year
-                ).toLocaleString('en-IN')} per year`
-              : 'See official scheme details';
-
-
-        const incomeLimit =
-          scholarship.family_income_limit
-            ? `₹${Number(
-                scholarship.family_income_limit
-              ).toLocaleString('en-IN')} per year`
-            : 'Not specified';
-
-
-        const education =
-          (scholarship.education_levels || []).join(', ');
-
-
-        const provider =
-          scholarship.provider || 'Government / Institution';
-
-
-        const portal =
-          scholarship.application_portal ||
-          'Check official scholarship portal';
-
-
-        return `
-
-          <div class="detail-section" style="margin-bottom:16px;">
-
-            <h2 style="margin-bottom:8px;">
-              ${scholarship.name}
-            </h2>
-
-            <p>
-              <strong>Provider:</strong>
-              ${provider}
-            </p>
-
-            <p>
-              <strong>Education:</strong>
-              ${education}
-            </p>
-
-            <p>
-              <strong>Benefit:</strong>
-              ${amount}
-            </p>
-
-            <p>
-              <strong>Family income limit:</strong>
-              ${incomeLimit}
-            </p>
-
-            <p>
-              <strong>Application:</strong>
-              ${portal}
-            </p>
-
-            ${
-              scholarship.renewal_required
-                ? `<p><strong>Renewal:</strong> Required</p>`
-                : ''
-            }
-
-            <details style="margin-top:12px;">
-              <summary style="cursor:pointer;font-weight:600;">
-                View eligibility details
-              </summary>
-
-              <div style="margin-top:12px;">
-
-                ${
-                  scholarship.entry_requirement
-                    ? `
-                      <p>
-                        <strong>Entry requirement:</strong>
-                        ${scholarship.entry_requirement.join(', ')}
-                      </p>
-                    `
-                    : ''
-                }
-
-                ${
-                  scholarship.eligibility_categories
-                    ? `
-                      <p>
-                        <strong>Eligibility categories:</strong>
-                        ${scholarship.eligibility_categories.join(', ')}
-                      </p>
-                    `
-                    : ''
-                }
-
-                ${
-                  scholarship.disability_requirement_percent
-                    ? `
-                      <p>
-                        <strong>Disability requirement:</strong>
-                        ${scholarship.disability_requirement_percent}% or more
-                      </p>
-                    `
-                    : ''
-                }
-
-                ${
-                  scholarship.eligible_regions
-                    ? `
-                      <p>
-                        <strong>Eligible regions:</strong>
-                        ${scholarship.eligible_regions.join(', ')}
-                      </p>
-                    `
-                    : ''
-                }
-
-              </div>
-            </details>
-
-          </div>
-
-        `;
-
-      }).join('')}
-    `;
-
-
-  } catch(error) {
-
-    console.error(error);
-
-    results.innerHTML = `
-      <div class="detail-section" style="--lc:#A2402F;">
-        <strong>Unable to load scholarships.</strong>
-        <p>Please try again.</p>
-      </div>
-    `;
-
+  results.innerHTML = `<div class="detail-section">Finding scholarships that may match your details…</div>`;
+
+  // Use the built-in verified starter dataset so the finder works even before
+  // a scholarship database/API has been populated.
+  const scholarships = LOCAL_SCHOLARSHIP_DATA;
+
+  const matches = scholarships.filter(s => {
+    const levels = (s.level_keys || []).length ? s.level_keys : [];
+    const levelMatch = levels.length ? levels.includes(level) : scholarshipLevelMatches(s, level);
+    const regions = (s.eligible_regions || []).map(x => String(x).toLowerCase());
+    const stateMatch = regions.includes('all-india') || regions.includes(state);
+    const limit = s.family_income_limit;
+    const incomeMatch = limit == null || income <= Number(limit);
+    const cats = (s.eligibility_categories || []).map(x => String(x).toLowerCase());
+    const categoryMatch = !cats.length || cats.includes(category);
+    return levelMatch && stateMatch && incomeMatch && categoryMatch;
+  });
+
+  const safe = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  if(!matches.length){
+    results.innerHTML = `<div class="detail-section"><h2>No likely matches found</h2><p>Try reviewing your education level, category, income, or state. This finder is a guide only; official scheme rules decide eligibility.</p><p><a class="btn" href="https://scholarships.gov.in/All-Scholarships" target="_blank" rel="noopener noreferrer">Browse official National Scholarship Portal ↗</a></p></div>`;
+    return;
   }
 
+  results.innerHTML = `
+    <div style="margin-bottom:16px;"><strong>${matches.length} possible scholarship match${matches.length === 1 ? '' : 'es'}</strong><p style="color:var(--ink-soft);font-size:.85rem;">Based on your answers. This is not an official eligibility decision.</p></div>
+    ${matches.map(s => {
+      const amount = s.benefit_text || (s.amount_per_year ? `₹${Number(s.amount_per_year).toLocaleString('en-IN')} per year` : 'See current official scheme guidelines');
+      const incomeLimit = s.family_income_limit == null ? 'Check official guidelines' : `₹${Number(s.family_income_limit).toLocaleString('en-IN')} per year`;
+      const portal = s.application_portal || 'https://scholarships.gov.in/All-Scholarships';
+      const education = (s.education_levels || []).join(', ');
+      return `<article class="detail-section" style="margin-bottom:16px;padding:18px;border:1px solid var(--rail);border-radius:10px;background:var(--card);">
+        <h2 style="margin-bottom:8px;">${safe(s.name)}</h2>
+        <p><strong>Provider:</strong> ${safe(s.provider || 'Government scheme')}</p>
+        <p><strong>Education:</strong> ${safe(education || 'See official guidelines')}</p>
+        <p><strong>Benefit:</strong> ${safe(amount)}</p>
+        <p><strong>Income criteria:</strong> ${safe(incomeLimit)}</p>
+        <p>${safe(s.summary || 'Review official scheme rules to confirm eligibility.')}</p>
+        ${s.renewal_required ? '<p><strong>Renewal:</strong> May be required for continuing students.</p>' : ''}
+        <details style="margin:12px 0;"><summary style="cursor:pointer;font-weight:600;">Eligibility notes and documents</summary><div style="margin-top:10px;">
+          ${(s.entry_requirement || []).map(item => `<p>• ${safe(item)}</p>`).join('')}
+          ${s.source_note ? `<p style="color:var(--ink-soft);font-size:.85rem;">${safe(s.source_note)}</p>` : ''}
+        </div></details>
+        <a class="btn btn-solid" href="${safe(portal)}" target="_blank" rel="noopener noreferrer">Visit official application portal ↗</a>
+      </article>`;
+    }).join('')}
+    <p style="font-size:.8rem;color:var(--ink-soft);">Data checked against official portals on 15 October 2026. Scheme availability, amounts, deadlines and eligibility can change; confirm all details with the official provider before applying.</p>
+  `;
 }
+
 function renderStreams(main, crumb){
 
   crumb.innerHTML = '';
@@ -9599,10 +9581,6 @@ async function renderHome(main, crumb) {
   crumb.innerHTML = '';
 
   const userName = currentUser?.displayName || 'Student';
-  const welcomeSeenKey = currentUser ? 'cvh_home_seen_' + currentUser.uid : '';
-  const isFirstDashboardVisit = !!currentUser && !localStorage.getItem(welcomeSeenKey);
-  const welcomeText = isFirstDashboardVisit ? 'Welcome' : 'Welcome back';
-  if (isFirstDashboardVisit) localStorage.setItem(welcomeSeenKey, '1');
 
   // ============================================================
   // PERSONALIZED RECOMMENDATIONS
@@ -9775,7 +9753,7 @@ async function renderHome(main, crumb) {
           line-height:1.2;
           color:#152238;
         ">
-          ${welcomeText}, ${userName}!
+          Welcome back, ${userName}!
         </h1>
 
         <p style="
@@ -11204,11 +11182,6 @@ function renderAuthPage(mode){
         displayName: name
       });
 
-      // A newly registered student must complete their profile before landing
-      // on the dashboard.
-      localStorage.removeItem('cvh_profile_onboarding_complete_' + result.user.uid);
-      location.hash = '#/profile';
-      return;
     }
 
     location.hash = '#/';
@@ -11732,8 +11705,8 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 }
-const API_BASE = 'https://career-hub-backend-i960.onrender.com';
-//const API_BASE = 'http://127.0.0.1:8000';
+//const API_BASE = 'https://career-hub-backend-i960.onrender.com';
+const API_BASE = 'http://127.0.0.1:8000';
 
 async function loadDataAndRender(){
   const main = document.getElementById('main');
@@ -12382,6 +12355,64 @@ forceHomeDashboardStyle();
 
 })();
 </script>
+
+
+<section id="cvh-chat-panel" role="dialog" aria-label="Career Buddy student chat" aria-modal="false">
+  <header class="cvh-chat-header"><div class="cvh-chat-avatar">🎓</div><div class="cvh-chat-header-copy"><strong>Career Buddy</strong><small>Student guidance · Courses · Exams · Careers</small></div><button class="cvh-chat-close" id="cvh-chat-close" type="button" aria-label="Close chat">×</button></header>
+  <div id="cvh-chat-messages" aria-live="polite"><div class="cvh-chat-message bot">Hi! 👋 I'm Career Buddy. Ask me about courses after 10th, career options, entrance exams, scholarships, or choosing a path that fits your interests.</div></div>
+  <div class="cvh-chat-quick" id="cvh-chat-quick"><button type="button" data-prompt="What courses can I choose after 10th?">Courses after 10th</button><button type="button" data-prompt="How do I choose a career?">Choose a career</button><button type="button" data-prompt="Tell me about scholarships and financial aid.">Scholarships</button><button type="button" data-prompt="Which entrance exams should I know about?">Entrance exams</button></div>
+  <form class="cvh-chat-compose" id="cvh-chat-form"><textarea id="cvh-chat-input" rows="1" maxlength="1200" placeholder="Type your question…" aria-label="Your message" required></textarea><button id="cvh-chat-send" type="submit" aria-label="Send message">➤</button></form>
+  <div class="cvh-chat-note">Guidance is a starting point. Verify admission rules and deadlines with official sources.</div>
+</section>
+<script id="cvh-student-chatbot-script">
+(function(){
+  const launcher=document.getElementById('cvh-chat-launcher');
+  const panel=document.getElementById('cvh-chat-panel');
+  const closeBtn=document.getElementById('cvh-chat-close');
+  const messages=document.getElementById('cvh-chat-messages');
+  const form=document.getElementById('cvh-chat-form');
+  const input=document.getElementById('cvh-chat-input');
+  const send=document.getElementById('cvh-chat-send');
+  const quick=document.getElementById('cvh-chat-quick');
+  const history=[];
+  function toggle(open){panel.classList.toggle('cvh-chat-open',open);launcher.setAttribute('aria-expanded',String(open));if(open)input.focus();}
+  launcher.addEventListener('click',()=>toggle(!panel.classList.contains('cvh-chat-open')));
+  closeBtn.addEventListener('click',()=>toggle(false));
+  function addMessage(text,who){const el=document.createElement('div');el.className='cvh-chat-message '+who;el.textContent=text;messages.appendChild(el);messages.scrollTop=messages.scrollHeight;return el;}
+  function localReply(q){const s=q.toLowerCase();
+    if(/course|after 10th|10th class|intermediate|stream|mpc|bipc|cec|hec/.test(s))return 'After Class 10, common options include Intermediate streams (MPC, BiPC, CEC/HEC), Polytechnic diploma, ITI, and vocational or skill-based courses. The best option depends on your favourite subjects, career goal, budget, and eligibility. Tell me your favourite subjects and the career you are interested in, and I can help compare paths.';
+    if(/career|job|future|choose|confused|interest|aptitude/.test(s))return 'A good career choice combines your interests, strengths, realistic study options, and future goals. Start by listing your favourite subjects, what activities you enjoy, and whether you prefer technology, healthcare, business, design, practical work, or public service. I can suggest options if you share those details.';
+    if(/scholarship|fee|financial|money|budget/.test(s))return 'For scholarships, check official National Scholarship Portal listings and your state education department, along with the college or institution scholarship page. Eligibility can depend on income, marks, course, and other criteria. Never pay an unofficial agent to guarantee a scholarship, and verify deadlines on the official portal.';
+    if(/entrance|exam|eamcet|eapcet|jee|neet|poly.?cet|icet/.test(s))return 'The right entrance exam depends on your target course and state. Engineering pathways may use state engineering entrance exams or JEE; medical pathways may require NEET; polytechnic admissions often have a state-level process. Confirm the current eligibility and dates on the official exam website. Which course or stream are you targeting?';
+    if(/college|institution|admission|eligib/.test(s))return 'To shortlist colleges, compare eligibility, approved courses, total fees, location, facilities, placement information, and scholarship availability. Share your preferred course, district/state, marks range, and budget and I can help you make a comparison checklist.';
+    if(/salary|pay|scope|demand/.test(s))return 'Career salaries vary by location, qualification, skills, and experience. Compare typical entry-level and experienced roles rather than relying on a single salary promise. Tell me the careers you are comparing and I can outline the skills, qualifications, and factors to research.';
+    if(/hello|hi\b|hey|namaste/.test(s))return 'Hi! 😊 What would you like help with today—courses after 10th, career choices, entrance exams, college selection, or scholarships?';
+    return 'I can help you explore courses after 10th, compare career paths, understand entrance exams, shortlist colleges, and find scholarship information. Could you share your class/stream and what you want to decide?';
+  }
+  async function getReply(q){
+    // If the backend implements POST /api/chat, use it; otherwise provide useful built-in guidance.
+    try{
+      if(typeof API_BASE!=='undefined' && API_BASE){
+        const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),9000);
+        try{const res=await fetch(API_BASE+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q,history:history.slice(-8)}),signal:controller.signal});
+          if(res.ok){const data=await res.json();const answer=data.reply||data.response||data.message||data.answer;if(typeof answer==='string'&&answer.trim())return answer.trim();}
+        }finally{clearTimeout(timer);}
+      }
+    }catch(e){/* local career-guidance fallback below */}
+    return localReply(q);
+  }
+  async function sendMessage(text){const q=text.trim();if(!q||send.disabled)return;addMessage(q,'user');history.push({role:'user',content:q});input.value='';input.style.height='auto';send.disabled=true;quick.style.display='none';const typing=document.createElement('div');typing.className='cvh-chat-typing';typing.textContent='Career Buddy is thinking…';messages.appendChild(typing);messages.scrollTop=messages.scrollHeight;
+    try{const answer=await getReply(q);typing.remove();addMessage(answer,'bot');history.push({role:'assistant',content:answer});}
+    catch(e){typing.remove();addMessage('Sorry, I could not answer right now. Please try again.','bot');}
+    finally{send.disabled=false;input.focus();messages.scrollTop=messages.scrollHeight;}
+  }
+  form.addEventListener('submit',e=>{e.preventDefault();sendMessage(input.value);});
+  input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();form.requestSubmit();}});
+  quick.addEventListener('click',e=>{const b=e.target.closest('button[data-prompt]');if(b)sendMessage(b.dataset.prompt);});
+})();
+</script>
+
+
 
 </body>
 </html>
