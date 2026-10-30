@@ -3809,6 +3809,40 @@ html,body{
   border-color: #93B4FF !important;
 }
 
+
+/* INTERACTIVE CAREER CHECKLIST */
+.cvh-progress-panel{
+  margin-top:18px;padding:22px;background:#fff;border:1px solid #E3E8EF;
+  border-radius:14px;box-shadow:0 3px 12px rgba(15,23,42,.05)
+}
+.cvh-progress-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:18px}
+.cvh-progress-kicker{font-size:.68rem;font-weight:800;letter-spacing:.12em;color:#2563EB}
+.cvh-progress-heading h2{margin:5px 0 4px;color:#152238;font-size:1.15rem}
+.cvh-progress-heading p{margin:0;color:#64748B;font-size:.8rem}
+.cvh-reset-progress{border:1px solid #D7DFEA;background:#F8FAFC;color:#334155;border-radius:8px;padding:8px 11px;font:600 .72rem Inter,sans-serif;cursor:pointer}
+.cvh-reset-progress:hover{background:#EAF1FF;border-color:#93B4F8}
+.cvh-progress-summary{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.cvh-progress-track{height:9px;flex:1;background:#E8EDF4;border-radius:99px;overflow:hidden}
+.cvh-progress-track span{display:block;width:0;height:100%;background:linear-gradient(90deg,#2563EB,#22A06B);border-radius:99px;transition:width .25s ease}
+.cvh-progress-summary strong{font-size:.75rem;color:#334155;white-space:nowrap}
+.cvh-checklist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.cvh-check-item{display:flex;align-items:flex-start;gap:9px;min-width:0;padding:13px;border:1px solid #E3E8EF;border-radius:10px;background:#FBFCFE;cursor:pointer}
+.cvh-check-item input{width:17px;height:17px;margin:2px 0 0;accent-color:#2563EB;flex-shrink:0}
+.cvh-check-copy{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+.cvh-check-copy strong{font-size:.76rem;color:#152238}
+.cvh-check-copy small{font-size:.68rem;line-height:1.4;color:#64748B}
+.cvh-task-link{font-size:.68rem;font-weight:700;color:#2563EB;white-space:nowrap;align-self:flex-start;margin-top:5px}
+.cvh-check-item.is-complete{background:#F0FDF4;border-color:#B7E4C7}
+.cvh-check-item.is-complete .cvh-check-copy strong{text-decoration:line-through;color:#52705D}
+.cvh-progress-note{margin:12px 0 0;color:#64748B;font-size:.68rem}
+@media(max-width:900px){.cvh-checklist{grid-template-columns:1fr}}
+@media(max-width:520px){
+  .cvh-progress-panel{padding:15px}
+  .cvh-progress-heading{flex-direction:column}
+  .cvh-progress-summary{align-items:flex-start;flex-direction:column}
+  .cvh-progress-track{width:100%;flex:none}
+}
+
 </style>
 
 <style id="final-home-dashboard-css">
@@ -5039,6 +5073,178 @@ body{
   transform: translateY(-2px);
   box-shadow: 0 7px 18px rgba(37, 99, 235, .28) !important;
 }
+
+
+/* WARM SAND / EARTH PALETTE — aligned with the supplied dashboard reference */
+:root{
+  --cvh-accent:#B99B6B;
+  --cvh-accent-hover:#A88959;
+  --cvh-accent-soft:#E8DCC5;
+  --cvh-accent-ink:#2A2318;
+}
+.dashboard-recommend-btn{
+  background:#D8C8A8 !important;
+  color:#2A2318 !important;
+  border:1px solid #C7B38E !important;
+  box-shadow:0 2px 5px rgba(42,35,24,.10);
+}
+.dashboard-recommend-btn:hover{
+  background:#CBB894 !important;
+  border-color:#B9A47D !important;
+  color:#2A2318 !important;
+  transform:translateY(-1px);
+}
+.dashboard-profile-button{
+  background:#F4ECDD !important;
+  color:#2A2318 !important;
+  border:1px solid #D9CBAE !important;
+}
+.dashboard-profile-button:hover{
+  background:#E8DCC5 !important;
+  border-color:#C7B38E !important;
+}
+.profile-avatar{
+  background:#2A2318 !important;
+  color:#F4ECDD !important;
+}
+.cvh-progress-kicker,
+.cvh-task-link{
+  color:#8A6738 !important;
+}
+.cvh-progress-track span{
+  background:linear-gradient(90deg,#B99B6B,#6F7B52) !important;
+}
+.cvh-check-item input{
+  accent-color:#8A6738 !important;
+}
+.cvh-reset-progress:hover{
+  background:#F0E7D6 !important;
+  border-color:#B99B6B !important;
+}
+.cvh-check-item.is-complete{
+  background:#F1F0E5 !important;
+  border-color:#C7C9A8 !important;
+}
+
+
+
+/* FINAL TOPBAR COLOUR OVERRIDE — warm beige / brown, no blue */
+.dashboard-topbar a.dashboard-recommend-btn,
+.dashboard-content .dashboard-topbar .dashboard-recommend-btn,
+a.dashboard-recommend-btn {
+  background: #D8C8A8 !important;
+  background-image: none !important;
+  color: #2A2318 !important;
+  border: 1px solid #C7B38E !important;
+  box-shadow: 0 2px 5px rgba(42,35,24,.10) !important;
+}
+.dashboard-topbar a.dashboard-recommend-btn:hover,
+.dashboard-content .dashboard-topbar .dashboard-recommend-btn:hover,
+a.dashboard-recommend-btn:hover {
+  background: #CBB894 !important;
+  color: #2A2318 !important;
+  border-color: #B9A47D !important;
+}
+.dashboard-topbar #authBox a.dashboard-profile-button,
+.dashboard-content .dashboard-topbar .dashboard-profile-button,
+#authBox .dashboard-profile-button,
+.dashboard-profile-button {
+  background: #F4ECDD !important;
+  background-image: none !important;
+  color: #2A2318 !important;
+  border: 1px solid #D9CBAE !important;
+  box-shadow: none !important;
+}
+.dashboard-topbar #authBox a.dashboard-profile-button:hover,
+.dashboard-content .dashboard-topbar .dashboard-profile-button:hover,
+#authBox .dashboard-profile-button:hover,
+.dashboard-profile-button:hover {
+  background: #E8DCC5 !important;
+  color: #2A2318 !important;
+  border-color: #C7B38E !important;
+}
+.dashboard-profile-button .profile-avatar,
+.dashboard-topbar .profile-avatar,
+#authBox .profile-avatar {
+  background: #2A2318 !important;
+  color: #F4ECDD !important;
+}
+
+
+
+/* NORMAL WARM NEUTRAL THEME: remove remaining bright-blue UI accents */
+:root{
+  --ui-accent:#8A6738;
+  --ui-accent-hover:#6F542F;
+  --ui-accent-soft:#E8DCC5;
+}
+a:not(.stream-card):not(.sidebar-link),
+button,
+[role="button"]{
+  --focus-accent:#A88959;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline:2px solid #B99B6B !important;
+  outline-offset:2px;
+}
+.home-kicker,
+.home-view-all,
+.page-head .code,
+.detail-section h2,
+.line-code,
+.station-code{
+  color:var(--ink-soft) !important;
+}
+.home-match-bar span{
+  background:#8A6738 !important;
+}
+.btn-solid,
+.dashboard-signup-button{
+  background:#2A2318 !important;
+  border-color:#2A2318 !important;
+  color:#F4ECDD !important;
+}
+.btn-solid:hover,
+.dashboard-signup-button:hover{
+  background:#5B5342 !important;
+  border-color:#5B5342 !important;
+  color:#F4ECDD !important;
+}
+.home-view-all,
+.home-view-all:hover,
+a.link,
+.text-link{
+  color:#6F542F !important;
+}
+
+
+
+/* Make Find My Career match the My Profile button */
+.dashboard-topbar .dashboard-recommend-btn,
+.dashboard-content .dashboard-topbar a.dashboard-recommend-btn,
+a.dashboard-recommend-btn{
+  background:#F4ECDD !important;
+  background-image:none !important;
+  color:#2A2318 !important;
+  border:1px solid #D9CBAE !important;
+  box-shadow:none !important;
+  border-radius:10px !important;
+  font-weight:600 !important;
+  transition:background .18s ease,border-color .18s ease !important;
+}
+.dashboard-topbar .dashboard-recommend-btn:hover,
+.dashboard-content .dashboard-topbar a.dashboard-recommend-btn:hover,
+a.dashboard-recommend-btn:hover{
+  background:#E8DCC5 !important;
+  color:#2A2318 !important;
+  border-color:#C7B38E !important;
+  transform:none !important;
+}
+
 </style>
 
 </head>
@@ -10547,8 +10753,92 @@ async function renderHome(main, crumb) {
 
       </div>
 
+      <!-- INTERACTIVE STUDENT ACTION PLAN -->
+      <section class="cvh-progress-panel" aria-labelledby="cvh-progress-title">
+        <div class="cvh-progress-heading">
+          <div>
+            <span class="cvh-progress-kicker">YOUR NEXT STEPS</span>
+            <h2 id="cvh-progress-title">Career planning checklist</h2>
+            <p>Complete these actions to organize your career exploration.</p>
+          </div>
+          <button type="button" id="cvh-reset-progress" class="cvh-reset-progress">Reset progress</button>
+        </div>
+
+        <div class="cvh-progress-summary">
+          <div class="cvh-progress-track" role="progressbar" aria-label="Career planning progress" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" id="cvh-progressbar">
+            <span id="cvh-progress-fill"></span>
+          </div>
+          <strong id="cvh-progress-count">0 of 3 completed</strong>
+        </div>
+
+        <div class="cvh-checklist">
+          <label class="cvh-check-item">
+            <input type="checkbox" class="cvh-task-check" data-task="profile">
+            <span class="cvh-check-copy"><strong>Complete your profile</strong><small>Add your education and interests.</small></span>
+            <a href="#/profile" class="cvh-task-link">Open profile →</a>
+          </label>
+          <label class="cvh-check-item">
+            <input type="checkbox" class="cvh-task-check" data-task="career">
+            <span class="cvh-check-copy"><strong>Explore career paths</strong><small>Compare options that match your interests.</small></span>
+            <a href="#/recommend" class="cvh-task-link">Find careers →</a>
+          </label>
+          <label class="cvh-check-item">
+            <input type="checkbox" class="cvh-task-check" data-task="exam">
+            <span class="cvh-check-copy"><strong>Review entrance exams</strong><small>Check which exams apply to your goals.</small></span>
+            <a href="#/exams" class="cvh-task-link">View exams →</a>
+          </label>
+        </div>
+        <p class="cvh-progress-note" id="cvh-progress-note" aria-live="polite">Your checklist is saved in this browser.</p>
+      </section>
+
     </section>
   `;
+
+  // Checklist state is saved locally in this browser; it does not claim server-side progress.
+  const checklistKey = 'cvh-career-checklist-v1';
+  const taskBoxes = Array.from(main.querySelectorAll('.cvh-task-check'));
+  const progressFill = main.querySelector('#cvh-progress-fill');
+  const progressCount = main.querySelector('#cvh-progress-count');
+  const progressBar = main.querySelector('#cvh-progressbar');
+  const progressNote = main.querySelector('#cvh-progress-note');
+
+  let completedTasks = {};
+  try {
+    completedTasks = JSON.parse(localStorage.getItem(checklistKey) || '{}') || {};
+  } catch (error) {
+    completedTasks = {};
+  }
+
+  function updateCareerChecklist() {
+    const completed = taskBoxes.filter(box => box.checked).length;
+    taskBoxes.forEach(box => {
+      const item = box.closest('.cvh-check-item');
+      if (item) item.classList.toggle('is-complete', box.checked);
+    });
+    progressFill.style.width = `${(completed / taskBoxes.length) * 100}%`;
+    progressCount.textContent = `${completed} of ${taskBoxes.length} completed`;
+    progressBar.setAttribute('aria-valuenow', String(completed));
+    progressNote.textContent = completed === taskBoxes.length
+      ? 'All steps completed. Review your choices and keep them up to date.'
+      : 'Your checklist is saved in this browser.';
+    completedTasks = Object.fromEntries(taskBoxes.map(box => [box.dataset.task, box.checked]));
+    try {
+      localStorage.setItem(checklistKey, JSON.stringify(completedTasks));
+    } catch (error) {
+      progressNote.textContent = 'Progress is active for this session but could not be saved by your browser.';
+    }
+  }
+
+  taskBoxes.forEach(box => {
+    box.checked = completedTasks[box.dataset.task] === true;
+    box.addEventListener('change', updateCareerChecklist);
+  });
+  updateCareerChecklist();
+
+  main.querySelector('#cvh-reset-progress')?.addEventListener('click', () => {
+    taskBoxes.forEach(box => { box.checked = false; });
+    updateCareerChecklist();
+  });
 }
 
 async function trackClick(streamId, pathId = null, nodeId = null) {
